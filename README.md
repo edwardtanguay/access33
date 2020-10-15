@@ -18,6 +18,11 @@ This is code that can get you going with Access VBA.
 - press ALT-F11
 - explore
 
+## For object-oriented code that reads from a database table
+
+- in Module `Main`, press F5 in `Sub TestSingleClass()`
+- in Module `Main`, press F5 in `Sub TestPluralClass()`
+
 ## Current Developers
 
 * Edward Tanguay [@edwardtanguay](https://github.com/edwardtanguay)
