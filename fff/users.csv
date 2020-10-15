@@ -1,0 +1,7 @@
+id,login,password,firstName,lastName,email,accessGroups,systemWhenCreated,systemWhoCreated
+2,anonymousUser,,Anonymous,User, ,loggedOutUsers,2018-05-16 14:52:20.358 +00:00,2018-05-16 14:52:20.358 +00:00
+3,kt,none,Karla,Tanguay,,"loggedInUsers, learnBitsMembers",2019-04-24 16:40:25,systemUnknown
+4,dev,146b43e430e2ea6f67cdc8e41c524ef1,Developer,User,,"developers,loggedInUsers,wk",2018-05-16 14:52:20.358 +00:00,2018-05-16 14:52:20.358 +00:00
+5,et,432bc2fff7ca806f5188e77a0b627cc1,Edward,Tanguay,,"loggedInUsers,wk",2019-03-19 15:19:19,systemUnknown
+8,ht,none,Hannah,Tanguay,,"loggedInUsers, learnBitsMembers",2019-04-24 16:40:06,systemUnknown
+10,gs,none,Gisela,Schmidt-Tanguay,,"loggedInUsers, learnBitsMembers",2019-04-24 16:40:37,systemUnknown

@@ -1,0 +1,14 @@
+id,category,title,info,score,extras,systemWhenCreated,systemWhoCreated
+1,vscode,How to make it so hitting enter does not choose autosuggest,"`ctrl-,`, `accept`, switch `Accept Suggestion on Enter` to `No`",5,,2019-03-21 16:51:15,systemUnknown
+2,vscode,How to go quickly to a line number in a file,"ctrl-p, `items:12` to go to `items.js`, line 12",5,,2019-03-21 16:51:15,systemUnknown
+3,vscode,"Make it so when you open file, it stays open","[CTRL-,], `workbench.editor.enablePreview`, uncheck",5,,2019-03-21 16:57:01,systemUnknown
+4,vscode,How to search for multiline text,"in search box, SHIFT-Enter, or copy multiline text before pressing ",5,,2019-04-12 15:59:10,systemUnknown
+5,sqlite,How to replace all backslashes with forward slashes,"`UPDATE applicationFiles SET pathAndFileName = replace(pathAndFileName, '\', '/');`",10,,2019-03-21 21:20:07,systemUnknown
+6,regex,How to put a `- ` in front of every line,"search: ^
+replace -
+- try in vscode and notepad++",10,,2019-03-21 21:20:11,systemUnknown
+7,regex,How to search for all words which have a `q` that is not followed by a `u`,"use ""negative look header"": search for `q(?!u)`",10,,2019-03-21 21:20:18,systemUnknown
+8,sql,How to count the number of occurances of a specific value,"select menu, count(*) as number from pageItems group by menu order by number desc",30,,2019-03-21 21:20:24,systemUnknown
+9,regex,Use regex to find for-in and for-of in code,"in Visual Studio Code, search for `for\(.* of` and `for\(.* in`",20,,2019-03-21 21:20:31,systemUnknown
+10,vscode,How to open multiple files,"`CTRL-P`, then right arrow for each file you want to open",10,,2019-03-21 21:33:27,systemUnknown
+11,vscode,Find keyboard shortcut,"[F1], then e.g. ""insert""",,,2019-04-12 15:59:02,systemUnknown

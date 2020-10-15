@@ -1,0 +1,137 @@
+id,idCode,menu,title,description,kind,subsite,type,accessGroups,displayOrder,holdMenu,systemWhenCreated,systemWhoCreated
+8,home,main,Home,,system,core,html,"loggedInUsers,loggedOutUsers",10,main,,
+9,showcaseBaseTechnologies,hide,Showcase: Base Technologies,,system,core,html,developers,20,hide,,
+10,login,hide,Login,,system,core,html,loggedOutUsers,999,hide,,
+11,showcaseDataLoading,developerShowcase,Showcase: Data Loading,,system,core,html,developers,30,developerShowcase,,
+83,showcaseBootbox,developerShowcase,Showcase: Bootbox,,system,core,html,developers,100,developerShowcase,,
+92,thirdPartyTools4,SWITCHED,Third Party Tools 4.x,,system,gf,vuejs,developers,110,submain,,
+137,deletePage,developerMain,Delete Page,,system,core,vuejs,developers,110,developerMain,,
+165,showcaseFormAndAjaxControls,developerShowcase,Showcase: Form And Ajax Controls,,system,core,vuejs,developers,100,developerShowcase,,
+166,showcaseJavaScriptSorting,developerShowcase,Showcase: JavaScript Sorting,,system,core,vuejs,developers,100,developerShowcase,,
+203,createPage,developerMain,Create Page,,system,core,,developers,100,developerMain,,
+268,showcaseTextParser,developerShowcase,Showcase: Text Parser,,system,core,,developers,100,developerShowcase,,
+273,createClass,developerMain,Create Class,,system,core,,developers,140,developerMain,,
+286,showcaseFormToEditDatabase,developerShowcase,Showcase: Form to Edit Database,,system,core,,developers,100,developerShowcase,,
+288,showcaseParseItemTypeDefinitionBlock,developerShowcase,Showcase: Parse Item Type Definition Block,,system,core,,developers,100,developerShowcase,,
+290,showcaseFormCodeBlocks,developerShowcase,Showcase: Form Code Blocks,,system,core,,developers,100,developerShowcase,,
+323,logout,loginArea,Logout,,system,core,,loggedInUsers,35,loginArea,,
+326,quarterReport,SWITCHED,Quarter Report,,system,gf,,developers,122,submain,,
+329,thirdPartyTools3,SWITCHED,Third Party Tools 3.x,,system,gf,,developers,90,submain,,
+331,showcaseCreatePdf,developerShowcase,Showcase: Create PDF,,system,core,,developers,100,developerShowcase,,
+333,showcaseCreatePdfReport,developerShowcase,Showcase: Create Pdf Report,,system,core,,developers,100,developerShowcase,,
+337,showcaseReadXmlFile,developerShowcase,Showcase: Read XML File,,system,core,,developers,100,developerShowcase,,
+343,createItemType,developerMain,Create Item Type,,system,core,,developers,120,developerMain,,
+344,showcaseDpDataLoader,developerShowcase,Showcase: DpDataLoader,,system,core,,developers,100,developerShowcase,,
+350,showcaseDisplayDataFromSqlStatement,developerShowcase,Showcase: Display Data from SQL Statement,,system,core,,developers,100,developerShowcase,,
+352,createPageBuilder,developerMain,Create Page Builder,,system,core,,developers,180,developerMain,,
+360,deleteItemType,developerMain,Delete Item Type,,system,core,,developers,130,developerMain,,
+383,showcaseCreateShowcaseBook,developerShowcase,Showcase: Create Showcase Book,,system,core,,developers,100,developerShowcase,,
+403,datapodForNode,main,Datapod for Node,,system,tech,,"loggedInUsers,loggedOutUsers",100,main,2019-02-25 15:45:45,systemUnknown
+404,genericizeSiteToTech,developerSeldom,Genericize Site to Tech,,system,dev,,developers,170,developerSeldom,2019-02-26 10:27:06,systemUnknown
+408,publishNewVersion,developerSeldom,Publish New Version,,system,dev,,developers,10,developerSeldom,2019-02-26 14:01:11,systemUnknown
+409,finalizeNewVersion,developerSeldom,Finalize New Version,,system,systemPublish,,developers,190,developerSeldom,2019-02-26 15:47:02,systemUnknown
+410,genericizeSiteSwitcher,developerSeldom,Genericize Site Switcher,,system,dev,,developers,165,developerSeldom,2019-02-26 21:37:51,systemUnknown
+412,showcaseMarkdown,developerShowcase,Showcase: Markdown,,system,core,,developers,100,developerShowcase,2019-02-28 13:22:45,systemUnknown
+417,showcaseCustomTextParsing,developerShowcase,Showcase: Custom Text Parsing,,system,core,,developers,100,developerShowcase,2019-03-01 16:12:30,systemUnknown
+419,showcaseTextChunkDocument,developerShowcase,Showcase: TextChunkDocument,,system,core,,developers,100,developerShowcase,2019-03-04 13:24:11,systemUnknown
+424,fillItemTypesFromDirectory,developerSeldom,Fill Item Types from Directory,,system,dev,,developers,200,developerSeldom,2019-03-05 15:59:14,systemUnknown
+426,systemCodeGenerator,hide,System Code Generator,,system,dev,,developers,100,hide,2019-03-06 16:50:02,systemUnknown
+427,batchImport,main,Batch Import,,system,core,,developers,290,developerMain,2019-04-01 16:27:27,systemUnknown
+443,showcaseDql,developerShowcase,Showcase: DQL,,system,core,,developers,100,developerShowcase,2019-03-12 16:22:19,systemUnknown
+572,manageApplicationFiles,developerSystemManage,Manage Application Files,,system,dev,,developers,100,developerSystemManage,2019-03-19 14:53:06,systemUnknown
+573,manageApplicationFile,hide,Manage Application File,,system,dev,,developers,100,hide,2019-03-19 14:53:11,systemUnknown
+574,manageDpnVersions,developerSeldom,Manage DPN Versions,,system,dev,,developers,100,developerSeldom,2019-03-21 10:45:14,systemUnknown
+575,manageDpnVersion,hide,Manage DPN Version,,system,dev,,developers,100,hide,2019-03-19 14:56:45,systemUnknown
+584,manageShowcaseBooks,developerSeldom,Manage Showcase Books,,system,dev,,developers,100,developerSeldom,2019-03-19 15:16:20,systemUnknown
+585,manageShowcaseBook,hide,Manage Showcase Book,,system,core,,developers,100,hide,2019-03-19 15:15:53,systemUnknown
+586,manageUsers,developerSystemManage,Manage Users,,system,core,,developers,100,developerSystemManage,2019-03-19 15:18:59,systemUnknown
+587,manageUser,hide,Manage User,,system,core,,developers,100,hide,2019-03-19 15:19:02,systemUnknown
+596,gp137,SWITCHED,Issue: gp-1370,,system,gf,,developers,85,submain,2019-03-21 10:19:11,systemUnknown
+600,manageTodos,hide,Manage Todos,,system,tech,,developers,100,hide,2019-03-21 16:33:06,systemUnknown
+601,manageTodo,hide,Manage Todo,,system,tech,,developers,100,hide,2019-03-21 16:33:08,systemUnknown
+602,manageTips,devManager,Manage Tips,,system,tech,,developers,100,devManager,2019-03-21 16:50:42,systemUnknown
+603,manageTip,hide,Manage Tip,,system,tech,,developers,100,hide,2019-03-21 16:50:44,systemUnknown
+604,manageKeys,devManager,Manage Keys,,system,tech,,developers,100,devManager,2019-03-21 16:56:30,systemUnknown
+605,manageKey,hide,Manage Key,,system,tech,,developers,100,hide,2019-03-21 16:56:32,systemUnknown
+611,showcaseBestEcmascript6Features,developerShowcase,Showcase:  ECMAScript 6 Features,,system,core,,developers,100,developerShowcase,2019-03-22 15:33:04,systemUnknown
+612,showcaseEditXmlFile,developerShowcase,Showcase: Edit XML File,,system,core,,developers,100,developerShowcase,2019-03-26 11:48:27,systemUnknown
+617,manageItemTypes,developerSystemManage,Manage Item Types,x,system,core,,developers,100,developerSystemManage,2019-04-01 16:51:03,systemUnknown
+618,manageItemType,hide,Manage Item Type,,system,core,,developers,100,hide,2019-04-01 16:51:08,systemUnknown
+619,showcaseMultipleSqlStatements,developerShowcase,Showcase: Multiple SQL Statements,,system,core,,developers,100,developerShowcase,2019-04-02 13:42:20,systemUnknown
+624,showcaseMultipleAjaxSteps,developerShowcase,Showcase: Multiple AJAX Steps,,system,core,,developers,100,developerShowcase,2019-04-03 14:41:38,systemUnknown
+625,showcaseMultipleAjaxStepsWithNodeRestarts,developerShowcase,Showcase: Multiple AJAX Steps with Node Restarts,,system,core,,developers,100,developerShowcase,2019-04-03 14:50:07,systemUnknown
+653,showcaseSearchAndDisplayItemType,developerShowcase,Showcase: Search and Display Item Type,,system,core,,developers,100,developerShowcase,2019-04-08 10:53:31,systemUnknown
+654,createDataType,developerMain,Create Data Type,,system,core,,developers,444,developerMain,2019-04-08 15:44:44,systemUnknown
+676,addFieldToItemType,developerMain,Add Field to Item Type,,system,core,,developers,333,developerMain,2019-04-10 14:07:19,systemUnknown
+712,manageShowcaseUsers,developerSystemManage,Manage Showcase Users,x,system,core,,developers,100,developerSystemManage,2019-04-11 15:07:53,systemUnknown
+751,manageShowcaseUser,hide,Manage Showcase User,,system,core,,developers,100,hide,2019-04-18 16:26:32,systemUnknown
+755,manageHowto,hide,Manage Howto,,system,tech,,developers,100,hide,2019-04-20 14:34:55,systemUnknown
+756,manageHowtos,devManager,Manage Howtos,x,system,tech,,developers,100,devManager,2019-04-20 14:35:03,systemUnknown
+757,howtos,main,Howtos,,system,tech,,"loggedInUsers,loggedOutUsers",102,main,2019-04-27 17:49:08,systemUnknown
+762,manageUserPoints,devManager,Manage User Points,,system,tech,,developers,100,devManager,2019-04-24 11:18:02,systemUnknown
+763,manageUserPoint,hide,Manage User Point,,system,tech,,developers,100,hide,2019-04-24 11:18:04,systemUnknown
+764,learnBits,main,Learn Bits,,system,tech,,"loggedInUsers,loggedOutUsers",100,main,2019-05-01 15:48:20,systemUnknown
+766,switchSiteMode,SWITCHED,Switch Site Mode,,system,gf,,developers,100,developerSeldom,2019-04-29 11:15:37,systemUnknown
+767,manageGfhowto,SWITCHED,Manage Gfhowto,,system,gf,,developers,100,hide,2019-05-02 11:08:40,systemUnknown
+768,manageGfhowtos,SWITCHED,Manage Gfhowtos,x,system,gf,,developers,100,developerSystemManage,2019-05-02 11:08:57,systemUnknown
+769,gfhowtos,SWITCHED,GEFEG Howtos,,system,gf,,developers,33,main,2019-05-02 11:12:08,systemUnknown
+775,manageGftasks,SWITCHED,Manage Gftasks,,system,gf,,developers,100,developerSystemManage,2019-05-02 14:31:54,systemUnknown
+776,manageGftask,SWITCHED,Manage Gftask,,system,gf,,developers,100,hide,2019-05-02 14:31:59,systemUnknown
+777,gftasks,SWITCHED,GEFEG Tasks,,system,gf,,developers,33,main,2019-05-02 14:32:53,systemUnknown
+781,manageComparisons,developerSystemManage,Manage Comparisons,x,system,tech,,developers,100,developerCustomManage,2019-05-17 15:54:01,systemUnknown
+782,manageComparison,hide,Manage Comparison,,system,tech,,developers,100,hide,2019-05-17 15:54:06,systemUnknown
+783,comparisons,hide,Comparisons,,system,tech,,developers,100,hide,2019-05-17 15:55:08,systemUnknown
+784,manageTechItems,developerSystemManage,Manage Tech Items,x,system,tech,,developers,100,developerCustomManage,2019-05-17 16:06:34,systemUnknown
+785,manageTechItem,hide,Manage Tech Item,,system,tech,,developers,100,hide,2019-05-17 16:06:39,systemUnknown
+786,techItems,main,Tech Items,,system,tech,,"loggedInUsers,loggedOutUsers",100,main,2019-05-17 16:12:33,systemUnknown
+787,showcasePageState,developerShowcase,Showcase: Page State,,system,core,,developers,100,developerShowcase,2019-05-28 14:35:31,systemUnknown
+790,manageTechTopicGroups,developerSystemManage,Manage Tech Topic Groups,x,system,tech,,developers,100,developerCustomManage,2019-06-12 11:21:45,systemUnknown
+791,manageTechTopicGroup,hide,Manage Tech Topic Group,,system,tech,,developers,100,hide,2019-06-12 11:21:50,systemUnknown
+792,showcaseMobileDevelopment,developerShowcase,Showcase: Mobile Development,,system,core,,developers,100,developerShowcase,2019-06-14 09:59:28,systemUnknown
+796,techReview,main,Tech Review,,system,tech,,"loggedInUsers,loggedOutUsers",100,main,2019-07-15 15:58:47,systemUnknown
+797,manageForay,hide,Manage Foray,,system,tech,,developers,100,hide,2019-07-22 11:31:28,systemUnknown
+798,manageForays,developerSystemManage,Manage Forays,..,system,tech,,developers,100,developerSystemManage,2019-07-22 11:31:38,systemUnknown
+799,forays,main,Forays,,system,tech,,"loggedInUsers,loggedOutUsers",100,main,2019-07-22 11:33:30,systemUnknown
+808,showcaseEs6Promise,developerShowcase,Showcase ES6 Promise,,system,core,,developers,100,developerShowcase,2019-07-30 15:25:04,systemUnknown
+810,showcaseLoadDataWithPromises,developerShowcase,Showcase: Load Data with Linked Promises,,system,core,,developers,100,developerShowcase,2019-08-01 10:47:00,systemUnknown
+811,showcaseES6MapFunction,developerShowcase,"Showcase: ES6 map(), filter(), reduce(), find() functions",,system,core,,developers,100,developerShowcase,2019-08-01 11:57:06,systemUnknown
+873,manageSystemTexts,developerSystemManage,Manage System Texts,x,system,core,,developers,100,developerSystemManage,2019-08-09 13:56:34,systemUnknown
+874,manageSystemText,hide,Manage System Text,,system,core,,developers,100,hide,2019-08-09 13:56:39,systemUnknown
+884,managePageItems,developerSystemManage,Manage Page Items,x,system,core,,developers,100,developerSystemManage,2019-08-12 15:49:44,systemUnknown
+885,managePageItem,hide,Manage Page Item,,system,core,,developers,100,hide,2019-08-12 15:58:00,systemUnknown
+886,manageItemType,hide,Manage Item Type,,system,core,,developers,100,hide,2019-08-12 16:04:05,systemUnknown
+888,manageGfHowto,hide,Manage Gf Howto,,system,core,,developers,100,hide,2019-08-12 16:19:52,systemUnknown
+890,manageGfTask,hide,Manage Gf Task,,system,core,,developers,100,hide,2019-08-12 16:21:08,systemUnknown
+892,manageShowcaseUser,hide,Manage Showcase User,,system,core,,developers,100,hide,2019-08-12 16:27:19,systemUnknown
+905,manageSiteTodos,developerSystemManage,Manage Site Todos,,system,tech,,developers,100,developerSystemManage,2019-08-14 10:44:26,systemUnknown
+906,manageSiteTodo,hide,Manage Site Todo,,system,core,,developers,100,hide,2019-08-14 10:44:31,systemUnknown
+907,siteTodos,submain,Site Todos,,system,tech,,developers,100,submain,2019-08-14 10:46:42,systemUnknown
+910,manageDpnFaqs,developerSystemManage,Manage Dpn Faqs,,system,tech,,developers,100,developerSystemManage,2019-08-15 09:30:32,systemUnknown
+911,manageDpnFaq,hide,Manage Dpn Faq,,system,tech,,developers,100,hide,2019-08-15 09:30:38,systemUnknown
+912,dpnFaqs,submain,Dpn Faqs,,system,tech,,developers,100,submain,2019-08-15 09:32:46,systemUnknown
+916,manageDocumentationSections,developerSystemManage,Manage Documentation Sections,,system,tech,,developers,100,developerSystemManage,2019-08-15 10:37:46,systemUnknown
+917,manageDocumentationSection,hide,Manage Documentation Section,,system,tech,,developers,100,hide,2019-08-15 10:37:53,systemUnknown
+919,documentation,submain,Documentation,,system,tech,,"loggedInUsers,loggedOutUsers",100,submain,2019-08-15 11:09:29,systemUnknown
+920,showcaseTypeScript,developerShowcase,Showcase: TypeScript,,system,core,,developers,100,developerShowcase,2019-08-20 12:53:16,systemUnknown
+921,showcaseSliders,developerShowcase,Showcase: Sliders,,system,core,,developers,100,developerShowcase,2019-08-22 16:22:58,systemUnknown
+923,manageDpnVersionFeature,hide,Manage Dpn Version Feature,,system,core,,developers,100,hide,2019-08-28 14:58:31,systemUnknown
+924,manageDpnVersionFeatures,developerSystemManage,Manage Dpn Version Features,,system,core,,developers,100,developerSystemManage,2019-08-28 14:58:49,systemUnknown
+936,showcaseRegex,developerShowcase,Showcase: Regex,,system,core,,developers,100,developerShowcase,2019-09-03 13:32:29,systemUnknown
+938,showcaseRegexParser,developerShowcase,Showcase: Regex Parser,,system,core,,developers,100,developerShowcase,2019-09-05 15:13:07,systemUnknown
+939,showcaseScreenScraping,developerShowcase,Showcase: Screen Scraping Basic,,system,core,,developers,100,developerShowcase,2019-09-09 10:42:59,systemUnknown
+942,showcaseLoadDataWithMultiplePromises,developerShowcase,Showcase: Load Data with Multiple Promises,,system,core,,developers,100,developerShowcase,2019-09-09 15:10:07,systemUnknown
+943,showcaseLoadFromMultipleDataSources,developerShowcase,Showcase: Load From Multiple Data Sources,,system,core,,developers,100,developerShowcase,2019-09-09 15:35:14,systemUnknown
+951,transformServerText,submain,Transform Server Text,,system,core,,developers,100,submain,2019-10-08 13:13:10,systemUnknown
+952,showcaseReadExcelFile,developerShowcase,Showcase: Read Excel File,,system,core,,developers,100,developerShowcase,2019-10-21 16:19:58,systemUnknown
+955,comparisons,submain,Comparisons,,system,core,,developers,100,submain,2020-04-14 14:39:57,systemUnknown
+956,manageLiTutorials,developerSystemManage,Manage LiTutorials,,system,core,,developers,100,developerSystemManage,2020-04-15 16:31:29,systemUnknown
+957,manageLiTutorial,hidden,Manage LiTutorial,,system,core,,developers,100,hidden,2020-04-15 16:31:34,systemUnknown
+958,liTutorials,main,Tutorials,,system,core,,developers,105,main,2020-04-15 16:34:46,systemUnknown
+959,manageFlashcards,developerSystemManage,Manage Flashcards,,system,core,,developers,100,developerSystemManage,2020-04-27 14:10:02,systemUnknown
+960,manageFlashcard,hidden,Manage Flashcard,,system,core,,developers,100,hidden,2020-04-27 14:10:07,systemUnknown
+961,learn,submain,Learn,,system,core,,developers,100,submain,2020-04-27 14:20:05,systemUnknown
+964,createJsonText,submain,Create Json Text,,system,core,,developers,100,submain,2020-05-10 17:03:17,systemUnknown
+966,techmem,submain,Techmem,,system,core,,developers,100,submain,2020-06-09 08:53:02,systemUnknown
+967,cards,submain,Cards,,system,core,,developers,100,submain,2020-06-16 16:58:03,systemUnknown
+968,cardstime,submain,Cardstime,,system,core,,developers,100,submain,2020-06-17 16:22:08,systemUnknown
+969,flashcards,submain,Flashcards,,system,core,,developers,100,submain,2020-07-22 16:14:16,systemUnknown

@@ -1,0 +1,193 @@
+id,title,body,displayOrder,extras,systemWhenCreated,systemWhoCreated
+2,ItemTypes and DataTypes,"ItemTypes and DataTypes are the core of Datapod. An ItemType represents a class and is connected one-to-one with a table. The fields of the ItemType are DataTypes. DataTypes are not flat like `string` and `integer` but rich like `wholeNumber`, `dateTime` and even `markdown`, `ipAddress`, `htmlColor`, and `numberOfBookPages` or even `firstName`. The fact that ItemTypes have rich DataTypes instead of simple types enable them to automatically validate themselves everywhere in the application, and enables Datapod to engage in intelligent activity such as populating dummy records not just with lorem ipsum text, but with realistic data, e.g. actual first names in first name fields, and realistic number of pages in a field for number of book pages, and realistic ip-addresses in an ip-address field, etc. 
+
+DataTypes allow Datapod applications to ""symantically sniff"" data, e.g. `216.3.128.12` smells like an ip address while the number `483` has a high chance of being a number of book pages, but the number `4` and `8347384` much less so, while the number `4` ""smells"" more like an age than a file size, and the `8347384` smells more like a file size and not at all like an age.
+
+DataTypes are objects which you can inherit and override, so that e.g. `numberOfBookPages` inherits from `wholeNumber` and simply extends the expectation of values to be between `10` and `2000`, i.e. realistic number of pages for a book, which is used to validate values, fill fields with reasonable dummy values, as well as symantically sniff values in unsemantically structured sources of data.
+
+When you create an ItemType, you typically copy and paste an `ItemType Definition Block` that you have created, such as this one:
+
+	** Showcase Books
+	Title
+	Description;p
+	Author
+	Number of Pages;numberOfBookPages
+	Kind;choice;$choices=Paperback, Hardcover, E-Book[ebook], PDF[pdf]
+	Section;choice;$choices=Programming,items Cooking, Travel, History, Philosophy
+
+This creates an ItemType with the idCode `showcaseBooks`, a plural and singular class files, and a database table with six fields `title`, `description`, `author`, `numberOfPages`, `kind`, and `section`. In the plural class for this item type, e.g. `showcaseBooks.js`, you will find this complete text as a block, which allows you to easily copy and paste it into another database to create the same ItemType.",20,,2019-08-15 10:54:48,systemUnknown
+3,Text-Editor Friendly,"While Datapod stores data in an SQLite database, it allows you to very easily copy records out as text in **Datapod format**, edit it in a text editor, and then batch import it back into the database very easily. This allows you to be able to make small changes to records via the website, yet if you want to edit dozens of records, you can easily copy them out into datapod format, change them all at once in a text edit using copy-and-paste, etc., and then import them all back into the database.
+
+Here is an example of Datapod format to add a record to the database:
+
+	==book
+	Node.js in Action
+	%OPENDOUBLEBRACKETS%
+	This is a thoroughly revised book based on the best-selling first 
+	edition. It starts at square one and guides you through all the 
+	features, techniques, and concepts you'll need to build 
+	production-quality Node applications.
+
+	Based on the bestselling first edition, Node.js in Action, Second 
+	Edition is a completely new book. Packed with practical examples, 
+	it teaches you how to create high-performance web servers using 
+	JavaScript and Node. 
+	%CLOSEDDOUBLEBRACKETS%
+	Alex Young
+	371 
+
+And here is an example of Datapod format to later edit that same record:
+
+	==book
+	id%DOUBLEDOT%53
+	title%DOUBLEDOT% Node.js in Action
+	description%DOUBLEDOT%%OPENDOUBLEBRACKETS%
+	This is a thoroughly revised book based on the best-selling first 
+	edition. It starts at square one and guides you through all the 
+	features, techniques, and concepts you'll need to build 
+	production-quality Node applications.
+
+	Based on the bestselling first edition, Node.js in Action, Second 
+	Edition is a completely new book. Packed with practical examples, 
+	it teaches you how to create high-performance web servers using 
+	JavaScript and Node. 
+	%CLOSEDDOUBLEBRACKETS%
+	author%DOUBLEDOT%Alex Young
+	numberOfPages%DOUBLEDOT%371 
+	category%DOUBLEDOT%
+	rank%DOUBLEDOT%
+
+Notice that the `description` field is a **paragraph DataType** and so has double brackets to allow you to enter multiline text.",30,,2019-08-15 12:24:15,systemUnknown
+4,Simplicity and Portability,"Every tool and framework arises out of specific needs, and the needs that have driven me to create Datapod in various languages and environments is to radically simplify the process of recording, displaying, searching and finding information from any machine, and with the flexibility to simply zip, copy, unpack and use it somewhere else with minimal setup of databases or environment configuration, etc. You should be able to be able to zip and send a Datapod website from a Windows computer via e-mail to someone with Linux or a Mac where they unzip it and it works locally, they upload to a website and it works there as well.
+
+For this reason, most mature versions of Datapod are written in technologies that tend to run on a wide variety of operating systems, e.g. PHP and Node.js. And the default database is always SQLite since it exists as a file, requires no setup or external environment to run, and thus can be copied with the code files into a zip file, sent somewhere else, unpack, and it will work.",40,,2019-08-15 12:34:47,systemUnknown
+5,Code Generation and Manipulation,"A unique characteristic of Datapod is that it utilizes automatic code generation freely and often. For instance, when you choose in the developer menu to create or delete a page, ItemType, class or DataType, code files will be created, deleted and modified in the background.",50,,2019-08-15 12:34:47,systemUnknown
+6,Flexible Data Sources,"While data in a Datapod site is *typically stored in an SQLite database*, accessing the data via `DQL` syntax enables you to define other data stores as well. An obvious example is once your Datapod has been developed and you realize you will be storing not 100s of records in database tables but 100,000 records, you can easily switch your data source to MySQL instead.
+
+But Data Sources can be defined at the ItemType level, so you might want to keep smaller tables in the SQLite database, but, e.g. a logging table with 100,000+ records in an *external MySQL database*.
+
+Another alternative is to *store records in text files* in Datapod format. This allows you to keep the data source for an ItemType in a text file that you keep open in a text editor so that you can add, delete and edit items without exporting or importing them at all, e.g. you might do this for an ItemType `flashcards` so that you can record flashcards as you read a text, e.g.:
+
+	==fc
+	fr
+	il va être mise à jour
+	it will be updated
+
+	==fc
+	fr
+	il va bien falloir les rattacher
+	we'll have to reattach them
+
+	==fc
+	fr
+	aucun scintillement
+	no flicker
+
+Each time Datapod accesses the file, it converts the simplified item type syntax to full syntax, so that after you viewed your flashcards in your website, the above text file would be automatically updated to:
+
+	==flashcard
+	id;1
+	language;french
+	front;il va être mise à jour
+	back;it will be updated
+	rank;categories;systemWhenCreated;2019-07-11 22:53:47
+	systemWhoCreated;jim
+
+	==flashcard
+	id;2
+	language;french
+	front;il va bien falloir les rattacher
+	back;we'll have to reattach them
+	rank;categories;systemWhenCreated;2019-07-11 22:53:47
+	systemWhoCreated;jim
+
+	==flashcard
+	id;3
+	language;french
+	front;aucun scintillement
+	back;no flicker
+	rank;categories;systemWhenCreated;2019-07-11 22:53:47
+	systemWhoCreated;jim
+
+One can then fill in the missing, optional information for e.g. `rank` and `categories` later as needed. Because Datapod uses this text file as the original data source itself, it is always up-to-date without having to import and export the text as when the data source is an SQL database.
+
+Another pragmatic datasource is an Excel file which enables someone who works more effeciently in Excel or who has an Excel file with other related information in it, yet certain worksheets are dedicated 1-to-1 datasources for Datapod as well. The data in the database tables could even be automatically generated with VBA scripts based on other information in the worksheets.
+
+To add to this flexibility, one ItemType can have multiple datasources, e.g. enabling a `DQL` statement to pull data out of the main SQLite database table, and a text file, then then return the combined result. 
+
+This flexibility allows you to optimize for how the data will be used, e.g. particularly if you are using a Datapod site for personal data collection and organization for only yourself, you can easily switch to text files which makes data entry and editing easy and fast, and as long as you don't have more than 1000 records in each table, you suffer no disadvantages in speed. And when you upload your site to a webserve where it will be accessed by numerous users at once, you can easily switch the datasource to MySQL, for instance.",70,,2019-08-15 12:37:38,systemUnknown
+7,ID-Code as string identifier,"An important item identifying concept in Datapod is the **idCode**, which is also a DataType. Much like the **id** field (and corresponding DataType), the idCode is used to uniquely identify a record, not with a number but with a human-readable and identifiable text. Examples of idCodes are `report1`, `jimSmith`, `dotNetFramework`, `french`, `originalStagingServer`, `javaScriptTheGoodParts`, etc. 
+
+ID-Codes are uses as URL parameter values and in other environments where a record needs to be uniquely identified and where it is likely that a human might befefit by seeing a half-way understandable text such as `javaScriptTheGoodParts` which indicates that this is probably a book and suggests the title of the book, instead of e.g. the id number 2343.
+
+ID-Codes are used frequently as values for fields which link to other ItemTypes, e.g. you might have an item Type called `languages` in your Datapod, and each item has an idCode of e.g. `french`, `german`, `english`, etc.  In the same application, other item types such as books, flashcards, and notes which have a specific language would have the idCode in their fields instead of the id so that it is easier when one reads the fields to see that the book is in French since one sees e.g. `language;french` instead of `language;2`. 
+
+ID-Codes are always in Hungarian notation, may contain only numbers and letters A-Z/a-z, start with a letter, may not contain umlauts or special characters of any kind, e.g. may not contain underscores, hyphens, spaces, commas, or slashes, etc.",90,,2019-08-15 12:37:38,systemUnknown
+8,"Blanks are allowed, but not nulls","Because Datapod has data sources which cannot handle nulls, such as text and Excel files, nulls are not allowed as distinctive values in SQL data sources. Since text-based data sources are used, all DataTypes can have an *empty* value, e.g. a `wholeNumber` can be blank and thus not assigned, and a `dateTime` or `ipAddress` can be blank and thus not assigned, a `line` DataType that is empty is not per se distinguishable from a null, e.g. you can distinguish between (1) no value has been assigned, and (2) a blank value has been assigned.",80,,2019-08-15 12:37:38,systemUnknown
+9,qtools,"Datapod has a collection of helper functions called **qtools** which stands for **Quick Tools** and are basically a collection of helpful functions divided into the categories strings functions (qstr), date functions (qdat), math functions (qmat), file functions (qfil), system functions (qsys), developer functions (qdev), etc.",100,,2019-08-15 12:37:38,systemUnknown
+10,DQL (Datapod Query Language),"All past implementations of Datapod have had some version of DQL which is a pragmatic and simplified version of SQL for Datapod Items, e.g.
+
+	load_pageItems(all)
+	load_pageItems(all) as system_pageItems
+	load_pageItems(id > 5) as system_pageItems
+	load_pageItems(id > 5 order by displayOrder) as system_pageItems
+
+Here is another syntax version which I am currently implementing in Datapod-for-Node:
+
+	- pageItems search xml
+	- pageItems search 'test page' order by displayOrder
+	- pageItem where idCode = home
+	- pageItem where id = 33
+	- testServers where numberOfCpus > 3 and kind = virtual order by freeSpace desc
+	- testServers where title.contains('the')
+	- testServers where title.doesNotContain('the')
+	- techItems order by rank desc first 10
+	- techItems order by rank desc last 10
+	- techItems where random 5
+	- techItems best 10 order by title
+		- (works on items with rank)	
+	- techItems worst 10 order by title
+		- (works on items with rank)	
+	- most popular 10 books
+
+The goal is to provide an abstraction layer that takes advantage of the richness of DataTypes in order to create a very semantic, expandable, flexible clear-English commands to get data from a data source. For instance, if you know that an ItemType has a `rank` DataType, which is a number from 0.0 to 5.0 which is represented as 1-to-5 star ranking system, then you can say that you want the ""most popular 10 books"" or the ""best 3 recipes"" and you will get the highest ranking items in order.
+
+It will also allow you to easily create new DQL commands such as `video links from french class notes` which will search the `classNotesItems` ItemType which has a DataType `language` that equals `french` and then searches all the `outline` DataType fields for embedded videos, builds full YouTube linkes out of them, and returns these URL-strings as an array. Another example might be `top 10 vocabulary items from german class notes`.",60,,2019-08-15 12:37:38,systemUnknown
+11,stringBlock vs. lines,"Because Datapod does so much text parsing, the concepts `stringBlock` and `lines` are important to understand. A `stringBlock` is a string with **new line** characters separating the lines, and `lines` is an array of strings. The functions `qstr.convertStringBlockToLines()` and `qstr.convertLinesStringBlock()` are thus used very often.",110,,2019-08-15 12:40:18,systemUnknown
+12,MVC Pattern,"Datapod is based on the MVC pattern in that you have an file such as `systemPages/createClass.ejs` (View) which communicates via AJAX with a backend file such as `systemControllers/controllerCreateClass.js` (Controller) which in turn gets data from the Model, usually the data-access class `DpDataLoader` which accesses the database (usually SQLite).",150,,2019-08-15 12:40:18,systemUnknown
+13,Singular and Plural ItemType Classes,"Each ItemType not only has a corresponding database table but a singular and plural class. The singular class of the ItemType **Monthly Reports** (idCode = `monthlyReports`) for instance would be called `MonthlyReport` and the plural class would be called `MonthlyReports`. The singular object instantiated from teh singular class contains flat fields with data in them, as well as a collection of rich DataType objects, one for each field, which are used for rich functionality such as validation of the item's fields. 
+
+The plural item type object instantiated from the plural item class has a collection of singular ItemType objects in it.
+
+Both the singular and plural classes of any ItemType inherit from the high classes `Item` and `Items`.",120,,2019-08-15 12:40:18,systemUnknown
+14,The labels `system` and `custom`,"Datapod is made to easily be updated to a new version with a minimum of modification to your own code. The main concept behind this is the distinction between `system` (referring to core Datapod files and data), and `custom` (referring to your own files and data that you added).",140,,2019-08-15 12:40:18,systemUnknown
+15,ItemType Variable Conventions,"Since it is easy to get confused whether an object is e.g. an array of ItemType objects or a plural ItemType object, nomenclature conventions are important:
+
+On the backend, the following naming conventions are used, for clarity, examples are of the ItemType `Howto`:
+
+## BACKEND: ##
+- `howto` = RICH singular object (an instance of the class Howto) which contains a collection of DataType objects with their values
+- `howtos` = a RICH plural object (an instance of the class Howtos) which contains (1) a collection howtoItems and (2) a collection of howtoRecords
+- `howtoObjects` = this is a flat array of rich singular howto item objects, and is called objects since itemTypes themselves often have the suffix ""-Items"" e.g. ClassNotesItems to indicate that ""Class Notes"" are one item of ""Class Notes Items""
+- `howtoRecord` = a 1-to-1 JSON object representing exactly what is in the database record
+- `howtoRecords` = (what you get from getRecordsWithSql), an array of howtoRecord objects
+- `howtoDataitems` = these are howtoObjects in redcuced JSON format (without any functionality), and may contain additional, extended data which is then sent via AJAX to the frontend 
+
+## FRONTEND: ##
+- `howtoDataitem` = a howto object in JSON form (without any functionality)
+- `howtoDataitems` = a simple array of howtoDataitems
+- in Vue.js, one iterates with `v-for=""dataitem in howtoDataitems""`",130,,2019-08-15 12:40:18,systemUnknown
+16,User and Page Autorization,"Authorization in Datapod is kept very simple: You have `pageItems` and `users` and each of these ItemTypes have a field called `accessGroups` which is a list of comma-separated idCodes, e.g. so if you have the following users:
+
+	anonymousUser: loggedOutUsers
+	jim: loggedInUsers, reportManagers
+	cindy: loggedInUsers, administrators, reportManagers
+
+and the following pageItems:
+
+	publicInfo: loggedOutUsers,loggedInUsers
+	privateInfo: loggedInUsers
+	reports: reportManagers, administrators
+	siteAdministration: administrators
+
+The only authorization rule is that a user can access the page if at least one of their accessCodes matches at least one of the accessCodes of the page. Anyone who is not logged in, accesses the site as `anonymousUser`.",75,,2019-08-15 16:29:06,systemUnknown

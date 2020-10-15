@@ -1,0 +1,716 @@
+id,category,title,body,extras,systemWhenCreated,systemWhoCreated
+1,servers,How to harden server by updating SSL so that the server gets a trusted rating at ssllabs,"- rerun tests:
+	- gehe zu: https://www.ssllabs.com/ssltest
+		- it will show red: No, NOT TRUSTED
+- create certificate file
+	- open IIS
+	- click on the main server link ##iisMainLink
+	- double-click on ""Serverzertifikate"" ##serverzertifIcon
+	- right-click *.gefeg.com, Zertifikatanforderung erstellen
+		- fill in first screen ##certficiateScreen1
+		- fill in second screen, make sure bit length is 2048 ##certificateScreen2with2048
+		- give file name where you want to save the certificate information and click Fertigstellen ##certificate3FileName
+- send certificate to Thawte
+	- goto https://ssl-certificate-center.thawte.de/process/retail/console_login?application_locale=THAWTE_DE
+		- login with info in keypass (admin@gefeg.com)
+	- look for url ##lookForUrl
+		- click on URL
+		- click `Ersetzen`
+	- fill out form
+		- select the e-mail ##selectAdmin
+		- fill out rest of form and click the button ##fillInRest
+		- wait till Frank gets a mail, approves it, and notifies you
+- set up new certificate
+	- again, goto https://ssl-certificate-center.thawte.de/process/retail/console_login?application_locale=THAWTE_DE
+	- click on URL again, e.g. *.gefeg.com
+	- click on `Zertifikat abrufen` ##getCertificate
+	- `Erste Schritte`
+	- fill out the fields and download ##downloadTheCertficate
+		- download file e.g. `DEGESEX239.zip`
+		- copy to the server, e.g. into `d:\certificate`
+		- unpack on server ##unpackOnServer
+		- copy path for next steps
+	- open IIS again
+		- click on server left and then double-click on ""Serverzertifikate"" ##serverzertifIcon
+		- click on abschließen ##clickFinishCertificate
+		- find and select p7b file, you have to change `*.cer` to `*.*` 
+		- add Anzeigename e.g. ""*.gefeg.com 2018-12-05"", and OK ##findAndSelectFile
+		- go default website ##theDefaultWebSite
+			- click on Bindungen ##clickOnBindungen
+			- select `https` and then click the `Bearbeiten` button ##select443
+			- choose certificate just created ##choseCertificateJust
+			- click OK and close everything
+- test server again at https://www.ssllabs.com/ssltest",,2019-03-27 13:15:34,systemUnknown
+2,portal4x,"How to set up a new project, e.g. for Melitta for a new customer","- you get a request to set up a project like this		
+	-----------------
+	Bitte erzeuge ein neues Projekt auf portal04.gefeg.com.
+	Projektname: Continental
+	Zweck: Validierung
+	Rollen: Administrator, Member
+	Funktionen f. Admins: Validieren, Download, Standards verwalten, Sprachressourcen, Custompages, Treetable, Nutzungsstatistik 
+	Funktionen f. Member: Validieren, Download view, Standards view
+	-----------------
+- go to server where project is to be set up, e.g. https://portal04.gefeg.com/gp/default/account/logon
+	- make sure you are on the `default` project
+	- log in as superuser
+	- click `administration`
+	- click projects ##clickProjects
+	- `Add new project`
+	- fill in all information on forms, clicking through them 
+		- page 1 ##createProjectPage1
+			- no expiration date
+			- owner e-mail: `validation.portal@gefeg.com`
+		- page 2 
+			- fill in name of company (this will appear on top of site) in both fields
+		- page 3: Plugins
+			- select plugins ##projectPage3
+		- page 4: Default Roles
+			- `Members`
+		- page 5
+			- no e-mail signature
+		- page 6
+			- leave custom fields as default
+		- click `Finish`
+- if you set up validation
+	- click on `Configuration Settings`
+	- search for `header`
+	- click on `Core.UI.MenuLayout.Header`
+	- click on the eye icon next to Validation##clickValidationEye
+	- you should now see Validation in the header##nowSeeValidationInHeader
+- add groups and rights
+	- switch to new project, e.g. `Continental`
+	- click on `Roles and Privileges` ##projectRoles
+	- click `Add New Role`
+		- type in `Members` and then click `Save`
+			- account.changeemail
+			- account.changepassword
+			- filebrowser.index
+			- user.delete
+			- user.edit
+			- user.viewprofile	
+			- validation.*
+			- standards.*			
+			- click `Save`
+	- click `Add New Role`
+		- type in `Administrators` and then click `Save`
+			- account.*
+				- account.changeemail 
+				- account.changepassword 
+				- account.changepassword.any 
+			- admin.*
+				- admin.clearauditlog 
+				- admin.clearservercache 
+				- admin.exportproject 
+				- admin.index 
+				- admin.sendmail 
+				- admin.viewauditlog 
+				- admin.viewsessions 
+				- admin.viewsitenotifications 
+			- apiaccount.*
+				- apiaccount.authenticationtoken 
+				- apiaccount.straightuserlogintoken 	
+				- apiaccount.userlogintoken 
+			- apifx.uploaddeliverables 
+			- apipreprocessors.availablepreprocessors 
+			- apisystem.getsysteminfo 
+			- configuration.*
+				- configuration.delete 
+				- configuration.edit 
+				- configuration.index 
+			- customfields.*
+				- customfields.create 
+				- customfields.delete 
+				- customfields.edit 
+				- customfields.index 
+				- customfields.managelookups 
+				- customfields.viewdetails 
+			- custompages.*
+				- custompages.create 
+				- custompages.delete 
+				- custompages.edit 
+				- custompages.index 
+				- custompages.viewdetails 
+			- event.*
+				- event.Account.AfterUserLogon 
+				- event.Account.AfterUserRegistration 
+				- event.EventLog.NewEntry 
+				- event.TreeTable.TTChangeLine 
+				- event.TreeTable.TTNewLine 
+				- event.Validation.AfterCheck 
+			- feedback.managetopics 
+			- filebrowser.index 
+			- home.index 
+			- pagemeta.manage 
+			- permissions.*
+				- permissions.createrole 
+				- permissions.deleterole 
+				- permissions.manage 
+			- project.editsecuritysettings 
+			- Project.RenderProjectList 
+			- reports.*
+				- reports.editreport 
+				- reports.index 
+				- reports.removereport 
+			- resources.manage 
+			- standards.*
+				- standards.index 
+				- standards.manage 
+				- standards.renderbrowser 
+				- standards.update 
+			- stickymessages.manage 
+			- transformation.*
+				- transformation.CheckResultConsumer 
+				- transformation.MessageReport 
+				- transformation.StandAlone 
+			- treetableadmin 
+			- user.*
+				- user.activate 
+				- user.create 
+				- user.delete 
+				- user.edit 
+				- user.edit.any 
+				- user.editroles 
+				- user.editroles.any 
+				- user.index 
+				- user.viewprofile 
+				- user.viewprofile.any 
+				- user.viewprofileofinactiveuser 
+			- validation.*
+				- validation.deletemessage 
+				- validation.deleteresult 
+				- validation.downloadmessage 
+				- validation.index 
+				- validation.uploadmessages 
+				- validation.validate 
+				- validation.viewmessage 
+				- validation.viewresult 	
+- add validation page to top
+	- click on `Administration`
+	- click on `Configuration`
+	- click on `Core.UI.MenuLayout.Header`
+	- turn on `Validation`
+	- click `Save`
+	- on Configuration page, make sure the following have the name of the company in them:
+		- Site.CompanyName
+		- Site.PageTitle
+		- Site.ProjectName
+- add lists and put the Standards Browser in the main menu
+	- go to `Projects`
+	- add `TreeTable`##addTreeTable
+	- click on `Listen`##clickOnListen
+	- Standards Browser erstellen##standardsBrowserErstellen
+	- Hauptmenü Bearbeiten##hauptmenubearbeiten
+	- make it visible##hauptmenuVisible",,2019-03-20 11:34:23,systemUnknown
+3,development,How to merge from 4.5 to 4.4x,"- go to 4.4
+- make sure it is a clean copy with no changes
+- update
+- merge: file:///I:/FX/SVN_Sources/_SVN_PORTAL/trunk
+	- show log
+	- choose edit to merge, e.g. 1815
+- commit
+	- click recent messages and choose last one",,2019-03-20 11:34:23,systemUnknown
+4,servers,How to update an SSL certificate for an Apache server (SVN servers),"- C:\Program Files\VisualSVN Server\conf
+- notepad as admin
+- (take off read-only... in edit)
+- SSLCertificateFile
+- (set to read-only)
+- openssl req -new -newkey rsa:2048 -nodes -keyout gefeg.com.key -out gefeg.com.csr
+- infos	
+	- Gesellschaft fuer Elektronischen Geschaeftsverkehr mbH
+	- common name: *.gefeg.com
+- gefeg.com.key copy to server
+- thawte
+	- zertifikat erneuern
+	- copy .crf file in
+	- zertifkat abrufen
+- server
+	- files in certs and change names in .conf file
+- restart server
+	- VisualSVN Server	",,2019-03-22 14:12:22,systemUnknown
+5,servers,How to set up a STRATO server to restart Cobian Backup services every night,"- make file `D:\CobianBackup\restart_cobian_services.bat`
+	----------------
+	timeout 15
+	sc stop cbVSCService11
+	sc stop CobianBackup11
+	timeout 15
+	sc start cbVSCService11
+	sc start CobianBackup11
+	----------------
+- create a task
+	- screen 1 ##taskScreen1
+	- screen 2 ##taskScreen2
+	- screen 3 ##taskScreen3
+- execute the task once",,2019-03-20 13:12:36,systemUnknown
+6,servers,How to raise the htbridge security rating for IIS servers,"- check rating at: https://www.htbridge.com/websec
+- X-Frame-Options: The header was not sent by the server. ##xframeNotSent
+	- in IIS, click on HTTP Response Headers ##theAntwortHeader
+	- right-click, add `X-Frame-Options: sameorigin` ##xframeOptionsSameorigin
+	- recheck rating: https://www.htbridge.com/websec
+		- on https://portal2.gefeg.com, this setting changed the rating from `B-` to `B+`
+- Content-Security-Policy: The header was not sent by the server. ##contentSecurityPolicy
+	- in IIS, click on HTTP Response Headers ##theAntwortHeader
+	- right-click, add `Content-Security-Policy: img-src *` ##contentSecurityFix
+		- on https://portal2.gefeg.com, this setting changed the rating from `B+` to `A`
+		- on https://portal04.gefeg.com, this setting changed the rating from `C+` to `B-`
+- Strict-Transport-Security: The header was not sent by the server. ##errorStrictTransport
+	- in IIS, click on HTTP Response Headers ##theAntwortHeader
+	- right-click, add `Strict-Transport-Security: max-age=31536000; includeSubdomains` ##strictTransport
+		- on https://portal04.gefeg.com, this setting changed the rating from `F` to `C`
+- X-Content-Type-Options: The header was not sent by the server. ##xContentTypeOptionsError
+	- in IIS, click on HTTP Response Headers ##theAntwortHeader
+	- right-click, add `X-Content-Type-Options: nosniff` ##fixXcontent
+		- on https://portal04.gefeg.com, this setting changed the rating from `B+` to `A`
+- X-XSS-Protection: The header was not sent by the server, enabling XSS exploitation if not restricted by the client's browser. ##xxssProtectionError
+	- in IIS, click on HTTP Response Headers ##theAntwortHeader
+	- right-click, add `X-XSS-Protection: 1` ##xxssFix
+		- on https://cbi.gefeg.com, this setting changed the rating from `B+` to `A`",,2019-03-22 14:12:22,systemUnknown
+7,servers,How to raise the htbridge security rating for Apache servers,"- check rating at: https://www.htbridge.com/websec
+- open notepad with administrator rights
+- open the file: `C:\Program Files\VisualSVN Server\conf\httpd.conf`
+- search for `header` and see if any header entries already exist
+- make sure `LoadModule headers_module bin/mod_headers.so` is present, if not, add it
+- after the LoadModule section at the root level (not in a virtual server), add this: ##apacheHeaderSection2
+	--------------------------------------
+	Header always append X-Frame-Options ""sameorigin""
+	Header always append Content-Security-Policy ""img-src *""
+	Header always append Strict-Transport-Security ""max-age=31536000; includeSubdomains""
+	Header always append X-Content-Type-Options ""nosniff""
+	Header always append X-XSS-Protection ""1""
+	--------------------------------------
+- restart the Apache server
+	- open the `VisualSVN Server`
+	- restart the Apache server ##apacheRestartButton
+- check the rating again at: https://www.htbridge.com/websec",,2019-04-06 09:24:18,systemUnknown
+8,servers,How to remove Diffie-Hellman and RC4 Ciphers in order to upgrade an ssllabs TRUSTED B to TRUSTED A,"- download IISCrypt 2.0: https://www.nartac.com/Products/IISCrypto
+- upload it to the server you want to harden and execute it ##uploadIisCrypto
+- look at the error message provided by ssllabs ##ciphersAndKeyExchanges
+- uncheck the appropriate ciphers and key exchanges ##uncheckCiphers
+- press `Apply` and click `OK` ##iisCryptoApply
+- then reboot the computer ##rebootComputerIisCrypto",,2019-03-19 14:32:21,systemUnknown
+22,gefegService,How to create and install the GEFEG service again,"- in Visual studio, rebuild the service:##theServiceRebuild
+- see the document `Docs\Howto\DebugThePortalService.md`
+	- go to directory, e.g.: `C:\dev\Gefeg.Portal.Issue1359\Gefeg.Portal.Bootstrapper\Support\Service`
+	- execute: `gefeg.portal.service.exe -install` 
+- then start the service again:##serviceRunningAgain",,2019-03-22 14:12:22,systemUnknown
+23,gefeg,How to install VPN for HomeOffice,"- go to: `https://vpn.gefeg.com:4443`
+- einloggen als Benutzer
+- click `Remote Access`
+- click the first `Herunterladen` button",,2019-03-22 13:11:38,systemUnknown
+26,portal,How to create a new Entity Framework class,"- remember:
+	- in Cache.cs (in Kernal), add table name to RelatedTablesEnum list
+- create SQL database table
+	- right-click on tabellen, tabellen
+		- columns
+			- ID, int, no null
+			- ProjectID, int, no null
+			- FeedbackTopicID, int, no null
+			- Status, nvarchar(50), null
+			- TimeStamp, datime2, no null
+		- call it: `Project_FeedbackTopic_StatusItems`
+		- set ID
+			- click on ID field
+			- change Identitätsspezifikation-(Ist Identity) to ja
+		- set foreign key relations
+			- save table
+			- Datenbankdiagramme
+				- neues
+				- choose the three tables, e.g. Project_FeedbackTopic_StatusItems, Projects, FeedbackTopics
+				- drag e.g. ID in products to ProductID in new table
+					- change INSERT- und UPDATE...
+						- 2x to Überlappend
+					- do this for each linked table
+			- save and call the diagram Diagram_temp_222 or anything
+				- here you have to deal with any foreign key issues, e.g.
+					-----------------------------------------
+					- Die Beziehung ""FK_Project_FeedbackTopic_StatusItems_FeedbackTopics"" kann nicht erstellt werden.  
+					Das Einführen der FOREIGN KEY-Einschränkung ""FK_Project_FeedbackTopic_StatusItems_FeedbackTopics"" für die Project_FeedbackTopic_StatusItems-Tabelle kann Schleifen oder mehrere Kaskadepfade verursachen. Geben Sie ON DELETE NO ACTION oder ON UPDATE NO ACTION an, oder ändern Sie andere FOREIGN KEY-Einschränkungen.
+					Die Einschränkung oder der Index konnte nicht erstellt werden. Siehe vorherige Fehler.						
+					-----------------------------------------
+					- take cascading out
+					- create the triggers that you need
+						- be sure to copy them into migrations
+- create migration
+	- rightclick table, make CREATE script to clipboard, e.g.
+		----------------------------------
+		USE [GPDB]
+		GO
+
+		/****** Object:  Table [dbo].[Project_FeedbackTopic_StatusItems]    Script Date: 16.08.2018 15:59:04 ******/
+		SET ANSI_NULLS ON
+		GO
+
+		SET QUOTED_IDENTIFIER ON
+		GO				
+		CREATE TABLE [dbo].[Project_FeedbackTopic_StatusItems](
+			[ID] [int] IDENTITY(1,1) NOT NULL,
+			[ProjetctID] [int] NOT NULL,
+			[FeedbackTopicID] [int] NOT NULL,
+			[Status] [nvarchar](50) NOT NULL,
+			[TimeStamp] [datetime2](7) NULL
+		) ON [PRIMARY]
+		GO
+
+		ALTER TABLE [dbo].[Project_FeedbackTopic_StatusItems]  WITH CHECK ADD  CONSTRAINT [FK_Project_FeedbackTopic_StatusItems_Projects] FOREIGN KEY([ProjetctID])
+		REFERENCES [dbo].[Projects] ([ID])
+		ON UPDATE CASCADE
+		ON DELETE CASCADE
+		GO
+
+		ALTER TABLE [dbo].[Project_FeedbackTopic_StatusItems] CHECK CONSTRAINT [FK_Project_FeedbackTopic_StatusItems_Projects]
+		GO
+		----------------------------------
+	- make migrition, e.g. ""20180915_1605_Project_FeedbackTopic_StatusItems\20180915_1605_Project_FeedbackTopic_StatusItemssql"" but take out:
+		------------------------------------------
+		USE [GPDB]
+		GO
+
+		/****** Object:  Table [dbo].[Project_FeedbackTopic_StatusItems]    Script Date: 16.08.2018 15:59:04 ******/
+		SET ANSI_NULLS ON
+		GO
+
+		SET QUOTED_IDENTIFIER ON
+		GO			
+		------------------------------------------
+	- create entity framework classes
+		- go to C:\dev\Gefeg.Portal.Trunk2\Gefeg.Portal.Kernel\Core\Caching\Cache.cs
+			- add in RelatedTablesEnum, the name of the table, e.g. Project_FeedbackTopic_StatusItems
+		- go to kernel/models --> GefegDatabase.edmx
+			- C:\dev\Gefeg.Portal.Trunk2\Gefeg.Portal.Kernel\Models\GefegDatabase.edmx
+				- right_click, model aus der datenbank aktuallisieren
+				- check the table, fertig stellen
+		- if table is not created, e.g. ""Das Modell wurde mit Warnungen oder Fehlern generiert. GefegDatabase.edmx Weitere Informationen erhalten Sie in der 'Fehlerliste'. Diese Probleme müssen vor dem Ausführen der Anwendung behoben sein.""
+			- look in SVN changes
+			- look at .edmx file
+	- create a record in the database like this:
+		-----------------------------------------
+		using (var db = new GefegDB())
+		{
+			try
+			{
+				var statusItem = new Project_FeedbackTopic_StatusItems();
+				statusItem.ProjetctID = 2;
+				statusItem.FeedbackTopicID = 2;
+				statusItem.Status = ""testing"";
+				statusItem.TimeStamp = DateTime.Now;
+				db.Project_FeedbackTopic_StatusItems.Add(statusItem);
+				db.SaveChanges();
+			}
+			catch (DbEntityValidationException ex)
+			{
+				throw new Exception($""DB Validation Exception: {ex}"");
+			}
+		}
+		-----------------------------------------
+	- it gave error when saving in database:
+		-----------------------------------------------
+		System.Data.Entity.Infrastructure.DbUpdateException
+		  HResult=0x80131501
+		  Nachricht = An error occurred while updating the entries. See the inner exception for details.
+		  Quelle = EntityFramework
+		  Stapelüberwachung:
+		   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+		   at Gefeg.Portal.Kernel.Models.GefegDB.SaveChanges() in C:\dev\Gefeg.Portal.Trunk2\Gefeg.Portal.Kernel\Models\GefegDB.cs:line 19
+		   at Gefeg.Portal.Bootstrapper.Controllers.AccountController.Register(RegisterModel model) in C:\dev\Gefeg.Portal.Trunk2\Gefeg.Portal.Bootstrapper\Controllers\AccountController.cs:line 662
+		   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+		   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+		   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+		   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+		   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+		   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+		   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+
+		Innere Ausnahme 1:
+		UpdateException: An error occurred while updating the entries. See the inner exception for details.
+
+		Innere Ausnahme 2:
+		SqlException: Die INSERT-Anweisung steht in Konflikt mit der FOREIGN KEY-Einschränkung ""FK_Project_FeedbackTopic_StatusItems_FeedbackTopics"". Der Konflikt trat in der GPDB-Datenbank, Tabelle ""dbo.FeedbackTopics"", column 'ID' auf.
+		Die Anweisung wurde beendet.
+		-----------------------------------------------",,2019-03-22 13:53:58,systemUnknown
+27,portal,How to update portal3 (with trunk),"- short version:
+	- get versions from/to:
+		- from site: `2018-09-20: 4.5.439.1828`
+		- `GefegPortal_4_5_440_1829.zip`	
+	- copy file to machine
+	- sticky note
+	- mail
+	- set reminder in calendar
+	- 8:45 get it ready
+	- 9:00 start
+- a day ahead of time:
+	- put up a sticky note at https://portal3.gefeg.com/gefeg/account/logon
+		- administration
+		- manage sticky notes
+			- choose: ""This server will be offline for maintenance/updates on Thursday, August 9, 2018 from 9:00 until 10:00. We apologize for any inconvenience caused by the downtime.""
+			- set time, e.g. 2018-07-16 10:45:00
+			- check main page to see if you can see it
+		- check sessions (Sitzungen) to get an idea of use
+			- https://portal3.gefeg.com/gefeg/admin/viewsessions
+	- send an email to: Melitta, Tayfun, Fathy, und Jörg
+		---------------------------------------------
+		Portal 3 Update 27.09. Donnerstag 15:00-16:00
+		.......
+		Hallo Melitta, Tayfun, Fathy, und Jörg, 
+
+		heute, den 27.09. zwischen 15:00 - 16:00 Uhr werde ich Portal3 mit einer neuen Version aktualisieren. 
+
+		Falls Euch dieser Zeitraum aus irgendeinem Grund nicht passt, z.B. wegen einer Präsentation, bitte mir Bescheid geben. Danke.
+		....................
+		Portal 3 Update 27.09. Donnerstag 15:00-16:00
+		...............
+		Hallo Melitta, Tayfun, Fathy, und Jörg, 
+
+		morgen, den 20.09. zwischen 9:00 - 10:00 Uhr werde ich Portal3 mit einer neuen Version aktualisieren. 
+
+		Falls Euch dieser Zeitraum aus irgendeinem Grund nicht passt, z.B. wegen einer Präsentation, bitte mir Bescheid geben. Danke.
+		...................................
+		Hallo Melitta, Tayfun, Fathy, und Jörg, 
+
+		morgen, den 18.09. zwischen 9:00 - 10:00 Uhr werde ich Portal3 mit einer neuen Version aktualisieren. 
+
+		Diese Version beinhaltet diversen Änderungen, unter anderem:
+
+		- Korrektur Konfigurationsseite: bestimmte Konfigurationswerte werden nicht mehr falscherweise versteckt
+		- Korrektur Dienste-Manager-Seite: Konfigurationen führen nicht mehr zu Fehlern mit EventMailer
+
+		Falls Euch dieser Zeitraum aus irgendeinem Grund nicht passt, z.B. wegen einer Präsentation, bitte mir Bescheid geben. Danke.
+		---------------------------------------------
+	- prepare installation file
+		- go to site, e.g.: https://portal3.gefeg.com/gefeg/account/logon
+		- check version on bottom of page: e.g. 4.5.422.1768
+			- 17.09: 4.5.437.1807
+		- check sessions: https://portal3.gefeg.com/gefeg/admin/viewsessions
+	- create zip file
+		- check tortoise svn, show log
+			- e.g. version 1789
+				- 17.09: 1821
+		- (unknown) check checkin version: e.g. http://ci-server:8080/view/GEFEG%20Portal%20Trunk/job/Portal-CheckIn/changes
+			- e.g. 1789. http://tracker/issue/gp-1215 = 1789
+		- check deploy version: http://ci-server:8080/view/GEFEG%20Portal%20Trunk/job/Portal-Deploy
+			- e.g. GefegPortal_4_5_423_1780.zip	= 1780
+				- 17.09. GefegPortal_4_5_437_1807.zip	 = 1807
+		- if versions are not the same, then build deploy version: Build Now
+			- it creates e.g. GefegPortal_4_5_424_1789.zip
+				- 17.09. GefegPortal_4_5_438_1821.zip	
+		- download it to e.g. C:\WORK\UPDATES\2018_08_09_STRATO21_PORTAL3
+	- upload zip file to server
+		- remote log into server
+		- copy zip file into `D:\AppliedPatches`
+		- unzip it
+		- delete the zip file
+- start update
+	- since this is PORTAL3, make sure again that you have TRUNK
+	- in e.g. `D:\AppliedPatches\GefegPortal_4_5_424_1789\GefegPortal_4_5_424_1789`
+		- right-click on setup.bat and ""start as administrator""
+		- click buttons to start
+	- clean up
+		- when finished, click button ""remove css files by clicking on button on setup""
+			- select all and click delete button
+		- check site 
+			- that it has new version: 4.5.422.1768
+			- turn off sticky note message
+			- see if uses are logged in and active
+			- test anything that was fixed by the update, e.g. edit configuration
+		- click close
+			- if there is a virus message just close it
+	- close
+	- logout
+- 2018-09-19
+	- from version: 4.5.438.1821
+	- to version: GefegPortal_4_5_439_1828.zip	",,2019-03-22 14:02:11,systemUnknown
+28,portal,How to restart the portal3 service if the Virus software identifies it as a virus,"- open virus software (in tray)
+- click the blue button on the left ""entsperren"", password ""virus""
+	- einstellungen
+	- ausschlüsse
+	- add file
+- copy file back
+	- open up directory: `D:\inetpub\wwwroot\support\service`
+	- copy file here: `D:\AppliedPatches\GefegPortal_4_5_430_1797\GefegPortal_4_5_430_1797\Support\Service`
+	- paste the file: `Gefeg.Portal.Service.exe`
+- start the service again",,2019-03-22 14:04:22,systemUnknown
+29,servers,How to reactivate a hung backup on server ,"- on monitoring page, you see red, e.g. strato28
+- login
+- task manager
+- details
+- cbService.exe more than 1,000,000 K, i.e. too much
+- double-click cobian icon (in tray)
+	- tools
+	- options
+	- Service and Application Control
+		- Ja
+	- Services
+	- click stop on both services
+- check task manager, if the services are still there
+	- kill them both
+		- `cbService.exe`
+		- `dbServiceControl.exe`
+- in Cobian control panel, start them again
+- in task manager, check to see that they are both running, e.g.
+	- cbService.exe  4.252 K
+	- cbServiceControl.exe 3.464 K
+- local backups can be viewed at:
+	- `\\AD-01\StratoBackup`",,2019-03-22 14:06:19,systemUnknown
+30,administration,Probe einrichten auf einem STRATO Server,"- auf dem entsprechenden Server einloggen, z.B. STRATO16
+	- auf dem Server im Browser: https://monitoring.gefeg.com
+		- einloggen als `admint`
+		- alle kleine Fenstern wegklicken (Passwort speichern usw.)
+	- Konfiguration > Downloads und Werkzeuge > Installer für Remote Probes
+		- den Button `Remote Probe hinzufügen` klicken
+			- (NICHT auf den Link `Den Remote Probe Installer Installer direkt herunterladen` klicken!)
+		- `Vorbereiten und herunterladen`
+		- `Datei speichern` im Popup-Fenster
+		- die Datei ausführen
+			- `Installieren`
+			- warten
+			- `Verbindung vergeschlagen` Fenster erscheint:##verbindungFehl
+				- `Beenden und das Administration Tool öffnen`
+	- `appserver02.gefegmbh.local` in `monitoring.gefeg.com` ändern##changeItApps
+		- `Speichern & Schließen` und `OK`
+		- warten
+		- du bekommst eine Mail
+		- wenn du dieses Fenster siehst, dann Häkchen entfernent, `Hinzufügen` und `Schließen`##ifExplorerpaessle
+		- drücke auf `Zulassen und autom.Suche durchführen`##thezulassok
+		- wenn du diese Meldung bekommst, musst du dich ausloggen und wieder als gefegAdmin einloggen##wennNotAllowedThen
+		- alle Eigenschaften anpassen, wie bei den anderen##likeTheOthersMake
+			- Rechner umbenennen
+			- Systemzustand 
+				- als `CPU`  umbenennen
+				- `Prozessorlast System` klicken
+				- vergewissere, dass die Grenzwerte so eingestellt sind:##the9050
+			- Zustand der Probe
+				- so lassen wie es ist
+			- Laufwerk
+				- umbenennen `HDD (free)`
+				- `Freie Bytes C:` auswählen
+				- für alle Festplatten mit `Freie Bytes`##fuerAlleFreiBytes
+				- `Einstellungen`, diese Werte entfernen##taketheseout234
+			- andere 4 löschen##deleteThese483838
+			- RAM
+				- Sensor hinzufügen
+				- nach `WMI` suchen
+				- `WMI Arbeitsspeicher`
+				- `Erstellen`
+				- als `RAM (free)` umbennenen
+				- `Verfügbarer Speicher` auswählen
+				- Grenzwerte ändern##ramsettignsok
+			- Dienst
+				- Sensor hinzufügen
+				- nach `dienst` suchen
+				- `WMI dienst`
+				- suche und wähle Dienst aus, z.B. `GEFEG Portal Service` oder `VisualSVN Server` oder `VPService3.5` abhängig davon, was der Server macht
+			- neuordnen: CPU, RAM, Dienst, Zustand, HDD
+			- Netzwerksuche entfernen##netzwerksuchedelete",,2019-05-02 11:10:54,systemUnknown
+31,administration,Active-Directory Gruppen im GEFEG Netzwerk bearbeiten,"- auf Server `AD-01.gefegmbh.local` als `admint` mit RDP einloggen
+- im Server-Manager, `Tools` und `Active Directory-Benutzer und -Computer`##thetools
+- unter `gefegmbh.local`, `MyBusiness`, `Security Groups`",,2019-05-14 13:16:17,systemUnknown
+32,ftp,Filezilla FTP Server User einrichten,"- Firewall berechtigung für FTP-Zugang
+	- https://192.168.30.254:4444
+		- admin
+		- passwort: (Nur Thomas und CeCon haben das Passwort)
+	- Network Protection
+		- NAT
+		- Filezilla
+		- erreichbar für ANY
+- RDP auf `AD-01.gefegmbh.local`
+	- FTP Certification ist here:
+		- `E:\FTP-Cert`
+		- wenn man ein neues braucht:
+			- FileZilla Server
+				- Edit, Settings
+				- FTP over TLS settings
+					- Generate new certificate
+						- 2048
+						- de
+						- usw.
+					- Dateiname: z.B. `certificat_2019`
+- FTP Server ist erreichbar unter: `backup.gefeg.com`
+- Befehle, die Herr Weichert verwendet hat
+	- flush DNS
+		- `ipconfig /flushdns`
+- backup servers testen
+	- auf Portal3 einloggen
+	- Cobian Backup starten
+	- `Daily Backup` rechtsklick, Edit##cobianCheckEdit
+		- Test drücken##thecobiantestok",,2019-05-10 10:55:49,systemUnknown
+33,installation,Schulungslaptop vorbereiten,"- vom Serverraum holen
+	- Laptops 
+		- Nummer auf der unteren Seite
+	- USB-Festplatte in der Box: 4TB mit keiner Nummer
+- einloggen mit GEFEG-Account: `.\gefeg`, Passwort: `Ber...`
+- Acronis starten
+	- neues Image installieren
+	- recovery
+		- Achtung: wenn ein **Image ist möglicherweise Korrupt** Fehler kommt, dann Acronis schließen und auf der Backup-Image-Datei klicken und **Öffnen mit Acronis** versuchen. Dies hat einmal mit dem Rechner 300 funktioniert.
+	- (nach 15 Minuten) neustarten
+- FX updaten
+- Windows updaten
+- falls es ein Problem mit dem Laptop gibt
+	- Acronis stick
+		- befindet sich in der Box: 4TB mit keiner Nummer
+		- startet von BIOS
+		- dann von USB stick
+- andere Infos
+	- `K:\INSTALL\Acronis\ATI2019`
+	- `I:\BW\BOA\Rechner_Installation_Win10.docx`
+	- `I:\BW\BOA\Rechner_Installation_Checkliste_CECON-GEFEG.DOCX`
+	- Guest Passwort für Rechner, der keinen Zugang hat: 
+		- `Sum...`
+	- Wiki info: http://dokuwiki.gefegmbh.local/doku.php?id=schulungs-rechner",,2019-05-16 09:17:30,systemUnknown
+34,servers,"Wenn STRATO server meldet Fehler, einloggen und neustartet via Putty","- gehe zu https://www.strato.de/apps/CustomerService
+	- in Paketübersicht, strato-ID von Strato-Server-List eingeben, z.B. `h2284695`
+	- auf Paketname klicken, z.B. **Root Server Windows Level 2 (v1403.12.38)**
+	- auf **Einstellungen verwalten** klicken.##theeinstellungnen
+	- auf **RemoteConsole** klicken##remoteServerConsole
+	- da sieht man die Infos: `Konsole Server`, `Benutzername`, `Passwort`
+- Putty öffnen
+	- Konsole Server für Hostname einfügen (`Port 22`)
+	- click [[Open]]
+	- Benutzername und Passwort eingeben
+	- du siehst die Eingabeaufforderung `SAC`##thesacprompt
+	- `help` eingeben##sachelp
+	- hier kannst du den Server neustarten in dem du `restart` tippst
+- Wenn das nicht funktioniert, dann auf **Backup & Recovery** klicken
+	- dann auf **RecoveryManager** klicken
+	- und auf [[Jetzt Aktion ausführen]] drücken ##recoveryManagerAktionausfuhren",,2019-05-07 16:05:35,systemUnknown
+35,gefeg,Wo sind die Belehrungen von den Jour GEFEG,"- im [intranet](http://intranet/default.aspx)
+- Dokumente.Intern
+	- GEFEG.intern
+		- Belehrungen ",,2019-05-07 16:05:25,systemUnknown
+36,gefeg,Wo sind die Protokolle von den Jour GEFEG Meetings,- `I:\BW\Meetings\Jour GEFEG`,,2019-05-07 15:25:48,systemUnknown
+37,general,Wo findet man infos zu Anschaffungen?,"- z.B. welche Inventar Nr. unsere USV hat
+- `I:\BW\BOA\Inventar`
+	- `Inventar.doc`",,2019-05-06 12:45:27,systemUnknown
+39,servers,Ein RDP Shortcut erstellen,"- Remotedesktop Verbindung öffnen
+- Optionen einblenden##optionenEinblenden11
+- [[Speichern unter]]
+- Verbinden",,2019-05-13 09:18:18,systemUnknown
+40,servers,Windows-Updates für einen Server einrichten,"- Gruppenrichtlinien, dann hier:##strato33thethreeWindowsUpdates
+- dann diese vier Einstellungen anpassen:##gruppenricht4
+	- Neustart:##neustart111
+	- Automatische Updates:##winUpdatesNeustart222
+	- die andere zwei einfach aktivieren	
+- oder Melitta hat eine ausführliches Dokument im Wiki: http://dokuwiki.gefegmbh.local/doku.php?id=technik
+	- dann hier klicken:##internetTheWikiUpdates",,2019-05-15 09:39:56,systemUnknown
+41,exchange,Exchange admin center einloggen,"- zu [Outlook-Exchange](https://exc-01.gefegmbh.local/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fexc-01.gefegmbh.local%2fowa%2f) gehen
+- als admint einloggen
+- es steht `A mailbox couldn't be found for GEFEGMBH\admint`
+- gehe zu [diesem Link](https://exc-01.gefegmbh.local/ecp) ",,2019-06-20 09:21:42,systemUnknown
+42,administration,die wichtigsten Dokumente beim Einrichten eines neuen Notebook/Laptop,"- von Melitta, für wenn man einen neuen Rechner für einen neuen Mitarbeiter einrichtet
+- I:\BW\BOA\Rechner_Installation_Win10.docx
+- I:\BW\BOA\Rechner_Installation_Checkliste_CECON-GEFEG.DOCX
+- I:\BW\BOA\Inventar\Softwarelizenzen\Softwarelizenzen.xls",,2019-08-06 10:16:04,systemUnknown
+43,acronis,Acronis Backup erstellen,"- Acronis USB Laufwerk verbinden
+- show im Order von dem PC, z.B. d:\pc357
+- auf dem ""Acronis True Image"" auf dem Desktop klicken
+- auf z.B. PC357 klicken
+- auf ""Backup jetzt"" klicken",,2019-09-18 10:56:19,systemUnknown
+44,acronis,Mit Acronis Rechner wiederherstellen,"- Acronis USB Laufwerk verbinden
+- show im Order von dem PC, z.B. `d:\pc357`
+- auf dem **Acronis True Image** auf dem Desktop klicken
+- auf z.B. `PC357` klicken
+- oben-rechts auf [[Recovery]]
+- unten-links auf [[PC wiederherstellen]]
+- wähle die Version, die wiederhergestellt werden soll
+- auf [[Recovery Jetzt]] klicken",,2019-09-18 11:07:04,systemUnknown
+45,windows,Domänen-Benutzer in Admin-Gruppe einbinden oder löschen,"- LAN-Kabel ist hier notwendig
+- Computerverwaltung > Lokale Benutzer und Gruppen > Gruppen > Administratoren
+- `GEFEGMBH\Domänen-Benutzer` hinzufügen bzw. löschen",,2019-09-18 11:29:40,systemUnknown

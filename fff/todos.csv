@@ -1,0 +1,11 @@
+id,category,info,score,extras,systemWhenCreated,systemWhoCreated
+1,js,retrieve certain objects from array of objects with .filter(): https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d,30,,2019-03-21 16:38:16,systemUnknown
+2,js,"combine .map(), .reduce() and .filter(): https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d",50,,2019-03-21 16:38:16,systemUnknown
+3,js,use .reduce() to get total and max from array of objects: https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d,30,,2019-03-21 16:38:16,systemUnknown
+4,gimp,"install and google for howtos, e.g. crop, layers, etc. ",20,,2019-03-21 21:22:40,systemUnknown
+5,dpn,create various kinds of pages and change in some meaningful way,,,2019-03-21 21:23:15,systemUnknown
+6,vscode,"Experiment with extensions, do some howtos on the best extensions",,,2019-03-21 21:31:45,systemUnknown
+7,vscode,ctrl-k-s and record keyboard shortcuts,,,2019-03-22 11:48:40,systemUnknown
+8,bootstrap,bootstrap 4 tips,,,2019-03-21 21:34:24,systemUnknown
+9,bootstrap,"how to display various content and styles for various size screens: visible-xs-block, for bootstrap 3 and 4",,,2019-03-21 22:36:27,systemUnknown
+10,jsfiddle,jsfiddle basics,,,2019-03-21 22:36:27,systemUnknown

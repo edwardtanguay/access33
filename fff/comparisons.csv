@@ -1,0 +1,446 @@
+id,techItemList,body,extras,systemWhenCreated,systemWhoCreated
+1,"react, reactNative","- React is rendered through Virtual DOM while React Native uses Native API's to render components on mobile
+- React is called React.js when compared to React Native
+- React.js is just the V part of the MVC framework, a library meant for rendering your views
+- React Native is a framework for building native applications using JavaScript
+	- compiles to native app components, which makes it possible for you to build native mobile applications",,2019-05-17 15:54:27,systemUnknown
+2,"react, vuejs, angular","- Will Stern: React is the definitive framework out there, Vue is a close contender, Angular still exists but you shouldn't be using it
+	- Vue is great but React has such a better ecosystem
+- Angular - (2009 AngularJS, 2015 Angular)
+	- developed by Google
+	- created to be used alongside with Typescript
+	- but harder to learn in comparison with React and Vue.js
+- React - 2013
+	- developed by Facebook
+	- easy to learn, use of HTML-like JSX syntax
+	- extremely fast
+	- Redux, the most popular framework for managing application state in React, also used in Angular
+	- can use TypeScript
+	- is unopinionated and so leaves developers with the task to make choices about the best way to develop
+	- the community is divided on the best way to write CSS in React, split between traditional stylesheets and CSS-in-JavaScript
+- Vue.js - 2014
+	- one advantage of Vue.js is that it is small enough to be easily added to an existing complex application, e.g. in one area of one page, without affecting anything else in the application
+	- can be used for both building single-page applications and more difficult web interfaces of apps
+		- smaller interactive parts can be easily integrated into the existing infrastructure with no negative effect on the entire system
+	- has a small size: 20KB
+- worldwide jobs for these technologies
+	- 78% React 
+	- 21% Angular 
+	- 1% Vue.js
+- React does many things in complex systems that Vue doesn't",,2019-05-20 15:29:32,systemUnknown
+4,"react,vuejs","- react most closely resembles Vue.js
+- Vue est beaucoup plus rapide que React dans de nombreux cas	",,2019-05-17 16:26:38,systemUnknown
+5,"rust,cplusplus","- in C++ you learn by trying to solve segfaults, debugging my pointer messes, where Rust tells you at compile time why what you're trying to do is probably not a wise choice
+- with Rust, you can be sure that your code will do exactly what you programmed it for when your code compiles, whereas with C++, you will get segfaults at runtime",,2019-05-27 13:28:41,systemUnknown
+6,"svn,git","- SVN is centralized, Git is decentralized
+- with Git, your local copy is a repository itself
+- with Gis, you can do practically anything offline, because everybody has their own repository
+- SVN has a good GUI tool TortoiseSVN",,2019-05-17 16:49:29,systemUnknown
+7,"grunt, gulp","- both written in Node.js
+- they are both designed to do the same thing
+	- Compiling Less/Sass to CSS
+	- Concatenating and minifying CSS and JavaScript
+	- Linting code
+	- Optimizing images
+	- Running tests
+- **Grunt is older**: released 2012
+	- Gulp released in December 2017
+- Grunt is more intuitive 
+	- Grunt
+		- works by defining tasks in a single configuration file called Gruntfile.js
+		- specify the configuration for each task and Grunt will run each task in sequence
+		- easy to read and understand
+		- can become brittle for larger projects
+	- Gulp
+		- makes each task definition a JavaScript function
+		- Gulp is usually much faster than Grunt
+			- can make use of node streams
+			- steeper learning curve because of the use of streams and promises
+- Grunt et Gulp sont comparés
+	- Grunt était un des premiers automatiseurs de tâches qui soit apparu
+	- Gulp est soi-disant devenu meilleur
+- note that one could also use npm scripts instead of Grunt or Gulp
+- ""If you've never really suffered performance problems working with Grunt, then perhaps you've never felt an urge to migrate to Gulp.""
+- **2018 Update: Grunt is mostly obsolete**, easy-to-write **Webpack ** configurations have killed it.
+	- Gulp does the same thing as Grunt but is faster",,2019-05-20 15:33:46,systemUnknown
+8,"jslint, jshint, eslint","- 2002 JSLint, 2011 JSHint, 2013 ESLint
+- JSLint has remained pretty much static, while JSHint has changed a great deal
+- I've seen very few JavaScript codesets that could pass a JSLint test
+	- but with the more pragmatic rules available in today's JSHint and ESLint tools, it is a much more realistic proposition to try to get your code passing through them with zero warning
+- JSLint is strict and not configurable, whereas JSHint is lacking the extension mechanism. JSCS is a good choice if you only want to check coding style, but ESLint does that and it checks your code for bugs and other problems as well. JSHint is strong second choice.
+- ""ESLint and Flow check your code for obvious mistakes. Reminds me of IntelliSense and compiler warnings. Again, pretty standard stuff.""",,2019-05-20 15:43:20,systemUnknown
+9,"mocha, jest","- when it comes to JavaScript test frameworks, there are two major contenders in 2018: Jest and Mocha
+- Jest works out of the box while **Mocha requires more setup**
+- for **large projects: Mocha**
+	- for **smaller projects: Jest**
+- **Mocha is an older** and more mature",,2019-05-20 16:05:11,systemUnknown
+10,"materialize, bootstrap","- Bootstrap gives you more freedom and control over UX elements
+	- Materialize is more opinionated about how UX elements should behave and look
+		- the purpose of Materialize is to help you conform your code to Material Design
+- start with Bootstrap and then learn Materialize CSS
+	- if you are a beginner, don't start with Materialize because its JavaScript components are difficult to change
+- Materialize CSS because they more focused on Mobile UI with by default touch screen features, fantastic input fields and they uses lot of javascript components
+- the grid system of boostrap is much more cleaner.And plus bootstrap has more components ",,2019-05-20 16:36:16,systemUnknown
+11,"kotlin,java","- in Kotlin, there is no need to catch or declare any exceptions
+- comparing a Java class with an equivalent Kotlin class demonstrates the conciseness of Kotlin code
+- one of the most infuriating issues concerning Java for developers is the NullPointerExceptions, Java lets developers assign a null value to any variable
+	- unlike Java, all **types in Kotlin are non-nullable** by default
+	- but you can mark a variable as nullable: `val number: Int? = null`
+- unlike Kotlin, Java has a ternary operator
+- irrespective of all the dissimilarities between the two programming languages, they are **fully interoperable**
+	- both Java and Kotlin **compile to bytecode**, which means it is possible to call Java code from Kotlin and vice-versa",,2019-05-20 16:36:16,systemUnknown
+13,"jsObject, jsMap","- in Object, the keys MUST be **simple types**, either integer or string or symbols, but in Map they can be **any data type**, e.g. an object, an array, etc.
+- in Map, **original order** of elements (pairs) is preserved, while in Object, it isn’t
+- Map is an instance of Object 
+- Map only one way to create: const map = new Map();
+- for Map, it's **easy to check if an element exists**: map.has(1)
+- for Map, add like this: map.set('name', ""Jim"")
+- for Map, to delete an item: var isDeleteSucceeded = map.delete(1);
+- for Map, erase all: map.clear()
+- for Map, three ways to iterate:
+	-------------------------
+	//given: map = {2=>3, 4=>5}
+	//for..of: 
+	for (const item of map){
+		console.log(item); 
+		//Array[2,3]
+		//Array[4,5]
+	}
+
+	//for..of
+	for (const [key,value] of map){
+		console.log(`key: ${key}, value: ${value}`);
+		//key: 2, value: 3
+		//key: 4, value: 5
+	}	
+
+	//forEach
+	map.forEach((value, key) => console.log(`key: ${key}, value: ${value}`));
+	//key: 2, value: 3
+	//key: 4, value: 5
+	-------------------------
+- Object is the better choice for scenarios when we only need simple structure to store data and know that all the keys are either strings or integers 
+- creating a plain Object and accessing Object’s property with a specific key is much faster than creating a Map 
+- JSON has direct support for Object, but not for Map 
+- Map is purely hash, Object has logic
+- in scenarios that requires a lot of adding and removing (especially) new pair, Map may perform much better
+- if iteration or element order are important, use Map
+- Map better for large set of data",,2019-05-20 16:46:55,systemUnknown
+14,"es5,es6,es7,es8,es9","- in 2018, all major browsers understood the JavaScript version from 2009 called ECMAScript 5
+- usually when someone says JavaScript without any further specification, what they mean is ES5
+- ES6 and ES7 are the accepted language of the web
+	- in 2015, the 6th edition of JavaScript called ES6 or ES2015 was released
+	- in 2016, the 7th edition called ES7 or ES2016 was released
+	- there is a gab between the latest version of JavaScript and what most browsers can run
+- ES8 (ECMAScript 2017)
+- ES9 (ECMAScript 2018)",,2019-05-20 16:46:55,systemUnknown
+15,"gulp, webpack, grunt","- Webpack is a bundler whereas Gulp is a task runner, so you'd expect to see these two tools commonly used together, but instead **there's a growing trend, especially among the React community, to use Webpack instead of Gulp**
+- even though there's some overlap between the tools, they both have their specialties, this allows you to use Gulp for higher level tasks while passing the problem of bundling to Webpack
+- ""I'm a little lost at why we're using both Webpack and Gulp though""
+- ""Yeah, from the outside I can understand the ""everything keeps changing!!"" complaint, but having been involved in JS for a few years, every single tool that got replaced was replaced for completely valid reasons, that couldn't have been solved incrementally by improving what was already there:
+	- **Grunt > Gulp > Webpack**
+	- manual polyfills > 6to5 > Babel
+	- script tags > bower > NPM > Yarn
+	- nothing > Flow/Typescript""",,2019-05-27 10:02:06,systemUnknown
+16,"browserify, webpack","- both are module bundlers which compile different modules and their dependencies into a single file that can be viewed in your browser
+- Browserify and WebPack are two of the most popular bundlers, WebPack is better because it is not just a module compiler, it is also capable of performing operations such as linting or testing, for which you would generally need other tools
+- **Webpack replaces Browserify, gulp/grunt and is quite versatile when it comes to working with large multi-module projects and considerably facilitates front-end development**
+- Webpack is more advanced and powerful than Browserify
+	- Browserify is conceptually simple. ""Hey, see all these cool packages on npm? Let me wrap those up for ya so you can use those in the browser."" So  Browserify is handy, yet this simplicity is also its Achilles heel. Chances are you have a long list of other things you need to get done like minifying, bundling, linting, running tests, etc.",,2019-05-27 10:02:06,systemUnknown
+17,"vsCommunity, vsProfessional, vscode","- even though free, Visual Studio Community is quite useful, has about 85% of the features of Visual Studio Professional
+- Visual Studio Code is cross-platform and fast, while Visual Studio Community/Professional are Windows-only and slow, yet they have more features for .NET development",,2019-05-27 14:07:52,systemUnknown
+18,"rest,soap","- REST vs SOAP is not the right question to ask
+- SOAP is a messaging protocol while REST is an architectural style
+- people mistakingly use the term REST to refer to any HTTP API that isn't SOAP
+- a SOAP client works like a custom desktop application, tightly coupled to the server, where a REST client is more decoupled like a browser",,2019-05-27 14:41:32,systemUnknown
+19,"rest,graphql","- GraphQL is the better REST
+- REST has been around since 2000 and since 2010 has become the standard for designing web APIs
+	- GraphQL was developed in 2012 to cope with the need for more flexibility and efficiency
+	- solves many of the shortcomings and inefficiencies of REST
+- one most common problems with REST is that of over- and underfetching, which happens because the only way for a client to download data is by hitting endpoints that return fixed data structures
+	- GraphQL allows a query language with which you can be much more accurate in defining what data you want
+- if you can use GraphQL instead of REST, you should, switching will get rid of a huge amount of complexity in your client-side state management and reduce the scope of your client side code to just how data should render in the UI, which is what it should have been all along",,2019-05-27 15:01:49,systemUnknown
+20,"graphql,redux","- for most client-side apps, **GraphQL can replace the need for Redux entirely**
+- some popular GraphQL libraries like Apollo can use Redux under the hood as a cache
+- you can still use Redux alongside of GraphQL, you just won’t need it very much",,2019-05-27 15:04:45,systemUnknown
+21,"flux,redux","- Flux is a **pattern** and Redux is a **library**
+- both Flux and Redux have actions
+	- actions are what trigger events
+	- in Flux, an action is a simple JavaScript object, and that’s the default case in Redux too, although **in Redux, actions can also be functions and promises**
+- Redux is not that different from Flux, overall it has same architecture, but Redux is able to cut some complexity corners by using **functional composition** where Flux uses **callback registration**
+- in Flux, stores are flat, but **in Redux, reducers can be nested via functional composition**, just like React components can be nested",,2019-05-27 15:19:47,systemUnknown
+22,"requirejs,browserify,webpack","- in 2015, RequireJS was one of 3 major options on the module loading scene, along with Browserify and Webpack
+	- where Browserify is an attempt to build a module loader on top of the npm ecosystem and node modules and uses CommonJS modules and integrates tightly with npm
+		- **Webpack is an attempt to unify the modules landscape by supporting AMD, CommonJS and ES6 modules, and handles JavaScript, CSS** and other assets, as well as preprocessors for each
+		- RequireJS suffers in comparison to both of them, both in terms of features and workflow
+	- this adds up to a strong case for not starting new projects with RequireJS: it's a good tool that has benefited many projects, but as other people have learned from its pain points and provided superior solutions, **in 2015, the time has come to move on from RequireJS to Browserify or Webpack**",,2019-05-27 15:36:27,systemUnknown
+23,"mysql, postgresql","- MySQL is open-source yet controlled by Oracle, whereas Postgres is open-source and controlled by the PostgreSQL Global Development Group
+- both run on all operating systems
+- technical differences in partitioning (clustering) and replication
+- PostgreSQL is the world's most advanced open-source database, MySQL is the world's most popular open-source database
+- one used to say that MySQL works best for online transactions, while PostgreSQL works best for analytical processes
+- lack of configuration flexibility with replication on PostgreSQL was the reason why Uber switched to MySQL
+- while MySQL is a relational database management system (RDBMS), PostgreSQL is an object-RDBMS (ORDBMS) 
+	- PostgreSQL supports table inheritance and function overloading, both are features usually attributed to object oriented languages
+	- one of the situations where the object-oriented approach is visible is the fact that for each table there is a corresponding data type created, so a table is essentially a set of ""instances"" of a specific type",,2019-06-13 11:33:20,systemUnknown
+24,"mysql, sqlite","- SQLite is much more portable than MySQL (the database is simply a file that has to be copied)
+- SQLite is flexible for development, prototyping, and testing, and the data can more or less be copied easily to MySQL when you are e.g. out of the prototype phase
+- SQLite is not designed for large-scale applications
+- MySQL can handle high traffic sites much better
+- MySQL has an environment of management capabilities that SQLite doesn't have
+	- e.g. higher levels of security as well as user permissions management,",,2019-06-13 12:59:23,systemUnknown
+25,"sql, nosql","- SQL is like a town where everyone speaks the same language, NoSQL is a town where people speak many languages and dialects of those languages
+	- SQL requires predefined schemas yet it is restrictive
+	- NoSQL has dynamic schema for unstructured data
+- advantages of NoSQL
+	- simplicity of design
+	- simpler horizontal scaling to clusters of machines which is a problem for relational databases
+	- limits the object-relational impedance mismatch
+	- you can create documents without having to first define their structure
+	- each document can have its own unique structure
+	- the syntax can vary from database to database
+	- you can add fields as you go
+	- NoSQL databases the preferred choice for large or ever-changing data sets
+- advantages of SQL
+	- better option for applications that require multi-row transactions ",,2019-06-13 14:29:44,systemUnknown
+26,"mongodb, couchdb","- MongoDB and CouchDB are the most popular NoSQL databases
+- CouchDB is good for pre-defined queries where MongoDB is better for dynamic queries
+- Do you need strong consistency of data? Then MongoDB.
+- Do you need high availability of database? Then CouchDB.
+- Do you need large community to be using DB? Then MongoDB",,2019-06-13 14:51:15,systemUnknown
+27,"react,backbone","- React is essentially a replacement for Backbone.View, it's not a huge application-level framework like Angular or Ember, and it can peacefully coexist with existing components like Backbone.Model",,2019-06-13 16:26:00,systemUnknown
+29,"react,polymer","- ""while using Polymer, I was clueless about most of the boilerplate and Starter kit code and why am I doing something, to be honest, I've devoted more time in learning Polymer than React, yet I feel I know React better""
+- Polymer has many ready-made elements using Material Design, while React provides you with nothing more than vanilla CSS",,2019-06-17 16:43:52,systemUnknown
+30,"typescript, dart","- TypeScript is developed by Microsoft whereas Dart is developed by Google
+- where TypeScript is JavaScript with some additional features, Dart as a replacement of JavaScript
+	- TypeScript is basically just typing on top of JavaScript
+	- Dart is more Java-ish than Typescript, for example in JavaScript there is undefined and null, while Dart only has null
+- the development cycle for TypeScript is faster and closer to the users needs than Dart
+- like TypeScript, Dart can be used in both frontend and backend",,2019-06-18 15:14:36,systemUnknown
+32,"fsharp,csharp","- there are tasks that are difficult and time-consuming in C# but easy in F#, like trying to pound a nail with a screwdriver, you can do it, but it's not ideal
+- data manipulation is easier in F#
+- complex stateful UI is easier in C#
+- F# is good for complex algorithmic programming, financial and scientific applications
+- F# good for parallel execution, it is easier to make F# code execute on parallel cores, than with C#",,2019-06-20 13:47:20,systemUnknown
+33,"groovy,java","- the two languages are similar, Groovy code can be more compact
+	- Java programmers can learn Groovy gradually by starting with familiar Java syntax before acquiring more Groovy programming idioms
+- unlike Java, a Groovy source code file can be executed as an **uncompiled script**
+	- if it contains code outside any class definition
+	- if it is a class with a main method
+	- if it is a Runnable or GroovyTestCase
+- ""I am a long time Java programmer who has learned a few of the follow on languages: Groovy, Scala, and Clojure. Of the three, Groovy is the one I do not use and do not like. My reasoning is this: **Groovy is syntactically similar to Java, but has dynamic typing**. That means when I read Groovy code, I expect it to be Java, but there is **no type information anywhere**, so I don't what is going on in the code. It is **just similar enough to be confusing**, and really **lacking any gain that would inspire me to really use it**. I am not a fan of dynamic typing at all.""",,2019-06-20 13:57:49,systemUnknown
+34,"haskell,miranda","- Haskell is based on the semantics but not the syntax of the Miranda programming language, which served to focus the efforts of the initial Haskell working group
+- ""Following the release of Miranda by Research Software Ltd. in 1985, interest in lazy functional languages grew. By 1987, more than a dozen non-strict, purely functional programming languages existed. Miranda was the most widely used, but it was proprietary software. At the 1987 conference on Functional Programming Languages and Computer Architecture in Portland, Oregon, there was a strong consensus that a committee be formed to define an open standard for such languages, which led to the development of Haskell.""",,2019-06-20 14:15:44,systemUnknown
+36,"r,s,scheme","- R (1993) is an implementation of the S programming language (1976) combined with lexical scoping semantics, inspired by Scheme (1975)
+- the modern implementation of S is R, a part of the GNU free software project",,2019-06-20 14:40:48,systemUnknown
+37,"reasonml, ocaml ","- ReasonML doesn't reinvent the wheel and is strictly based on the established OCaml
+- benefits of basing ReasonML on OCaml
+	- it is an established language (created in 1996) that has proven itself in many projects, e.g. Facebook itself is using it in several projects, e.g. Flow
+	- supports object-orientation and mutable state",,2019-06-20 15:34:47,systemUnknown
+38,"reason,jsx","- ReasonML supports JSX, the syntax for HTML templates inside JavaScript used by Facebook's React framework
+- ""I'm ambivalent about JSX in ReasonML – it has pros and cons. I'm glad that ReasonML doesn't reinvent the wheel and is strictly based on the established OCaml.""",,2019-06-20 15:34:47,systemUnknown
+39,"reason,typescript","- 2019: ""We recently started to find more and more use-cases for statically-typed languages that compile to JavaScript. TypeScript and ReasonML are two leaders of this trend that started a couple of years ago
+- TypeScript was built as a superset of JavaScript, while Reason was built as an extension to the functional programming language OCaml
+- in Reason, all variables are declared with the let keyword
+	- in TypeScript, just like in JavaScript, you can use var, let or const
+- TypeScript and Reason share Boolean and String
+- JavaScript and TypeScript has a single type for numbers
+	- Reason distinguishes between Integers and Floats",,2019-06-20 15:34:47,systemUnknown
+40,"ruby, python, perl","- the syntax of Ruby is broadly similar to that of Perl and Python
+	- but unlike Python, indentation is not significant
+- one of the differences from Python and Perl is that **Ruby keeps all of its instance variables completely private** to the class and only exposes them through accessor methods ",,2019-06-20 15:47:39,systemUnknown
+41,"java,scala","- like Java, Scala is object-oriented, and uses a curly-brace syntax reminiscent of the C programming language
+- unlike Java, Scala has many features of functional programming languages like Scheme, Standard ML and Haskell, including currying, type inference, immutability, lazy evaluation, and pattern matching
+- features of Scala not present in Java include operator overloading, optional parameters, named parameters, and raw strings
+- as Android applications are typically written in Java and translated from Java bytecode into Dalvik bytecode when packaged, Scala's Java compatibility makes it well-suited to Android development, more so when a functional approach is preferred",,2019-06-20 16:04:00,systemUnknown
+42,"smalltalk,simula","- Smalltalk was one of many object-oriented programming languages based on Simula
+- Smalltalk and Simula are usually viewed as the first object oriented languages",,2019-06-20 16:35:40,systemUnknown
+43,"smalltalk, cplusplus, objectivec, ruby","- ""I worked on two Smalltalk projects in the early 90's at two different companies. Both efforts were abandoned for C++. Numerical computation was too slow. Garbage collection was slow. Not everyone had yet bought into object-oriented programming, much less making everything an object. It was strange. C++ seemed safer since everybody at the time knew and was comfortable with C programming. In the end I think the Smalltalk experience left such a bad taste in everyone's mouth that when these issues were resolved no one was interested in going back and giving Smalltalk a second look. Nowadays Smalltalk lives on in Objective-C.""
+- ""I'd say there are two currently popular languages that are significantly influenced by Smalltalk: Ruby and Objective-C.""",,2019-06-20 16:35:40,systemUnknown
+44,"csharp, visualbasicnet","- C# and Visual Basic .NET are syntactically very different languages with very different histories
+	- C# syntax is based on the core C programming language
+	- VB.NET has its roots in the BASIC language of the 1960s
+- though C# and VB.NET are syntactically very different, that is where the differences mostly end
+	- they compile to the same intermediate language (IL), which runs against the same .NET Framework runtime libraries
+- C# is now the dominant Microsoft-based development language
+	- developers will notice that VB 15 (first appearing in Visual Studio 2017) lacks certain language capabilities contained in the new C# 7.3",,2019-06-21 15:02:14,systemUnknown
+45,"clojure, commonlisp","- Clojure is better than other Lisps because it runs on the JVM and hence gets automatic access to the engineering in the JVM itself, e.g. advanced garbage collection algorithms
+- Clojure has good Java interoperability, and so provides compatibility with the huge range of libraries in the Java/JVM language ecosystem
+- Clojure is more prescriptive about functional programming than Common Lisp
+	- Clojure's philosophy, idioms, and to some degree language/libraries strongly encourage and sometimes insist that you program in a functional way
+	- Common Lisp definitely supports functional programming, but it also allows mutable state and imperative programming
+- keep in mind that Clojure is a language and an implementation (usually on the JVM)
+	- Common Lisp is a language specification with more than ten different implementations
+	- so we have a category mismatch right here
+	- you might for example compare Clojure with SBCL, for instance",,2019-06-21 15:24:15,systemUnknown
+46,"yarn,npm","- npm was the industry standard from its release in 2011 until 2016
+- 2016 Yarn was released
+- Yarn **isn't technically a replacement for npm** since it relies on modules from the npm registry
+- the installation methods are different
+- **managing version numbers is more robust in yarn** since the package.json file can get messy sometimes, and the yarn.lock file helps alleviate the mess
+- since Yarn only installs from your yarn.lock or package.json files, it's considered to be **more secure**
+- Yarn is still commonly considered an improvement over npm (2017)
+- using npm and Yarn together can create conflicts
+- the fact that Yarn is still young naturally makes some people skeptical 
+- these two technologies **solve the exact same problem**
+- Yarn has two advantages: 1. it **has the yarn.lock file**, 2. it is **very fast**
+- npm is happy to give you nondeterministic builds, shrinkwrap helps out with this but is not enough
+	- Yarn takes a different approach
+- both npm and yarn use `package.json` to know what to install
+	- yarn uses a separate file `yarn.lock` to manage versions
+- yarn has parallel builds, which speeds up the install
+	- yarn is always faster than npm and often significantly faster
+	- yarn is deterministic: one build is the same other builds on other machines
+- Prior to NPM version 5, you would use shrinkwrap.
+- NPM version 5 (2017 with Node 8.0) introduced package-lock.json as a mechanism to capture the exact dependency tree installed at any point in time
+- ""I remember when Yarn exploded onto the scene (2016). It was super fast. It saved minutes with every yarn install. It ensured your `/node_modules` exactly matched the `/node_modules` of your buddy next to you. And the `/node_modules` on the server too. No more, ""Well, it works for me."" Then 6 months passed and npm made an epic comeback with v5 (2017), bringing speed improvements and consistent `/node_modules`. All those reasons we switched to Yarn in the first place. Many devs are now wondering if Yarn is still necessary. I think it's time to switch back to npm.""",,2019-07-11 15:46:50,systemUnknown
+47,"typescript,babel","- Typescript now supports plain old Javascript, so if you are using Typescript, there is no reason to use Babel
+- TypeScript is basically ES2017 (ES8) with types, so it approximately provides what Babel provides plus all of the benefits that types gives you
+- Typescript tends to be more conservative when onboarding new features, they'll usually only seriously consider an ECMAScript proposal once it's Stage 3 or further, whereas Babel usually tries to cover all active proposals and allows you to choose how ""next"" you want to go
+- 2018 Article: [Moving from Babel, Flow, and ESLint to TypeScript](https://medium.com/@Zh0uzi/moving-from-babel-flow-and-eslint-to-typescript-18797495885c)",,2019-07-11 16:30:44,systemUnknown
+48,"erlang, elixir","- everything you can do in Erlang is possible in Elixir
+- for web applications Elixir is much nicer, because it was created to solve this problem
+- for some kinds of distributed systems you can find simplicity of Erlang superior: a lack of features is often a good thing",,2019-07-12 11:36:25,systemUnknown
+49,"fsharp, scala","- **F# is to C# as Scala is to Java**
+- in F#, syntax is much better without the curly braces everywhere, and it is more pleasing to write and look at
+- in F# compile times are faster than in Scala
+- the vast majority of third-party libraries are written from an OOP perspective and integrate much better with C#/Java than F#/Scala, forcing you to either write adapters or just null check everywhere and forego a major benefit of functional programming in the first place (no nulls)",,2019-07-15 10:29:48,systemUnknown
+50,docker vs. virtual machine,"- while virtual machines are made up of user space plus kernel space of an operating system, docker containers are merely the user space
+	- containers share the host OS kernel whereas every virtual machine has its own
+- the bigger the operating system footprint, the more benefits you get from containers
+- containers also have the following advantages
+	- reduced IT management resources
+	- reduced size of snapshots
+	- quicker spinning up apps
+	- reduced and simplified security updates
+	- less code to transfer
+	- easier migrations of code and operating systems
+- with containers, you don't need to mess around with trying to isolate your projects using various programming language version managers. You can just isolate them with Docker instead
+- it's **a difference is a level of abstraction**:
+	- you use Docker to isolate individual applications
+	- you use virtual machines to isolate entire operating systems",,2019-07-19 10:59:04,systemUnknown
+51,"reactNative, ionic","- generally, if you're a React shop, choose React Native; if you're an Angular shop, choose Ionic
+	- however, Ionic 4 (2019) works with any JS framework, including React",,2019-07-19 11:11:21,systemUnknown
+52,"rust, go","- both are system level programming languages
+- Go is growing faster than Rust
+- concurrency is central to Go programming methodology
+	- architects made it easy for developers to write programs to optimize networked and multiple core devices
+	- **but the Go compiler is less cautious about thread safety than Rust**
+- Go is easy to integrate with modules of C code
+	- as Google’s premier language, Go is currently in use in thousands of system level applications globally
+	- one of Go's biggest success stories is that it that **Go was used to build the wildly popular Docker platform**
+- Rust architects endowed their compiler with a novel capability to enforce memory safety called Ownership
+	- the Rust compiler actually tracks the end of scope for pointers and destroys the allocation when the end of the scope is reached
+	- Rust has high thread safety
+		- **thread safety was a foundational goal of the Rust project**
+	- Rust eliminates garbage collection pauses
+	- much of the Rust functionality amounts to innovations on the Haskell programming language
+	- use Rust to **squeeze the juice out of a machine**",,2019-07-19 11:25:01,systemUnknown
+53,"gitlab, jenkins","- GitLab already provides more than what Jenkins is hoping to evolve to, by providing a fully integrated single application for the entire DevOps lifecycle
+- Jenkins plugins are expensive to maintain, secure, and upgrade
+	- in contrast, GitLab is open core and anyone can contribute changes directly to the codebase
+		- and once merged would be automatically tested and maintained with every change
+- Jenkins is well known to be time consuming to set up
+- Jenkins is easier to use and learn, but it has the risk to become a plugin hell
+- Jenkins has a GUI, which can be preferred if it has to be accessible and maintainable by other people
+- Jenkins is very configurable because of all the plugins that are available. The downside of this is that your CI server can become a spaghetti of plugins
+- chaining and orchestrating of jobs in Jenkins is much simpler
+- over time, GitLab is proving to be an awesome tool to work with
+- Gitlab is blazing fast to configure
+	- try to open a complex Jenkins job configuration in Firefox and wait for the non-responsive script to come up vs. how lightweight is to edit .gitlab-ci.yml",,2019-07-19 12:52:29,systemUnknown
+54,"xml,json","- both JSON and XML can be used to receive data from a web server
+- both JSON and XML are self describing and human readable, as opposed to binary formats
+- both JSON and XML are hierarchical, i.e. contain values within values
+- both JSON and XML can be parsed and used by lots of programming languages
+- JSON is shorter
+- JSON is quicker to read and write
+- JSON can use arrays
+- XML is much more difficult to parse than JSON
+	- JSON is parsed into a ready-to-use JavaScript object
+- parsing large XML can consume large amounts of memory
+	- parsing JSON is faster
+	- in many languages, especially dynamic ones, you can just ""slurp in the JSON"" and you immediately have your domain object
+		- it is easy to go from objects in JSON to the objects in code because they align
+		- when going from objects in XML to objects in code they do not align and there is a lot of room for interpretation
+- XML is more robust than JSON, e.g. can be defined with schema that restrict how XML documents can be formed",,2019-07-19 13:32:17,systemUnknown
+55,"webpack, rollup","- use webpack for apps, use Rollup for libraries
+- Rollup had tree shaking (automatica removal of unused code) first, now Webpack 2 has it
+- Rollup has limited support for alternative file type loading, while Webpack has advanced support for CSS/HTML/image loading
+- Webpack has code splitting, but Rollup added it in 2018
+- Webpack has a complicated API
+- [Parcel](https://parceljs.org/) is an up-and-coming bundler with a much less complicated configuration",,2019-07-19 14:03:22,systemUnknown
+56,"github, bitbucket","- Github only supports Git, but not Mercurial
+	- Bitbucket supports Bitbucket supports Git and Mercurial
+	- neither support SVN
+- Github is considered to be free. But that’s only if you allow your work to be public
+	- BitBucket, on the other hand, is totally free for up to five users
+- Bitbucket has a good Jira integration
+- GitHub is more universal than BitBucket
+- GitHub has more plugins",,2019-07-19 14:33:59,systemUnknown
+57,"neo4j, mongodb","- Neo4j and MongoDB are **both NoSQL databases**, however, **Neo4J is a graph database**
+- MongoDB is schemaless
+- graph databases like Neo4J comply ACID framework with complete fine-grained atomicity of the transactions 
+	- **ACID** = Atomicity, Consistency, Isolation, Durability
+	- guarantee validity even in the event of errors, power failures, etc.
+- **MongoDB provides flexibility**, high scalability in a distributed environment, therefore it requires eventual consistency of the database than instant ACID compliance
+- **MongoDB does not create relationships** between the database models, as each data set stored in the document store of the database is disaggregated and independent
+- **Neo4J enables visualization and navigation through the graphs as a tree**, where MongoDB cannot provide visualization of the document stores as graphs",,2019-07-30 13:15:48,systemUnknown
+58,"aws,azure,googleCloud","- a market that has been dominated by AWS since day one
+- whereas AWS has grown into the largest cloud services provider by being first to market and by being the more developer-friendly of the two platforms, Azure caters better for larger organizations already committed to Microsoft products moving an existing infrastructure to the cloud
+- AWS key strength continues to be the breadth and depth of its services
+- AWS often wins on developer functionality
+- Microsoft is a strong number two to AWS thanks to its combination of Azure, Office 365 and Teams
+- Google also often stands out for its deep expertise around open source technologies
+- all vendors offer **free introductory tiers**, allowing customers to try their services before they buy",,2020-04-14 15:37:34,systemUnknown
+59,"parcel,fusebox,browserify, rollup, webpack","- Parcel and FuseBox both try to do as much as possible within the core, i.e. don't rely so much on plugins as WebPack and Rollup do
+- Browserify and Rollup are specialized in dealing with JavaScript
+- while Parcel works out of the box, where Rollup requires plugins for things that really should work out of the box
+	- requires a plugin to work with CommonJS modules 
+	- also Rollups architecture also was not really robust regarding transformations
+- FuseBox's ecosystem is not as mature or vast as Webpack's, but at least in our test everything seemed to have worked together well
+- the **older Browserify and Brunch** may still be viable for one or the other use case, however, their age has shown in the test
+	- without any bundle splitting or possibility to reference static assets they may still be viable for use in Node.js projects",,2020-05-06 17:10:11,systemUnknown
+60,"clojure, scala","- Scala’s increased popularity over Clojure has a very simple root cause. Beyond the obvious head start that Scala had over Clojure, the simple fact is that **Scala is similar enough to Java that it is easy to pick up** and hence **Scala is the  “better Java”**. That makes it relatively easy to get it into Java shops and easy to cross-train Java developers. And the people behind Scala have marketed it aggressively to “enterprise Java” shops.
+- None of that is true for Clojure, which looks alien. **Clojure requires developers to unlearn almost everything they’re used to with Java**: variables, loops, mutation, encapsulation… And Clojure isn’t being “marketed”: it’s presented quietly and calmly as a better solution for folks who are willing to make the leap. Being popular isn’t a goal for Clojure.
+- And that’s all fine. **Clojure doesn’t need to be “popular”.** The overall market is huge so a small slice is fine. **Clojure is a hard language to learn unless you’re coming to it without any OOP baggage – or you’re willing to invest the time to unlearn that and learn the new way of thinking.** We shouldn’t worry about popularity – effectiveness is much more important.",,2020-06-23 10:50:40,systemUnknown
+61,"jest,jasmine","- **Jasmine has been around a lot longer than Jest**, and it was one of the first JavaScript testing frameworks, so many people will have existing unit tests in Jasmine.
+- Jest is heavily associated with **React** (both developed by **Facebook**), so if you are using a different framework you may find jasmine easier.
+- Personally I love jest, works great with React & vanilla code.",,2020-08-31 15:19:32,systemUnknown
+62,"laravel, symfony","- **Laravel is the most popular PHP framework**, but Symfony still ends up high on the list at number two.
+- though Symfony still shares great documentation, the resources are not as extensive as those for Laravel
+- and Laravel has https://laracasts.com which is an excellent video-based learning platform
+- In older versions, Laravel performed better than Symfony. However, with improvements in Symfony 4+, Laravel’s edge shrunk down close to nothing. The performance gains that Laravel once boasted might not be there anymore.
+- Using Laravel to get up and running will leave your Symfony cohorts in the dust thanks to a useful set of pre-built dependencies that you’ll need.
+- While Symfony provides Twig as the default templating engine, Laravel provides a bit more. Laravel’s default templating engine Blade has lots for everyone, Blade provides advantages over Twig, as it allows for code reusability that doesn’t exist in Twig. Additionally, Laravel brings in Lumen, a sub-framework for building APIs and microservices.
+- Both Laravel and Symfony provide object-relational mapping (ORM) for data access. **Doctrine handles ORM for Symfony**, while **Eloquent provides ORM for Laravel**.
+- both support MySQL, Postgresql, SQLite, SQL Server
+- With Laravel, accessing the data requires more knowledge of SQL. That’s not the case with Symfony, although it requires that you create a repository function for each call. If your application uses a complicated database structure, that may result in a large number of repository functions.
+- Eloquent tends to tie your application to your DB schema design. Changing a column name could result in changes throughout your codebase, whereas Doctrine/Symfony uses a mapper pattern, so you can delineate between your database schema and your business objects and logic.",,2020-09-03 16:36:43,systemUnknown
+63,"apache,nginx","- in 2020, **Apache had 40%** and **Nginx had 32%** of the server installations
+- Nginx was written with an explicit **goal of outperforming the Apache web server**
+	- serving static files, Nginx uses much less memory than Apache
+	- this performance boost comes at a cost of decreased flexibility,
+		- Apache has .htaccess file for rewrite, Nginx has nothing like this
+- Nginx also has a reputation of being **harder to install and configure than Apache**
+- Nginx is generally considered to be less stable on Windows Server than it is on Linux, while Apache has equal support for both.
+- both Apache and Nginx are free and open-source software
+- both can be configured as proxy servers
+- both use event-based processing
+	- in earlier version of Apache, each connection was handled by a worker process
+		- so Apache caught up with Nginx in this capacity
+- Apache has XML configuration files, whereas **Nginx has C-like syntax configuration files**
+- **Apache can have an .htaccess file in each directory** so that default configurations can be overwritten
+	- but this is a bit slower
+	- Nginx has central configuration and is faster",,2020-09-09 17:35:01,systemUnknown
+64,"kubernetes, cloudFoundry","- **CloudFoundry is an Application PaaS** while **Kubernetes is a Container PaaS**
+- CloudFoundry has a staging layer that takes a user app (e.g. jar or gem) and a Heroku-style buildpack (e.g. Java+Tomcat or Ruby) and produces a droplet (analogous to a Docker image)
+	- CloudFoundry doesn't expose the containerization interface to the user, but Kubernetes does.
+- audience
+	- **CloudFoundry: enterprise application devs** who want to deploy 12-factor stateless apps using Heroku-style buildpacks
+		- 12-factor apps: methodology for building software-as-a-service applications
+	- Kubernetes: is a broader, including both stateless application and stateful service developers who provide their own containers
+- **both projects mature and compete**
+- deployment
+	- CloudFoundry's competitive advantages is that it has a mature deployment engine, BOSH, which enables features like scaling, resurrection and monitoring of core CF components
+	- Kubernetes' deployment abstraction is still in its infancy
+- **CloudFoundry is opinionated and prescribed**",,2020-09-10 13:40:17,systemUnknown

@@ -1,0 +1,4837 @@
+id,category,title,rank,body,extras,systemWhenCreated,systemWhoCreated
+5,Vue.js,Set up a Vue CLI project with complete tooling,4.47,"- start here: https://cli.vuejs.org
+- virtual machine
+	- install node: https://nodejs.org/en/download/
+	- make directory `vuecli`
+	- git bash here
+	- `npm install -g @vue/cli`
+		- it apparently installed but created no files in the directory
+		- but confirmed with `vue --version`
+			- 3.10.0
+	- install global addon 
+		- `npm install -g @vue/cli-service-global`
+	- make `App.vue`
+		--------------
+		<template>
+		  <h1>Hello!</h1>
+		</template>
+		--------------
+	- `vue serve`
+		- in browser: `http://localhost:8080` and it works
+	- `vue build` created a `dist` folder but the .html page didn't work
+- new directory `vue2`
+	- `vue create hello-world`
+	- note: arrow key selection doesn't work with git-to-bash, but with Explorer command line
+		- dart-sass vs node-sass 
+			- use dart-sass, since being done in pure javascript, it works way better than node sass for cross-platform compability
+		- I saved as preset
+			- you can then after than in your e.g. `webs` directory type `vue create -p typescript
+	- created a folder called `hello-world`
+	- installed vscode: https://code.visualstudio.com
+	- you can also use `vue ui` for  gui install
+	- ran `npm run build` which created a `dist` directory
+	- installed `npm install -g serve`
+		- then `serve -s dist`
+		- went to `http://localhost:5000`
+	- making changes
+		- changed App.vue line 4:
+			-----------------
+			 <HelloWorld msg=""This is the application.""/>
+			-----------------
+		- `npm run build`
+		- `serve -s dist`
+		- so know it's changed, but that is a lot to do to make one change
+- )) get more background on how the application works with [this video](https://www.vuemastery.com/courses/real-world-vue-js/optimizing-your-editor)",$place=hm,2019-07-22 11:39:10,systemUnknown
+6,GitLab,Setup Gitlab with basic project flow,4.0,- )) start with [this tutorial](https://docs.gitlab.com/ee/gitlab-basics/),,2019-07-22 11:39:10,systemUnknown
+8,Node.js,Try out Sails.js,4.2,- )) start with this [video tutorial](https://www.youtube.com/watch?v=C43gU8G_V8Q),$place=hm,2019-07-22 11:42:21,systemUnknown
+9,CSS,Explore most useful CSS3 features,4.1,- work this [this tutorial](https://tutorialzine.com/2013/10/12-awesome-css3-features-you-can-finally-use),,2019-07-22 11:42:21,systemUnknown
+11,Graphic editor,Try out Krita,2.9,,,2019-07-22 11:42:21,systemUnknown
+12,Coffeescript,Make a website with Coffeescript,3.7,,,2019-07-22 11:42:21,systemUnknown
+13,JavaScript,Get examples going of JavaScript observables,3.1,"- what are the differences between observables and promises
+	- a promise resolves to a single value asynchronously, an observable resolves to (or emits) multiple values asynchronously (over time)
+	- concrete examples: 
+		- promise = response from an Ajax call
+		- observable = a click event
+	- observables are a representation for a possibly infinite amount of values
+	- promises are designed to represent AJAX calls
+		- observables are designed to represent anything: events, data from databases, data from ajax calls
+	- a promise is often a good choice when you want to fetch a single chunk of data
+	- if your component gets data with only one request it's a good choice to use Promise but if it has a chain of request-cancel-new request you should use observable
+	- observables provide many values, promises provide one
+	- ES6 added built-in support for promises to JavaScript
+		- observables were 2017 ECMA proposal that wasn't adopted
+	- to use promises, use the RxJA library: http://reactivex.io
+		- )) work through this [Functional Programming in Javascript Tutorial](http://reactivex.io/learnrx)",,2019-07-22 11:42:21,systemUnknown
+14,JavaScript,Get numerous examples of map() working,3.6,"- working through this article: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+- working through: https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d
+- in Datapod, made **Showcase: ES6 map(), filter(), reduce(), find() functions**
+	----------------------
+	messages.push(`Numbers are ${numbers.join(', ')}.`);
+	messages.push(`Doubles are ${doubles.join(', ')}.`);
+	messages.push(`Descriptions are ${descriptions.join(', ')}.`);
+	messages.push(`All customer IDs: ${this.getCustomers().map(m => m.customerID).join(', ')}.`);
+
+	// map() to search in spectific property
+	messages.push(`New customer objects with ""the"" in the name: ` + JSON.stringify(this.getCustomers().map(m => { return 
+{ id: m.customerID, name: m.companyName }; }).filter(m => m.name.toLowerCase().includes('the'))));
+
+	// map/filter with a format function
+	messages.push(`Product prices: ${this.getProducts().map(m => qmat.formatMoney(m.unitPrice)).join(', ')}.`);
+
+	// reduce() to find total
+	messages.push(`Total price: ${qmat.formatMoney(this.getProducts().reduce((total, m) => { return total + m.unitPrice }, 0))}.`);
+
+	// reduce() to find the most expensive
+	messages.push(`Most expensive product is: ${JSON.stringify(this.getProducts().reduce((mostExpensive, m) => 
+{ return mostExpensive.unitPrice > m.unitPrice ? mostExpensive : m }, {}))}.`);
+
+	// find() to find a unique record
+	const record = this.getProducts().find(m => m.productID == 8);
+	messages.push(`Unique Record: ${record ? record.name : '(not found)'}`);
+	----------------------
+- )) redo above examples with more variation and make into a howto",,2019-07-22 11:42:21,systemUnknown
+16,Gimp,Learn 10 useful skills in Gimp,4.2,"- )) start with [this video tutorial](https://www.youtube.com/watch?v=IeABb8cwdUg)
+- make 10 howtos for doing using things in Gimp",$place=hm,2019-07-22 11:42:21,systemUnknown
+17,web development,"find and collect ten best tools for front-end development, e.g. color selectors, pixie, etc.",3.9,,,2019-07-22 11:42:21,systemUnknown
+18,HTML5,Explore the newest HTML5/CSS3 features,4.3,"- )) make ""Showcase: New in HTML5/CSS3"" and work through [this tutorial](http://www.tothenew.com/blog/advanced-features-of-html5-and-css3/)
+- localStorage",,2019-07-22 11:42:21,systemUnknown
+19,JavaScript Testing,Get an example of Jest running,4.0,,,2019-07-22 11:42:21,systemUnknown
+21,JavaScript,Try out GoJS library and create some graphs,4.1,"- )) make ""Showcase: GoJS Graphs""
+- and work through the [examples here](https://gojs.net/latest/index.html)",,2019-07-22 11:42:21,systemUnknown
+22,.NET Core,Set up developing environment and howtos for .NET Core programming,3.7,"- how to make each kind of project
+- test on Linux as well",,2019-07-22 11:42:21,systemUnknown
+23,TypeScript,Get minimal TypeScript working with automatic compiling in VSCode,4.5,"- find tutorial
+	- https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+- install by itself 
+	- created directory `ts`
+	- get bash here
+	- `npm install typescript`
+	- make `test.ts` file
+		--------------------------
+		class Student {
+			fullName: string;
+			constructor(public firstName: string, public middleInitial: string, public lastName: string) {
+				this.fullName = firstName + "" "" + middleInitial + "" "" + lastName;
+			}
+		}
+
+		interface Person {
+			firstName: string;
+			lastName: string;
+		}
+
+		function greeter(person: Person) {
+			return ""Hello, "" + person.firstName + "" "" + person.lastName;
+		}
+
+		let user = new Student(""Jane"", ""M."", ""User"");
+
+		document.body.textContent = greeter(user);
+		--------------------------
+	- `tsc test.ts`
+	- look at test.js
+	- check with `npm list typescript` and `npm list -g typescript`
+	- do this: https://code.visualstudio.com/docs/editor/tasks
+		- `tsc --init`
+		- question: https://stackoverflow.com/questions/56972740/how-can-i-fix-the-segmentation-fault-error-in-visual-studio-codes-terminal
+			- doesn't look like it will be answered
+	- ask question: What is the easiest way to set up tasks for Node/Vue.js project in Visual Studio Code?
+		- https://stackoverflow.com/questions/56984244/what-is-the-easiest-way-to-set-up-tasks-for-node-vue-js-project-in-visual-studio
+		- no answer
+	- get simple example to work
+		- we have ""typescript"": ""^3.5.3"", installed
+		- get simple compile to work again
+			- making simple isolated TypeScript Howto
+				- make directory `testts`
+				- get-bash-here into it
+				- `npm install typescript`
+				- doing this: https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+					- create `person.ts`:
+						------------------------
+						interface Person {
+							firstName: string;
+							lastName: string;
+						}
+
+						function displayWelcomeMessage(person: Person) {
+							return `Hello, ${person.firstName} ${person.lastName}.`;
+						}					
+						------------------------
+					- create `index.htm`:
+						--------------------------
+						<!DOCTYPE html>
+						<html>
+							<head><title>TypeScript Test</title></head>
+							<body>
+								<div id=""message"">(no message)</div>
+								<script src=""person.js""></script>
+								<script>
+									const user = { firstName: ""Hans"", lastName: ""Tester"" };
+									document.getElementById('message').innerHTML = displayWelcomeMessage(user);
+								</script>
+							</body>
+						</html>						
+						--------------------------
+				- execute `tsc person.ts`
+					- note that `person.js` was created and is the JavaScript version of the TypeScript file
+				- look at `index.htm` in a browser
+	- make Showcase: TypeScript
+		- first same as above
+		- problem: TypeScript doesn't seem to work in the `require()` environment, see `typeScript\systemControllers`, etc.
+		- figure out how to get it to work in this environment
+			- )) do [v2b TypeScript video](https://www.linkedin.com/learning/l-essentiel-de-typescript-2/decouvrir-les-decorateurs) and other videos of TypeScript
+- next
+	- auto compiling with vscode
+	- restart with [this tutorial](https://mobilemancer.com/2015/12/17/running-tasks-in-visual-studio-code/)
+	- v2b videos: grunt",$place=hm,2019-07-22 11:42:21,systemUnknown
+24,virtual machines,"Try out all three virtual machine softwares: Hyper-V, VirtualBox and VMWare",3.1,,,2019-07-22 11:42:21,systemUnknown
+25,CSS,Understand when you would use CSS grids,4.1,"- )) [get an overview here](https://www.w3schools.com/css/css_grid_container.asp)
+- and then move on to more complex examples of real-life uses of grids",$idCode=cssGrids,2019-07-22 11:42:21,systemUnknown
+26,CSS,make examples using display:flex,4.35,"- )) make ""Showcase: Flexbox""
+- work through [this tutorial](https://vegibit.com/css-flexbox-tutorial/)",,2019-07-22 11:42:21,systemUnknown
+27,JavaScript,Get a useful example of ES6 promises to work,4.3,"- working through: https://codeburst.io/a-simple-guide-to-es6-promises-d71bacd2e13a
+	- callbacks suffer from problems like Callback Hell and Pyramid of Doom
+		- promises are a pattern that greatly simplifies asynchronous programming by making the code look synchronous and avoid problems associated with callbacks
+	- a promise is a container for a future value
+		- like a plane ticket, the ticket is a placeholder for a future value, namely, the seat
+	- created simple ""Showcase ES6 Promise"" in Datapod
+		- but it is not a useful example that could be applied to anything
+- working through example with timeout: http://jamesknelson.com/grokking-es6-promises-the-four-functions-you-need-to-avoid-callback-hell/
+	- up until promises arrived, developers in JavaScript land had been using callbacks
+	- an example of callback hell, or callback pyramids:
+		----------------------
+		runAnimation(0);
+		setTimeout(function() {
+			runAnimation(1);    
+			setTimeout(function() {
+				runAnimation(2);
+			}, 1000);
+		}, 1000);
+		----------------------
+	- the above code is still readable, but if you had e.g. 5+ animations, it becomes more difficult to read
+	- note: **callbacks are functions, promises are objects**
+	- handlers passed to `promise.then` don't just handle the result of the previous promise, but rather, whatever they return is turned into a new promise
+	- chained promises no longer cause callback pyramids, no matter how many levels of callback hell you’d be in for, the equivalent promises code is flat
+- working through this article: https://www.eventbrite.com/engineering/learning-es6-promises
+	- getting example to work on frontend
+	- a promise is settled (the async operation has completed) if it is either fulfilled or rejected
+- do a real world example with getting data
+	- working through this article: https://medium.com/@trekinbami/its-not-magic-using-es6-promises-in-javascript-cd0100a81e14
+	- post question regarding timeOut
+- **question with good answers at Stack Overflow**
+	- https://stackoverflow.com/questions/57305870/what-do-i-need-settimeoutresolve-in-my-javascript-data-loading-promise
+- ** two showcases and code
+	- [Showcase: ES6 Promise Code](showcaseEs6Promise)
+	- [Showcase: Load Data with Promises](showcaseLoadDataWithPromises)
+- basic promise code
+	----------------------
+	const thePromise = new Promise((resolve, reject) => {
+		const result = Math.random() * 100;
+		if (result <= 50) {
+			resolve('promise kept: ' + result);
+		}
+		reject('promise not kept');
+	});
+
+	const onResolved = (resolvedValue) => console.log(resolvedValue);
+	const onRejected = (error) => console.log(error);
+
+	thePromise.then(onResolved, onRejected);
+
+	const that = this;
+	this.someProcess(1000)
+		.then(function () {
+			qdev.debug('111');
+			return that.someProcess(1000);
+		})
+		.then(function () {
+			qdev.debug('222');
+			return that.someProcess(1000);
+		})
+		.then(function () {
+			qdev.debug('333');
+		});
+	----------------------
+- Code for using using with Axiom:
+	-----------------------------
+	initialize: function () {
+		// call promises in sequence
+		this.loadData('data1')
+			.then(() => this.loadData('data2'))
+			.then(() => this.loadData('data3'))
+			.then(() => this.loadData('data4'))
+			.then(() => this.loadData('data5'));
+			
+		// call promises in parallel
+		Promise.all([
+			this.loadData('data1'),
+			this.loadData('data2'),
+			this.loadData('data3'),
+			this.loadData('data4'),
+			this.loadData('data5')
+		]);
+	},
+	loadData: function (idCode) {
+		this.pageStatus = 'busy';
+		const that = this;
+		return axios({
+			method: 'post',
+			url: 'controllerShowcaseLoadDataWithPromises',
+			data: {
+				action: 'loadData',
+				idCode: idCode
+			}
+		}).then(function (responseObject) {
+			const response = qsys.getResponse(responseObject);
+			that[idCode] = response.data.message;
+			that.numberLoaded++;
+			if (that.numberLoaded >= 5) {
+				that.pageStatus = 'ready';
+			}
+		}).catch(function (error) {
+			that.pageStatus = 'failed';
+		});
+	}
+	-----------------------------
+- %% made two Showcases, particularly [Showcase: Load Data with Promises](http://localhost:49900/showcaseLoadDataWithPromises) is useful",,2019-07-30 14:58:59,systemUnknown
+29,vscode,Figure out how to run macros in Visual Studio Code,4.0,"- )) start with [this tutorial](https://marketplace.visualstudio.com/items?itemName=geddski.macros)
+- the best would be where you can record them so that they would be automatically written to a script",,2019-08-14 13:44:13,systemUnknown
+30,JavaScript Frameworks,Research the best JavaScript Frameworks to explore and learn,4.4,- )) prepare by collecting from techItems,,2019-08-14 14:29:59,systemUnknown
+32,JSFiddle,Try out all features on JSFiddle,4.1,"- load all libraries and try them all out
+- google for jsfiddle <libraryName>",,2019-08-14 15:09:00,systemUnknown
+34,Disqus,Setup disqus on a site,4.3,- )) work through [this tutorial](https://www.webnots.com/how-to-add-disqus-to-your-website/),$place=hm,2019-08-14 17:07:25,systemUnknown
+35,JavaScript,Get ten search-and-replace examples working JavaScript regex,4.2,"- use this basic code
+	---------------------------
+	const searchMask = theSearchTerm;
+	const regEx = new RegExp('(' + searchMask + ')', ""ig"");
+	const replaceMask = '<span class=""searchHighlight"">$1</span>';
+	r = r.replace(regEx, replaceMask);
+	---------------------------
+- do examples for sophsticated text parsing, e.g.
+	- highlight search text (as above)
+	- in showcase with datapod items, e.g. I read the book @@showcaseBook(sevenHabits), you can ask @@user(jimsmith) about it.",,2019-08-16 15:16:27,systemUnknown
+36,Bootstrap 4,Research the 10 most useful new features of Bootstrap 4,4.62,"- )) make Showcase: New in Bootstrap 4
+- work through [this tutorial](https://auth0.com/blog/whats-new-in-bootstrap4)",,2019-08-21 15:52:43,systemUnknown
+37,Git,Setup a Git repository and push and pull from two code areas,5.0,"- set up a simple [TypeScript site](howtos?id=47)
+	- then work though the main [main Git documentation](https://git-scm.com/book/en/v2)
+		- continue reading [here](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
+	- check it into a Git repository
+	- check it out somewhere else
+	- use also Github
+	- also from within Visual Studio Code
+- now trying [this tutorial](https://www.godo.dev/tutorials/local-git-server/)
+	- on ubuntu
+		- connecting on `http://192.168.241.3:49903` works
+		- install git: `apt-get install git`
+			- Could not open lock file
+			- reboot
+			- `sudo apt-get install git`
+			- `git --version` = 2.17.1
+	- made web directory with one file
+		- `git init`
+		- `git add *.*`
+		- `git commit -m 'initial commit'`
+		- `git log --pretty=oneline`
+		- `git log --pretty=format:""%h %s - %an""`
+- here is a [tutorial on setting up Git for multiple users](https://shapeshed.com/setting-up-git-for-multiple-developers/)
+	- had to create public key etc.
+- working further in the main Git tutorials
+	- `git tag -a v1.0 -m ""Version 1.0""`
+- this [tutorial](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners) shows you how to set up at Github
+- how to set up [git in vscode](https://www.google.com/search?q=how+to+setup+git+in+visual+studio+code&rlz=1C1CHBF_deDE791DE791&oq=how+to+setup+git+in+vis&aqs=chrome.0.0j69i57j0l4.3358j0j1&sourceid=chrome&ie=UTF-8)	
+- also, set up git on two computers connected via GitHub
+- or how to [push to local network drive](https://stackoverflow.com/questions/11635493/push-git-changes-to-a-shared-network-drive)
+- %% got this going well, basically everything is recorded in [this howto](howtos?id=58)",,2019-08-21 16:16:10,systemUnknown
+38,Audio,Make a showcase for audio with howto for Audacity,4.3,"- )) make ""Showcase: Webiste Audio"" with flashcards that have audio
+- make a howto for how to record with audacity, where to save, etc.",$place=hm,2019-08-21 16:54:23,systemUnknown
+39,Video,Find a useful alternative to Windows Movie Maker,3.9,- )) read this [this article](https://www.ionos.com/digitalguide/online-marketing/online-sales/windows-movie-maker-alternatives),$place=hm,2019-08-21 16:54:23,systemUnknown
+40,sqlite,Grok windows functions in SQLite and get examples working,2.1,- )) start here: [SQL Windows Functions](https://www.sqlitetutorial.net/sqlite-window-functions),,2019-08-27 22:15:02,systemUnknown
+41,Regex,Learn deeper about JavaScript Regex functions,4.7,"- )) start with these videos:
+	- https://www.youtube.com/watch?v=OhHlfR2gdE0
+	- https://www.youtube.com/watch?v=t029QcVHtas
+	- https://www.youtube.com/watch?v=fdyqutmcI2Q",$place=hm,2019-09-04 15:19:26,systemUnknown
+42,Bootstrap 4,Do Showcase: Bootstrap 4 Cards,4.6,"- )) start with [this tutorial](https://getbootstrap.com/docs/4.0/components/card/)
+- particularly see this:
+	- [tabs within card](https://getbootstrap.com/docs/4.0/components/card/#navigation)
+	- shocase",,2019-09-04 16:45:27,systemUnknown
+43,Bootstrap 4,Make Showcase: Bootstrap 4 Model with Background Fade,4.7,"- )) start [here](shocasehttps://www.w3schools.com/bootstrap4/bootstrap_modal.asp)
+	- make example with sending data as well, e.g. a page login",,2019-09-04 16:45:27,systemUnknown
+44,Node,Make Showcase: Screen Scraping,4.9,"- start with [this tutorial](https://blog.bitsrc.io/https-blog-bitsrc-io-how-to-perform-web-scraping-using-node-js-5a96203cb7cb)
+	- checking if axios is there, in package.json
+		- no axios is not in the list
+	- installing both in backend: `npm install axios cheerio`
+		- package.json: both in
+	- %% code worked immediately, very nice, see [Showcase: Screen Scraping](showcaseScreenScraping)",,2019-09-06 15:39:13,systemUnknown
+45,apis,try out verbix API,4.5,"- )) try out the [Verbix API](https://api.verbix.com)
+- make showcase",,2019-09-30 15:41:49,systemUnknown
+46,Ubuntu,Install Ubuntu in VirtualBox,4.6,"- working through [howto](https://itsfoss.com/install-linux-in-virtualbox)
+	- getting ISO from [here](https://ubuntu.com/desktop)
+	- downloading **Ubuntu 18.04.3 LTS**, 1.9 GB
+		- downloaded `ubuntu-18.04.3-desktop-amd64.iso`
+	- setup machine
+		- click [[New]] icon
+		- type `Ubuntu`
+		- all defaults, create dynamic VDI disk 
+	- start machine
+		- `FATAL: No bootable medium found!`
+		- Geräte, Optische Laufwerke, Abbild##abbildokgetiso
+		- start again
+			- runs for 2 minutes
+		- choose **Install**
+			- all defaults
+			- takes a few minutes, black screen
+			- after five minutes of black screen, restarted virtual machine
+	- installing again
+		- unchecked **Download updates while installing Ubuntu**
+		- black screen and odd-looking mouse cursor again
+		- got out of memory error##gotmemerrorout
+		- turned off machine
+	- installing again
+		- changed memory from 1024 (!) to 4096
+		- started machine
+			- faster now
+		- `Erase disk and install Ubuntu` and [[Install Now]]
+		- `Who are you?`
+			- Test User
+			- ubuntu001
+			- test
+			- password: test
+		- installed for 4 minutes
+		- [[Restart Now]]
+- first log in
+	- `Please remove the installation medium`
+		- stopped removed and restarted
+	- logged in as `test`
+- installing virtual box extensions
+	- added ISO to drive
+	- right-clicked on ISO icon and `open in termainl`
+		- `sudo ./VBoxLinuxAdditions.run`
+			---------------------
+			This system is currently not set up to build kernal modules.
+			Please install the gcc make perl packages from your distribution.
+			---------------------
+		- `sudo ./autorun.sh` does same
+	- executing `sudo apt install virtualbox-guest-utils virtualbox-guest-dkms`
+		- taking more than three minutes to install
+		- then `sudo ./VBoxLinuxAdditions.run` again
+		- restart
+		- you can now resize the screen
+	- made screenshow `BASE`
+- %% Ubuntu virtual machine works well, 4GB was important and note how to install the guest additions",,2019-10-23 09:26:30,systemUnknown
+47,DPN,Setup Datapod on Ubuntu virtual machine,4.5,"- installing node
+	- `sudo apt-get install nodejs`
+		- if you get `Could not get lock /var/lib/dpkg/lock`
+			- restart
+			- worked
+	- version is v8.10.0
+	- npm was not installed
+- installing npm
+	- `sudo apt install npm`
+	- version 3.5.2
+- test node
+	- made nodewebs
+	- make `server.js`
+		-----------------------------------
+		var http = require('http');
+		http.createServer(function (req, res) {
+		  res.writeHead(200, {'Content-Type': 'text/plain'});
+		  res.end('Hello World\n');
+		}).listen(3000, ""127.0.0.1"");
+		console.log('Server running at http://127.0.0.1:3000/');
+		-----------------------------------
+- setting up connected drive
+	- set it to `C:\edward\ubshare`
+	- restart
+	- it's on the desktop
+- installing Notepad++
+	- windows key
+	- ubuntu software
+	- search install
+- installing visual studio code
+	- via unbuntu software
+		- this seems to be available only after node is installed
+		- if not available then install it like this: `sudo snap install --classic code`
+- install dpod
+	- download [dpod](http://tanguay.info/tech/datapodForNode) and unzip in `nodewebs/test001`
+	- unzip
+	- `npm install`
+	- in browser: `http://localhost:49901`
+- start with nodemon
+	- `sudo npm install g nodemon`
+	- `nodemon server.js`
+- install sqlitebrowser (same as DB Browser on Windows)
+	- vi unbuntu software
+- %% everything installed fine, found all software even DB Browser",,2019-10-23 11:24:56,systemUnknown
+48,Ubuntu,Try out 50 best apps on Ubuntu,4.6,- )) start with [this overview](https://itsfoss.com/best-ubuntu-apps),,2019-10-23 13:10:23,systemUnknown
+49,Ubuntu,Connect VirtualBox Ubuntu in network with Windows host,4.7,"- working through [this workshop](https://technology.amis.nl/2017/01/29/network-access-to-ubuntu-virtual-box-vm-from-host-laptop)
+- global tools
+- create
+	- IPv4-Address: 192.168.241.1
+- then add host-only adapter
+	- in the machine, you can go to http://192.168.241.1 and access the host machine
+	- works but you can't get online
+	- but then added another adapter: network bridge, realttek USB GbE Family Controller
+	- now both work
+- from host to virtual machine
+	- in virtual machine: `ifconfig`
+	- 192.168.30.103, works
+- %% VirtualBox Ubuntu machine can access host via http ip and host can access virtual machine via http ip",,2019-10-23 13:33:59,systemUnknown
+51,Networking,Connect computers via WLAN,4.9,- )) start with [this tutorial](https://www.online-tech-tips.com/computer-tips/how-to-connect-two-computers-or-laptops-wirelessly/),$place=hm,2019-10-23 14:49:56,systemUnknown
+52,SED,Learn SED Basics,3.9,"- basics
+	- get files 
+		- `cp /usr/share/common-licenses/BSD .`
+		- `cp /usr/share/common-licenses/GPL-3 .`
+	- get first five lines
+		- `sed -n '1,5p' BSD`
+	- print every other line
+		- `sed -n '1~2p' BSD`
+	- delete every other line
+		- `sed '1~2d' BSD`
+	- delete every other line and save it to a new file
+		- `sed '1~2d' BSD > everyother.txt`
+	- delete every other line and save changes in that file
+		- `sed -i '1~2d' everyother.txt`
+	- make backup first, then delete every other line and save changes in that file
+		- `sed -i.bak '1~2d' everyother.txt`
+	- replace all ""a"" with ""x"" (/g is for all matches in line, not just the first)
+		- `sed 's/a/x/g' BSD`
+	- replace 'and' with '***' and print out the lines in which there were changes
+		- `sed -n 's/and/***/gp' BSD`
+	- same thing as case-insensitive
+		- `sed -n 's/and/***/gpi' BSD`
+	- use regular expressions, e.g. change ""and"" only at the beginning of a line
+		- `sed -n 's/^and/***/gpi' BSD`
+	- put brackets around ""and""
+		- `sed -n 's/and/[&]/gpi' BSD`
+	- if you have text with slashes, use another character as the divider
+		- `echo ""files/version001/index.html"" | sed 's_files/version_files/BLANK_'`
+- pipe output of commands to SED
+	- replace all digits with stars in a directory listing (you can't use \d)
+		- `ls -al | sed 's/[[:digit:]]/*/g'`
+	- erase the time from a directory listing
+		- `ls -al | sed 's/[[:digit:]][[:digit:]]:[[:digit:]][[:digit:]]\s//g'`
+	- don't list directories
+		- `ls -al | sed '/^d/d'`
+- sed scripts
+	- create file `dirparse.sed`:
+		---------------------------
+		/^d/d
+		s/[[:digit:]][[:digit:]]:[[:digit:]][[:digit:]]\s//g
+		---------------------------
+	- then run: `ls -al | sed -f dirparse.sed`
+- create a command with script
+	- `alias ld=""ls -al | sed -f ~/work/sed/dirparse.sed`
+- %% these are sed basics",,2019-10-25 12:51:26,systemUnknown
+53,awk,Learn basic AWK commands,3.8,"- make test file (with tabs):
+	------------------------
+	Jim     Smith   102
+	John    Adams   321
+	Hans    Gilder  834
+	Wayne   Ahilder 821
+	------------------------
+- list all records with an ""s"" in specific format
+	- `awk '/s/ {IGNORECASE=1; print $2, $1 ""\t"" $3}' data.txt`
+- download [customers.csv](https://github.com/bitnine-oss/import-northwind)
+	- download full file
+	- unzip and get customers.csv out
+	- not the delimiters are pipe (|)
+- list out columns in certain format
+	- `awk -F ""\|*"" '{print $3 "" ("" $4 "")""}' customers.csv`
+- )) continue on [here](https://www.tutorialspoint.com/awk/awk_basic_examples.htm)",,2019-10-25 16:40:55,systemUnknown
+54,Angular,Watch Quickly through Angular 8 Video Series,4.9,"- )) watch [Angular 8 videos on Code Evolution](https://www.youtube.com/watch?v=0eWrpsCLMJQ&list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ)
+- take rough notes, get main concepts",$place=hm,2019-10-26 12:49:27,systemUnknown
+55,Find Forays,"Find forays at Grafikart.fr, Code Evolution and Net Ninja",4.8,"- )) Scan and watch videos at [Grafikart.fr](https://www.youtube.com/user/grafikarttv/playlists)
+- Also look through [Code Evolution](https://www.youtube.com/channel/UC80PWRj_ZU8Zu0HSMNVwKWw/playlists) and [Net Ninja](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg/playlists)",$place=hm,2019-10-26 12:52:35,systemUnknown
+56,Github,Install and try out Github desktop,4.1,- )) download [Github desktop](https://desktop.github.com) and install,,2019-11-04 16:41:43,systemUnknown
+57,Windows,Learn the basics of MMC,3.8,"- identify the usefulness of MMC on Windows
+- )) start with [these videos](https://www.google.com/search?q=windows+10+mmc+tutorial&rlz=1C1CHBF_deDE791DE791&sxsrf=ACYBGNQP14waA4oo6o5kz9dx2GO2yYcJlQ:1574942266828&source=lnms&tbm=vid&sa=X&ved=2ahUKEwi5keyS7YzmAhWSLFAKHbdaCLgQ_AUoAXoECAwQAw&biw=1154&bih=635)",,2019-11-28 12:59:07,systemUnknown
+58,GitHub,Learn the basics of tags and releases,3.7,- )) start with [these videos](https://www.google.com/search?q=github+tags+and+releases&rlz=1C1CHBF_deDE791DE791&sxsrf=ACYBGNTW0BL0qEIroMFHL8MnuwmarqELoA:1574951802661&source=lnms&tbm=vid&sa=X&ved=2ahUKEwiGofHVkI3mAhWR6aQKHaZ8BlYQ_AUoA3oECA8QBQ&biw=1154&bih=635),$place=hm,2019-11-28 15:40:06,systemUnknown
+59,vi,Record 10 useful flashcards for vi,4.1,- )) start with [this workshop](http://jerrywang.net/vi),,2019-11-29 13:37:07,systemUnknown
+60,Git,Record 10 useful git commands as flashcards,4.8,- )) start with [this workshop](https://www.git-tower.com/learn/git/faq/change-author-name-email),,2019-11-29 13:40:17,systemUnknown
+61,Java,"Download and install JRE, compile and run HelloWorld program",4.7,"- <H|The solution to install Java JRE and JDK that work together on **Windows ** issue is basically to [install the JDK 13.0.1 from this link](https://www.oracle.com/technetwork/java/javase/downloads/index.html) (which doesn't require you to sign up for an account at Oracle as other links do), and which will give you both the `java` and `javac` executables, then in your environment variables, delete all other Java-related paths for CLASSPATH and PATH, in both the user and system variables, and add one PATH variable which points to the bin directory your Java installation direction, e.g. `C:\Program Files\Java\jdk-13.0.1\bin`. Getting Java to work on **Ubuntu ** (18.4.3) was simple, basically you execute `sudo apt install default-jre` and `sudo apt install default-jdk` and you have it. See all details below.|H>
+- Windows 10
+- download from [oracle.com](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+	- click: download **Java Platform (JDK) 13**
+	- click: Accept License Agreement
+	- click: jdk-13.0.1_windows-x64_bin.exe (160 MB)
+- install
+	- execute
+	- next, next, next
+- check
+	- environmental variables
+		- JAVA_HOME is not set
+- restart computer
+- check
+	- environmental variables
+		- JAVA_HOME is still not set
+- doing [this tutorial](https://www3.ntu.edu.sg/home/ehchua/programming/howto/JDK_Howto.html)
+	- under system variables, added `C:\Program Files\Java\jdk-13.0.1\bin`
+- check
+	- open command shell, cmd
+	- `path`
+	- you should see the path: `C:\Program Files\Java\jdk-13.0.1\bin`
+	- `javac -version` should show **javac 13.01**
+- make and compile program
+	- create `Hello.java`
+		--------------------------
+		public class Hello {
+			public static void main(String[] args) {
+				System.out.println(""Hello, world!"");
+			}
+}
+		--------------------------
+	- `javac Hello.java`
+	- `java Hello` will print **Hello, world!**
+- on my machine at home (Windows 10), it compiled but then when entering `java Hello` it gave the error
+	-------------------
+	java.lang.UnsupportedClassVersionError: Simple has been compiled by a more recent version of the Java Runtime (class file version 57.0), this version of the Java Runtime only recognizes class file versions up to 52.0
+	-------------------
+	- so downloaded the JRE from [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html), now:
+		----------------------
+		C:\edward\filesForWeeklyBackup\javaapps>javac -version
+		javac 13.0.1
+
+		C:\edward\filesForWeeklyBackup\javaapps>java -version
+		java version ""1.8.0_231""
+		Java(TM) SE Runtime Environment (build 1.8.0_231-b11)
+		Java HotSpot(TM) 64-Bit Server VM (build 25.231-b11, mixed mode)
+		----------------------
+	- but while javac can compile .java to .class, it still gets this error
+		-------------------------
+		C:\edward\filesForWeeklyBackup\javaapps>javac Simple.java
+
+		C:\edward\filesForWeeklyBackup\javaapps>dir
+		 Volume in drive C is SYSTEM M2 SSD
+		 Volume Serial Number is 100F-E2EB
+
+		 Directory of C:\edward\filesForWeeklyBackup\javaapps
+
+		02-12-2019  22:55    <DIR>          .
+		02-12-2019  22:55    <DIR>          ..
+		02-12-2019  22:55               416 Simple.class
+		01-12-2019  21:40               116 Simple.java
+					   2 File(s)            532 bytes
+					   2 Dir(s)  120.448.843.776 bytes free
+
+		C:\edward\filesForWeeklyBackup\javaapps>java Simple
+		Error: A JNI error has occurred, please check your installation and try again
+		Exception in thread ""main"" java.lang.UnsupportedClassVersionError: Simple has been compiled by a more recent version of the Java Runtime (class file version 57.0), this version of the Java Runtime only recognizes class file versions up to 52.0
+				at java.lang.ClassLoader.defineClass1(Native Method)
+				at java.lang.ClassLoader.defineClass(Unknown Source)
+				at java.security.SecureClassLoader.defineClass(Unknown Source)
+				at java.net.URLClassLoader.defineClass(Unknown Source)
+				at java.net.URLClassLoader.access$100(Unknown Source)
+				at java.net.URLClassLoader$1.run(Unknown Source)
+				at java.net.URLClassLoader$1.run(Unknown Source)
+				at java.security.AccessController.doPrivileged(Native Method)
+				at java.net.URLClassLoader.findClass(Unknown Source)
+				at java.lang.ClassLoader.loadClass(Unknown Source)
+				at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+				at java.lang.ClassLoader.loadClass(Unknown Source)
+				at sun.launcher.LauncherHelper.checkAndLoadMain(Unknown Source)
+
+		C:\edward\filesForWeeklyBackup\javaapps>		
+		-------------------------
+	- on real machine where it works:
+		-------------------------------
+		$ javac -version
+		javac 13.0.1
+		$ java -version
+		java version ""13.0.1"" 2019-10-15
+		Java(TM) SE Runtime Environment (build 13.0.1+9)
+		Java HotSpot(TM) 64-Bit Server VM (build 13.0.1+9, mixed mode, sharing)
+		-------------------------------
+	- on virtual machine where it works:
+		-------------------------------
+		C:\Users\Tester>javac -version
+		javac 13.0.1
+		C:\Users\Tester>java -version
+		java version ""13.0.1"" 2019-10-15
+		Java(TM) SE Runtime Environment (build 13.0.1+9)
+		Java HotSpot(TM) 64-Bit Server VM (build 13.0.1+9, mixed mode, sharing)
+		-------------------------------
+- installed and worked without problems on two Windows 10 machines (one virtual, one real)
+- on third window machine (home), it gets the above error
+- results of `java -version`
+	- on machine where it does not work:
+		---------------------------
+		java version ""1.8.0_231""
+		Java(TM) SE Runtime Environment (build 1.8.0_231-b11)
+		Java HotSpot(TM) 64-Bit Server VM (build 25.231-b11, mixed mode)
+		---------------------------
+	- on machine where it does work:
+		---------------------------
+		java version ""13.0.1"" 2019-10-15
+		Java(TM) SE Runtime Environment (build 13.0.1+9)
+		Java HotSpot(TM) 64-Bit Server VM (build 13.0.1+9, mixed mode, sharing)
+		---------------------------
+- on machine where it doesn't work, reinstalling java
+	- uninstalled `Java 8 Update 234 (64-bit) version 8.02310.11`
+	- now `java -version` says: `bash: /c/Program Files (x86)/Common Files/Oracle/Java/javapath/java: No such file or directory`
+	- downloading from [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+		- `jdk-13.0.1_windows-x64_bin.exe`
+			- this is the Java SE Development Kit 13.0.1, so not what we need
+		- but it says it has the JDK and JRE, so uninstalling the JDK first
+		- now installing the `jdk-13.0.1_windows-x64_bin.exe`
+			- but it only installed the JDK and not the JRE (!)
+		- trying to install the JRE 13.0.1
+			- [here](https://www.java.com/de/download/windows-64bit.jsp) you can install Version 8 Update 231 (Releasedatum 15. Oktober 2019) but we don't want that version
+				- although above it says `java version ""13.0.1"" 2019-10-15`, same date
+			- downloaded from [here](https://download.cnet.com/Java-Runtime-Environment-JRE/3001-2213_4-10009607.html)
+				- it install 8.0.2210.11
+- installing on home virtual machine
+	- no java was installed
+	- installing from [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+		- downloading `jdk-13.0.1_windows-x64_bin.exe`
+		- 'javac -version` and `java -version` are not found
+		- reboot first
+		- javac and java still not found
+		- trying to install again says that it is already installed (!)
+		- but in `C:\Program Files\Java\jdk-13.0.1\bin` there is a java.exe and a javac.exe and both on mouseover show they are 13.0.1.0
+		- looking for path, none, so added path: `C:\Program Files\Java\jdk-13.0.1\bin`
+		- now correct:
+			------------------
+			C:\Users\User>java -version
+			java version ""13.0.1"" 2019-10-15
+			Java(TM) SE Runtime Environment (build 13.0.1+9)
+			Java HotSpot(TM) 64-Bit Server VM (build 13.0.1+9, mixed mode, sharing)
+
+			C:\Users\User>javac -version
+			javac 13.0.1
+			------------------
+		- made test java program:
+			------------------
+			class HelloWorld {  
+				public static void main(String args[]){  
+				 System.out.println(""Hello World"");  
+				}  
+			}
+			------------------
+		- it compiled and ran fine
+- fixing on my machine at home
+	- in `C:\Program Files\Java\jdk-13.0.1\bin` there is a java.exe and a javac.exe and both on mouseover show they are 13.0.1.0
+	- looking in environment path
+	- `echo %path%` showed this:
+		-----------------------------
+		C:\edward\filesForWeeklyBackup\javaapps>echo %PATH%
+C:\Program Files (x86)\Common Files\Oracle\Java\javapath; C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler; C:\Program Files\Microsoft MPI\Bin\; C:\ProgramData\Oracle\Java\javapath;  C:\WINDOWS\system32; C:\WINDOWS; C:\WINDOWS\System32\Wbem; C:\WINDOWS\System32\WindowsPowerShell\v1.0\; C:\Program Files\dotnet\;  C:\Program Files\Microsoft SQL Server\130\Tools\Binn\; C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;  C:\Program Files\Microsoft SQL Server\140\Tools\Binn\; C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\; C:\Program Files\Microsoft SQL Server\140\DTS\Binn\; C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\; C:\Program Files\Microsoft SQL Server\110\Tools\Binn\; C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\; C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\; C:\edward\cmdlets; C:\WINDOWS\System32\OpenSSH\; C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;  C:\Program Files\nodejs\; C:\Program Files\Java\jdk-13.0.1\bin; C:\Users\ADMIN\.windows-build-tools\python27\; C:\Users\ADMIN\AppData\Roaming\npm\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin; C:\Users\ADMIN\AppData\Roaming\npm\node_modules\windows-build-tools\node_modules\.bin; C:\Users\ADMIN\AppData\Roaming\npm\node_modules\.bin; C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler; C:\Program Files\Microsoft MPI\Bin\; C:\WINDOWS\system32; C:\WINDOWS; C:\WINDOWS\System32\Wbem; C:\WINDOWS\System32\WindowsPowerShell\v1.0\; C:\Program Files\dotnet\; C:\Program Files\Microsoft SQL Server\130\Tools\Binn\; C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\; C:\Program Files\Microsoft SQL Server\140\Tools\Binn\; C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\; C:\Program Files\Microsoft SQL Server\140\DTS\Binn\; C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\; C:\Program Files\Microsoft SQL Server\110\Tools\Binn\; C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\T; C:\Users\ADMIN\AppData\Roaming\npm\node_modules\npm\bin; C:\Users\ADMIN\AppData\Roaming\npm; C:\Users\ADMIN\AppData\Local\Programs\Microsoft VS Code\bin; 
+		-----------------------------
+	- fixing path
+		- in system variables, found these:
+			- `C:\Program Files (x86)\Common Files\Oracle\Java\javapath`
+			- `C:\ProgramData\Oracle\Java\javapath`
+			- added in system variables this: `C:\Program Files\Java\jdk-13.0.1\bin`
+			- worked
+- on laptop at home, did everything above
+	- `java -version` worked ok
+	- `javac -version` reported that it couldn't find the `MSVCR100.dll`
+		- I looked in `c:\Windows\System32` and it wasn't there
+		- copied it from main computer to laptop
+	- now `javac -version` works
+	- but compiling `Simple.java` and the running `java Simple` gives error: `could not find or load main class Simple`
+	- ok, fixed it: I had to take the CLASSPATH variable that was pointing to some java path
+		- having no CLASSPATH in environment variables is what worked
+- installing JRE and JDK on Ubuntu 18.4.3
+	- worked from [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04) which has some background information
+	- `sudo apt update`
+	- check if java is installed with `java -version`
+	- install with `sudo apt install default-jre`
+	- now `java -version` shows:
+		---------------------------
+		openjdk version ""11.0.4"" 2019-07-16
+		OpenJDK Runtime Environment (build 11.0.4+11-post-Ubuntu-1ubuntu218.04.3)
+		OpenJDK 64-Bit Server VM (build 11.0.4+11-post-Ubuntu-1ubuntu218.04.3, mixed mode, sharing)
+		---------------------------
+	- check if javac is installed with `javac -version`
+	- install with `sudo apt install default-jdk`
+	- now `javac -version` shows:
+		-----------------------------
+		javac 11.0.4
+		-----------------------------
+	- testing with `HelloWorld.java`:
+		-------------------------------
+		public class Hello {
+			public static void main(String[] args) {
+				System.out.println(""Hello, world!"");
+			}
+		}
+		-------------------------------
+	- it works fine:##testubujavaworks
+- %% got it to work on four Windows 10 computers, two real and two virtual, and got it to work in Ubuntu 18.04.3",,2019-12-02 16:21:54,systemUnknown
+62,Git,Learn how to use git branches well local/remote,4.9,- )) start with [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-git-branches),,2019-12-03 11:17:19,systemUnknown
+63,Java,Get an example of a useful text pages java program,4.5,"- e.g. have it work through lines of a text file filling them with variables
+	- )) start with this code
+		--------------------
+		import java.io.File;
+		import java.io.FileWriter;
+		import java.io.IOException;
+
+		public class TestWriteFile {
+			public static void main(String[] args) {
+				String name = ""John Doe"";
+				int age = 44;
+				double temp = 26.9;
+				FileWriter fw;
+				try {
+					fw = new FileWriter(new File(""mytextfile.txt""));
+
+					fw.write(String.format(""My name is %s."",name));
+					fw.write(System.lineSeparator()); //new line
+					fw.write(String.format(""I am %d years old."",age));
+					fw.write(System.lineSeparator()); //new line
+					fw.write(String.format(""Today's temperature is %.2f."",temp));
+					fw.write(System.lineSeparator()); //new line
+					fw.close();
+				} catch (IOException ex) {
+					ex.printStackTrace();
+				}
+				System.out.println(""Done"");  
+			}
+		}
+		--------------------",,2019-12-03 15:49:20,systemUnknown
+64,Linux,Learn the basics of BASH scripting,4.5,- )) start with [this tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners),,2019-12-05 00:30:11,systemUnknown
+65,GitHub,Make a GUI app with Java,3.5,"- )) start with [this StackOverflow question](https://stackoverflow.com/questions/5118701/how-to-create-a-gui-in-java)
+	- this works if you `javac TestApp.java` and then `java TestApp`
+		-----------------------
+		import java.awt.BorderLayout;
+		import java.awt.event.ActionEvent;
+		import java.awt.event.ActionListener;
+
+		import javax.swing.JButton;
+		import javax.swing.JFrame;
+		import javax.swing.JTextArea;
+
+		public class TestApp {
+
+		  public static void main(String[] args) {
+
+			JFrame f = new JFrame(""A JFrame"");
+			f.setSize(250, 250);
+			f.setLocation(300,200);
+			final JTextArea textArea = new JTextArea(10, 40);
+			f.getContentPane().add(BorderLayout.CENTER, textArea);
+			final JButton button = new JButton(""Click Me"");
+			f.getContentPane().add(BorderLayout.SOUTH, button);
+			button.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					textArea.append(""Button was clicked\n"");
+
+				}
+			});
+
+			f.setVisible(true);
+
+		  }
+
+		}		
+		-----------------------
+	- .. making a more useful example",,2019-12-05 12:57:00,systemUnknown
+66,Java,Make a HelloWorld GUI app with Java,3.5,"- started with [this StackOverflow question](https://stackoverflow.com/questions/5118701/how-to-create-a-gui-in-java)
+	- this works on Windows if you `javac TestApp.java` and then `java TestApp`
+		-----------------------
+		import java.awt.BorderLayout;
+		import java.awt.event.ActionEvent;
+		import java.awt.event.ActionListener;
+
+		import javax.swing.JButton;
+		import javax.swing.JFrame;
+		import javax.swing.JTextArea;
+
+		public class TestApp {
+
+		  public static void main(String[] args) {
+
+			JFrame f = new JFrame(""A JFrame"");
+			f.setSize(250, 250);
+			f.setLocation(300,200);
+			final JTextArea textArea = new JTextArea(10, 40);
+			f.getContentPane().add(BorderLayout.CENTER, textArea);
+			final JButton button = new JButton(""Click Me"");
+			f.getContentPane().add(BorderLayout.SOUTH, button);
+			button.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					textArea.append(""Button was clicked\n"");
+
+				}
+			});
+
+			f.setVisible(true);
+
+		  }
+
+		}		
+		-----------------------
+	- and it compiiled and ran on Ubuntu (18.4.3) as well:##twojavaapps
+	- %% I was able to quickly get a simple Swing HelloWorld GUI app compiled and running on both Windows 10 and Ubuntu 18.04.3 with Java 13.0.1.",,2019-12-05 13:09:46,systemUnknown
+67,Java,How to make Java app that creates a git log and parses it into an HTML file from an icon click,3.5,"- create a folder where you will keep all your javaapps that you want to run anywhere, e.g. `C:\edward\javaapps`
+	- then in environmental system variables, add: `CLASSPATH` as `C:\edward\javaapps`
+	- create `createlog.java` file:
+		-------------------------------
+		import java.io.BufferedReader;
+		import java.io.IOException;
+		import java.io.InputStreamReader;
+		import java.io.File;
+		import java.io.FileWriter;
+
+		public class createlog {
+
+			public static void main(String[] args) {
+
+				LogManager lm = new LogManager(""displayBasicWebLog"");
+				lm.execute();
+			}
+
+		}
+
+		class LogManager {
+
+			String idCode = """";
+			String tempRawLogFileName = ""rawlog.txt"";
+			String outputHtmlFileName = ""log.html"";
+			String[] rawLogFileLines;
+
+			public LogManager(String desiredIdCode) {
+				idCode = desiredIdCode;
+			}
+
+			public void execute() {
+				switch(idCode) {
+					case ""displayBasicWebLog"":
+						createRawLogFile();
+						readInRawLogFile();
+						qfil.deleteFile(tempRawLogFileName);
+						writeHtmlFile();
+						break;
+				}
+			}
+
+			private void readInRawLogFile() {
+				try {
+					rawLogFileLines = qfil.readFileAsArray(tempRawLogFileName);
+				}
+				catch(IOException e) {
+				  e.printStackTrace();
+				}
+			}
+
+			public void createRawLogFile() {
+				Process p;
+				try {
+					p = Runtime.getRuntime().exec(""cmd /c git log --pretty=format:\""%ci|%H|%s|%an\"" > "" + tempRawLogFileName);
+
+					p.waitFor(); 
+					BufferedReader reader=new BufferedReader(new InputStreamReader(p.getInputStream())); 
+					String line; 
+					while((line = reader.readLine()) != null) { 
+						System.out.println(line);
+					} 
+				} catch (IOException e) {
+					e.printStackTrace();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}	
+			}	
+
+			public void writeHtmlFile() {
+				FileWriter fw;
+				try {
+					fw = new FileWriter(new File(outputHtmlFileName));
+					fw.write(""<html><body>"");
+					fw.write(""<h2>Current Log:</h2>"");
+					fw.write(""<ul>"");
+					for (String line : rawLogFileLines) {
+						String[] parts = line.split(""\\|"");
+						String rawDate = parts[0];
+						String niceDate = rawDate.substring(0,19);
+						String hash = parts[1];
+						String subject = parts[2];
+						String rawAuthor = parts[3];
+						fw.write(""<li>"" + niceDate + "" - "" + rawAuthor + "": <a href=\""https://github.com/edwardtanguay/n49901_dpn/commit/"" + hash + ""\"">"" + subject + ""</a></li>"");
+					}	
+					fw.write(""</ul>"");
+					fw.write(""</body></html>"");		
+
+					fw.close();
+				} catch (IOException ex) {
+					ex.printStackTrace();
+				}
+			}	
+		}
+		-------------------------------
+- create `qfil.java` file in javaapps direction:
+	----------------------
+	import java.io.BufferedReader;
+	import java.io.FileReader;
+	import java.io.IOException;
+	import java.util.ArrayList;
+	import java.util.List;
+	import java.io.File; 
+
+	public class qfil {
+
+		public static String[] readFileAsArray(String pathAndFileName) throws IOException {
+			FileReader fileReader = new FileReader(pathAndFileName);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			List<String> lines = new ArrayList<String>();
+			String line = null;
+			while ((line = bufferedReader.readLine()) != null) {
+				lines.add(line);
+			}
+			bufferedReader.close();
+			return lines.toArray(new String[lines.size()]);
+		}
+
+		public static void deleteFile(String pathAndFileName) {
+			File f = new File(pathAndFileName);
+			f.delete();
+		}
+	}
+	----------------------
+- create `start_createlog.bat`
+	-----------------------------
+	cd C:\edward\nodewebs\n49900_tech
+	java createlog
+	-----------------------------
+	- make a shortcut
+	- right click, add `explorer ` in front of path
+	- change icon
+	- drag to taskbar
+- now clicking on the taskbar icon will generate an uptodate web page that has links to github commits
+- %% this works well and is a good basis for writing useful java programs that you can execute by clicking an icon on your task bar",,2019-12-05 17:08:09,systemUnknown
+68,GitHub,Setup basic Java Project in Eclipse,3.7,- )) start with [this tutorial](https://www.ntu.edu.sg/home/ehchua/programming/howto/EclipseJava_HowTo.html),,2019-12-06 09:51:35,systemUnknown
+69,GitHub,Try out gitk on Ubuntu,3.5,- )) start with `sudo apt-get install gitk`,,2020-01-21 21:51:17,systemUnknown
+70,Svelte,Learn the basics of Svelte,4.9010,- )) start with [the main page](https://svelte.dev/),,2020-02-19 16:04:34,systemUnknown
+71,JavaScript Framworks,Learn the basics of Elm,4.9,- )) start with [the main page from Elm](https://elm-lang.org/),,2020-02-19 16:09:50,systemUnknown
+72,JavaScript Languages,Learn the basics of PureScript,4.7,- )) start with [PureScript main page](http://www.purescript.org/),,2020-02-19 16:13:55,systemUnknown
+73,Mobile Development,Create a simple mobile app with Electron,4.8,- )) start with [the main page from Electron](https://www.electronjs.org/),,2020-02-19 16:18:52,systemUnknown
+74,Python,Set up a website with Django/Python,4.4,- )) start with [this tutorial](https://www.fullstackpython.com/django.html),$place=hm,2020-02-20 10:15:23,systemUnknown
+75,TypeScript,Get TypeScript running in a node.js web application,4.8,- )) start with [this tutorial](https://itnext.io/how-to-use-node-js-with-typescript-98e16b35518a),,2020-02-21 10:25:14,systemUnknown
+76,Mobile,Get a mobile app running in Flutter,3.5,"- ""Flutter is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.""
+	- )) start with [this tutorial](https://flutter.dev)",$place=hm,2020-02-21 10:36:05,systemUnknown
+77,Mobile Development,Learn the basics of AMP mobile development,4.5,"- ""AMP is an open-source HTML framework that provides a straightforward way to create web pages that are fast, smooth-loading and prioritize the user-experience above all else.""
+	- )) start with [this introduction](https://amp.dev/)",$place=hm,2020-02-21 10:50:56,systemUnknown
+78,React,Learn the basics of next.js,4.6,"- ""With Next.js, server rendering React applications has never been easier, no matter where your data is coming from.""
+	- ""Next.js comes with styled-jsx included, but it also works with every CSS-in-JS solution you know and love.""
+	- )) start with [this main site](https://nextjs.org)",,2020-02-21 10:55:50,systemUnknown
+79,JavaScript,Create Showcase for moment.js,3.5,"- start with [the main page](https://momentjs.com/)
+		- )) try out the main functionality",,2020-02-24 14:58:29,systemUnknown
+80,Screencasts,Try out OBS as a screencaster,4.8,- )) start by [downloading it here](https://obsproject.com/fr/download),$place=hm,2020-02-28 15:05:51,systemUnknown
+81,Video Production,Create presentation video with free version of DaVinci Resolve,3.5,"- )) download [DaVinci Resolve Free](https://www.blackmagicdesign.com/products/davinciresolve) 
+	- scroll to bottom of page, on left is the button for the free version
+- article [Fusion FX stand alone vs Fusion in Resolve](https://forum.blackmagicdesign.com/viewtopic.php?f=21&t=79514)
+	- Since the full version of Fusion gets you the full version of Resolve as well, there is no reason to only get Resolve
+	- the full version of Resolve will give you only the integrated fusion, not the standalone
+	- Fusion in Resolve doesn't support native Fusion plug-ins yet (2018)
+	- 2019: Fusion 16 not free anymore, if you want free Fusion, you need to use at least DaVinci Resolve (non-Studio).
+	- Pros of DaVinci Resolve is free, no watermarks",$place=hm,2020-02-28 15:23:02,systemUnknown
+82,Backups,Install Duplicati backup solution at home,4.2,"- )) download Duplicati [here](https://www.duplicati.com/download)
+	- copy to FTP
+	- do restore on virtual machine",$place=hm,2020-03-05 17:00:28,systemUnknown
+83,React,"Work through tutorial ""Complete React Tutorial for Beginners""",4.9510,"- from Jan 25, 2020, seems to be a one page tutorial by Dave Ceddia, clear, and is kind of an advertisement to take more courses
+	- )) start with [this one-page tutorial](https://daveceddia.com/react-tutorial/) 
+	- **seems like an advertisement**",,2020-04-02 21:38:43,systemUnknown
+84,React,"Work through tutorial ""L'intro à React""",4.9570,"- advantage: this tutorial is in French and English, you can switch back and forth
+	- )) start with [this tutorial](https://fr.reactjs.org/tutorial/tutorial.html)
+	- it's a simple game and shows what you will be building##thetictic",,2020-04-02 22:14:10,systemUnknown
+85,React,Work through this tutorial: LinkedIn L'essentiel de React.js,4.9590,"- published: June 2019
+	- created by Damien Bruyndonckx [broo-en-DONKS] who has many other tutorials
+- .. watching through once (2h 27m) [L'essentiel de React.js](https://www.linkedin.com/learning/l-essentiel-de-react-js-2/bienvenue-dans-l-essentiel-de-react-js)
+	- 2011 Facebook
+	- 2012 Instagram
+	- 2013 Facebook décide d'open sourcer React
+	- React utilise la nouvelle syntaxe ES6 pour les fonctions##newfunctionsyntax
+	- c'est une autre version##andthisfunction
+	- est cette version##thirdsytqxn
+	- le spread operator##spreadoperatorksjdf
+	- une autre méthode de passer les paramètres##theparafuncfunc
+	- first React page
+		-------------------------
+		<!DOCTYPE html>
+		<html lang=""en"">
+
+		<head>
+			<meta charset=""UTF-8"">
+			<meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+			<title>React1</title>
+			<script src=""https://unpkg.com/react@16.7.0/umd/react.production.min.js""></script>
+			<script src=""https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js""></script>
+		</head>
+
+		<body>
+			<div id=""react-root""></div>
+			<script>
+				ReactDOM.render(
+					React.createElement('b', null, 'First React Page'),
+					document.getElementById('react-root')
+				)
+			</script>
+		</body>
+
+		</html>
+		-------------------------
+	- first React page with Babel
+		--------------------------
+		<!DOCTYPE html>
+		<html lang=""en"">
+
+		<head>
+			<meta charset=""UTF-8"">
+			<meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+			<title>React1</title>
+			<script src=""https://unpkg.com/react@16.7.0/umd/react.production.min.js""></script>
+			<script src=""https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js""></script>
+			<script src=""https://unpkg.com/babel-standalone@6.26.0/babel.min.js""></script>
+		</head>
+
+		<body>
+			<div id=""react-root""></div>
+			<script type=""text/babel"">
+				ReactDOM.render( 
+					<i> this is italics </i>,
+					document.getElementById('react-root')
+				)
+			</script>
+		</body>
+
+		</html>
+		--------------------------
+	- React Component
+		----------------------------
+		<!DOCTYPE html>
+		<html lang=""en"">
+
+		<head>
+			<meta charset=""UTF-8"">
+			<meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+			<title>React1</title>
+			<script src=""https://unpkg.com/react@16.7.0/umd/react.production.min.js""></script>
+			<script src=""https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js""></script>
+			<script src=""https://unpkg.com/babel-standalone@6.26.0/babel.min.js""></script>
+		</head>
+
+		<body>
+			<div id=""react-root""></div>
+			<script type=""text/babel"">
+
+				class DisplayIntroduction extends React.Component{
+					render() {
+						return (
+							<div class=""main"">
+								<h1>This is a React component.</h1>
+							</div>
+						)
+					}
+				}
+
+				ReactDOM.render( 
+					<DisplayIntroduction/>,
+					document.getElementById('react-root')
+				)
+			</script>
+		</body>
+		</html>
+		----------------------------
+	- function component
+		--------------------------
+		<script type=""text/babel"">
+			const DisplaySummary = () => <h1>This is the summary.</h1>
+			ReactDOM.render( 
+				<DisplaySummary/>,
+				document.getElementById('react-root')
+			)
+		</script>
+		--------------------------
+	- you have to use className instead of class in elements, because you are in JavaScript
+	- how to pass a property
+		--------------------------------
+		class DisplayTitle extends React.Component {
+			render() {
+				return (
+					<p>This is the text: <b>{this.props.title}</b></p>
+				)
+			}
+		}
+
+		ReactDOM.render( 
+			<DisplayTitle title=""hello""/>,
+			document.getElementById('react-root')
+		)
+		--------------------------------
+	- how to pass multiple properties, string and number
+		----------------------------------
+		class DisplayTitle extends React.Component {
+			render() {
+				return (
+					<div>
+						<p>This is the text: <b>{this.props.title}</b></p>
+						<h1>Current Version: {this.props.version + 1}</h1>
+						<h1>Next Version: {this.props.version + 1}</h1>
+					</div>
+				)
+			}
+		}
+
+		ReactDOM.render( 
+			<DisplayTitle title=""hello"" version={23}/>,
+			document.getElementById('react-root')
+		)
+		----------------------------------
+	- functional components with parameters
+		----------------------------
+		const DisplayTitle = (props) => {
+			return (
+				<div>
+					<h1>{props.title}</h1>
+					<div>Current version: {props.version}</div>
+					<div>Next version: {props.version+1}</div>
+				</div>
+			)
+		}
+
+		ReactDOM.render( 
+			<DisplayTitle title=""hello"" version={23}/>,
+			document.getElementById('react-root')
+		)
+		----------------------------
+	- functional components with named-parameters
+		-----------------------------
+		const DisplayTitle = ({title, version}) => {
+			return (
+				<div>
+					<h1>Title: {title}</h1>
+					<div>Current version: {version}</div>
+					<div>Next version: {version+1}</div>
+				</div>
+			)
+		}
+
+		ReactDOM.render( 
+			<DisplayTitle title=""hello"" version={23}/>,
+			document.getElementById('react-root')
+		)
+		-----------------------------
+	- input and onChange
+		-----------------------------
+		class DisplayMain extends React.Component {
+
+			constructor(props) {
+				super(props);
+				this.state = {
+					mainVersion : '2.2.0'
+				}
+				this.changeVersion = this.changeVersion.bind(this);
+			}              
+
+			changeVersion(e) {
+				this.setState({
+					mainVersion : e.target.value
+				})
+			} 
+
+			render() {
+				return (
+					<section>
+						<div>here is the text</div>
+						<div>Version: {this.props.version}</div>
+						<div>Main Version: {this.state.mainVersion}</div>
+						<div><input type=""text"" value={this.state.mainVersion} onChange={this.changeVersion}/></div>
+					</section>
+				)
+
+			}
+		}
+
+		ReactDOM.render( 
+			<DisplayMain title=""hello"" version={23}/>,
+			document.getElementById('react-root')
+		)
+		-----------------------------
+	- Create React App
+		- command line as administator
+			- `npm install -g create-react-app`
+			- `create-react-app todo-list`
+			- `cd todo-list`
+			- `npm start
+		- delete all except index.js
+			- delete all except first two lines
+	- for .js files, change to JavaScript React in lower-righthand-corner
+	- React Icons
+	- `npm install bootstrap react-icons jquery popper.js --save`
+- QUESTIONS
+	- how to use the React Developer tools, they are different than in the video and show less information##lessreactshow
+		- in video this is how it is:##reactseconok
+		- the author gets more information##getsmoreinfofo
+		- STACKOVERFLOW: [How to get new (2020) React Developer Tools to show elements as old version did?](https://stackoverflow.com/questions/61138104/how-to-get-new-2020-react-developer-tools-to-show-elements-as-old-version-did)",,2020-04-02 22:33:12,systemUnknown
+86,Netlify,Get a free account and set up a quick site at Netlify,3.5,- )) start with [the Netlify site](https://www.netlify.com/),,2020-04-17 11:11:01,systemUnknown
+87,JAMStack,Learn the basics of JAMStack,3.5,"- )) start with [this tutorial](https://www.freecodecamp.org/news/jamstack-full-course/)
+	- you should be able to get a free account at Netlify to host it",$place=hm,2020-04-17 11:36:15,systemUnknown
+88,Webpack,Get simple Webpack site going,4.8,"- start with [this tutorial](https://medium.com/@ahsan.ayaz/beginners-guide-to-webpack-how-to-start-a-basic-application-with-webpack-2-ebed3172fa8c)
+	- `npm install -g webpack webpack-dev-server`
+	- create folder `webpacktest` and enter with VSCode
+	- in it `npm init`
+	- make basic HTML page as `index.html`
+		----------------------
+		<!DOCTYPE html>
+		<html lang=""en"">
+
+		<head>
+			<meta charset=""UTF-8"" />
+			<meta name=""viewport"" content=""width=device-width, initial-scale=1.0"" />
+			<title>Test</title>
+			<link rel=""stylesheet"" type=""text/css"" href=""/css/main.css"" />
+		</head>
+
+		<body>
+			<h1 class=""title"">Webpack works.</h1>
+			<script src=""dist/bundle.js""></script>
+		</body>
+
+		</html>
+		----------------------
+	- make `css/main.css` file
+		-----------------------------
+		.title {
+			color: navy;
+			font-size: 23px;
+			background-color: #eee;
+		}
+		-----------------------------
+	- make `main.js` file
+		------------------
+		console.log(""Hello webpack. Demo works"");
+		------------------
+	- make `webpack.config.js`
+		--------------------
+		const path = require(""path"");
+
+		module.exports = {
+			entry: ""./main.js"",
+			output: {
+				path: path.resolve(__dirname, ""dist""),
+				filename: ""./bundle.js""
+			},
+			mode: ""development"",
+			watch: true,
+			watchOptions: {
+				ignored: /node_modules/
+			}
+		};
+		--------------------
+	- then `webpack`",$place=hm,2020-04-18 14:18:12,systemUnknown
+89,Git,Work through the Git Cookbook,3.5,- )) work through [this book](https://github.com/miollek/Free-Git-Books/blob/master/book/Git%20Version%20Control%20Cookbook.pdf),,2020-04-20 17:47:23,systemUnknown
+90,React,"Create a React site, push to Github, and publish to Netlify",4.8,"- create React site locally
+	- go to webs directory
+	- `npx create-react-app reacttest`
+	- enter directory with vscode
+	- `npm start`
+	- `src\App.js`
+		-----------------------------
+		function App() {
+			return (
+				<div className=""App"">
+					<h1>Welcome to this site.</h1>
+				</div>
+			);
+		}
+		-----------------------------
+	- `settings.json`
+		---------------------
+		""emmet.includeLanguages"": {
+			""javascript"": ""javascriptreact""
+		},
+		---------------------
+	- `src\App.css`
+		-----------------------
+		.App {
+			margin: 20px;
+		}
+		-----------------------
+- upload to Github repository
+	- rename above directory to `reacttest_move`
+	- on Github, create new repository `reacttest*
+	- clone the repository locally: `git clone https://github.com/edwardtanguay/reacttest.git`
+	- copy files from `reacttest_move` to `reacttest`
+	- delete old directory `reacttest_move`
+	- `git add *`
+	- `git commit -m initial`
+	- `git push`
+- create site at Netlify
+	- go to https://www.netlify.com
+	- [[Get started for free]]
+	- [[Github]]
+	- [[New site from Git]]
+	- [[Github]] again
+	- choose repository you want to import
+	- [[Deploy Site]]
+	- visit at the Netlify url
+	- this above instructions work very well to here, setting up domain is a bit more involved
+- set up custom domain
+	- click **Set up custom domain**
+	- copy the Netlify URL that was generated
+	- on your hosting provider, in cpanel, search for `cname`
+	- click on [[+ CNAME RECORD]]
+	- NAME, e.g. `dpodreact.tanguay.info`
+	- CNAME, e.g. `friendly-kilby-497d1b.netlify.app`
+	- click below on [[Verify DNS configuration]]
+	- it can take up to 48 hours to propogate
+		- you can check it here: https://www.whatsmydns.net
+	- ,, waiting for Stackoverflow answer
+		- [How to do I get my free Netlify subdomain to connect via CNAME to my domain?](https://stackoverflow.com/questions/61414871/how-to-do-i-get-my-free-netlify-subdomain-to-connect-via-cname-to-my-domain)
+	- ,, waiting for Netlify Community answer
+		- [How to do I get my free Netlify subdomain to connect via CNAME to my domain?](https://community.netlify.com/t/how-to-do-i-get-my-free-netlify-subdomain-to-connect-via-cname-to-my-domain/13267)
+	- at Netflify
+		- add domain name
+		- then add this info##creatednsatnetfl
+		- but then it wanted me to change my domain servers:##
+	- wrote back at [How to do I get my free Netlify subdomain to connect via CNAME to my domain?](https://community.netlify.com/t/how-to-do-i-get-my-free-netlify-subdomain-to-connect-via-cname-to-my-domain/13267)
+		---------------------
+		Thanks, but when I worked through those steps, the third step wanted me to update the domain servers of my entire tanguay.info site--I have many other sites there--so that they are all pointing to netlify.
+		It is possible to simply have
+		--- dpodreact.tanguay.info
+		point to:
+		--- dpodreact.netlify.app
+		while still having tanguay.info and other sites like tanguay.info/run continue to point to my present server hosting company, i.e. A2Hosting?
+		---------------------
+	- ,, wait for response from Netlify",,2020-04-20 20:36:13,systemUnknown
+91,Parcel,Set up a quick site with Parcel,3.5,"- watching [this video](https://www.youtube.com/watch?v=b-6BeS-22yw)
+- in vscode, goto new directory parcel4
+- `npm i -g parcel-bundler`
+- `npm init -y`
+- `touch index.html module1.js module2.js`
+- in `index.html`
+	- ! boilerplate
+	- `<script src=""module1.js""></script>`
+- `parcel index.html`
+- goto `http://localhost:1234/`
+- add `<h1>Test</h1>`, it refreshes
+- in module1.js
+	- `console.log('mod1');
+- see that it shows
+- load in Babel (**didn't work**)
+	- `touch .babelrc`
+	- `npm i -D babel-preset-stage-3`
+	- didn't work: stage-3 is discontinued and stage-2 didn't work
+	- trying this
+		- `npm install --save-dev @babel/preset-stage-3`
+		- then `.babelrc`
+			----------------------
+			{
+				""presets"": [
+					""@babel/preset-stage-3""
+				]
+			}
+			----------------------
+	- didn't work either
+- install React
+	- `npm i -S react react-dom`
+- in `index.html`:
+	- add: `<div id=""app""></div>`
+- in **module1.js**:
+	--------------------------
+	import React from 'react';
+	import ReactDom from 'react-dom';
+
+	ReactDom.render(<h1>React works.</h1>,
+		document.getElementById('app')
+	);
+	--------------------------
+- %% works except for Babel",$place=hm,2020-04-24 22:22:24,systemUnknown
+92,Mysql,Install and Use MySQL on Windows,3.5,"- install
+	- https://www.mysql.com/downloads
+	- MySQL Community (GPL) Downloads
+	- MySQL Community Server
+	- Go to download page
+	- first option 
+	- click no thanks
+	- execute
+	- Developer Default
+	- [[Execute]]
+		- install everything it wants to
+	- [[Next]] 
+	- [[Execute]]
+	- Standalone
+	- Development Computer
+	- password: `test`
+	- click through rest
+- use from command line
+	- `cmd`
+	- `cd C:\Program Files\MySQL\MySQL Server 8.0\bin`
+	- `mysql -uroot -p`
+	- `show databases;`
+- use from MySQL Workbench
+	- `mysql workbench download`
+	- install
+	- was not able to install
+		- [this article](https://www.prajwaldesai.com/system-administrator-has-set-policies-to-prevent-installation/) fixed it
+		- make sure to run `gpupdate /force` at the end
+	- run
+	- select MySQL80
+	- edit data (tables need an ID)
+- %% everything installed and Workbench is quite robust",$place=hm,2020-04-25 00:27:10,systemUnknown
+93,MySQL,Install MySQL on Ubuntu,3.5,"- `mysql`, get message
+- `sudo apt-get install mysql-server...` (whatever it says)
+- ,, try this on a docker image instead of a VM (errors)",$place=hm,2020-04-25 01:26:14,systemUnknown
+94,Node,Read data from Docker MySQL database with Node.js,3.5,"- setup mysql in docker container
+	- `docker pull mysql`
+	- `docker run --name main5mysql -p 3406:3306 -e MYSQL_ROOT_PASSWORD=pass -d mysql
+- install MySQL Workbench
+	- [download here](https://dev.mysql.com/downloads/workbench)
+	- make a database called ""learndata""
+	- add a table called ""flashcards"" with columns id, front, back
+- make node app
+	- new directory in vscode
+	- `npm init -y`
+	- `npm i mysql2`
+	- create `app.js`
+		-------------------------
+		const mysql = require('mysql2');
+
+		const connection = mysql.createConnection({
+			host: 'localhost',
+			port: 3406,
+			user: 'root',
+			password: '',
+			database: 'learndata'
+		});
+
+		connection.connect((err) => {
+			if (err) throw err;
+			console.log('connected');
+
+			connection.query('select * from flashcards', (err, results) => {
+				if (err) throw err;
+				console.log(results);
+
+				for (const item of results) {
+					console.log(item.front);
+				}
+			});
+
+			connection.end();
+		});
+		-------------------------
+- install Sequelize
+	- `npm i sequelize`
+	- add this code
+		---------------------------
+		const sequelize = new Sequelize({
+			host: 'localhost',
+			port: 3406,
+			user: 'root',
+			password: 'pass',
+			database: 'nodetest',
+			dialect: 'mysql'
+		});
+
+		sequelize
+			.authenticate()
+			.then(() => {
+				console.log('connected to sequelize');
+			})
+			.catch((err) => {
+				console.log(err);
+				process.exit(1);
+			});
+		---------------------------
+	- gets error `[SequelizeConnectionError]: Server requests authentication using unknown plugin sha256_password.`
+- )) fix sequelize error
+	- [MySQL 8.0 - Client does not support authentication protocol requested by server; consider upgrading MySQL client](https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server)
+	- )) downgrade to SQL Server below 8.0",$place=hm,2020-04-25 02:10:04,systemUnknown
+95,Docker,Install Docker,4.5,"- I had installed Docker and on my Windows 10 
+	- I realized that I couldn't use Virtual Box anymore
+	- so I made some change so I could use Virtual Box
+	- but then Docker didn't start anymore
+- now I want to use Docker instead of Virtual Box
+	- I deinstalled Docker
+	- I'm reinstalling docker now: Docker Desktop Installer.exe
+	- it asks me this:##dockaskme
+	- here's a [good explanation from 2018](https://medium.com/@javier.ramos1/docker-windows-vs-linux-1bb26d8090b3)
+		- With Windows 10 Pro, Microsoft introduced the Hyper-V, which is a super fast virtualization tool, Docker for Windows was launched for Windows 10 Pro, to run containers much faster and easier, but you need Windows 10 Pro, Home will not work.
+		- When Windows Server 2016 was launched, it was re architecture to support a kind of isolated process, so it can run Docker natively without Hyper-V or any virtualization. As of today, Windows Server 2016 is the only windows system that support native containers, however, the most basic image is 5GB big which is not very efficient.
+		- Windows server runs Windows containers natively and uses Hyper-V for Linux.
+		- Also, when you run Windows Containers you cannot run Linux ones, so you have to choose one or the other. Since 99% of the images are Linux base, and .NET can run on Linux, Windows containers are not that useful.
+		- Use Linux for Containers, it is always the best option.
+		- Windows 10 Pro with Hyper-V is a good option to run in your PC/Laptop, but Linux will always be better
+		- There is no support for Windows containers in most cloud providers or Kubernetes.
+			- Apparently with Windows 2019 this is no longer true.
+	- [article on Docker](https://forums.docker.com/t/hyper-v-or-native-windows-containers/44631)
+		- No, on Windows 10 only Hyper-V isolation is available. The Windows 10 kernel configuration is a little different from the Windows Server kernel configuration, so Hyper-V isolation is required.
+- ok, since Linux is obviously the default and since I can change it later, I left this book unclicked and **will use Linux containers**
+- Docker installed
+- reboot
+- VirtualBox still works, surprisingly
+- but in PowerShell
+	- `docker version` works
+	- `docker run hello-world`
+-",$place=hm,2020-04-25 11:31:04,systemUnknown
+96,JSON,Import JSON via web with Node,4.5,"- vscode
+- create directory `jsontest`
+- `npm init -y`
+- `npm i request`
+- create `test.js`
+	-----------------------
+	const request = require('request');
+
+	function fetchData(callback) {
+		request.get('http://mysafeinfo.com/api/data?list=englishmonarchs&format=json', (err, raw, body) => {
+			return callback(err, JSON.parse(body));
+		});
+	}
+
+	fetchData((err, data) => {
+		if (err) throw err;
+		console.log(data);
+	});
+	-----------------------
+- `node test.js`
+- %% simple and works",$place=hm,2020-04-25 13:21:48,systemUnknown
+97,Webpack,Setup React site with Webpack,4.7,"- working through [this video](https://www.linkedin.com/learning/webpack-for-react-applications/webpack-configuration-load-assets)
+- basic site with Webpack
+	- vscode
+	- create directory
+	- `npm i -g yarn`
+	- `yarn init -y`
+	- `yarn global add webpack@2.6.1`
+	- `src`
+		- make `app.js` with console.log
+	- make `webpack.config.js`
+		----------------------
+		module.exports = {
+			entry: './src/app.js',
+			output: {
+				filename: 'app.bundle.js'
+			}
+		}
+		----------------------
+	- `webpack`
+		- it created `bundle.js`
+	- create `dist/index.html`
+		--------------------
+		<!DOCTYPE html>
+		<html lang=""en"">
+
+		<head>
+			<meta charset=""UTF-8"">
+			<meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+			<title>Webpack Site</title>
+		</head>
+
+		<body>
+			<p>Hello from Webpack.</p>
+			<script src=""app.bundle.js""></script>
+		</body>
+
+		</html>
+		--------------------
+	- open with Live Server
+- configure Webpack for relative path
+	- change `webpack.config.js`
+		------------------------------
+		const webpack = require('webpack');
+		const path = require('path');
+
+		const BUILD_DIR = path.join(__dirname, 'dist');
+		const APP_DIR = path.join(__dirname, 'src');
+
+		const config = {
+			entry: APP_DIR + '/app.js',
+			output: {
+				path: BUILD_DIR,
+				filename: 'app.bundle.js'
+			}
+		}
+
+		module.exports = config;
+		------------------------------
+	- `yarn add webpack@2.6.1 -D`
+	- `webpack`
+- add first run script
+	- in `package.json` add:
+		-------------------------
+	    ""scripts"": {
+			""dev"": ""webpack -d""
+		},
+		-------------------------
+	- `yarn run dev`
+- install Babel
+	- `yarn add babel-loader babel-preset-es2015 babel-preset-react -D`
+	- `yarn add babel-core -D`
+	- `yarn add babel-loader@7 -D`
+	- `touch .babelrc`
+		----------------------------
+		{
+			""presets"": [""es2015"", ""react""]
+		}
+		----------------------------
+	- add to `webpack.config.js`:
+		----------------------------
+		module: {
+			loaders: [
+				{
+					test: /\.(js|jsx)$/,
+					// include: APP_DIR,
+					exclude: /node_modules/,
+					use: 'babel-loader'
+				}
+			]
+		}		
+		----------------------------
+	- `yarn run dev`
+- install React
+	- `yarn add react react-dom`
+	- in `index.html` add:
+		-----------------------
+		<div id=""root""></div>
+		-----------------------
+	- delete content from `app.js`
+	- install vscode extension **Simple React Snippets**
+		- first line: `imr` [[TAB]]
+		- also use `ren` [[TAB]] below
+	- add:
+		----------------------
+		class App extends React.Component {
+			render() {
+				return (
+					<p>Hello React.</p>
+				);
+			}
+		}
+
+		render(<App />, document.getElementById('root'));
+		----------------------
+-",$place=hm,2020-04-25 22:18:59,systemUnknown
+98,Git,"How to create new local branch, make changes, merge into master",4.999,"- how to create, complete, and check in a branch locally
+	- create branch and do changes
+		- `git checkout -b et/enh/show-spaces-in-tutorials`
+		- do changes
+	- check back in
+		- `git add *`
+		- `git commit -m ""spaces work now""`
+	- merge into master
+		- `git checkout master`
+		- `git merge et/enh/show-spaces-in-tutorials`
+	- delete branch
+		- `git branch -d et/enh/show-spaces-in-tutorials`
+- %% simple and works",,2020-04-28 15:52:32,systemUnknown
+99,JAMStack,Make a Node.js Eleventy project,4.8,"- INFOS
+	- you can get code for this here: https://github.com/LinkedInLearning/serverless-jamstack-eleventy-2824238
+- get simple site up and running
+	- made directory `elev4`
+	- vscode
+	- `npm init -y`
+	- `npm install @11ty/eleventy -D`
+	- `npx @11ty/eleventy`
+		- you will see: Wrote 0 files in 0.03 seconds (v0.10.0)
+	- index.html
+		----------------------
+		<!doctype html>
+		<html>
+
+		<head>
+			<title>Page title</title>
+		</head>
+
+		<body>
+			<p>Hi</p>
+		</body>
+
+		</html>
+		----------------------
+	- README.md
+		------------------------
+		# Page header
+		------------------------
+	- `npx @11ty/eleventy`
+	- you know have a directory `_site`
+	- `npx @11ty/eleventy --serve`
+	- in browser
+		- `http://localhost:8080`
+		- `http://localhost:8080/README`
+- configure
+	- edit package.json
+		-----------------------
+		{
+			""name"": ""elev4"",
+			""version"": ""1.0.0"",
+			""description"": """",
+			""scripts"": {
+				""start"": ""eleventy --input=_site --output=dist --serve""
+			},
+			""author"": """",
+			""license"": """",
+			""devDependencies"": {
+				""@11ty/eleventy"": ""^0.10.0""
+			}
+		}
+- add more
+	- )) fix this, the date works but not the items
+		--------------------------
+		---
+		title: The First Page
+		date: Created
+		tags: 
+			- home
+			- flashcards
+			- info
+		---
+
+		## {{ title }}
+		**Publish Date:** {{ page.date }}
+
+		This is the index page now.
+
+		<ul>
+			{% for item in tags %}
+			<li>{{ item }}</li>
+			{% endfor %}
+		</ul>
+		--------------------------",$place=hm,2020-04-30 06:32:04,systemUnknown
+100,github,How to upload an existing file to GitHub,3.5,"- at GitHub, create repository `webpack8`
+- goto directory webpack8 with files already there
+- `git init`
+- `git add -A`
+- `git commit -m ""first commit""`
+- `git remote add origin https://github.com/edwardtanguay/webpack8.git`
+- `git push -u origin master`
+- %% works well",,2020-04-30 21:18:39,systemUnknown
+101,netlify,How to get a quick Eleventy site up on Netlify,3.5,"- https://www.netlify.com
+- Log in
+- new site from GitHub
+- Build command: eleventy
+- publish directory: dist
+- change name
+- works at: https://eleventy4.netlify.app",$place=hm,2020-05-02 15:24:21,systemUnknown
+102,vmware,Download VMWare and install Ubuntu on it,3.5,"- trying virtualbox again as a repair
+	- https://www.virtualbox.org/wiki/Downloads
+	- Windows Hosts
+	- download, install, repair
+	- restart
+	- didn't work
+- trying to fix virtualbox with turning on hyper-v again
+	- `optionalfeatures`
+	- no, it's checked, so virtualbox should work
+- VMWare
+	- downloaded: https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html
+		- Workstation 15.5
+		- ""VMware Workstation and Device/Credential Guard are not compatible. VMware Workstation can be run after disabling Device/Credential Guard.""
+			- looked to risky
+	- downloaded: WMWare player
+		- https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html
+		- it said the same thing so
+			- https://windowsreport.com/disable-credential-guard-windows-10/
+			- `optionalfeatures`
+	- doing this: https://www.youtube.com/watch?v=VIBdY-5zr58
+		- `gpedit.msc`
+			- admin, system, device guard
+			- activate
+			- deactivate
+		- `gpupdate /force`
+		- became far too complicated
+	- just trying to turn off Hyper-V
+- !! ended up abandoning this since it was too complicated to get VMWware to work with Docker having Hyper-V on",$place=hm,2020-05-03 20:31:46,systemUnknown
+103,gulp,Get Gulp running compiling SASS,4.5,"- working through [this tutorial](http://zetcode.com/gulp/sass)
+- make directory `gulp22`
+- open VSCode to this directory
+- install gulp
+	- `npm init -y`
+	- `npm i -g gulp-cli`
+	- `npm i gulp -D`
+- install files for SASS
+	- `npm i -D gulp-sass`
+	- `npm i -D del`
+		- this deletes files
+- setup basic files
+	- `mkdir sass css`
+	- `touch index.html gulpfile.js sass/main.scss`
+- index.html
+	---------------
+	<!DOCTYPE html>
+	<html lang=""en"">
+
+	<head>
+		<meta charset=""UTF-8"">
+		<meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+		<link rel=""stylesheet"" href=""css/main.css"">
+		<title>Test</title>
+	</head>
+
+	<body>
+
+		<div class=""container"">
+
+			<h1>Test</h1>
+
+			<table>
+
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+				</tr>
+
+				<tr>
+					<td>First Item</td>
+					<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque consectetur labore aut
+						exercitationem fuga harum similique. Quas eius omnis quos eligendi, voluptates perspiciatis itaque
+						repudiandae sunt magnam id pariatur labore.</td>
+				</tr>
+
+				<tr>
+					<td>Second Item</td>
+					<td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum debitis voluptate totam modi! Ipsam
+						explicabo hic, ex natus adipisci a commodi quo distinctio porro inventore recusandae quas blanditiis
+						in non!</td>
+				</tr>
+
+				<tr>
+					<td>Third Item</td>
+					<td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi odio voluptatum sunt impedit earum
+						blanditiis nemo repellendus, cumque facere, adipisci nesciunt? Consequuntur praesentium libero optio
+						aliquam fugit modi quis quisquam.</td>
+				</tr>
+
+				<tr>
+					<td>Fourth Item</td>
+					<td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel porro voluptates dicta animi earum
+						perspiciatis veniam quam non beatae quae? Cum doloribus voluptate dignissimos totam, dolorum ab
+						velit explicabo. Ad?</td>
+				</tr>
+
+			</table>
+
+		</div>
+
+	</body>
+
+	</html>
+	---------------
+- main.scss
+	---------------
+	$myfont: Georgia 1.2em;
+	$table_head_col: #ccc;
+	$table_row_col: #eee;
+	$table_bor_col: #eee;
+	$container_width: 700px;
+	$first_col_width: 150px;
+
+	div.container {
+
+		margin: auto; 
+		font: $myfont;
+		width: $container_width;
+	}
+
+	table {
+
+		tr:nth-child(odd) {background: $table_row_col}
+
+		td:first-child {width: $first_col_width}
+
+		th {
+			background-color: $table_head_col;
+		}
+
+		border: 1px solid $table_bor_col;
+	}
+	---------------
+- gulpfile.js
+	-----------------------
+	const gulp = require('gulp');
+	const sass = require('gulp-sass');
+	const del = require('del');
+
+	gulp.task('styles', () => {
+		return gulp.src('sass/**/*.scss')
+			.pipe(sass().on('error', sass.logError))
+			.pipe(gulp.dest('./css/'));
+	});
+
+	gulp.task('clean', () => {
+		return del([
+			'css/main.css',
+		]);
+	});
+
+	gulp.task('watch', () => {
+		gulp.watch('sass/**/*.scss', (done) => {
+			gulp.series(['clean', 'styles'])(done);
+		});
+	});
+
+	//gulp.task('default', gulp.series(['clean', 'styles']));
+	gulp.task('default', gulp.series(['watch']));
+	-----------------------
+- `gulp`
+- %% works well as watch, .css file is updated live, with Live Server a nice SASS development environment",,2020-05-05 09:03:25,systemUnknown
+104,npm,How to use browser-sync to immediately show changes in browser,3.5,"- `npm i browser-sync -g`
+- `browser-sync start --server --files ""*""`
+- to get it to update on a CSS file change, I had to do this:
+	------------------------------
+	""scripts"": {
+		""start"": ""browser-sync start --server --files \""*\"", \""css/*\""""
+	},
+	-------------------------------
+- )) find more features of browser-sync, e.g. what do do with UI, how to change the port, etc.",,2020-05-06 03:35:07,systemUnknown
+105,GitHub,Create an npx-executable Gist,3.0,"- made this one: 
+	- https://gist.github.com/edwardtanguay/50961e21f434d3e1f1a92231154c4947
+- but it gets this error
+	--------------------------
+	npm ERR! premature close
+	npm ERR! A complete log of this run can be found in:
+	npm ERR!     C:\Users\ADMIN\AppData\Roaming\npm-cache\_logs\2020-05-08T16_22_03_623Z-debug.log
+	Die Installation von [ 'git+https://gist.github.com/50961e21f434d3e1f1a92231154c4947.git' ] 
+	ist mit dem Code 1 fehlgeschlagen
+	--------------------------
+- )) fix error",,2020-05-08 21:48:14,systemUnknown
+106,Gimp,Change GIMP splash screen on Windows,4.5,"- this didn't work:
+	- watched [this tutorial](https://www.youtube.com/watch?v=CNi8GZVSrTs)
+	- Add `splashes` folder to `C:\Users\ADMIN\AppData\Local\GIMP\2.10`
+	- put in a .png file
+- this worked:
+	- watched [this tutorial](https://daviesmediadesign.com/project/gimp-2-10-tutorial-customize-your-splash-screen-image)
+	- goto `C:\Program Files\GIMP 2\share\gimp\2.0\images`
+	- his are 1920 x 1080
+	- had to copy it via command line with administrator rights, but it worked
+	- you have to rename it `gimp-splash.png`
+- %% worked, you just have to replace the current splash screen PNG file",,2020-05-09 00:26:02,systemUnknown
+107,VSCode,Set multiple instances of VSCode to a different color,4.8,"- trying [this extension](https://papapeacockstorage.z13.web.core.windows.net/guide/#overview)
+- installed
+- [[F1]] `enter color`
+- dark purple: `060114`
+- dark orange: `1f1702`
+- [google color picker](https://www.google.com/search?q=color%20picker%20online)
+- [[F1]] `save current color to favorites`
+- [[CTRL-,]] `peacock` > favorite colors > edit in settings
+- %% Peacock extension installed, works well",,2020-05-09 08:27:17,systemUnknown
+108,gimp,Create a shape icon with transparent background for website,3.5,"- gimp
+- ctrl-n, (fill with transparency), return
+- new layer, ""circle"", fill with transparency
+- define foreground color
+- [[R]] for Rectable
+- ctrl-, to fill with foreground color
+- repeat for blue circle
+- !! can't get shadow selection to go away
+- can only do ctrl-c, ctrl-shift-v on one selection and then ctrl-e to export",$place=hm,2020-05-16 12:48:21,systemUnknown
+109,react,Setup React site and push to Netlify,3.5,"- setup local React site
+	- `npx create-react-app gimp --use-npm`
+	- `npm start` works
+- set up initial commit
+	- reorganized into css and components
+	- made favicon
+		- DON'T USE: https://www.favicon-generator.org
+			- used favicon-96x96.png
+			- were too blurry
+		- https://icoconvert.com
+			- just click the [[PNG to ICO]] button
+			- rename
+		- locally it is still the react favicon
+- create repository at github
+	- git remote add origin https://github.com/edwardtanguay/nnnnnnnnnnn.git && git push -u origin master
+- setup at Netlify
+	- deploy site
+	- site settings, change name: https://tanguay-gimp.netlify.app
+- add in HTML to app.js
+	- replaced logo in public
+	- test images in source
+- %% site is up at [Netlify](https://tanguay-gimp.netlify.app)",,2020-05-16 20:30:34,systemUnknown
+110,webpack,Set up site with manually installed Webpack,4.9,"- setup project
+	- make project directory
+	- `npm init -y`
+- setup base site
+	- `npm i -D webpack webpack-cli`
+	- two directories `src` and `dist`
+	- `npm i jquery`
+	- base HTML file `dist/index.html` with content:
+		-----------------------
+		<h1 id=""title""></h1>
+		<script src=""main.js""></script>
+		-----------------------
+	- `scr/index.js`:
+		---------------------------
+		import $ from 'jquery';
+		$('#title').html(""Welcome to Webpack"");
+		---------------------------
+- compile and and run the site
+	- note: you can't just type `webpack` because it is no installed globally
+	- `npx webpack`
+		- notice index.js file in dist now
+	- right-click index.html, ""Open with Live Server""
+- set webpack config file
+	- create `webpack.config.js`
+		----------------------
+		const path = require('path');
+
+		module.exports = {
+			entry: ""./src/index.js"",
+			output: {
+				filename: ""js/site.js"", 
+				path: path.resolve(__dirname, 'dist')
+			}
+		};
+		----------------------
+	- delete `main.js`
+	- in `index.html` change `main.js` to`js/site.js`
+	- `npx webpack`
+- .. configure scripts, setup watch, and build in more settings",$place=hm,2020-05-18 07:35:22,systemUnknown
+111,Netlify,Install 10 Jamstack templates at Netlify,4.99,- )) install 10 of [these Jamstack templates](https://templates.netlify.com/?utm_source=blog&utm_medium=netlify-features-cs&utm_campaign=devex),,2020-05-20 10:14:34,systemUnknown
+112,Django,Set up a basic Django site,3.5,"- install Python, e.g. version 3.8.3: [https://www.python.org/downloads](https://www.python.org/downloads)
+- install Django, e.g. version 3.0.3: `pip install django==3.0.3`
+- create and run django project
+	- `django-admin startproject test111`
+	- `cd test111`
+	- `python manage.py runserver`
+	- note: this last command would not work in termin of VSCode, but only in git bash
+- create app
+	- `python manage.py startapp adoptions` (""adoptions"" is the name of the app we chose, e.g. a pet adoptions site)
+	- add to settings.py, INSTALLED_APPS: 'adoptions'
+- in `models.py`
+	----------------------------
+	class Pet(models.Model):
+		SEX_CHOICES = [('M', 'Male'), ('F', 'Female')]
+		name = models.CharField(max_length = 100)
+		submitter = models.CharField(max_length = 100)
+		species = models.CharField(max_length = 30)
+		breed = models.CharField(max_length = 30, blank=True)
+		description = models.TextField()
+		sex = models.CharField(max_length=1, choices=SEX_CHOICES, blank=True)
+		submission_date = models.DateTimeField()
+		age = models.IntegerField(null=True)
+		vaccinations = models.ManyToManyField('Vaccine', blank=True)
+
+	class Vaccine(models.Model):
+		name = models.CharField(max_length=50)
+	----------------------------
+- `python manage.py makemigrations`
+- `python manage.py showmigrations`
+- `python manage.py migrate`
+- look at db.sqlite3
+- for more, see [Learning Django](liTutorials?id=148)",,2020-05-21 17:38:26,systemUnknown
+114,Virtualization,Get VirtualBox running with Docker,3.5,"- after installing Docker, VirtualBox didn't run well, machines often crashed, etc. 
+- deinstalled VirtualBox
+- installed version: VirtualBox-6.1.8-137981-Win.exe
+- after installation, all four of my machines were there	
+- starting windows
+	- it works slowly and then after four minutes restarted all of a sudden
+	- there seems to be something wrong with VirtualBox
+- I think installed a machine on Hyper-V and it worked much better, no crashing",,2020-05-23 22:28:52,systemUnknown
+115,PHP,Install XAMPP / Wordpress locally on Windows,4.6,"- [download XAMPP](https://www.apachefriends.org/download.html)
+- install
+	- ok, next
+	- (all) next
+	- leave with `C:\xampp`
+	- uncheck, next
+	- start control panel
+		- I had on machine 3.2.2, training had 3.2.2, but I installed 3.2.4 (May 2020)
+	- on windows I had 
+	- start Apache and MySQL
+- set up site
+	- add to `C:\xampp\apache\conf\extra\httpd-xampp.conf`:
+		-----------------------------
+		    Alias /blog ""C:\work\site_wordpress_blog""
+		    <Directory ""C:\work\site_wordpress_blog"">
+		        AllowOverride AuthConfig
+		        Require local
+		        ErrorDocument 403 /error/XAMPP_FORBIDDEN.html.var
+		    </Directory>
+		-----------------------------
+	- getting this to work on another machine, I had to convert all the backslashes to forward slashes:
+		------------------------------------
+		    Alias /testphp ""C:/edward/filesForWeeklyBackup/LEARN2020/testphp""
+    <Directory ""C:/edward/filesForWeeklyBackup/LEARN2020/testphp"">
+		AllowOverride AuthConfig
+		Require local
+		ErrorDocument 403 /error/XAMPP_FORBIDDEN.html.var
+    </Directory>
+		--------------------------------------
+- set up database
+	- MySQL Admin button
+	- create database `wordpress`
+- access at [http://localhost/blog](http://localhost/blog)
+	- button
+	- infos
+		- wordpress
+		- root
+		- [EMPTY]
+		- localhost
+		- wp001_
+- %% it worked",,2020-05-23 23:24:19,systemUnknown
+116,general,Set up a local Wiki,3.5,- )) start with [this tutorial](https://www.howtogeek.com/67717/how-to-setup-your-own-powerful-wiki-on-your-windows-pc/),,2020-06-16 10:47:47,systemUnknown
+117,React,Create React application from scratch,3.5,"- setup git
+	- github directory
+- `npm init -y`
+- create `public`
+- create `src`
+- create `public\index.html`
+	------------------------------------
+	<!DOCTYPE html>
+	<html lang=""en"">
+
+	<head>
+		<meta charset=""UTF-8"">
+		<meta name=""viewport""
+			  content=""width=device-width, initial-scale=1.0, shrink-to-fit=no"">
+		<title>React from Scratch</title>
+	</head>
+
+	<body>
+		<div id=""root""></div>
+		<noscript>Please enable JavaScript</noscript>
+		<script src=""..dist/bundle.js""></script>
+	</body>
+
+	</html>
+	------------------------------------
+- `npm i -D @babel/core @babel/cli @babel/preset-env @babel/preset-react`
+- create `.babelrc`
+	-----------------------------
+	{
+		""presets"": [""@babel/preset-env"", ""@babel/preset-react""]
+	}
+	-----------------------------
+	- preset-env = transformation of ES6 to JavaScript
+	- preset-react = knows how to deal with JSX
+	- although most modern browsers support ES6 syntax
+- create `src/App.js`
+	-------------------------
+	import React from 'react';
+	import './App.css';
+
+	const App = () => (
+		<div className=""App"">
+			<h1>Hello World</h1>
+		</div>
+	);
+
+	export default App;
+	-------------------------
+- create `src/App.css`
+	--------------------------
+	.App {
+		margin: 1rem;
+		font-family: Arial, Helvetica, sans-serif;
+		color: #222;
+	}
+	--------------------------
+- create `src/index.js`
+	------------------------------
+	import React from 'react';
+	import ReactDOM from 'react-dom';
+	import App from '.App.js';
+
+	ReactDOM.render(<App />, document.getElementById('root'));
+	------------------------------
+- `npm i react react-dom`
+- second commit
+	- `.gitignore`
+		-------------------------
+		node_modules
+		-------------------------
+	- push
+- Webpack
+	- `npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader babel-loader`
+- my versions 2020-06-21
+	-------------------------
+	""dependencies"": {
+		""react"": ""^16.13.1"",
+		""react-dom"": ""^16.13.1""
+	},
+	""devDependencies"": {
+		""@babel/cli"": ""^7.10.3"",
+		""@babel/core"": ""^7.10.3"",
+		""@babel/preset-env"": ""^7.10.3"",
+		""@babel/preset-react"": ""^7.10.1"",
+		""babel-loader"": ""^8.1.0"",
+		""css-loader"": ""^3.6.0"",
+		""style-loader"": ""^1.2.1"",
+		""webpack"": ""^4.43.0"",
+		""webpack-cli"": ""^3.3.12"",
+		""webpack-dev-server"": ""^3.11.0""
+	}	
+	-------------------------
+- create `webpack.conifg.js`
+	---------------------------
+	const path = require('path');
+	const webpack = require('webpack');
+
+	module.exports = {
+		entry: './src/index.js',
+		mode: 'development',
+		module: {
+			rules: [
+				{
+					test: /\.(js|jsx)$/,
+					exclude: /(node_modules)/,
+					loader: 'babel-loader',
+					options: { presets: [""@babel/env""] }
+				},
+				{
+					test: /\.css$/,
+					use: ['style-loader', 'css-loader']
+				}
+			]
+		},
+		resolve: { extensions: ['*', '.js', '.jsx'] },
+		output: {
+			path: path.resolve(__dirname, 'dist/'),
+			publicPath: '/dist/',
+			filename: 'bundle.js'
+		},
+		devServer: {
+			contentBase: path.join(__dirname, 'public/'),
+			port: 3000,
+			publicPath: 'http://localhost:3000/dist/',
+			hotOnly: true
+		},
+		plugins: [new webpack.HotModuleReplacementPlugin()]
+	};
+	---------------------------
+	- uses CommonJS and ES5 syntax because this is the file that converts to ES6
+- `npx webpack-dev-server --mode development`
+	- goto: `localhost:3000`
+- load hot-loader
+	- `npm i -D react-hot-loader`
+	- in `App.js` add:
+		- `import { hot } from 'react-hot-loader';`
+		- `export default hot(module)(App);`
+- add start command
+	- in `package.json`
+		- `""start"": ""npx webpack-dev-server --mode development""`
+	- notice doesn't make /dist folder
+- add build script
+	- in `package.json`
+		- `""build"": ""npx webpack --mode development""`
+		- delete others
+- make component
+	- create `src\todos\TodoList.js`
+		-------------------------
+		import React from 'react';
+		import TodoListItem from './TodoListItem';
+
+		const TodoList = ({ todos }) => (
+			<div className=""todoListWrapper"">
+				{todos.map(todo => <TodoListItem todo={todo} />)}
+			</div>
+		);
+
+		export default TodoList;
+		-------------------------",,2020-06-21 08:48:03,systemUnknown
+118,Ramda,Work through documentation of Ramda,4.2,- )) work through [Ramda documentation](https://ramdajs.com/docs),$place=wk,2020-06-23 15:50:21,systemUnknown
+119,TypeScript,Go through all of the TypeScript examples at typesriptlang.org,3.5,- )) [TypeScript playground](https://www.typescriptlang.org),$place=hm,2020-06-28 08:11:20,systemUnknown
+120,React,Add Redux to React site,3.5,"- `npm i redux react-redux`
+- `src\store.js`:
+	---------------------
+	import { createStore, combineReducers } from 'redux';
+
+	const reducers = {};
+
+	const rootReducer = combineReducers(reducers);
+	---------------------
+- wrap app in Redux provider
+	- in `src\App.js` add:
+		-------------------------
+		import { Provider } from 'react-redux';
+		import { configureStore } from './store';
+		-------------------------
+	- then wrap App in Provider:
+		-----------------------------
+		ReactDOM.render(
+			<Provider store=""{configureStore}"">
+				<App />
+			</Provider>,
+			document.getElementById('root')
+		);
+		-----------------------------
+- make actions: `src\todos\actions.js`
+	--------------------
+	export const CREATE_TODO = 'CREATE_TODO';
+
+	export const createTodo = text => ({
+		type: CREATE_TODO,
+		payload: { text }
+	});
+
+	export const REMOVE_TODO = 'REMOVE_TODO';
+
+	export const removeTodo = text => ({
+		type: REMOVE_TODO,
+		payload: { text }
+	});
+	--------------------
+- make reducers: `src\todos\reducers.js`
+	---------------------------
+	import { CREATE_TODO, REMOVE_TODO } from './actions';
+
+	const { type, payload } = action;
+
+	export const todos = (state = [], action) => {
+
+		const { type, payload } = action;
+
+		switch (type) {
+			case CREATE_TODO: {
+				const { text } = payload;
+				const newTodo = {
+					text,
+					isCompleted: false
+				}
+				return state.concat(newTodo);
+			}
+			case REMOVE_TODO: {
+				const { text } = payload;
+				return state.filter(todo => todo.text !== text);
+			}
+			default:
+				return state;
+		}
+	}
+	---------------------------
+- in `store.js`, add:
+	------------------------
+	import { todos } from './todos/reducers';
+
+	const reducers = {
+		todos
+	};
+	------------------------
+- connect components, e.g. `src\todos\NewTodoForm.js`, here with many changes:
+	-----------------------
+	import React, { useState } from 'react';
+	import { connect } from 'react-redux';
+	import { createTodo } from './actions';
+	import './NewTodoForm.css';
+
+	const NewTodoForm = ({ todos, onCreatePressed }) => {
+		const [inputValue, setInputValue] = useState('');
+		return (
+			<div className=""new-todo-form"">
+				<input
+					className=""new-todo-input""
+					type=""text""
+					placeholder=""Type new todo here""
+					value={inputValue}
+					onChange={e => setInputValue(e.target.value)} />
+				<button
+					onClick={() => {
+						const isDuplicateText =
+							todos.some(todo => todo.text === inputValue);
+						if (!isDuplicateText) {
+							onCreatePressed(inputValue);
+							setInputValue('');
+						}
+					}}
+					className=""new-todo-button"">Create todo</button>
+			</div>
+		);
+	}
+
+	const mapStateToProps = state => ({
+		todos: state.todos
+	});
+	const mapDispatchToProps = dispatch => ({
+		onCreatePressed: text => dispatch(createTodo(text))
+	});
+
+	export default connect(mapStateToProps, mapDispatchToProps)(NewTodoForm);
+	-----------------------
+- see a working app with these code changes here: https://github.com/edwardtanguay/reactscratch",,2020-07-21 23:50:07,systemUnknown
+121,Gatsby,Set up and publish a Gatsby site,3.5,"- install Gatsby command line if you don't have it yet
+	- `npm i -g gatsby-cli`
+- install Gatsby starter site
+	- go to your webs directory
+	- https://www.gatsbyjs.org/starters
+		- find a site, e.g. https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-default
+		- scroll down and copy install command line, changing the name of the folder, e.g.:
+		- `gatsby new gatsby2 https://github.com/gatsbyjs/gatsby-starter-default` (replace `gatsby2` with name you want for your project)
+	- `cd gatsby2`
+	- `gatsby develop`
+	- in browser, go to: `http://localhost:8000`
+- upload to github
+	- (the setup initialized Git and made the first local commit)
+	- goto GitHub and create folder `gatsby2`
+	- copy two lines at ""check in existing site"", e.g.
+		- `git remote add origin https://github.com/edwardtanguay/gatsby2.git`
+		- `git push -u origin master`
+- VSCode
+	- install plugins Prettier and ESLint
+- make change and push
+	- `gatsby develop`
+	- in browser, go to: `http://localhost:8000`
+	- in `src\pages\index.js` change ""Hi people"" to ""Hello World"" and see that it immediately changes in browser
+	- push	 to changes to GitHub
+- Publish at Netlify
+	- goto `https://www.netlify.com`
+	- [[New site from Git]]
+	- [[GitHub]]
+	- search for site, e.g. `gatsby2` and click it
+	- [[Deploy Site]]
+	- [[Site Settings]]
+	- [[Change site name]]
+	- enter site name, e.g. `gatsby2`
+	- [[Save]]
+	- (wait 2 minutes)
+	- goto e.g. `https://gatsby2.netlify.app`
+- Publish change
+	- make change
+	- push
+	- (wait 2 minutes)
+	- goto e.g. `https://gatsby2.netlify.app`",,2020-08-02 17:11:55,systemUnknown
+122,static sites,Try out all static site generators at staticgen.com,3.5,"- )) start with [this site](https://www.staticgen.com)
+- try Hexo first",$place=hm,2020-08-03 17:25:02,systemUnknown
+124,Hugo,Install hugo,4.5,"- install Hugo on Windows
+	- try via npm first:
+		- `npm i hugo-cli`
+		- or even this: `npx hugo-cli server`
+	- if that doesn't work, install manually (worked 2020-08-04)
+		- https://github.com/gohugoio/hugo/releases
+		- download: hugo_extended_0.74.3_Windows-64bit.zip
+		- unpack and copy `hugo.exe` to `c:\hugo\bin`
+		- add `c:\hugo\bin` to environment variables
+	- more information here: https://gohugo.io/getting-started/installing
+- check installation
+	---------------------------
+	$ hugo version
+	Hugo Static Site Generator v0.74.3/extended windows/amd64 BuildDate: unknown
+	---------------------------
+- create site
+	- `hugo new site hugosite001`
+	- `cd hugosite001`
+	- `ls` to check files
+- open in Visual Studio Code
+- add to Git
+	- `git init`
+	- `git status`
+	- `git add --all`
+	- `git commit -m ""first commit""`
+- add to GitHub
+	- at GitHub, create `hugosite001`
+	- `git remote add origin https://github.com/edwardtanguay/hugosite001.git`
+	- `git push -u origin master`
+- add a theme
+	- `https://themes.gohugo.io`
+	- choose one, e.g. `https://themes.gohugo.io/hugo-classic`
+	- right-click [[Download]] and ""Copy link address""
+	- `git submodule add https://github.com/goodroot/hugo-classic.git themes/hugo-classic`
+	- (copy the .toml file in `data` if there is one)
+	- copy the contents of the `config.toml` file to the root config.toml
+		- note: `theme = ""hugo-classic""` has to be the same name as the folder in `themes`
+- preview site
+	- `hugo server`
+	- change e.g. title to see immediate change
+- add content
+	- `hugo new post/first-article.md`
+	- goto `content\post\first-article.md` and edit
+		- learn Markdown here: https://www.markdowntutorial.com
+	- to make it show up, change draft to `false`
+		- or run with `hugo server -D` to show drafts
+- .. continue on",$place=hm,2020-08-04 07:48:42,systemUnknown
+125,Express,"Create a four-line, static website server with Node/Express",3.5,"- install Node.js
+- setup project directory
+	- in webs folder, e.g. `nodebasics`
+	- `npm init -y`
+- install Express
+	- `npm i express`
+		- I got `4.17.1`
+- server.js
+	-----------------------
+	const express = require('express');
+
+	const app = express();
+
+	app.use(express.static(__dirname));
+	app.listen(3000); 
+	-----------------------
+- hello.html
+	---------------------
+	hello
+	---------------------
+- `node server.js`
+- in browser, go to: `https://localhost:3000`",,2020-08-06 11:49:42,systemUnknown
+126,Express,Create a complex website server with Node/Express,3.5,"- full code of finished project is here: https://github.com/edwardtanguay/nodebasics
+- get basic website up
+	- install Node.js
+	- setup project directory
+		- in webs folder, e.g. `nodebasics`
+		- `npm init -y`
+	- install Express
+		- `npm i express`
+			- I got `4.17.1`
+	- server.js
+		-----------------------
+		const express = require('express');
+
+		const app = express();
+
+		app.use(express.static(__dirname));
+		app.listen(3000); 
+		-----------------------
+	- hello.html
+		---------------------
+		hello
+		---------------------
+	- `node server.js`
+	- in browser, go to: `https://localhost:3000`
+- add ability to add messages on the frontend
+	- index.html
+		- emmet ! to get HTML/BODY boilerplate
+	- https://getbootstrap.com
+		- [[Get started]]
+		- copy CDN stylesheet `<link...>` into head
+		- copy CDN JavaScript `<script...>` (3x) into head
+	- in body:
+		-----------------------
+			<div class=""container"">
+			<div class=""jumbotron"">
+				<ht class=""display-4"">Send Message</ht>
+			</div>
+			<input class=""form-control"" placeholder=""Name"" />
+			<div id=""send"" class=""btn btn-success mt-2 btn-gray"">Send</div>
+			<div class=""mt-4"" id=""messages"">
+
+			</div>
+		</div>
+		<script>
+			$(() => {
+				$(""#send"").click(() => {
+					addMessage({ name: ""Robert"", text: ""Hello"" });
+				});
+			});
+
+			function addMessage(message) {
+				$('#messages').append(`<h4>${message.name}</h4><p>${message.text}</p>`);
+			}
+		</script>
+		-----------------------
+- get messages from backend via JQuery AJAX (`$.get()`)
+	- server.js, add:
+		--------------------
+		const messages = [
+			{ name: 'Jim', text: '111' },
+			{ name: 'Rob', text: '222' },
+			{ name: 'Anders', text: '333' },
+			{ name: 'George', text: '444' }
+		];
+
+		app.get('/messages', (req, res) => {
+			res.send(messages);
+		});
+		--------------------
+	- index.html:
+		- remove `slim` from `jquery-3.5.1.slim.min.js`
+		- take out integrity property from that element as well
+		- add call to `getMessages()` in main section:
+			----------------------
+			$(() => {
+				$(""#send"").click(() => {
+					addMessage({ name: ""Robert"", text: ""Hello"" });
+				});
+				getMessages();
+			});
+			----------------------
+		- add the `getMessages` function:
+			---------------------	
+			function getMessages() {
+				$.get('http://localhost:3001/messages', (data) => {
+					data.forEach(addMessage);
+				});
+
+				// or you can run through the items being received from the server like this:
+				// $.get('http://localhost:3001/messages', (data) => {
+				// 	data.forEach((item) => {
+				// 		addMessage(item);
+				// 	}, this);
+				// });
+			}
+			---------------------
+	- you will now see that the backend messages appear on the frontend
+- enable posting of messages from Postman
+	- install Postman
+		- https://www.postman.com/downloads
+	- install body-parser
+		- `npm i body-parser`
+		- add: `app.use(bodyParser.json());`
+	- add post code:
+		---------------------
+		app.post('/messages', (req, res) => {
+			messages.push(req.body);
+			res.sendStatus(200);
+		});
+		---------------------
+	- now restart server
+	- load page
+	- post from postman
+	- reload page
+	- see that you have entry from postman
+- enable posting of messages from frontend
+	- server.js: add `app.use(bodyParser.urlencoded({ extended: false }));`
+	- index.html: add `addMessage(message);`
+- bi-directional updating via sockets.io
+	- setup
+		- `npm i socket.io`
+		- server.js
+			- add: `const http = require('http').Server(app);`
+			- add: `const io = require('socket.io')(http);`
+			- change to: const server = http.listen(port, () => {
+			- add:
+				---------------------
+				io.on('connection', (socket) => {
+					console.log('a user connected');
+				});
+				---------------------
+		- index.html
+			- add: `<script src=""socket.io/socket.io></script>`
+			- add: `const socket = io();`
+		- refresh page, see ""a user connected"" 
+	- make message event
+		- server.js
+			- in app.post, add: `io.emit('message', req.body);`
+- setup database
+	- get account at: https://cloud.mongodb.com
+		- cluster = cluster0
+		- database = nodebasics
+		- collection = main
+		- used my Google Account
+			- ok, and was able to login from other two email accounts as well, be sure to login:
+				- here: https://cloud.mongodb.com
+				- not here: https://mlab.com
+	- test connection
+		- download Mongo Compass: https://www.mongodb.com/try/download/compass
+			- connect with: mongodb+srv://learn:PASSWORD@cluster0.hqjr5.mongodb.net/nodebasics
+	- server.js
+		- add: `const mongoose = require('mongoose');`
+		- add: `const dbUrl = `mongodb+srv://learn:<password>@cluster0.hqjr5.mongodb.net/<dbname>?retryWrites=true&w=majority`;`
+		- replace:
+			-----------------------
+			mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+				if (err) {
+					console.log('mongo db connection error:', err);
+				}
+				console.log('mongo db connection: success');
+
+				const server = http.listen(port, () => {
+					console.log(`Listening on port ${server.address().port}...`);
+				}); 
+			})
+			-----------------------
+	- see that it connects
+- save message in database
+	- server.js
+		- add:
+			---------------------
+			const Message = mongoose.model('Message', {
+				name: String,
+				message: String
+			});
+			---------------------
+		- replace:
+			--------------------
+			app.post('/messages', (req, res) => {
+				const message = new Message(req.body);
+				message.save((err) => {
+					if (err) {
+						sendStatus(500);
+					} else {
+						messages.push(req.body);
+						io.emit('message', req.body);
+						res.sendStatus(200);
+					}
+				});
+			});
+			--------------------
+	- notice it updates on all browsers, and data is retained and shown after page refresh",,2020-08-07 06:12:17,systemUnknown
+127,Express,Create a Node/Express site with templates,3.5,"- pre-setup as node/git project
+	- make directory e.g. `nodeexpress3`
+	- enter with VSCode
+	- `npm init -y`
+	- `git init`
+	- `git add * && git commit -m ""first commit""`
+	- `npm i express`
+	- create `.gitignore`
+		----------------
+		node_modules
+		----------------
+	- GitHub: create `nodeexpress3`
+		- `git remote add origin https://github.com/edwardtanguay/nodeexpress3.git`
+		- `git push -u origin master`
+- setup as express site to send text
+	- create `server.js`
+		---------------------
+		const express = require('express');
+
+		const app = express();
+		const port = 3001;
+
+		app.get('/', (req, res) => {
+			res.send(""Hello express"");
+		});
+
+		app.listen(port, () => {
+			console.log(`Listening on port ${port}.`);
+		});
+		---------------------
+	- `node server.js`
+	- in browser: `http://localhost:3001`
+- setup to server files
+	- create: `static\test.htm`
+		----------------
+		This is a <b>test</b>.
+		----------------
+	- in server.js
+		- add: `const path = require('path');`
+		- change to: `res.sendFile(path.join(__dirname, './static/test.htm'));`
+	- or you can just server all files in the directory like this:
+		- add: `app.use(express.static(path.join(__dirname, './static')));`
+		- and you can remove the explicit serving of ""/""
+- setup ESLint
+	- `npm i -D eslint`
+	- `npx eslint --init`
+		- select: style, commonjs, node, airbnb, json
+		- your nnn file should look like this:
+			--------------------------
+			{
+				""env"": {
+					""browser"": true,
+					""commonjs"": true,
+					""es2020"": true
+				},
+				""extends"": [
+					""airbnb-base""
+				],
+				""parserOptions"": {
+					""ecmaVersion"": 11
+				},
+				""rules"": {
+				}
+			}
+			--------------------------
+- setup Prettier
+	- `npm i -D prettier eslint-config-prettier eslint-plugin-prettier`
+	- [[CTRL-,]], `format`, change Default Formatter to `esbenp.prettier-vscode`
+	- create `.prettierrc`:
+		---------------------
+		{
+			""trailingComma"": ""es5"",
+			""printWidth"": 100,
+			""singleQuote"": true
+		}
+		---------------------",$place=hm,2020-08-07 19:07:54,systemUnknown
+128,MongoDB,Manage MongoDB database at cloud.mongodb.com,3.5,"- use the mongoimport command
+	- download the MongoDB Database Tools at: https://www.mongodb.com/try/download/database-tools
+	- commands that didn't work:
+		- `mongoimport --username learn --password PASSWORD --host cluster0.hqjr5.mongodb.net --db nodebasics --collection games --file games.tsv --type tsv --headerline`
+			- didn't work: couldn't find server
+		- found this: `mongoimport --username joe --password secret1 mongodb://mongodb0.example.com:27017 --ssl`
+		- `mongoimport --username learn --password PASSWORD --host mongodb+srv://cluster0.hqjr5.mongodb.net:27017  --db nodebasics --collection games --file games.tsv --type tsv --headerline`
+			-  error parsing uri: must have at least 1 host
+		- `mongoimport --username learn --password PASSWORD --uri mongodb+srv://cluster0.hqjr5.mongodb.net:27017  --db nodebasics --collection games --file games.tsv --type tsv --headerline`
+			- error parsing command line options: error parsing uri: URI with srv must not include a port number
+		- `mongoimport --username learn --password PASSWORD --uri mongodb+srv://cluster0.hqjr5.mongodb.net --db nodebasics --collection games --file games.tsv --type tsv --headerline`
+			- Failed: open games.tsv: The system cannot find the file specified.
+	- put .exe folder into PATH, went to the director where the .tsv file was located
+	- this command worked:
+		- `mongoimport --username learn --password PASSWORD --uri mongodb+srv://cluster0.hqjr5.mongodb.net --db nodebasics --collection games --file games.tsv --type tsv --headerline`
+			- connected to: mongodb+srv://cluster0.hqjr5.mongodb.net
+			- 4 document(s) imported successfully. 0 document(s) failed to import.",,2020-08-08 02:26:59,systemUnknown
+129,Heroku,Set up Basic React App at Heroku,4.9,"- sign up for Heroku account
+	- https://signup.heroku.com
+	- free account
+- install the Heroku CLI
+	- https://devcenter.heroku.com/articles/heroku-cli
+		- says ""PATH not updated, original length 1300 > 1024""
+	- add to environment path: `C:\Program Files\heroku\bin`
+- use Heroku
+	- `heroku login`
+		- this will take you to a website where you will be automatically logged in
+- create simple node/express app
+	- decided against this as you need to make so many settings, trying create-react-app instead
+	- publish app
+		- `heroku create --remote production`
+			- ERROR `ENOENT: spawn git ENOENT`
+				- added path variable to `C:\Program Files\Git\bin`
+		- worked, reported these two urls:
+			- https://agile-cliffs-21831.herokuapp.com
+				- Heroku | Welcome to your new app!
+			- https://git.heroku.com/agile-cliffs-21831.git
+		- git remote -v
+			---------------------		
+			origin  https://github.com/edwardtanguay/nodedeploy.git (fetch)
+			origin  https://github.com/edwardtanguay/nodedeploy.git (push)
+			production      https://git.heroku.com/agile-cliffs-21831.git (fetch)
+			production      https://git.heroku.com/agile-cliffs-21831.git (push)
+			---------------------
+		- it seems to you need make many environment settings before it can be deployed, now trying create-react-app
+- publish app with `npx create-react-app`
+	- working from this: https://blog.heroku.com/deploying-react-with-zero-configuration
+	- `npx create-react-app nodedeployreact`
+	- `cd nodedeployreact'
+	- `npm start`
+	- VSCode
+		- App.js: ""Test"" in header
+		- App.css
+			------------------
+			.App {
+				text-align: left;
+			}
+
+			.App-header {
+				padding: 20px;
+				background-color: #282c34;
+				min-height: 100vh;
+				font-size: calc(10px + 2vmin);
+				color: white;
+			}
+			------------------
+	- Windows command line
+		- `heroku create -b https://github.com/mars/create-react-app-buildpack.git`
+			- says: `https://desolate-everglades-91774.herokuapp.com/ | https://git.heroku.com/desolate-everglades-91774.git`
+		- `git add .`
+		- `git commit -m ""react-create-app on Heroku""`
+		- `git push heroku master`
+			- 2 minutes
+		- `heroku open`
+	- rename
+		- in dashboard
+		- then in VSCode
+			- `git remote rm heroku`
+			- `heroku git:remote -a nodedeployreact`
+	- subsequent changes
+		- make changes
+		- `git add .`
+		- `git commit -m ""commit message""`
+		- `git push heroku master`",,2020-08-09 12:05:03,systemUnknown
+131,Heroku,Get simple Node.js app running at Heroku,4.9999,"- working through: https://devcenter.heroku.com/articles/deploying-nodejs
+- create local node app
+	- set up project
+		- directory: `nodeheroku`
+		- `cd nodeheroku`
+		- `npm init -y`
+		- `git init`
+		- `npm i express`
+	- create and run node web app
+		- server.js
+			-----------------------
+			const express = require('express');
+
+			const app = express();
+			const port = 3001;
+
+			app.use('/', (req, res) => {
+				res.send('this is a node app');
+			});
+			app.listen(process.env.PORT || port, () => {
+				console.log(`Listening at: http://localhost:${port}`);
+			}); 
+			-----------------------
+		- `node server.js`
+		- in browser, go to: `https://localhost:3001`
+			- prepare node app for Heroku
+				- package.json, add:
+					----------------
+					""engines"": {
+						""node"": ""14.x""
+					}
+					----------------
+				- `Procfile`:
+					---------------------
+					web: node server.js
+					---------------------
+				- `heroku local web`
+			- deploy to Heroku
+				- `.gitignore`:
+					---------------------
+					/node_modules
+					npm-debug.log
+					.DS_Store
+					/*.env
+					---------------------
+				- `git add .`
+				- `git commit -m ""first commit""`
+				- `heroku login`
+				- `heroku create`
+				- `git push heroku master`
+			- customize URL
+				- in dashboard: https://dashboard.heroku.com/apps
+					- click app
+					- Settings
+					- change name, e.g. `etnode1` (ignore warnings)
+				- then in VSCode
+					- `git remote rm heroku`
+					- `heroku git:remote -a etnode1`
+			- add Mongo access
+				- load packages
+					- `npm i body-parser`
+					- `npm i mongoose`
+					- `npm i socket.io`
+				- replace app.js:
+					----------------------
+			const express = require('express');
+			const bodyParser = require('body-parser');
+			const mongoose = require('mongoose');
+
+			const app = express();
+			const http = require('http').Server(app);
+			const io = require('socket.io')(http);
+			const port = 3001;
+
+			const dbUrl = `mongodb+srv://learn:PASSWORD@cluster0.hqjr5.mongodb.net/nodebasics?retryWrites=true&w=majority`;
+
+			const Message = mongoose.model('Message', {
+				name: String,
+				text: String
+			});
+
+			app.get('/', (req, res) => {
+				Message.find({}, (err, messages) => {
+					res.send(messages.map(m => m.name).join(', '));
+				});
+			});
+
+			mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+				if (err) {
+					console.log('mongo db connection error:', err);
+				}
+				console.log('mongo db connection: success');
+
+				const server = http.listen(process.env.PORT || port, () => {
+					console.log(`Listening on port ${server.address().port}...`);
+				});
+			});
+		----------------------",$place=hm,2020-08-09 15:57:55,systemUnknown
+132,Heroku,Get Node.js app connecting to Mongo running at Heroku,4.9999,"- working through: https://devcenter.heroku.com/articles/deploying-nodejs
+- create local node app
+	- set up project
+		- directory: `nodeheroku`
+		- `cd nodeheroku`
+		- `npm init -y`
+		- `git init`
+		- `npm i express`
+- create and run node web app
+	- server.js
+		-----------------------
+		const express = require('express');
+
+		const app = express();
+		const port = 3001;
+
+		app.use('/', (req, res) => {
+			res.send('this is a node app');
+		});
+		app.listen(process.env.PORT || port, () => {
+			console.log(`Listening at: http://localhost:${port}`);
+		}); 
+		-----------------------
+	- `node server.js`
+	- in browser, go to: `https://localhost:3001`
+- upload app to Heroku
+	- prepare node app for Heroku
+		- package.json, add:
+			----------------
+			""engines"": {
+				""node"": ""14.x""
+			}
+			----------------
+		- `Procfile`:
+			---------------------
+			web: node server.js
+			---------------------
+		- `heroku local web`
+	- deploy to Heroku
+		- `.gitignore`:
+			---------------------
+			/node_modules
+			npm-debug.log
+			.DS_Store
+			/*.env
+			---------------------
+		- `git add .`
+		- `git commit -m ""first commit""`
+		- `heroku login`
+		- `heroku create`
+		- `git push heroku master`
+	- customize URL
+		- in dashboard: https://dashboard.heroku.com/apps
+			- click app
+			- Settings
+			- change name, e.g. `etnode1` (ignore warnings)
+		- then in VSCode
+			- `git remote rm heroku`
+			- `heroku git:remote -a etnode1`
+	- run Heroku app
+		- `heroku open`
+- add Mongo access
+	- load packages
+		- `npm i body-parser`
+		- `npm i mongoose`
+		- `npm i socket.io`
+	- replace app.js:
+		----------------------
+		const express = require('express');
+		const bodyParser = require('body-parser');
+		const mongoose = require('mongoose');
+
+		const app = express();
+		const http = require('http').Server(app);
+		const io = require('socket.io')(http);
+		const port = 3001;
+
+		const dbUrl = `mongodb+srv://learn:PASSWORD@cluster0.hqjr5.mongodb.net/nodebasics?retryWrites=true&w=majority`;
+
+		const Message = mongoose.model('Message', {
+			name: String,
+			text: String
+		});
+
+		app.get('/', (req, res) => {
+			Message.find({}, (err, messages) => {
+				res.send(messages.map(m => m.name).join(', '));
+			});
+		});
+
+		mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+			if (err) {
+				console.log('mongo db connection error:', err);
+			}
+			console.log('mongo db connection: success');
+
+			const server = http.listen(process.env.PORT || port, () => {
+				console.log(`Listening on port ${server.address().port}...`);
+			});
+		});
+		------------------------
+	- commit changes and `git push heroku master`
+- add web sockets
+	- `heroku features:enable http-session-affinity`
+	- replace server.js:
+		------------------------------
+		const express = require('express');
+		const bodyParser = require('body-parser');
+		const mongoose = require('mongoose');
+
+		const app = express();
+		const http = require('http').Server(app);
+		const io = require('socket.io')(http);
+		const port = 3001;
+
+		app.use(express.static(__dirname));
+		app.use(bodyParser.json());
+		app.use(bodyParser.urlencoded({ extended: false }));
+
+		const dbUrl = `mongodb+srv://learn:PERSON@cluster0.hqjr5.mongodb.net/nodebasics?retryWrites=true&w=majority`;
+
+		const Message = mongoose.model('Message', {
+			name: String,
+			text: String
+		});
+
+		app.get('/messages', (req, res) => {
+			Message.find({}, (err, messages) => {
+				res.send(messages);
+			});
+		});
+
+		app.post('/messages', (req, res) => {
+			const message = new Message(req.body);
+			message.save((err) => {
+				if (err) {
+					sendStatus(500);
+				} else {
+					io.emit('message', req.body);
+					res.sendStatus(200);
+				}
+			});
+		});
+
+		io.on('connection', (socket) => {
+			console.log('a user connected');
+		});
+
+		mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+			if (err) {
+				console.log('mongo db connection error:', err);
+			}
+			console.log('mongo db connection: success');
+
+			const server = http.listen(process.env.PORT || port, () => {
+				console.log(`Listening at http://localhost:${server.address().port}...`);
+			});
+		});
+		------------------------------
+- try hosting at netlify
+	- push to GitHub account
+	- add to netlify
+	- doesn't work, can't load: socket.io/socket.io.js
+		- ""The answer to this question is actually no. No server side processing is supported at Netlify.""",$place=hm,2020-08-09 16:04:12,systemUnknown
+133,AWS,Create Node.js app and deploy on AWS Elastic Beanstalk,3.5,"- setup (should only have to do this once)
+	- get the awsebcli tools if you don't have them:
+		- https://docs.aws.amazon.com/console/elasticbeanstalk/eb-cli-install
+		- `git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git`
+		- `.\bundled_installer`
+			- if error: ModuleNotFoundError: No module named 'virtualenv'
+			- `pip uninstall -y virtualenv`
+			- `pip install virtualenv` (as administrator)
+			- `python .\aws-elastic-beanstalk-cli-setup\scripts\ebcli_installer.py`
+	- set up user if you haven't (I didn't need these codes)
+		- IAM
+		- add user: NodeDeploy
+			- programmatic access
+			- attach existing policies directory
+			- search ""beanstalk""
+			- full access
+- make Node.js app	
+	- make directory: `awsnodeapp`
+	- `npm init -y`
+	- `git init`
+	- `npm i express`
+	- `.gitignore`: node_modules
+	- `.server.js`:
+		--------------------
+		const express = require('express');
+
+		const app = express();
+		const port = 3001;
+
+		app.use(express.static(__dirname));
+		app.listen(process.env.PORT || port);
+		--------------------
+	- `index.html`
+		---------------------
+		This is a <b>test Node/Express site</b>.
+		---------------------
+- test app
+	- package.json	
+		---------------------
+		""start"": ""node server.js""
+		---------------------
+	- `npm start`
+- check into local Git
+	- `git add .`
+	- `git commit -m ""first commit""`
+- push application to cloud
+	- PowerShell
+	- `eb init`
+		- answer all, no CodeCommit
+	- `eb create prod --instance_type t2.micro --platform Node.js`
+	- `eb console`
+		- Applications
+		- click on app
+		- click on url, e.g.: http://prod2.eba-hhthceph.eu-central-1.elasticbeanstalk.com",$place=hm,2020-08-09 20:07:51,systemUnknown
+134,Azure,How put publish a Node app at Azure as a Webapp,4.8,"- create Webapp online
+	- https://portal.azure.com
+	- (three line icon)
+	- Create a Resource
+	- Web App
+	- firstAppWeb-rg
+	- `et-socket-test`
+	- Code
+	- Node 12 LTS
+	- Linux
+	- Central US (so you can get the free tier)
+	- Gratuit F1
+	- [[Create]]
+- visit created site
+	- e.g. https://et-socket-test.azurewebsites.net
+	- [[Development Center]]
+	- Local Git
+	- Build Service (left)
+	- [[Finish]]
+- create Node App locally
+	- in webs, create directory `et-socket-test`
+- make Node.js app	
+	- make directory: `awsnodeapp`
+	- `npm init -y`
+	- `git init`
+	- `npm i express`
+	- `.gitignore`: node_modules
+	- `.server.js`:
+		--------------------
+		const express = require('express');
+
+		const app = express();
+		const port = 3001;
+
+		app.use(express.static(__dirname));
+		app.listen(process.env.PORT || port);
+		--------------------
+	- `index.html`
+		---------------------
+		This is a <b>test Node/Express site</b>.
+		---------------------
+- test local app
+	- package.json	
+		---------------------
+		""start"": ""node server.js""
+		---------------------
+	- `npm start`
+- check into local Git
+	- `git add .`
+	- `git commit -m ""first commit""`
+- publish to Azure
+	- find git address
+		- MAIN > et-socket-test > properties > https://etuser001:et-socket-test.scm.azurewebsites.net/et-socket-test.git
+	- `git remote add azure https://etuser001:et-socket-test.scm.azurewebsites.net/et-socket-test.git` 
+	- `git push --set-upstream azure master`
+		- !! gets error: fatal: unable to access 'https://etuser001:et-socket-test.scm.azurewebsites.net/et-socket-test.git/': Port number ended with 'e'
+		- )) fix error
+	- `git push azure_web`",$place=hm,2020-08-10 00:20:49,systemUnknown
+135,React,Create an Node/Express/React site from scratch,3.5,"- see this similar howto article with [this tutorial](jscomplete.com/reactful)
+- my finished code here: https://github.com/edwardtanguay/mongonodereact
+- Basic setup
+	- `npm init -y`
+	- `git init`
+	- push to GitHub
+		- `.gitignore`: node_modules
+- dependencies
+	- `npm i express`
+	- `npm i mongodb`
+	- `npm i react react-dom`
+	- `npm i prop-types` (improves React)
+- devDependencies
+	- `npm i -D webpack webpack-cli`
+	- `npm i -D babel-loader @babel/cli @babel/core @babel/preset-env @babel/preset-react @babel/plugin-proposal-class-properties @babel-node`
+	- `npm i -D eslint babel-eslint eslint-plugin-react`
+- pre-setup
+	- make directory structure
+		- `/src/index.js`
+		- `/public/index.html`
+		- `/api/index.js`
+	- package.json
+		- `""start"": ""nodemon --exec babel-node server.js --public/""`
+		- `""dev"": ""webpack -wd""`
+	- create `webpack.config.js`
+		---------------------------
+		const path = require('path');
+
+		module.exports = {
+			entry: './src/index.js',
+			output: {
+				path: path.resolve('public'),
+				filename: 'bundles.js'
+			},
+			module: {
+				rules: [
+					{
+						test: /\.js$/,
+						exclude: /node_modules/,
+						user: {
+							loader: 'babel-loader'
+						}
+					}
+				]
+			}
+		};
+		---------------------------
+	- create `babel.config.js`
+		------------------------------
+		module.exports = {
+			presets: ['@babel/react', '@babel/env'],
+			plugins: ['@babel/plugin-proposal-class-properties']
+		};
+		------------------------------
+	- create `eslintrc.js`
+		-------------------------
+		module.exports = {
+			parser: 'babel-eslint',
+			env: {
+				browser: true,
+				commonjs: true,
+				es6: true,
+				node: true,
+				jest: true
+			},
+			extends: ['eslint:recommended', 'plugin:react/recommended'],
+			parserOptions: {
+				ecmaFeatures: {
+					jsx: true
+				},
+				sourceType: 'module'
+			},
+			plugins: ['react'],
+			rules: {
+				indent: ['error', 'tab'],
+				quotes: ['error', 'single'],
+				semi: ['error', 'always'],
+				'no-console': ['warn', { allow: ['clear', 'info', 'error', 'dir', 'trace'] }],
+			}
+		};
+		-------------------------
+	- Babel check
+		- execute module
+			- `config.js`:
+				---------------------
+				console.log('config');
+				---------------------
+			- `server.js`:
+				----------------------
+				import './config';
+				----------------------
+			- `./node_modules/.bin/babel-node server.js`
+		- import functions
+			- `qstr.js`:
+				---------------------
+				export const putInBrackets = (message) => {
+					return `[${message}]`;
+				};
+				---------------------
+			- `server.js`:
+				----------------------
+				import * as qstr from './qstr';
+
+				console.log(qstr.putInBrackets('nnn'));
+				----------------------
+			- `./node_modules/.bin/babel-node server.js`
+- setup Express server
+	- config.js
+		-------------------------
+		const env = process.env;
+
+		export default {
+			port: env.PORT || 3001
+		};
+		-------------------------
+	- server.js
+		---------------------------
+		import config from './config';
+
+		import express from 'express';
+		const server = express();
+
+		server.get('/', (req, res) => {
+			res.send('on browser2 <a href=""about"">about</a>.');
+		});
+		server.get('/about', (req, res) => {
+			res.send('about page');
+		});
+
+		server.listen(config.port, () => {
+			console.log('Express listening on port', config.port);
+		});
+		---------------------------
+	- check it with `curl http://localhost:3001`
+	- change server.js to server HTML from /public
+		--------------------
+		import config from './config';
+
+		import express from 'express';
+		const server = express();
+
+		server.use(express.static('public'));
+
+		server.listen(config.port, () => {
+			console.log('Express listening on port', config.port);
+		});
+		--------------------
+- setup Express templating
+	- `npm i ejs`
+	- create `views` folder
+	- add to server.js
+		-------------------------------
+		import config from './config';
+
+		import express from 'express';
+		const server = express();
+
+		server.set('view engine', 'ejs');
+		server.set('views', './views');
+
+		server.get('/', (req, res) => {
+			res.render('index.ejs', {
+				userName: 'Dirk Baumer',
+				htmlContent: 'This is a <b>description</b>.'
+			});
+		});
+
+		server.use(express.static('public'));
+
+		server.listen(config.port, () => {
+			console.info('Express listening on port', config.port);
+		});
+		-------------------------------
+	- /views/header.js
+		------------------------
+		<!DOCTYPE html>
+		<html lang=""en"">
+
+		<head>
+			<meta charset=""utf-8"">
+			<title>EJS Test</title>
+		</head>
+
+		<body>
+			<h3>Site</h3>
+			<hr />
+		------------------------
+	- /views/footer.js
+		------------------------
+		<hr/>
+		<code>The First Site</code>
+		</body>
+
+		</html>
+		------------------------
+	- /views/index.js
+		------------------------
+		<%- include('header') %>
+		<div>
+			Name: <%= userName %>
+		</div>
+		<div>
+			HTML encoded: <%=htmlContent%>
+		</div>
+		<div>
+			HTML rendered: <%-htmlContent%>
+		</div>
+		<div>
+			Random number: <%= Math.floor(Math.random() * 100) + 1 %>
+		</div>
+		<%- include('footer') %>
+		------------------------",$place=hm,2020-08-10 21:25:10,systemUnknown
+136,webpack,Setup simple website which uses webpack to convert SASS to CSS,4.5,"- working through [this tutorial](https://dev.to/pixelgoo/how-to-configure-webpack-from-scratch-for-a-basic-website-46a5)
+- cloned this: https://github.com/pixelgoo/simple_webpack_boilerplate
+	- it works and does SASS-CSS conversion
+	- uploaded to netlify: 
+		- it doesn't work: https://sasswebpack2.netlify.app
+		- but the .css file is there: https://sasswebpack2.netlify.app/bundle.css
+		- that it because there is no index.html in the dist build
+		- getting webconfig to copy index.html
+			- https://stackoverflow.com/questions/42499327/how-can-i-move-index-html-when-using-webpack
+			- worked: in build script add `&& cp src/index.html build/index.html`
+		- get site be easily edited locally and in dist, and complex SASS working 
+			- get copiable in webpack
+				- https://www.npmjs.com/package/copy-webpack-plugin
+					- `npm i -D copy-webpack-plugin`
+					- took out: ""dev"": ""cp src/html/* dist && webpack -wd --config webpack.config.js"",					
+		- x make howto for copying static files in Webpack
+- the full code can be found at: https://github.com/edwardtanguay/sasswebpack2
+- %% this code works as-is at Netlify, and is available: https://sasswebpack2.netlify.app
+- issues
+	- it won't work at 5500 anymore
+		- not sure where it got port 5500, but I have this in my bookmarks and was using it
+		- searched 5500 in all files, found nothing
+		- RESOLVED: this turned out to be **Live Server**",$place=hm,2020-08-13 15:09:04,systemUnknown
+137,SASS,Add SASS to custom React install on Webpack,3.5,"- `npm i -D sass sass-loader postcss-loader mini-css-extract-plugin css-loader`
+- add to `webpack.config.js` to top:
+	---------------------
+	const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+	---------------------
+- add to `webpack.config.js` under **rules**:
+	-----------------------------
+	{
+		test: /\.(sa|sc|c)ss$/,
+		use: [
+			{
+				loader: MiniCssExtractPlugin.loader
+			},
+			{
+				loader: 'css-loader',
+			},
+			{
+				loader: 'postcss-loader'
+			},
+			{
+				loader: 'sass-loader',
+				options: {
+					implementation: require('sass')
+				}
+			}
+		]
+	}
+	-----------------------------
+- it's not clear how the React app is going to use sass, e.g. what files will be copied to /public so that they can run without node",$place=hm,2020-08-13 16:40:50,systemUnknown
+138,React,How to extend ESLint in a create-react-app site,4.9,"- working through [this article](https://medium.com/@pppped/extend-create-react-app-with-airbnbs-eslint-config-prettier-flow-and-react-testing-library-96627e9a9672)
+- `npm i -D eslint-config-airbnb eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier prettier`
+- created this `.eslintrc` file:
+	---------------------------
+	{
+		""extends"": [
+			""react-app"",
+			""airbnb"",
+			""plugin:jsx-a11y/recommended"",
+			""prettier"",
+			""prettier/react""
+		],
+		""plugins"": [""jsx-a11y"", ""prettier""],
+		""rules"": {
+			""quotes"": [""error"", 'single'],
+			""semi"": [""error"", ""always""],
+			""import/no-unresolved"": ""off"",
+			""import/extensions"": [
+				""error"",
+				""ignorePackages"",
+				{
+					""js"": ""never"",
+					""jsx"": ""never"",
+					""ts"": ""never"",
+					""tsx"": ""never""
+				}
+			],
+			""import/no-self-import"": ""allow"",
+		}
+	}
+	---------------------------
+- asked this question: https://stackoverflow.com/questions/63420472/why-is-this-eslint-override-file-in-a-create-react-app-not-finding-errors
+- installing the ESLint command line
+	- instructions: https://eslint.org/docs/user-guide/command-line-interface
+	- `npm i -g eslint`
+		- eslint can't be executed
+	- https://stackoverflow.com/questions/60290876/create-react-app-how-to-set-extend-eslint-to-true
+	- https://dev.to/benweiser/how-to-set-up-eslint-typescript-prettier-with-create-react-app-3675
+- this found many errors: `./node_modules/.bin/eslint --fix src/**`
+	- got unexpected token: `$frame_background_color: #ddd;`
+		- `npm i stylelint-scss`
+		- try again: same error
+- )) Next step: get very basic eslint working manually, then transfer over
+	- )) find out why after installing globally, you still have to use `./node_modules/.bin/eslint --fix src/**`",,2020-08-17 06:53:02,systemUnknown
+139,ESLint,Get ESLint working in simple example from command line,3.5,"- new directory
+- `npm init -y`
+- `npm i -g eslint`
+	- `eslint` then works
+- trying in react site
+	- `eslint --init`
+	- it asks questions then installs everything
+- .eslintignore - these give warnings now
+	--------------------------
+	*.scss
+	src/serviceWorker.js
+	--------------------------
+- )) continue with getting VSCode extension to work",$place=hm,2020-08-18 06:43:53,systemUnknown
+140,Node,"Fix problem when doing ""npm install"": ""npm ERR cb() never called""",3.5,"- worked through [this Stackoverflow question](https://stackoverflow.com/questions/15393821/npm-err-cb-never-called)
+	- `npm cache clean -f`
+	- `npm install -g n`
+		- Unsupported platform for n@6.7.0: wanted {""os"":""!win32"",""arch"":""any""} (current: {""os"":""win32"",""arch"":""x64""})
+		- node 
+			- version that fails: 14.2.0
+			- version that works: 10.15.3
+			- current version available: 14.8.0
+		- npm 
+			- version that fails: 6.14.4
+			- version that works: 6.4.0
+			- current version available: 6.14.7
+		- trying to compile tech
+			- works, compiled in bash
+		- trying to compile base
+			- works, compiled in bash
+		- installing again as before
+			- it worked
+	- %% the problem was the **slow Internet connection**",$place=hm,2020-08-20 20:10:51,systemUnknown
+141,vscode,Learn how to debug in VSCode in many environments,3.5,"- simple debugging [howto](howtos?id=193)
+- figure out how to debug in create-react-app, start [here](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial)
+	- explicitly in OneSpace",,2020-08-31 15:08:28,systemUnknown
+142,PHP,100 PHP Questions and Answers,3.5,"- sources
+	- https://www.codementor.io/blog/php-interview-questions-answers-du1080ext
+- **1. What’s the difference between the include() and require() functions?**
+	- both include a file, but if not found, require() will not execute any more commands",$place=hm,2020-09-05 13:12:35,systemUnknown
+143,JavaScript,100 JavaScript Questions and Answers,3.5,"- sources
+	- https://www.codementor.io/@nihantanu/21-essential-javascript-tech-interview-practice-questions-answers-du107p62z
+- **1. What is the difference between `undefined` and `not defined`?**
+	- A variable that is declared (`var x;`) but not defined, will be of type `undefined`. A variable that is not yet even declared, will also be of type `undefined` but if used, it will give an error that it is not defined.
+		-----------------------
+		var x;
+		let y = 12;
+		let s = '';
+
+		y = 3 + z; // ReferenceError: z is not defined
+
+		y = 3 + x;
+		console.log(y); // NaN
+
+		s += x;
+		console.log(s); // undefined
+
+		console.log(typeof x); // undefined
+		console.log(typeof y); // number
+		console.log(typeof z); // undefined
+		-----------------------
+- **2. What is hoisting?**
+	- Hoisting meaning variables and function declarations are moved to the top of their scope before code execution. Note that JavaScript only hoists declarations, not initializations.
+		-----------------------
+		console.log(num); // Returns undefined, as only declaration was hoisted
+		var num; // Declaration will be hoisted
+		//num = 6; // Initialization will not be hoisted
+
+		console.log(doit2());
+
+		function doit() { // will be hoisted
+			return 5;
+		}
+
+		const doit2 = () => { // will not be hoisted
+			return 6;
+		}
+		-----------------------
+- **3. Explain closures
+	- The point here is that outerParam is `outer`, not `outer-2`
+		---------------------------
+		var globalVar = ""global"";
+		var outerVar = ""outer""
+
+		function outerFunc(outerParam) {
+			function innerFunc(innerParam) {
+				console.log(globalVar, outerParam, innerParam);
+			}
+			return innerFunc;
+		}
+
+		const x = outerFunc(outerVar);
+		outerVar = ""outer-2"";
+		globalVar = ""guess""
+		x(""inner"");
+		---------------------------",$place=hm,2020-09-05 16:48:02,systemUnknown
+144,ES6,100 ES6 Questions and Answers,3.5,"- sources
+	- https://exploringjs.com/es6/ch_overviews.html
+- **1. What are the new features in ES6?**
+	- 1. let and const declaration, 2. default parameters, 3. arrow functions, 4. template literals, 5. object literals, 6. spread operators and rest parameters, 7. destructuring assignment, 8. modules, 9. classes, 10. iterators/generators, 11. promises/async/await, 12. Set, 13. Map, 14. Symbol, 15. for..in / for..of / forEach, 16. map(), filter(), find(), reduce(), 17. every() / some(), 18. include() / search()",$place=hm,2020-09-05 17:51:52,systemUnknown
+145,MySQL,100 MySQL Questions and Answers,3.5,"- sources
+	- https://career.guru99.com/top-50-mysql-interview-questions-answers/
+- **1. Differentiate between FLOAT and DOUBLE? **
+	- Doubles are just like floats, except for the fact that they are twice as large. This allows for a greater accuracy.
+- **2. Differentiate CHAR_LENGTH and LENGTH**
+	- CHAR_LENGTH is character count whereas the LENGTH is byte count. The numbers are same for Latin characters but they are different for Unicode and other encodings.
+- **3. What are the different kinds of tables?**
+	- **INNO DB** - SELECT wird schneller ausgeführt, as of MySQL 5.5 the default storage engine, InnoDB has row-level locking. MyISAM only has full table-level locking
+	- **MyISAM** - Häufiger genutzt und gängigster Standard 
+	- **Heap** - refers to a table created with the MEMORY storage engine, the MEMORY storage engine does not persist any data to disk; it holds data in RAM
+	- **Merge** - when you create a MERGE table, MySQL creates a . MRG file on disk that contains the names of the underlying MyISAM tables that should be used as one.
+	- **ISAM** - The original storage engine in MySQL was the ISAM engine, the only storage engine available until MySQL 3.23, Due to the deprecated status of ISAM, and because MyISAM is an improvement over ISAM, you are advised to convert any remaining ISAM tables to MySAM as soon as possible.",$place=hm,2020-09-08 01:05:49,systemUnknown
+146,Jenkins,Install Jenkins on Ubuntu,3.5,"- <H|If you just want to install Jenkins quickly, skip down to the sections labeled ""These instructions work""|H>
+- prepare to install Jenkins
+	- `sudo su -`
+	- install Java: 
+		- `apt-get -y install openjdk-8-jdk`
+	- `wget -q -O - http://pkg.jenkins-ci.org/debian-stable/jenkins-ci.org.key | apt-key add -`
+	- `sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'`
+	- `apt-get update && apt-get upgrade -y`
+- install Jenkins
+	- `sudo apt-get install jenkins`
+	- `sudo service jenkins start`
+- in browser:
+	- `http://localhost:8080`
+		- failed: unable to connect
+- VARIOUS: might be helpful
+	- firewall commands
+		------------------
+		sudo ufw allow 8080
+		sudo ufw status
+		sudo ufw enable
+		------------------
+- installing on Ubuntu Server
+	- `apt-get -y install openjdk-8-jdk`
+	- `wget -q -O - http://pkg.jenkins-ci.org/debian-stable/jenkins-ci.org.key | apt-key add -`
+	- `sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'`
+	- `sudo apt-get install jenkins`
+	- `sudo apt-get install Jenkins`
+		- unable to locate
+	- `sudo apt update`
+	- `sudo apt install Jenkins`
+		- unable to locate
+	- OK, NOW TRYING THIS: https://phoenixnap.com/kb/install-jenkins-ubuntu
+		- `wget –q –O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add –`
+			- said it couldn't add ""-""
+		- `sudo nano /etc/apt/sources.list` and add at end:
+			--------------------------
+			#  Jenkins software repository
+			deb https://pkg.jenkins.io/debian binary
+			--------------------------
+		- save with CTRL-O, enter, CTRL-X
+		- `sudo apt update`
+			- malformed entry 51 in list file /etc/apt/sources.list (the line we just added)
+		- `sudo apt install Jenkins`
+			- malformed entry 51 in list file /etc/apt/sources.list (the line we just added)
+- TRYING AGAIN:
+	- https://linuxize.com/post/how-to-install-jenkins-on-ubuntu-18-04/
+	- (install Java)
+	- `wget -q -O - http://pkg.jenkins-ci.org/debian-stable/jenkins-ci.org.key | apt-key add -`
+		- ok
+	- `sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'`
+	- `sudo apt update`
+		-----------------------------
+		Hit:1 http://de.archive.ubuntu.com/ubuntu focal InRelease
+		Hit:2 http://de.archive.ubuntu.com/ubuntu focal-updates InRelease
+		Hit:3 http://de.archive.ubuntu.com/ubuntu focal-backports InRelease
+		Hit:4 http://de.archive.ubuntu.com/ubuntu focal-security InRelease
+		Ign:5 https://pkg.jenkins.io/debian-stable binary/ InRelease
+		Get:6 https://pkg.jenkins.io/debian-stable binary/ Release [2,044 B]
+		Get:7 https://pkg.jenkins.io/debian-stable binary/ Release.gpg [833 B]
+		Ign:7 https://pkg.jenkins.io/debian-stable binary/ Release.gpg
+		Reading package lists... Done
+		W: GPG error: https://pkg.jenkins.io/debian-stable binary/ Release: The following signatures couldn't 
+		be verified because the public key is not available: NO_PUBKEY FCEF32E745F2C3D5
+		E: The repository 'http://pkg.jenkins.io/debian-stable binary/ Release' is not signed.
+		N: Updating from such a repository can't be done securely, and is therefore disabled by default.      
+		N: See apt-secure(8) manpage for repository creation and user configuration details.
+		-----------------------------
+	- `sudo apt install jenkins`
+		----------------------------------
+		root@ubuntu-server:~# sudo apt install jenkins
+		Reading package lists... Done
+		Building dependency tree       
+		Reading state information... Done
+		Package jenkins is not available, but is referred to by another package.
+		This may mean that the package is missing, has been obsoleted, or
+		is only available from another source
+		E: Package 'jenkins' has no installation candidate
+		----------------------------------
+	- Asked Server Fault question: [Installing Jenkins on Ubuntu tells me: Package jenkins has no installation candidate](https://serverfault.com/questions/1034893/installing-jenkins-on-ubuntu-tells-me-package-jenkins-has-no-installation-can)
+		- reinstalling based on answer to above question
+		- <H|These instructions work:|H>
+		- install Java: `apt-get -y install openjdk-8-jdk` (version 14)
+		- import GPG key (GNU Privacy Guard): `wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -`
+			- OK
+		- add file and line for importing: `sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'`
+		- `sudo apt update`
+			---------------------
+			Ign:1 https://pkg.jenkins.io/debian-stable binary/ InRelease
+			Get:2 https://pkg.jenkins.io/debian-stable binary/ Release [2,044 B]
+			Get:3 https://pkg.jenkins.io/debian-stable binary/ Release.gpg [833 B]
+			Get:4 https://pkg.jenkins.io/debian-stable binary/ Packages [18.4 kB]
+			Hit:5 http://de.archive.ubuntu.com/ubuntu focal InRelease
+			Hit:6 http://de.archive.ubuntu.com/ubuntu focal-updates InRelease
+			Hit:7 http://de.archive.ubuntu.com/ubuntu focal-backports InRelease
+			Hit:8 http://de.archive.ubuntu.com/ubuntu focal-security InRelease
+			Fetched 21.3 kB in 1s (21.3 kB/s)
+			Reading package lists... Done
+			Building dependency tree       
+			Reading state information... Done
+			2 packages can be upgraded. Run 'apt list --upgradable' to see them.
+			---------------------
+		- `sudo apt install jenkins`
+			- %% Jenkins installed (once we had correct GPG key)
+- Installing again on Ubuntu with GUI:
+	- <H|These instructions work, and show you how to set up Jenkins:|H>
+	- install Java: `sudo apt-get -y install openjdk-8-jdk` (version openjdk 1.8.0_265)
+	- import GPG key (GNU Privacy Guard): `wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -`
+		- OK
+	- add file and line for importing: `sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'`		
+	- `sudo apt update`
+	- `sudo apt install jenkins`
+	- browser: http://localhost:8080
+		- shows *Unlock Jenkins* page
+		- `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
+		- type in password
+		- install suggested plugins
+		- create admin user (for testing): test, test, Admin, (no e-mail, actually it hung, so I typed in an e-mail and it worked)
+		- keep suggested URL: localhost:8080",$place=hm,2020-09-09 16:16:06,systemUnknown
+147,Hyper-V,Get an Ubuntu machine running in Hyper-V,3.5,"- Actions: Quick create
+- Ubuntu 20.04
+	- this didn't work
+- finding a new machine
+	- https://ubuntu.com/download/desktop
+	- download as `.iso` file
+- New > Virtual Computer
+	- accept all defaults 
+		- EXCEPT on network card, change ""not connected"" to ""default switch""
+	- last step: find and click on .iso file
+	- install operating system
+	- restart
+	- it says: ""please remove the installation medium""
+		- click on the ""switch off"" button (black square in circle)
+		- then restart
+	- this restart shows a black screen for 30 seconds or so, just wait
+- log in
+- set up file sharing
+	- skip this first, but it may be necessary:
+		- https://linuxhint.com/shared_folders_hypver-v_ubuntu_guest/
+		- in windows, search for ""Turn Windows Features on or off""
+			- turn on both SMB services
+			- OK and reboot
+			- turn on sharing in ""Advanced sharing settings""
+	- in Windows, get ip with `ipconfig`
+	- in Ubuntu, goto e.g.: `http://192.168.47.1/share.txt`
+- change background 
+	- https://www.pixelstalk.net/solid-color-hd-wallpapers
+	- save file
+	- right click, set as background graphic
+- make small icons on left
+	- settings > appearance > icon size > 30
+- customize
+	- icons: delete everything but firefox, files, and ubuntu software
+	- add terminal: bottom dots icon, right-click terminal, add to favorites
+- %% everything installed",$place=hm,2020-09-10 00:51:21,systemUnknown
+148,PHP,"Get Ubuntu working as developer web server and connected to Windows with Apache, MySQL, PHP, MySQL Workbench, WinSCP, DB Browser for SQLite",4.98,"- install Ubuntu as virtual machine
+	- as minimal
+- install Apache
+	- `sudo apt-get update`
+	- `sudo apt-get install apache2`
+		- hm: first had to type:
+			- `sudo dpkg --configure -a`
+			- `sudo apt --fix-broken install`
+	- `sudo service apache2 start`
+	- in browser: `http://localhost`
+		- worked: wk, hm
+	- wk, hm
+		- from virtual-pc can access websites on host
+	- getting host ot access virtual-pc
+		- https://stackoverflow.com/questions/15579216/how-to-access-a-web-server-installed-on-hyper-v
+		- https://www.andrewconnell.com/allowing-a-host-machine-to-talk-to-guest-vms-in-hyper-v/
+		- couldn't get this to work
+- install PHP
+	- `sudo apt-get install php libapache2-mod-php php-mysql`
+	- `sudo service apache2 restart`
+	- `cd /var/www/html`
+	- `sudo nano phpinfo.php`
+		-----------------
+		<?php
+		phpinfo();
+		-----------------
+	- in browser: `http://localhost/phpinfo.php`
+- install mysql
+	- `sudo apt-get install mysql-server`
+	- `sudo mysql_secure_installation utility`
+		- y for validate passwords
+		- 0 for low
+		- enter password: ""rootroot"" (for testing)
+		- y to accept the password
+		- then enter (no) for all remaining questions
+	- turn on password authentication
+		- `sudo mysql`
+		- `select user, authentication_string from mysql.user;`
+		- `alter user root@localhost identified with mysql_native_password by 'rootroot';`
+		- `flush privileges;`
+		- `exit`
+		- `mysql -u root -p`
+- install MySQL Workbench
+	- `sudo apt-get install mysql-workbench`
+		- ERROR: Unable to locate package mysql-workbench
+		- 2020-09: no answers worked, seemed to have been taken down
+	- http://dev.mysql.com/downloads/workbench
+		- choose software installer: Failed to install file: not supported
+	- Ubuntu Software
+		- (add to favorites)
+		- search: `workbench`
+		- select: Mysql Workbench Community
+			- (it installed but made the screen resolution smaller, manually changed it back)
+		- add workbench to favorites
+	- start workbench
+		- click 3306 box
+			- error: ""Your connection attempt failed for user root to the MySQL server at localhost:3306""
+				- this fixed it: `sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service`
+		- fix font problem: all characters in query window as I type are boxes
+			- https://stackoverflow.com/questions/63696603/display-errors-in-mysql-workbench
+			- this fixed the font problem (apparently a problem in Ubuntu 20.04)
+				-----------------------
+				rm -rf ~/.cache/fontconfig 
+				sudo fc-cache -r -v
+				find ~/snap/mysql-workbench-community/ -name 'fontconfig'
+				rm -rf ~/snap/mysql-workbench-community/common/.cache/fontconfig/
+				-----------------------
+		- schemas are databases
+			- one named sys (you have to click the right/left arrows)
+			- create tables and enter data
+- virtual directory
+	- make `/home/test/webs/testapp/index.html`
+		--------------
+		this is a <b>test</b>
+		--------------
+	- `sudo vi /etc/apache2/sites-available/000-default.conf`
+		-------------------------
+		<VirtualHost *:80>
+			ServerAdmin webmaster@localhost
+			DocumentRoot /home/test/webs
+
+			ErrorLog ${APACHE_LOG_DIR}/error.log
+			CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+			<Directory /home/test/webs>
+				Options FollowSymLinks
+				AllowOverride All
+				Order deny,allow
+				Require all granted
+			</Directory>
+		</VirtualHost>
+		-------------------------
+	- `sudo a2ensite testapp.conf`
+	- `sudo service apache2 reload`
+	- %% virtual directory works
+- vscode			
+	- install
+		- Ubuntu Software
+		- search: vscode
+		- install
+	- add to favorites			
+- get PHP page connected to MySQL
+	- create read-only user
+		---------------------
+		use mysql;
+		select user from user;
+		create user reader@localhost identified by 'readread';
+		select user from user;
+		grant select on testapp.* to reader@localhost;
+		---------------------
+	- add this page: `/var/www/html/showdb.php`
+		------------------------
+		<?php
+		$servername = ""localhost"";
+		$username = ""reader"";
+		$password = ""readread"";
+		$dbname = ""testapp"";
+
+		// Create connection
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		// Check connection
+		if ($conn->connect_error) {
+		  die(""Connection failed: "" . $conn->connect_error);
+		}
+
+		$sql = ""SELECT id, name FROM servers"";
+		$result = $conn->query($sql);
+
+		if ($result->num_rows > 0) {
+		  // output data of each row
+		  while($row = $result->fetch_assoc()) {
+			echo ""id: "" . $row[""id""]. "" - Name: "" . $row[""name""] . ""<br>"";
+		  }
+		} else {
+		  echo ""0 results"";
+		}
+		$conn->close();
+		------------------------
+- install and setup DB Browser for SQLite
+	- install
+		- sudo add-apt-repository ppa:linuxgndu/sqlitebrowser-testing
+		- sudo apt-get update && sudo apt-get install sqlitebrowser
+	- add to favorites
+	- open up sqlite file",,2020-09-10 17:19:03,systemUnknown
+149,VirtualBox,Connect Ubuntu to Windows network so machines can access each other,3.5,"- Ubuntu installed and running in VirtualBox
+	- enable Ubuntu to access host
+		- host machine is: 192.168.241.1
+		- `ping 192.168.241.1` works
+		- in browser: `http://192.168.241.1:29990` brings up Node site on host
+	- enable host to access Ubuntu
+		- ifconfig shows IP as 10.0.2.15##ifconfigij
+		- Apache is running on localhost
+			- `http://localhost` bring up Apache page
+			- created page `/var/www/html/test.html`
+			- `http://localhost/test.html` shows it
+			- `http://10.0.2.15/test.html` shows it as well
+		- connect it to Windows network (random IP)
+			- in VirtualBox: File > Host-only network manager
+				- Server address: 192.168.188.100
+				- Server mask: 255.255.255.0
+			- Virtualbox VM settings: 
+				- **added another adapter: network bridge, realttek USB GbE Family Controller**
+			- start Ubuntu virtual machine
+				- ifconfig says IP is now 192.168.30.142
+					- it seems to be chosen randomly
+				- ping to 192.168.30.142 works
+				- internal: http://192.168.30.142/test.html works
+				- from Windows host: http://192.168.30.142/test.html works
+		- connect it to Windows network with manual IP
+			- on machine: host-only adapter (the one we created above with 192.168.188.100
+				- windows can no longer connect with browser
+					- (switched it back to ""network bridge, realttek USB GbE Family Controller"" and it worked)
+			- again: on machine: host-only adapter (the one we created above with 192.168.188.100
+				- created file `/etc/network/interfaces`
+					-----------------------
+					auto enp0s8
+					iface enp0s8 inet static
+					address 192.168.188.101
+					netmask 255.255.255.0
+					-----------------------
+				- restart: could not start:
+					- ""Failed to open/create the internal network 'HostInterfaceNetworking-VirtualBox Host-Only Ethernet Adapter' (VERR_INTNET_FLT_IF_NOT_FOUND).""
+	- **RESULT: cannot set the IP manually, have to leave it at the randomly set 192.168.30.142**
+- connect via Putty
+	- 192.168.30.142, SSH, port 22
+- setup WinSCP to connect and copy files
+	- enable SSH connection
+		- sudo apt-get install openssh-server
+	- downloading 5.17.7
+		- https://winscp.net/download/WinSCP-5.17.7-Setup.exe
+	- connect with SCP, 192.168.30.142, port 22
+- %% everything works exchange manual IP assignment",,2020-09-11 13:55:05,systemUnknown
+150,Linux,Install Ubuntu Server on VirtualBox,3.5,"- download Ubuntu Server ISO
+	- https://releases.ubuntu.com/20.04](https://releases.ubuntu.com/20.04/)
+	- download 64-bit PC (AMD64) server install image
+	- ubuntu-20.04.1-live-server-amd64.iso
+- create machine at VirtualBox
+	- create, name: Ubuntu Server
+		- (64bit)
+		- 1GB RAM
+		- 100 GB hard drive
+		- Network: NAT Network
+			- hm: ""No NAT Network name is currently specified"" message
+				- so chose: bridge, TP-Link
+			- wk: choose NAT Network and NatNetwork
+			- wk@hm: 
+				- could not access Realtek USB which worked at wk
+				- VirtualBox Host-Only Ethernet Adapter is not a Bridged Adapter interface
+				- VirtualBox Host-Only #2: ""will appear to work but cannot connect""
+				- WORKED: Network Bridge, Killer Wireless-n/a/ac 1535 Wireless Network Adapter
+			- wk@hm.live-server:
+				- Network Bridge, Killer Wireless-n/a/ac 1535 Wireless Network Adapter
+					- got DHCPv4 192.168.2.113/24	
+			- hm.live-server
+				- Network Bridge, TP-Link Wireless N PCI Exprses Adapter
+					- got ""SQUASHFS error: sb_bread failed reading block"" but this probably some other problem 
+			- hm.desktop
+				- Network Bridge, TP-Link Wireless N PCI Exprses Adapter
+					- working better than hm.live-server above
+					- black screen now over five minutes
+				- ok hm.windows10 didn't work either
+			- NOTES:
+				- https://www.nakivo.com/blog/virtualbox-network-setting-guide/
+				- NAT: 
+					- A guest machine is not accessible from a host machine, or from other machines in the network when the NAT mode is used for VirtualBox networking.	
+					- only for Internet access
+				- NAT Network	
+					- If you use the NAT Network mode for multiple virtual machines, they can communicate with each other via the network. 
+					- You **cannot access the guest machine from the host machine** when using the NAT Network mode 
+					- If you use the NAT Network mode for multiple virtual machines, they can communicate with each other via the network.
+				- Bridged Adapter
+					- This network mode can be used to run servers on VMs that must be fully accessible from a physical local area network. 
+				- Internal Network
+					- VMs connected to this network can communicate with each other, but they cannot communicate with a VirtualBox host machine, or with any other hosts in a physical network or in external networks.
+				- Host-only Adapter
+					- A VM **can communicate with other VMs connected to the host-only network, and with the host machine**. The VirtualBox host machine can access all VMs connected to the host-only network.
+					- You can edit settings of this VirtualBox network by going to File > Host Network Manager.
+		- Storage: empty, attach .iso file
+	- start machine
+		- hm: choose .iso file again
+		- wk: didn't have to choose .iso again
+	- installation
+		- text-based
+		- choice between Ubuntu Server or MAAS
+			- Self-service, remote installation of Windows, CentOS, ESXi and Ubuntu on real servers turns your data centre into a bare metal cloud.
+			- Metal As A Service
+- login from host
+	- setup SSH on virtual machine
+		- `sudo apt-get install openssh-server openssh-client`
+	- connect via SSH
+		- from command line: `ssh test@192.168.2.113`
+	- connect via WinSCP
+		- SCP, 192.168.2.113, 22
+- connect with key-pair
+	- setup on server
+		- on client
+			- `ssh-keygen` 
+			- accept all defaults
+			- look in .ssh
+			- `id_rsa` is private key
+			- `id_rsa.pub` is public key
+		- log into server with password
+			- `mkdir .ssh`
+			- with winscp, copy public key here and rename as `authorized_keys`
+		- tell ssh to accept only keys
+			- `sudo vi /etc/ssh/sshd_config`
+			- search for `Permit`
+				- change to `PermitRootLogin`
+			- uncomment `PubkeyAuthentication yes`
+			- `PasswordAuthentication no`
+		- restart ssh service
+			- `sudo systemctl restart sshd`
+		- logout from server
+	- with SSH
+		- `ssh test@192.168.227.115`
+			- or if you change the name of the file: `ssh test@192.168.227.115 -i .ssh/id_rsa`
+	- with WinSCP
+		- parameters, authentication, C:\Users\ADMIN\id_rsa
+		- it's converted to: C:\Users\ADMIN\.ssh\id_rsa.ppk
+	- with putty",$place=hm,2020-09-13 03:01:20,systemUnknown
+151,Ubuntu,Install Apache on Ubuntu Server virtual machine,3.5,"- install Apache
+	- `sudo apt install apache2`
+	- `systemctl status apache2`
+	- `sudo less /etc/apache2/apache2.conf`
+		- shows tree of conf sites
+	- `sudo vi /etc/apache2/sites-available/000-default.conf`
+		- conf file for main site
+		- you need an A record at your domain registrar or a DNS server of your own
+		- if you add a new file, you have to enable it with `sudo a2ensite testapp.conf`
+		- change to:
+			-------------------------
+			<VirtualHost *:80>
+				ServerAdmin webmaster@localhost
+				DocumentRoot /home/test/webs
+				ErrorLog ${APACHE_LOG_DIR}/error.log
+				CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+				<Directory /home/test/webs>
+					Require all granted
+				</Directory>
+			</VirtualHost>
+			-------------------------
+	- pub files here: `/home/test/webs`
+	- open up firewall for port 80
+		- `sudo ufw allow 80/tcp`
+- SSL on site
+	- `openssl req -x509 -newkey rsa:2048 -keyout mycert.key -out mycert.crt -days 365 -nodes`
+	- `sudo cp mycert.crt /etc/ssl/certs/`
+	- `sudo cp mycert.key /etc/ssl/private/`
+	- `sudo vi /etc/apache2/sites-available/default-ssl.conf`
+		---------------------------------
+		SSLCertificateFile      /etc/ssl/certs/mycert.crt
+		SSLCertificateKeyFile /etc/ssl/private/mycert.key
+		---------------------------------
+	- `sudo a2ensite default-ssl.conf`
+	- `sudo a2enmod ssl`
+	- `systemctl reload apache2`
+	- `sudo ufw allow 443/tcp`
+	- %% SSL works",,2020-09-13 14:34:31,systemUnknown
+152,ES6,"Node/Express application that allows user to display, search and save information in a JSON file",3.5,"- this will be framework: node-express-vue-json
+	- This is a minimal implementation of a Node/Express/EJS site that has one page which displays data from a JSON file and allows the user to search and enter new items via Vue/Axios which calls backend that uses promises/async/await.
+- info
+	- final code for this project is here: https://github.com/edwardtanguay/node-express-vue-json
+- prerequisites
+	- install Node
+	- install Git
+	- GitHub account
+- make minimal site with Node and Express
+	- create directory `node-express-vue-json`
+	- `npm init -y`
+	- `npm i express`
+	- `server.js`
+		------------------------
+		const express = require('express');
+
+		const app = express();
+		const port = 3001;
+
+		app.get('/', (req, res) => {
+			res.send('hello app');
+		});
+
+		app.listen(port, () => {
+			console.log('app running on port ' + port);
+		});
+		------------------------
+	- `node server.js`
+	- in browser: `http://localhost:3001`
+- set up Git and check in site to GitHub
+	- `npm init -y`
+	- `git init`
+	- create `.gitignore`
+		--------------------
+		node_modules
+		--------------------
+	- `git add .`
+	- `git commit -m ""first commit""`
+	- on GitHub, create repository, e.g. `node-express-vue-json`
+	- click copy-text in section ""…or push an existing repository from the command line""
+		- execute it in terminal
+	- refresh GitHub
+- serve an .ejs file
+	- `npm i ejs`
+	- add path:
+		-------------------------------
+		const path = require('path');
+		-------------------------------
+	- add ejs info
+		-------------------------
+		app.set('view engine', 'ejs');
+		app.set('views', path.join(__dirname, './public/pages'));
+
+		const staticDirectory = path.join(__dirname, './public');
+		app.use(express.static(staticDirectory));
+		-------------------------
+	- replace `res.send` line with:
+		-------------------------------
+		res.render('index', { pageTitle: 'Flashcards' });
+		-------------------------------
+	- create `public/pages/index.ejs`
+		-----------------------------
+		hello ejs page
+		-----------------------------
+	- in browser: `http://localhost:3001`
+- set up nodemon for quick development
+	- `npm i nodemon -D`
+	- in `package.json` replace `""test"":` line with:
+		- `""start"": ""nodemon server.js""`
+	- `npm start`
+	- in browser: `http://localhost:3001`
+	- now change
+		- `res.render('index', { pageTitle: 'Flashcards' });`
+		- to: `res.render('index', { pageTitle: 'Flashcards2' });`
+		 and reload, see that you can make backend changes and node server will restart
+- pass info to .ejs page
+	- in `server.js`, add page title:
+		--------------------------
+		res.render('index', { pageTitle: 'Flashcards' });
+		--------------------------
+	- replace content in `public/pages/index.ejs`
+		---------------------------
+		<!DOCTYPE html>
+		<html>
+
+		<head>
+			<title><%=pageTitle%></title>
+		</head>
+
+		<body>
+			<p>Flashcards will be shown here.</p>
+		</body>
+
+		</html>
+		---------------------------
+- add Vue.js to .ejs page
+	- replace body content with:
+		----------------------
+		<!DOCTYPE html>
+		<html>
+
+		<head>
+			<title><%=pageTitle%></title>
+			<script src=""https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.4/vue.js""></script>
+		</head>
+
+		<body>
+			<div id=""app"">
+				Message: {{message}}
+			</div>
+			<script>
+				const app = new Vue({
+					el: '#app',
+					data: {
+						message: ""hello from vue""
+					}
+				});
+			</script>
+		</body>
+
+		</html>
+		----------------------
+- enable Vue to get data from backend
+	- in `server.js`, add:
+		---------------------------
+		app.post('/backend', (req, res) => {
+			const emulatedWaitSeconds = 2;
+			setTimeout(() => {
+				const data = {
+					message: `Menu: <a href=""info"">get information</a>`
+				};
+				res.send(JSON.stringify(data));
+			}, emulatedWaitSeconds * 1000);
+		});
+		---------------------------
+	- in `index.ejs`, replace script element:
+		--------------------------------
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					message: ""hello from vue"",
+					pageLoaded: false,
+					pageError: false
+				},
+				methods: {
+					initialize: function () {
+						this.loadPageData();
+					},
+					loadPageData: function () {
+						this.pageLoaded = false;
+						axios({
+							method: 'post',
+							url: 'backend',
+							data: {
+								action: 'loadPageData'
+							}
+						}).then(response => {
+							const data = response.data;
+							this.message = data.message;
+							this.pageLoaded = true;
+						}).catch(function (error) {
+							this.pageError = true;
+						});
+					}
+				}
+			});
+			app.initialize();
+		</script>
+		--------------------------------",,2020-09-15 20:43:50,systemUnknown
+153,Symfony,"Create, save to GitHub, and upload simple Symphony project",3.5,"- prerequisites
+	- install **Composer**: https://getcomposer.org/download
+		- download and install *Composer-Setup.exe*
+	- install **Git**
+	- setup **GitHub* account
+- go to `c:\edward\webs`
+- open terminal
+	- `composer create-project symfony/skeleton sympf2` (""sympf2"" is the name of your site)
+- `cd sympf2`
+- set up Git repository
+	- `git init`
+- install Symfony CLI
+	- https://symfony.com/download
+	- download and install *setup.exe*
+	- close and restart VSCode
+	- `symfony`
+- start server
+	- `symfony server:start`
+	- in browser: `http://localhost:8000`
+- create repository at GitHub and upload
+	- create new repository: `sympf2`
+	- `git add .`
+	- `git commit -m ""initial commit""`
+	- copy and paste code under *…or push an existing repository from the command line* e.g.
+		-------------------------------
+		git remote add origin https://github.com/edwardtanguay/sympf2.git
+		git branch -M master
+		git push -u origin master
+		-------------------------------
+- upload
+	- via FTP: over 1400 files (!)
+	- .. find proper way to upload and publish",,2020-09-15 23:39:02,systemUnknown
+154,vuejs,Install Vue.js 3.x Preview (2020-09) and look for Webpack,3.5,"- wk
+- install latest version of Vue CLI 4.x 
+	- `vue -V` --> 2.9.6
+	- `npm i -g @vue/cli` (4 minutes)
+	- `vue -V` --> 2.9.6
+	- `npm un -g @vue/cli` (says up to date)
+	- `npm uninstall -g @vue/cli` (says up to date)
+	- found:
+		-----------------
+		Warning regarding Previous Versions: The package name changed from vue-cli to @vue/cli. If you have the previous vue-cli (1.x or 2.x) package installed globally, you need to uninstall it first with npm uninstall vue-cli -g or yarn global remove vue-cli.
+		-----------------
+	- `npm unintsall -g vue-cli`
+	- `vue -V` --> no such file
+	- `npm i -g @vue/cli`
+	- `vue -V` **--> 4.5.6**
+- create Vue project
+	- in apps directory
+	- `vue create vuetest44`
+		- *Manually select features*
+		- chose all
+			- Babel
+			- TypeScript
+			- PWA
+			- router
+			- Vuex
+			- CSS Pre-processors
+			- Linter / Formatter
+			- Unit Testing
+			- E2E Testing
+		- Chose 3.x preview over 2.x
+			- The official release is planned in Q3 2020
+		- chose class-style component syntax (default is no)
+			- readability
+			- TypeScript friendly
+			- can use vuex-class
+			- officially maintained
+		- use Babel alongside TypeScript --> yes
+		- use history mode for browser --> yes
+		- chose dart-sass over node-sass
+			- Dart Sass is the primary implementation of Sass, which means it gets new features before any other implementation
+			- being done in pure javascript, dart-sass works way better than node-sass for cross-platform compability
+		- chose default: ESLint with error prevention only (not Airbnb)
+		- Lint on save
+		- Mocha + Chai (default)
+		- Cypress (Chrome only) - default
+		- Babel, ESLint etc. in dedicated config files (not package.json)
+		- (takes about 10 minutes to install - spends quite a bit of time on Cypress)
+- run project
+	- open VSCode in *vuetest44*
+	- (*node_modules* already built)
+	- `npm run serve`
+		- says *Starting development server...*
+	- vuetest22 (""vue"": ""^3.0.0-0"") and vuetest44 (""vue"": ""^3.0.0-0"") have similar folder structtures
+- as comparison, installing a vue 2.x project:
+	- `vue create vuetest66`
+	- manually select
+	- all options
+		- Babel
+		- TypeScript
+		- PWA
+		- router
+		- Vuex
+		- CSS Pre-processors
+		- Linter / Formatter
+		- Unit Testing
+		- E2E Testing
+	- 2.x
+	- class-style component syntax (default Y this time, on 3.x it was N), I chose yes
+	- `""vue"": ""^2.6.11"",`
+- regarding Webpack
+	- vuetest22 - @vue/cli4, 3.x - few options - 3.0.0
+	- vuetest44 - @vue/cli4, 3.x - all options - 3.0.0
+	- vuetest66 - @vue/cli4, 2.x - all options - 2.6.11
+	- apparently: ""the `vue-cli-service serve` command starts a dev server which is: based on webpack-dev-server that comes with Hot-Module-Replacement (HMR) working out of the box""; ""For using webpack you need to use something like `vue init webpack your-project`""
+- creating a vue that actually has webpack in it
+	- `vue init webpack vuetest77`
+	- it responds:
+		-----------------------
+		Command vue init requires a global addon to be installed.
+		Please run npm install -g @vue/cli-init and try again.
+		-----------------------
+	- `npm install -g @vue/cli-init`
+	- again: `vue init webpack vuetest77`
+		- runtime + compiler (default)
+		- install vue-router (default)
+		- ESLint
+			- standard
+		- tests Jest (default)
+		- e2e with Nightwatch --> yes
+		- use NPM
+	- `npm start` starts `webpack-dev-server --inline --progress --config build/webpack.dev.conf.js`
+	- shows same Vue start page
+	- it didn't have git initialized",,2020-09-16 17:34:27,systemUnknown
+155,Java,Install Java 15 and IntelliJ on Ubuntu and Windows,4.5,"- Ubuntu Server
+	- ""No need to have JRE when you have JDK."" 
+	- so just installing `sudo apt install default-jdk`
+		- afterwards: 
+			- `java -version`
+				- *openjdk version ""11.0.8"" 2020-07-14
+			- `javac -version`
+				- *java 11.0.8*
+	- doesn't seem to be version 15 so installing: `sudo apt install default-jre`
+		- says: `default-jre is already the newest version (2:1.11-72)
+	- now following this: http://techoral.com/blog/java/install-openjdk-15-ubuntu.html
+		- `sudo apt-get install openjdk-15-jre`
+			- *unable to locate package openjdk-15-jre*
+		- `sudo apt-get install openjdk-15-jdk`
+			- *unable to locate package openjdk-15-jdk*
+		- `sudo apt-get update`
+			- same thing
+		- `sudo apt-get upgrade`
+		- `sudo apt-get install openjdk-14-jdk`
+			- this installed:
+				- *java 14.0.1*
+				- *openjdk version 14.01.1""
+		- and we can create, compile and run a Java program:
+			- create `Hello.java`
+				--------------------------
+				public class Hello {
+					public static void main(String[] args) {
+						System.out.println(""Hello, world!"");
+					}
+				}
+				--------------------------
+			- `javac Hello.java`
+			- `java Hello` will print **Hello, world!**
+	- trying to update so that it can install Java 15
+		- `sudo apt-get upgrade`
+			- installed quite a bit, two minutes
+		- `sudo apt-get update`
+			- a few seconds
+		- `sudo apt-get install openjdk-15-jdk`
+			- still: *unable to locate package openjdk-15-jdk*
+		- `sudo add-apt-repository universe`
+			- *'universe' distribution component is already enabled for all sources*
+		- `whereis java`
+			- /usr/bin/java
+			- /usr/share/java
+			- /usr/share/man/man1/java.1.gz
+	- trying manually to install Java 15
+		- download at: jdk.java.net/15/
+			- no browser on Ubuntu Server
+			- so with WinSCP
+			- on windows
+				- download: Linux/x64 tar.gz (sha256) 195313679
+					 - (not AArch64)
+				- got: openjdk-15_linux-x64_bin.tar.gz
+			- copy to Ubuntu Server via WinSCP
+			- in that directory: `tar zxvf openjdk-15_linux-x64_bin.tar.gz`
+			- now `java -version` shows 14
+			- but `/home/test/javatest/jdf-15/bin/java -version` shows 15
+		- set path
+			- `JAVA_HOME=/home/test/javatest/jdk-15`
+			- `PATH=$PATH:$HOME/bin:$JAVA_HOME/bin`
+			- `export JAVA_HOME`
+			- `export JRE_HOME`
+			- `export PATH`
+		- now `java` is version 15
+- install on Ubuntu client
+	- start machine
+		- `java -version`
+			- not a command
+	- upgrade package manager and install
+		- `sudo apt-get upgrade`
+		- `sudo apt-get update`
+		- `sudo apt-get install openjdk-15-jdk`
+			- Unable to locate package openjdk-15-jdk
+		- so seems to be too early (2020-09-21)
+	- installing manually
+		- goto: jdk.java.net/15/
+			- it's not online
+				- change to Realtek bridge, and it worked
+		- download: Linux/x64 tar.gz (sha256) 195313679
+			- secure connection failed
+		- copy via WinSCP
+		- `echo $PATH` shows `/usr/bin`
+		- `tar zxvf openjdk-15_linux-x64_bin.tar.gz -C /usr/bin`
+			- it went to: */usr/bin/jdf-15*
+		- set environment
+			- `JAVA_HOME=/usr/bin/jdk-15`
+			- `PATH=$PATH:$HOME/bin:$JAVA_HOME/bin`
+			- `export JAVA_HOME`
+			- `export JRE_HOME`
+			- `export PATH`
+	- now `java -version` shows: *openjdk version ""15"" 2020-09-15*
+	- and `javac -version` shows: *javac 15*
+- install IntelliJ IDEA
+	- (orange icon) Ubuntu Software
+		- can't find it ""intellij idea""
+	- `sudo snap install intellij-idea-community --classic`
+		- certificate has expired or is not yet valid
+	- copying tar file via winscp: `ideaIC-2020.2.2.tar.gz`
+	- tar zxvf ideaIC-2020.2.2.tar.gz
+	- start it
+		- `cd idea-IC-202.7319.50/bin`
+		- `./idea.sh`
+		- create a script: `/usr/local/bin/idea`
+- Windows 
+	- `java -version`
+		- *java version ""13.0.1"" 2019-10-15*
+	- upgrade
+		- http://jdk.java.net/15
+		- downloaded Windows zip
+		- unzipped
+		- copied to: `C:\Program Files\Java\jdk-15`
+		- set bin path in the environment path
+			- environment
+			- path
+			- removed: `C:\Program Files\Java\jdk-13.0.1`
+			- added: `C:\Program Files\Java\jdk-15\bin`
+		- `java -version` = *openjdk version ""15"" 2020-09-15*
+	- test
+		- create `Hello.java`
+			--------------------------
+			public class Hello {
+				public static void main(String[] args) {
+					System.out.println(""Hello, world!"");
+				}
+			}
+			--------------------------
+		- `javac Hello.java`
+		- `java Hello` will print **Hello, world!**
+		- worked
+	- install IntelliJ IDEA
+		- [download here](https://www.jetbrains.com/de-de/idea/download/#section=windows) (Community version - .exe)
+		- set up
+			- configure
+			- structure for new projects
+			- SDKs
+			- [+]
+			- add JDK: `C:\Program Files\Java\jdk-15`
+	- %% Java 15 and IntelliJ installed well on Ubuntu Server, Ubuntu Client and Windows 10",,2020-09-21 14:59:07,systemUnknown
+156,Java,Create Java console program in IntelliJ,3.5,"- create project
+- in main, `sout` and tab and ""hello""
+	- `System.out.println(""Hello"");`
+- click green arrow button
+- File close project
+- new project
+- JavaFX
+- create
+- click green arrow
+	- *java: package javafx.application does not exist*
+	- reason: The JavaFX package is not included in JDK 9 and later. 
+	- so downloaded 15 from [here](https://gluonhq.com/products/javafx), put in java directory and connected lib to it
+		- it got passed the error, but then:
+			-  bad class file: /C:/Program Files/Java/javafx-sdk-15/lib/javafx.graphics.jar!/javafx/application/Application.class
+	class file has wrong version 55.0, should be 53.0
+	- so trying 11
+		- but then this: Application has been compiled by a more recent version of the Java Runtime (class file version 54.0), this version of the Java Runtime only recognizes class file versions up to 53.0
+	- !! couldn't get JavaFX working because of version conflicts, dropping it",,2020-09-21 17:26:58,systemUnknown
+157,Gimp,100 Howtos for Gimp,4.9,"- **custom shape trails**##customShapeTrails
+	- [[CTRL-SHIFT-B]]
+	- Create a new brush
+	- define its settings
+	- use it as paintbrush [p]
+	- alter: foreground/background color
+	- alter: size and spacing
+- **porcupine quills**##porcupinequills
+	- color: brown
+	- brush: 2 hardness
+	- size: 50
+	- dynamic options: fade tapering
+- **bubble wave**##bubblewave
+	- color: blue
+	- brush: 2 hardness
+	- size: 50
+	- dynamic options: fade tapering
+	- apply jitter
+- **star chains**##starchains
+	- color: yellow
+	- brush: star
+	- size: 100
+	- spacing: 100
+	- dynamic options: basic simple",,2020-09-22 07:38:50,systemUnknown
+158,Networking,100 Networking Questions,3.5,"- **1. What is the difference between TCP and UDP? **
+	- both built on top of IP protocol
+	- both send packets over the Internet
+	- packets are sent to IP addresses, travel over routers
+	- User Datagram Protocol
+	- Transmission Control Protocol
+	- TCP = connection oriented, UDP = connectionless
+	- TCP = slowers, UDP = faster
+	- TCP = tracks tranmission integrity, UDP = does not track packets, lost is lost",,2020-09-22 13:34:08,systemUnknown
+160,GitLab,Install GitLab on Ubuntu,3.5,"- install GitLab Enterprise Edition
+	- working vagrant machine installed in lesson 1.1 from this workshop: liTutorials?id=145
+	- following along here: https://about.gitlab.com/install/#ubuntu
+		- install dependencies:
+			- `sudo apt-get update`
+			- `sudo apt-get install -y curl openssh-server ca-certificates tzdata`
+			- (skips the e-mail install of postfix)
+		- install GitLab
+			- `curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash`
+			- `sudo EXTERNAL_URL=""http://192.168.50.10"" apt-get install gitlab-ee`
+				- if you typed the wrong EXTERNAL_URL in, use this: https://docs.gitlab.com/omnibus/settings/configuration.html
+			- `sudo apt-get install gitlab-ce`
+				- said it couldn't find it
+				- so I did: `sudo apt-get install gitlab-ee`
+		- login to web interface
+			- http://192.168.50.10
+			- said was taking too long to respond for awhile (2 minutes)
+			- then worked
+			- new password (for testing: testtest)
+			- login: root/testtest
+	- create project
+		- [[New Project]]
+		- internal
+		- with README
+		- [[Create Project]]
+		- create user
+			- wrench icon: new user
+			- test, testtest
+			- admin
+			- [[Create User]]
+			- edit
+			- password: testtest
+			- [[Save Changes]]
+		- sign out and sign in as user
+- install GitLab Community Edition
+	- above I wanted to install Community Edition but it didn't find the -ce file, so I installed the -ee version
+	- background: why use Enterprise Edition
+		- really there is no reason to install Community Edition since if you don't have a license, then you don't have the extra features anyway
+		- community edition is only if you want to make sure you only have opensource software
+		- but I want to get it running once
+			- and want to see if vagrant replaces the current machine, makes a new one with a similar name, or asks to replace, etc.
+	- current state
+		- current machine in virtualbox is called: *Ch01_default_1600859453582_33567*
+		- machine is on status: *abgebrochen*
+	- start vagrant 
+		- `C:\edward\nwo\gitlab22_files\Ch01`
+		- `vagrant up`
+			- message: *Machine already provisioned. Run 'vagrant provision' or use '--provision'*
+		- `vagrant provision`
+		- `vagrant up`
+			- message: *Machine already provisioned. Run 'vagrant provision' or use '--provision'*
+	- <H|This is the main install instructions for GitLab Community Edition:|H>
+	- reinstall with vagrant: 
+		- delete old machine: *Ch01_default_1600859453582_33567*
+		- closed virtualbox
+		- `C:\edward\nwo\gitlab22_files\Ch01`
+		- `vagrant up`
+			- it was finished in two minutes (!)
+			- ""==> default: Machine booted and ready!""
+		- started VirtualBox
+			- machine is now: Ch01_default_1600940910862_6576
+	- log in to interface
+		- `vagrant ssh`
+			- automatically logged in
+			- `ifconfig`: 192.168.50.10
+	- install dependencies:
+		- `sudo apt-get update`
+		- `sudo apt-get install -y curl openssh-server ca-certificates tzdata`
+		- (skip the e-mail install of postfix)
+	- install GitLab
+		- `curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash`
+		- `sudo EXTERNAL_URL=""http://192.168.50.10"" apt-get install gitlab-ce`		
+	- login to web interface
+		- http://192.168.50.10
+		- new password (for testing: testtest)
+		- login: root/testtest		
+	- create project
+		- [[New Project]]
+		- `Test 001`
+		- internal
+		- with README
+		- [[Create Project]]
+	- create user
+		- wrench icon: new user
+		- test, testtest
+		- admin
+		- [[Create User]]
+		- edit
+		- password: testtest
+		- [[Save Changes]]
+		- sign out and sign in as user		
+		- new password and log in again
+	- create SSH key pair
+		- allows you to connect with your repositories without logging in
+		- install from gitforwindows.org
+			- chooses vim
+			- uses git-bash window to set up SSH
+		- `ssh-keygen` [ENTER] [ENTER] [ENTER] 
+		- `ls ~/.ssh/` (even on Windows)
+			- two files: `id_rsa` (secret) and `id_rsa.pub` (public key)
+		- `cat ~/.ssh/id_rsa.pub`
+			- copy text
+			- GitLab
+			- Settings
+			- SSH Keys
+			- (paste)
+			- [[Add Key]]
+	- create project again: Test 002
+		- clone to local machine: `git clone git@192.168.50.10:edward/test-002.git`",,2020-09-25 17:12:20,systemUnknown
+161,Webpack,Simple Webpack project,4.9,"- project: https://github.com/edwardtanguay/webpack777
+- users.js
+	--------------------------
+	var users = ['Jim', 'John', 'Joe'];
+
+	function getUsers() {
+		return users;
+	}
+
+	module.exports = {
+		getUsers: getUsers
+	}
+	--------------------------
+- dom.js
+	--------------------
+	const getUsers = require('./users').getUsers;
+
+	function addUserToDOM(name) {
+		var elemLi = document.createElement('li');
+		var elemText = document.createTextNode(name);
+		elemLi.append(elemText);
+
+		document.getElementById('users').appendChild(elemLi);
+	}
+
+	document.getElementById('addUser').addEventListener('click', function () {
+		var newUser = document.getElementById('newUser');
+		addUserToDOM(newUser.value);
+		newUser.value = '';
+	});
+
+	var users = getUsers();
+	for (var i = 0; i < users.length; i++) {
+		addUserToDOM(users[i]);
+	}
+	--------------------
+- index.html
+	--------------------------
+	<!DOCTYPE html>
+	<html lang=""en"">
+	<head>
+		<meta charset=""UTF-8"">
+		<meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+		<title>module_history_001</title>
+	</head>
+	<body>
+		<h1>Users</h1>
+		<ul id=""users""></ul>
+		<input type=""text"" id=""newUser"" placeholder=""new user"">
+		<button id=""addUser"">Add user</button>
+		<script src=""bundle.js""></script>
+	</body>
+	</html>
+	--------------------------
+- `npm init -y`
+- `npm i -D webpack webpack-cli`
+- webpack.config.js
+	---------------------------
+	const path = require('path');
+
+	module.exports = {
+		entry: ""./dom.js"",
+		output: {
+			path: path.resolve(__dirname),
+			filename: ""bundle.js""
+		},
+		mode: 'development'
+	};
+	---------------------------
+- in package.json, add this script:
+	--------------------
+	""start"": ""webpack""
+	--------------------
+- `npm start`",,2020-09-27 14:57:14,systemUnknown

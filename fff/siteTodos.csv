@@ -1,0 +1,413 @@
+id,category,title,body,rank,extras,systemWhenCreated,systemWhoCreated
+1,newFeature,Enable Batch Import to import Item Type Definition Blocks as well,- so that you can paste in ItemType Definition Block along with data and ItemType will be created and data added,2.7,,2019-08-14 10:46:15,systemUnknown
+2,newPage,Create User,- convert the password via MD5,4.6,,2019-08-14 10:46:15,systemUnknown
+3,newShowcase,Dynamic texts,"- remove SystemTexts	
+- replace it with ItemType Dynamic Texts
+- has accessGroups and so shows an edit button only for those in that accessGroup
+- make an example of a number of texts ",3.4,$idCode=showcaseDynamicText,2019-08-14 10:48:46,systemUnknown
+4,newCreatePage,Editable Markdown Page,"- specificy accessGroups
+- anyone in that group can edit the full text on that page in markdown",3.2,$dependsOn=showcaseDynamicText,2019-08-14 10:48:48,systemUnknown
+5,newFeature,Make user signup process,"Include confirming e-mail, etc.",3.1,,2019-08-14 10:48:49,systemUnknown
+6,newCreatePage,Editable Outline Page,"- specificy accessGroups
+- anyone in that group can edit the full text on that page in markdown",3.0,$dependsOn=showcaseDynamicText,2019-08-14 10:48:51,systemUnknown
+7,newFeature,Import/Export Downloadable Pages,"- enable Pages to be exported as .zip files
+- when you download them and put them in the `systemImport` folder, they are automatically imported at next page load (when in developing mode)",2.9,,2019-08-14 10:48:51,systemUnknown
+8,newCreatePage,Editable Markdown Page,"- specificy accessGroups
+- anyone in that group can edit the full text on that page in markdown",3.7,$dependsOn=showcaseDynamicText,2019-08-14 10:48:51,systemUnknown
+10,newFeature,Import/Export Downloadable DataTypes,"- enable DataTypes to be exported as .zip files
+- when you download them and put them in the `systemImport` folder, they are automatically imported at next page load (when in developing mode)",2.9,,2019-08-14 10:48:51,systemUnknown
+11,newFeature,Manage ItemType Page Panel,"- make a panel that allows various actions to be executed on ItemTypes, e.g.
+	- based on what items are showing (based on search, or all)
+		- export to Datapod Item Transfer file
+			- has Item Type Definition Block 
+			- on import, ItemType will be created if not present
+		- export to Excel sheet
+		- copy to clipboard (or for copy and paste) as Datapod Item Editing Text
+		- export as XML
+		- export as JSON
+		- export as CVS
+		- create Display <itemType> Page
+		- fill with dummy data
+			- add SystemExtras to track that this is dummy data so it is not displayed, and can easily be deleted, even when other data is in the database table
+		- add field
+		- delete field",3.0,,2019-08-14 11:05:39,systemUnknown
+12,newShowcase,System Extras,"- build this in Showcase: Extras
+- make Extras DataType
+- make this a System field called System Extras so it is on every Item Type
+- make ""itemExtras"" convert to ""Item Extras;extras""
+- make easy Item level functions to save and get data from Extras
+- enable extras to be converted into full fields",2.8,,2019-08-14 11:05:39,systemUnknown
+13,newPage,Code Explorer,"- gives search box, searches through all code in site
+- update button to reread code into database
+- filters: [x] Quick Tools, [x] Method names, [x] comments",1.9,,2019-08-14 11:05:39,systemUnknown
+14,newFeature,Highlighted Search,"- on ItemType Display Page, add a regex search-and-replace so that text searched is highlighted",1.3,,2019-08-14 11:10:22,systemUnknown
+15,refactoring,Make item/object/record nomenclature consistent on frontend and backend,"	- i.e. ""item"" will not be used on the frontend anymore
+	- frontend: it will always get e.g. howtoRecords and will be: v-for=""object in howToObjects""
+	- by ""item"" and ""items"" is always meant the class item or items itself
+		- the class ""items"" has a collection of objects
+		- howtoObjects means an array of item objects
+		- howtos means the class which contains the array of item objects
+		- howtoRecords means an array of item records stright from the database
+	- or simply keep it the way it is and document it, e.g.	
+		- backend itemObjects (e.g. howtoObjects) get flattened into frontend items (e.g. v-for=""item in howtoItems), i.e. have their flat data but not the methods to call
+		- if you send something to the frontend that is not a rich item or collection of items, then it should be called a record, e.g. v-for=""record in infoRecords""
+		- or perhaps we need a new word that refers to a flat time on the front end, e.g. 
+			- unit, howtoUnit
+			- fitem = flatitem
+			- or flitem
+			- or monad, e.g. howtoMonads
+			- or thing, e.g. howtoThings
+			- or flatitem, e.g. howtoFlatitem
+			- or flat, e.g. howtoFlats
+			- or ding, e.g. howtoDing
+	- or (the way it is), simply understand that bits of information that arrive from the backend onto the front end are called ""item"" and ""items"" e.g. v-for=""item in howtoItems"", and allHowtoItems and filteredHowtoItems
+	- to example this, use this example:
+		-----------------------------------------
+		const allSearchObjects = [];
+		const object = {
+			id: 1,
+			idCode: 'nnn',
+			title: 'This is the title.',
+			searchText: function () {
+				return this.title + '|' + this.idCode;
+			}
+		};
+		qdev.debug('searchText', object.searchText());
+		allSearchObjects.push(object);
+		that.responseData.allSearchItems = allSearchObjects;		
+		-----------------------------------------",3.8,,2019-08-14 11:33:14,systemUnknown
+16,refactoring,Restructure or remove all callback code and replace with ES6 promises if possible,"- mainly in data access, a number of a various attempts were made and left in code
+	- some of the code areas are instances of callback hell, two or three levels deep
+	- try to replace these with ES6 promises
+- also, restructure all complex procedures such as ItemType creation so that these can be automatically tested, e.g. create an ItemType, run tests to make sure everything on it works, add/edit/delete items, then delete ItemType and check to make sure no residue exists",3.3,,2019-08-14 12:19:03,systemUnknown
+17,newShowcase,Showcase: Data Sniffing,"- experiment with using DataTypes to sniff out fields, items and ItemTypes to import
+- examples:
+	- 4k
+		- distance
+		- 4 kilometers
+		- 4K
+		- 4,000 meters
+	- jan 4
+		- date
+		- Friday, January 4, 2019
+		- 218 days ago
+	- red
+		- color
+		- `#FF0000`
+	- 4.1
+		- rank
+		- 4 out of 5 stars
+		- 82% satisfaction
+		- ****(*)
+	- 312
+		- whole number
+		- integer
+		- number of book pages
+	- yes, true, ok, no, 1, 0 
+		- boolean (DataType: yesNo)",3.8,,2019-08-14 12:19:03,systemUnknown
+18,refactoring,Standardize DQL syntax ,"- create showcase to test this
+- examples
+	- pageItems search xml
+	- pageItems search 'test page' order by displayOrder
+	- pageItem where idCode = home
+	- pageItem where id = 33
+	- testServers where numberOfCpus > 3 and kind = virtual order by freeSpace desc
+	- testServers where title.contains('the')
+	- testServers where title.doesNotContain('the')
+	- techItems order by rank desc first 10
+	- techItems order by rank desc last 10
+	- techItems where random 5
+	- techItem where random
+		- random techItem
+		- 3 random techItems
+		- 3 random techItems where category = javascript
+	- techItems best 10 order by title
+		- (works on items with rank)	
+	- techItems worst 10 order by title
+		- (works on items with rank)		
+- Datapod Global Search
+	- 1. if it's not a recognizable DQL statement, it will be searched
+	- 2. if it is recognizable DQL, it will be executed
+	- 3. if you want to search for a DQL statements then, e.g. s/pageItems
+	- in search fields e.g. on manage page, one could type in:
+		- dql/pageItem where id=33
+		- dql/pageItemd.33
+		- pageItems orderby title as xml
+		[] then options:
+			- export: XML, JSON, Datapod, SQL, CSV, HTML
+	- examples
+		- servers where kind = virtual as csv",3.8,,2019-08-14 12:19:03,systemUnknown
+19,newShowcase,Showcase: Stress Test,"- adds 100, 1000, 10000000 records and displays, shows loading speeds in seconds",3.3,,2019-08-14 12:19:03,systemUnknown
+20,tech,"In forays, make a `Create Howto` button ","- that creates a howto, copies the outline to the howto content, deletes the foray outline content, and makes a reference to the how (so that you still have a record of what forays were finished and when)",4.5,,2019-08-14 12:19:03,systemUnknown
+21,refactoring,Replace all that=this with ES6 arrow functions,- use the ES6 arrow functionality everywhere so that that = this isn't necessary anymore,4.1,,2019-08-14 12:19:03,systemUnknown
+22,bugFix,- completely test basic Datapod on smartphone,4.3,,,2019-08-14 12:40:57,systemUnknown
+23,newDataType,Create all time DataTypes,"	- dateTime (complete)
+        - 2019-04-12 12:13:08
+	- time
+    - date
+        - 2019-04-12
+        - mar 5 (2019)
+        - apr 2
+	- duration
+		- 1h
+		- 3h15s
+		- 3:15
+		- 04:02:04
+        - 00:23:33.2343
+        - 1s
+        - 25s
+        - 3032s
+        - 838m
+        - 23:33 (23 minutes)
+        - 23m
+        - 23:33 = 00:23:33 = 23m33s
+        - 02:23:05 = 2h23m5s
+    - rank
+        - 0
+        - 1.3
+        - 2.5 default
+        - 5
+        - 4.7
+        --> stars (with halves)
+    - distance
+        - 5k
+        - 10k
+        - 800m
+        - 1.8 K
+    - yesno
+        - yes
+        - no
+        - ja
+        - nein
+        - 1
+        - 0
+        - ok
+    - list (multiple choice)
+        - green, red, blue, yellow",4.5,,2019-08-14 12:40:57,systemUnknown
+24,newDataType,Create all number DataTypes,"- integer = a postiive or negative number that is not a fraction or decimal: ..., -3, -2, -1, 0, 1, 2, 3, ...
+	- wholeNumber = all non-negative integers: - 0, 1, 2, 3, etc.
+		- age
+		- numberOfBookPages
+	- naturalNumber = non-zero positive integers: - 1, 2, 3, etc.
+- decimal = -3.1, -1.8987, 0, 1, 1.2323, 23.1
+	- money = -34.23, 0, 152.00
+		- dollar
+		- euro
+	- rank = 0, 0.5, 1, 1.6, 2, 3.5, 4.3, 5 (stars)
+	- temperature",4.3,,2019-08-14 12:40:57,systemUnknown
+25,newDataType,DataType: distance,"	- 10k
+	- 4k
+	- 5.4k
+	- 800m
+	- 5cm
+	- 3mm",3.7,,2019-08-14 12:40:57,systemUnknown
+26,newCreatePage,Stand-Alone Search Page,"- ask for list of item types
+- file called `search.htm` is created with all data as JSON in JavaScript",3.7,,2019-08-14 14:11:15,systemUnknown
+27,newFeature,Datapod CLI (Command Line Interface),"- example commands
+	- dpod /help
+		- show examples
+	- dpod newPage Information backend
+	- dpod newItemType Notes ""idCode, Title, Body;outline"" -dummy:10
+	- dpod deletePage Information",,,2019-08-14 14:11:15,systemUnknown
+28,newFeature,ItemType Manage Page: Code chunks,"- area that enables developer to search for code chunks for that item type, e.g.
+	- load all items from database
+	- foreach on item types
+	- get records, itemTypeObjects, etc.
+- also: ItemType Definition Block",3.7,,2019-08-14 14:11:15,systemUnknown
+29,newShowcase,Showcase: Outline Formatting,"- change to: Markdown Formatting
+- also pictures
+	- do with ShowcaseBooks
+- add button syntax: [[Create]] and [[CTRL-C]]",4.1,,2019-08-14 14:11:15,systemUnknown
+30,newFeature,Publish site,"- strips site down to upload
+	- delete anything marked dev
+- copies all files then deletes what is not necessary
+	- logs user out
+	- runs script to genericize
+- option to upload via FTP
+",2.0,,2019-08-14 14:11:15,systemUnknown
+31,newFeature,Code Expanders,"- developer can enter text in code, e.g.
+	- //code.foreach.pageItems
+	- //code.loadAll.pageItems
+- and refreshing the page expands this code based on a code block",2.5,,2019-08-14 14:11:15,systemUnknown
+32,refactoring,Add fadeIn() to each page,"- add the non-flicker `$(""#app"").fadeIn(100);` solution to each page and each creation-page template
+- see `showcaseSliders` for an example",4.2,,2019-08-14 14:11:15,systemUnknown
+33,newFeature,Item Type Caching ,"	- set at site or ItemType level
+	- be able to set them as cache
+	- they are then written to a file that can be accessed via JSON
+		- enables direct access of data 
+	- do speed testing",3.4,,2019-08-14 14:11:15,systemUnknown
+34,newCreatePage,Display Data from SQL Statement with Page State,"- make Create Page: 
+	- base this on Showcase: Page State",4.2,,2019-08-14 14:11:15,systemUnknown
+35,newDataType,DataType: yesNo,"- first make **Showcase: DataType YesNo**
+- names for field description: yesNo, bool, boolean
+- valid values
+	- affirmative
+		- yes
+		- 1
+		- ok
+	- negative
+		- no
+		- 0
+		- nope
+- form field
+	- checkbox with clickable label",4.9,,2019-08-14 14:11:15,systemUnknown
+36,newFeature,DocumentTypes,"- create document types
+	- e.g. data/documentTypes/books
+	- one file for each classes
+	- each file has notes for the class with syntax to record:
+		- flashcards
+		- todos
+		- etc.",2.8,,2019-08-14 14:29:59,systemUnknown
+37,newShowcase,Two-person interactive game,"- use ShowcaseFlashcards
+	- with category
+- sign in as one player
+- the next person to go to page will see player waitig, join
+- each chooses category
+- answer as fast as possible till 10
+- move player from left to right, etc.
+- show them typing at the same time",4.1,,2019-08-14 14:29:59,systemUnknown
+38,newFeature,Smarten the Create Search-Display-and-Edit-Item-Type page ,"- get best-guess title
+- get best-guess category
+- if there is a markdown or outline, then parse and display only it ",4.3,,2019-08-14 14:29:59,systemUnknown
+39,newFeature,Page Developer Panel,"- at bottom of each page
+	- change title, menu, accessGroups, etc. reload page to reflect in menu
+	- clone page with new title
+	- delete page
+	- how long it took the page to load
+	- the libraries that the page uses",3.0,,2019-08-14 14:53:30,systemUnknown
+40,newDataType,"DataTypes: DateRange, Date, DateTime, Time",- use this picker: https://uxsolutions.github.io/bootstrap-datepicker,3.1,,2019-08-14 14:53:30,systemUnknown
+41,newDataType,DataType: List,"- form control is multichoice
+	- checkboxes
+	- multichoice dropdown
+- save as e.g.: red, brown, green",3.0,,2019-08-14 14:53:30,systemUnknown
+42,newFeature,ItemType Manage Page:  Edit and Delete Fields,"- edit field name
+- edit field order
+- delete field
+- added field",3.3,,2019-08-14 14:55:43,systemUnknown
+43,newFeature,Batch Import: show previews of outline and markdown datatypes,- process them same as in form preview,3.9,,2019-08-14 15:09:00,systemUnknown
+44,newDataType,"DataTypes: File, Files",- form control: upload file(s),2.3,,2019-08-14 15:09:00,systemUnknown
+45,newFeature,Developer Panel,"- bring everything the developer would want to do on one panel
+- modes
+	- normal mode: only top options
+	- expert mode shows all options",3.5,,2019-08-14 15:09:00,systemUnknown
+46,newFeature,ItemType Manage Page:  create stand-alone PHP page,- php page that gets data from sqlite database,3.2,,2019-08-14 15:11:13,systemUnknown
+47,newShowcase,Showcase: Canvas.js,"- get 10 samples working from https://canvasjs.com
+- make Create Page: Page with Canvas
+	- background data",4.1,,2019-08-14 15:44:44,systemUnknown
+48,newFeature,ItemType with multiple datasources,"- ItemType: DataSources
+	- sqliteMain
+		- data/main.sqlite
+	- sqliteJimSmith
+		- data/user_jimSmith.sqlite
+	- mysqlMain
+		- connection, login, password
+	- textMain
+		- data/main/howtos.txt
+	- textJimSmith
+		- data/jimSmith/howto.txt
+	- excelMain
+		- data/main.xls
+	- urlSecondSite
+		- http://nnnnnn.com/secondSite
+		- readonly",3.2,,2019-08-14 15:44:44,systemUnknown
+49,newFeature,DataType List: enable joins to other DataTypes,"- new definition systax:
+	- Category;list;ItemType:Categories
+	- will look for idCode, title
+		- or idCode, label
+		- if no idCode, then id",3.0,,2019-08-14 15:44:44,systemUnknown
+50,refactoring,Replace DataType paragraph with paragraphs,- change name everywhere,3.0,,2019-08-14 15:44:44,systemUnknown
+51,newFeature,DataType Choice: enable joins to other DataTypes,"- new definition systax:
+	- Category;choice;ItemType:Categories
+	- will look for idCode, title
+		- or idCode, label
+		- if no idCode, then id",3.0,,2019-08-14 15:44:44,systemUnknown
+52,newShowcase,Showcase: Web Sockets,- start with [this tutorial](https://hackernoon.com/implementing-a-websocket-server-with-node-js-d9b78ec5ffa8),3.0,,2019-08-14 15:44:44,systemUnknown
+53,newShowcase,Showcase: Examples for formmating code,- use https://highlightjs.org,3.0,,2019-08-14 15:44:44,systemUnknown
+54,newFeature,Delete Page shows list of pages,"- instead of having to type in the page name
+- refresh page so menu is refreshed, make experience more smooth",4.9,,2019-08-14 15:44:44,systemUnknown
+55,newShowcase,Showcase: Chart.js,"- get 10 samples working from https://www.chartjs.org
+- make Create Page: Page with Chart
+	- background data",4.2,,2019-08-14 15:44:44,systemUnknown
+56,newFeature,Make page creation automatic,- automate all 8 steps in page creation,4.8,,2019-08-14 15:44:44,systemUnknown
+57,newShowcase,Showcase: Color Syntax Coloring,- see: https://www.npmjs.com/package/syntax,2.0,,2019-08-14 17:07:25,systemUnknown
+58,newFeature,Protect controllers with AccessGroups,- enable controllers to be accessed not online on loggedIn/notLoggedIn level but accessGroups level,4.0,,2019-08-14 17:07:25,systemUnknown
+59,newDataType,DataType: pathAndFileName,"- form: allows you to selected it in public
+- define folder for files to exist in
+- (define this more)",0.5,,2019-08-14 17:07:25,systemUnknown
+60,newFeature,Item Type Creation with Data Sniffing,"- point to:
+	- Excel file
+	- sql table output
+	- CSV files
+	- XML file
+	- JSON file
+- the data will be analyzed and bestGuess Item Type Schema and data will be produced",2.5,,2019-08-14 17:07:25,systemUnknown
+61,datapodSite,Code in GitHub,- put and maintain code in GitHub,3.1,,2019-08-14 17:07:25,systemUnknown
+62,newShowcase,Showcase: JQuery Steps,- http://www.jquery-steps.com,3.0,,2019-08-14 17:07:25,systemUnknown
+63,newShowcase,Showcase: Email Sender,- example to send an e-mail from server,3.0,,2019-08-14 17:07:25,systemUnknown
+64,newShowcase,Showcase: Dynamicsjs,- get 10 best examples on page from http://dynamicsjs.com,3.5,,2019-08-14 17:07:25,systemUnknown
+65,newFeature,Application message area,"- place in the bootstrap_header which shows a message, which will be displayed when the page is refreshed
+- make ItemType
+	- Application Messages",3.7,,2019-08-14 17:07:25,systemUnknown
+66,newFeature,Snapshots,"- make directory: `snapshots`
+- enable developer to make snapshot:
+	- zip site and put in `snapshots/dpn_snapshot_2019-06-14_22_10_12_beforeAddedServersItemType.zip`
+- enable developer to rolback to previous snapshot
+- in the case that some change makes the appliation unable to start
+	- include a batch script in the `snapshots` directory, e.g.
+		- restoreSnapshot.js
+		- run it with node restoreSnapshot.js etc.",3.3,,2019-08-14 17:07:25,systemUnknown
+67,newFeature,Developer Panel: Integrity Scan,"- searches through code to find e.g. ununsed classes or unused methods
+- offers to delete them for you
+- create SmartCodeFile and SmartApplication
+- run with unit tests
+- check database: no nulls, if all fields in all item types validate, no extra tables, etc.
+run with unit tests",2.1,,2019-08-14 17:07:25,systemUnknown
+68,newFeature,Version Updater,"- you can copy a e.g. dpn03010.zip file into the directory `import/`
+- and at the next page refresh, it will show in the Application Message Area that there is a new version to import",3.0,,2019-08-14 17:07:25,systemUnknown
+69,refactoring,Standardize names for files,"- standardize names for files e.g. fileName, file, relativeDirectory, pathAndFileName, etc.",3.8,,2019-08-14 17:07:25,systemUnknown
+70,newFeature,Global Batch Import,"- make Batch Import the input for everything:
+	- ItemType creation
+	- class creation
+	- PageItem creation
+	- DataType creation
+	- ItemType import
+	- commands",2.4,,2019-08-14 17:07:25,systemUnknown
+71,newShowcase,Showcase: CoffeeScript,- get 10 examples working,2.1,,2019-08-14 17:07:25,systemUnknown
+72,enhancement,Validate ItemType definition block upon ItemType creation,"- put validation on ItemType definition blocks, e.g. to catch typos like ""Description:markdown"" instead of ""Description;markdown""",4.1,,2019-08-15 09:45:38,systemUnknown
+73,newFeature,Put search in menu dropdown,"- in any drop down that has more than 10 items, add a search button at the top to filter and find fast",3.7,,2019-08-15 09:59:08,systemUnknown
+74,bugFix,In Create Search-Display-and-Edit ItemType Page fix URL redirect,"- the method `refreshUrlFromPageState
+	- replace the name of the **itemType** e.g. `qsys.changeUrl('documentationSections', this.pageState)`
+	- with the name of the page, e.g. `documentation`",4.8,,2019-08-15 12:58:40,systemUnknown
+75,enhancement,Create Page: make dropdown for ItemType on all pages,"- also when list DataType is finished, do this for multiple item types",4.5,,2019-08-15 12:58:40,systemUnknown
+76,enhancement,Forms: Enable size of textarea boxes to be easily defined,- enable syntax in ItemType Definition Block to enable a textarea box to be defined,4.3,,2019-08-15 13:37:32,systemUnknown
+77,newFeature,"Fix Chrome problem with ""waiting for available socket""","- when using Chrome, clicking on an edit icon and at other times, the browser seems to be loading the page and displays the message ""waiting for available socket""
+- this seems to work fine with Firefox",4.2,,2019-08-19 12:57:58,systemUnknown
+78,enhancement,For Paragraph DataType enable ability to change height,"- add ability to say, e.g. `Description;p;$height=500px`",4.7,,2019-08-22 10:02:34,systemUnknown
+79,enhancement,"On display page, make single item load only that item, not all items","- also: record speed difference, e.g. build in page speed display",4.6,,2019-08-22 10:06:38,systemUnknown
+80,enhancement,Enable ItemType items to have alternative codes for import,"- e.g. for the ItemType Flashcard, enable `==fc` instead of `==flashcard`",4.5,,2019-08-22 10:33:50,systemUnknown
+81,enhancement,Enable ItemType export and import,"- both export and import can be text (with schema and items) or a zip file with this file in it and images
+- or full export as zip file with
+	- images
+	- display pages, manage pages
+- when you download them and put them in the `\systemImport` folder, they are automatically imported at next page load (when in developing mode)",4.4,,2019-08-22 10:33:50,systemUnknown
+82,newShowcase,Showcase: Sliders,"- make a simple slider control which changes a vue.js number
+- also one that changes colors",4.7,,2019-08-22 16:22:00,systemUnknown
+83,enhancement,Enable choice DataType to be styled with MarkDown,"- as on the Create Page form which has some styling now, also enable full MarkDown",4.2,,2019-08-29 10:46:12,systemUnknown
+84,newShowcase,Showcase: Regex Parsing Examples,"- make examples parsing like this:
+	- `check out !!book(javascriptGoodParts)`
+	- `here is a ***highlight***` 
+	- `e.g. a flashcard`
+	- `also looking up in database, etc.`",4.1,,2019-08-29 13:23:45,systemUnknown
+85,newPage,Page with Example List,- base it on Showcase: Regex,4.5,,2019-09-03 13:43:59,systemUnknown
+86,enhancement,Add example text when creating form,display all available syntax for fields,4.9,,2019-09-10 16:51:12,systemUnknown
+87,enhancement,Add notes area at the end of item add and update blocks,"- make it a block that can contain any information which will be ignored, e.g.
+	-----------------------
+	`` REQUIRED FIELDS: category, title, status
+	`` VALID VALUES FOR CATEGORY: bugFix | tech | newPage | newCreatePage | refactoring | newDataType | newShowcase | newFeature | enhancement
+	-----------------------",4.65,,2019-09-11 13:25:48,systemUnknown
+88,newFeature,Automatic adding of features to older versions,"- enhance the ""manual changes"" feature of version features so that developers can click a button and have the feature be added automatically
+- create SmartCode class with methods like
+	- `addAboveLine('processForm: function () {', codeBlock)`
+	- `addAsCss(codeBlock)`
+	- `addAsMethod(codeBlock)`",4.6,,2019-09-11 13:25:48,systemUnknown
+89,tech,New class: SmartExtras,"- allows Extra line to be handles automatically, also with DataType Extras",4.2,,2019-12-06 13:24:25,systemUnknown

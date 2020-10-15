@@ -1,0 +1,1712 @@
+id,genericTermIdCode,title,body,extras,systemWhenCreated,systemWhoCreated
+1,Mobile Framework,React Native,"- an open-source mobile application framework created by Facebook, used to develop applications for Android, iOS and UWP by enabling developers to use React along with native platform capabilities
+- React Native lets you build mobile apps using only JavaScript
+- you don't have to build the same application for iOS and Android, separately as React Native allows your developers to reuse the common logic layer
+- the working principles of React Native are virtually identical to React except that React Native does not manipulate the DOM via the Virtual DOM. It runs in a background process (which interprets the JavaScript written by the developers) directly on the end-device and communicates with the native platform via a serialisation, asynchronous and batched Bridge",$rank=4.1;$quick=a popular JavaScript framework for building mobile apps;$todo=worth learning,2019-05-20 15:04:44,systemUnknown
+2,JavaScript Framework,React,"- developed 2013 by Facebook
+- a JavaScript library for building user interfaces
+- is not a complete application framework like Angular, it is just a view layer
+- React itself is not a framework, you need to add extra stuff to make it shine
+- React by itself doesn’t do all the pieces, instead, it intends to be bolted onto an existing stack
+- **React abstracts away the DOM from you, giving a simpler programming model and better performance**
+- learn React Router
+- versions
+	- 15.0.0 - April 2016
+	- 16.0.0 - September 2017
+	- 16.8 - February 2019 - Hooks
+	- 16.13 - February 2020
+	- 17 - Sep or Oct 2020
+- tools
+	- https://codesandbox.io
+- [MERN](https://codingthesmartway.com/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-1/)
+	- 
+- concepts
+	- React Suspense
+		- lazy loading components is the only use case supported by React.Suspense
+	- Time Slicing
+		- the most awaited feature in version 17
+			- expected to hugely improve performance and demand little attention on the development side
+			- slices the computations of updates for children components during the callback, therefore their rendering can be spread over time
+		- React Suspense and Time Slicing are about optimizing heavy workloads for slow devices
+		- React 17 along with Time Slice and Suspense API
+	- concurrent mode
+		- a change in how React schedules updates to your UI
+	- React Async
+		- You can find it as react-async on npm.
+		- React Async uses the React Context API to pass data down to the helper components
+	- [React Fire](https://github.com/facebook/react/issues/13525)
+		- an effort to modernize React DOM
+		- many of the polyfills in React are unnecessary for modern browsers, and some of them create more issues than they solve
+		- to make React better aligned with how the DOM works
+		- at this stage, the project is very exploratory
+- Redux
+	- ""I’ve been a fan of Redux in the past mostly for its functional style, it tends to be too much for your average application. It’s a steep learning curve and quite a bit of boilerplate, but most of all it distances the data fetching from the data presentation. I like to keep things simple, so I went back to the basics: **local setState**.""
+		- common place to perform data fetching in a React component is in the componentDidMount lifecycle method. Just run fetch and use setState to store the result
+	- Redux Thunk 
+		- a middleware that lets you call action creators that return a function instead of an action object. That function receives the store's dispatch method, which is then used to dispatch regular synchronous actions inside the body of the function once the asynchronous operations have completed.19 juin 2018
+- [React Frameworks](https://coffeencoding.com/cra-vs-next-js-vs-gatsby)
+	- [CRA](https://create-react-app.dev/docs/getting-started/)
+	- [Next.js](https://nextjs.org/)	
+		- a minimalistic framework for server-rendered React applications
+		- server side rendering just keeps getting better and better
+		- instead of PHP, we build the app with JavaScript and React
+		- Webpack-based dev environment
+		- create-react-app can be classified as a tool in the ""Javascript UI Libraries"" category, while Next.js is grouped under ""Frameworks (Full Stack)""
+	- [Gatsby](https://www.gatsbyjs.org/)
+		- free and open source framework based on React that helps developers build blazing fast websites and apps
+- [Storybook for React](https://storybook.js.org/docs/guides/guide-react/)
+	- a user interface development environment and playground for UI components
+	- enables developers to create components independently and showcase components interactively in an isolated development environment
+	- runs outside of the main app so users can develop UI components in isolation without worrying about app specific dependencies and requirements
+- [Docz](https://www.docz.site/)
+	- powered by Gatsby since version 2
+	- MDX is Markdown + JSX, it brings the world of components to Markdown. MDX makes it possible to import and use your components in Markdown-style files
+	- Docz provides native TypeScript support for TSX components
+- [Emotion](https://emotion.sh/docs/introduction)
+	- a CSS library designed for writing css styles with JavaScript
+- [styled-components](https://styled-components.com/docs/basics)
+	- enhanced CSS for styling React component systems
+- [Mobx](https://mobx.js.org/)
+	- simpler than Redux
+	- use Redux for more complex applications",$rank=4.93;$quick=currently the most popular front-end JavaScript framework along with Vue and Angular;$todo=definitely learn this,2019-05-22 16:45:55,systemUnknown
+3,Programming Concept,dependency injection,"- dependency injection is a technique whereby one object supplies the dependencies for another object
+- makes testing easy since you can send in completely mocked databases and other resources",$rank=3.2;$quick=an advanced programming concept but necessary in complex applications;$todo=learn eventually,2019-05-20 14:42:56,systemUnknown
+4,Programming LanguageProgramming Language,Rust,"- 2010 created
+- syntactically similar to C++ but is designed to provide better memory safety while maintaining high performance
+- originally designed by Graydon Hoare at Mozilla Research
+- compiler is free and open-source 
+- was the ""most loved programming language"" in the Stack Overflow Developer Survey for 2016, 2017, 2018, and 2019
+- intended to be a language for highly concurrent and highly safe systems, and programming in the large, that is, creating and maintaining boundaries that preserve large-system integrity",$rank=2.1;$quick=a newer lower-level language like C++ with better memory safety;$todo=popular but not interesting for front-end developers,2019-05-20 15:12:35,systemUnknown
+5,Programming LanguageProgramming Language,Python,"- easy to learn, popular language popular with **data scientists, mathematicians, statisticians**
+- versions	
+	- 1994: Python 1.0
+	- 2000: Python 2.0
+	- 2008: Python 3.0
+	- Oct 2019: Python 3.8
+	- May 2020: Python 3.9
+- [fourth most popular technology](https://insights.stackoverflow.com/survey/2019#technology)
+- 2019: Python is the most wanted language for the third year in a row
+- created by Guido van Rossum and first released in 1991
+- emphasizes code readability with its notable use of significant whitespace
+- described as a ""batteries-included language"" due to its comprehensive standard library
+- uses whitespace indentation, rather than curly brackets or keywords
+- example of Python in Visual Studio Code, notice the lack of curly brackets and the indentation##pythonInVscode
+- four-minute video of Guido van Rossum talking about how he created Python@@J0Aq44Pze-w",$rank=4.3;quick=an older but pragmatic language and increasingly popular today used widely by scientists and mathematicians;$todo=easy to learn and worth it,2019-05-24 15:45:25,systemUnknown
+7,Programming LanguageProgramming Language,Kotlin,"- a language designed to **interoperate fully with Java** and improve on it
+- type inference allows its syntax to be more concise
+- since May 2019, Kotlin is Google's **preferred language for Android** app development
+- mainly targets the JVM, but **also compiles to JavaScript**
+- sponsored by **JetBrains and Google** through the Kotlin Foundation.",$rank=2.1;$quick=Google's new Java language;$todo=not that interesting for front-end development,2019-05-20 15:14:53,systemUnknown
+8,Revision Control System,SVN,"- 2000, a software versioning and revision control system, popular but being replaced by Git
+- now a top-level Apache project
+- CollabNet founded the Subversion project in 2000",$rank=3.7;$quick=the second most popular revision control system behind Git;$todo=easy and worth learning,2019-05-20 15:00:17,systemUnknown
+9,Container Platform,Kubernetes,"- **2015**, an open-source container orchestration system for automating application deployment, scaling, and management, works with e.g. Docker
+- **originally designed by Google**, and is now maintained by the Cloud Native Computing Foundation
+- works with a range of container tools, including Docker
+- Rancher is a good interface too it, makes Kubernetes simpler
+- versions
+	- 2015 - Version 1.0
+	- 2019-03 - Version 1.14
+	- 2020-08 - Version 1.19","$rank=2.9;$quick=platform used for large-scale application automation; $todo=learn if you get into cloud deployment and docker, etc.",2019-05-20 15:17:05,systemUnknown
+10,Task Runner,Grunt,"- 2012, a JavaScript task runner, a tool used to automatically perform frequent tasks such as minification, compilation, unit testing, and linting.
+- written in Node.js","$rank=4.8;$quick=the older of the two task runners Grunt and Gulp;$todo=worth learning, easier than Gulp",2019-05-20 15:31:44,systemUnknown
+11,Task Runner,Gulp,"- 2017, a task runner built on Node.js and npm, used for automation of time-consuming and repetitive tasks involved in web development like minification, concatenation, cache busting, unit testing, linting, optimization",$rank=4.7;$quick=the newer of the two popular JavaScript task runners;$todo=has a steeper learning curve than Grunt,2019-05-20 15:31:25,systemUnknown
+12,Revision Control System,Git,"- 2005, a distributed version-control system for tracking changes in source code during software, created by Linux Torvalds, becoming the default version-control system in software projects",$rank=4.9;$quick=the most-used revision control system today;$todo=learn it well,2019-05-22 16:31:49,systemUnknown
+13,Build Tool,Jake,"- a build tool similar to Make and Rake, but written in and for JavaScript
+- it's a port of Ruby's Rake, but inspired by the classic Make","$related=make, rake;$rank=3.1;$quick=a popular JavaScript build too; $todo=know about it",2019-05-20 15:05:48,systemUnknown
+14,Build Tool,Rake,"- Rake is a software task management and build automation tool, written in Ruby","$rank=1.8;$quick=one of the many Make tools, written in Ruby; $todo=know about it",2019-05-20 15:21:34,systemUnknown
+15,Build Tool,Make,"- 1976, Make is a build automation tool that automatically builds executable programs and libraries from source code by reading files called Makefiles which specify how to derive the target program
+- Make is one of the most widespread, primarily due to its inclusion in Unix",$rank=2.4;$quick=on of the oldest and most popular build tools;$todo=know about it,2019-05-20 15:22:00,systemUnknown
+16,Code Analysis Tool,JSHint,"- created in 2011 by Anton Kovalyov 
+	- a fork of the JSLint project by Douglas Crockford
+	- felt JSLint was getting too opinionated",$rank=3.2;$idCode=jshint;$quick=a code analysis tool that will help you write better JavaScript;$todo=worth incorporating in your project (but also see ESLint),2019-05-20 15:43:20,systemUnknown
+17,Code Analysis Tool,ESLint,"- ESLint checks your coding style and checks your code for bugs and other problems as well
+- it is the newest of the JavaScript code analysis tools, newer than JSHint and JSLint",$idCode=eslint;$rank=3.9;$quick=the newest JavaScript code analysis tool;$todo=worth incorporating in your project,2019-05-20 15:43:20,systemUnknown
+18,JavaScript Testing Framework,Mocha,"- a JavaScript test framework for Node.js programs
+- can use assertion libraries such as Chai
+- one of the **most flexible**
+- requires some additional setup and configuration
+- c'est celui qui fait de l'ombre à Jasmine parce que c'est également un très bon framework et c'est très utilisé
+- ca tourne en Node.js et est vraiment génial à utiliser mais **plus orienté sur les grosses applications**",$rank=3.6; $quick=one of the most popular JavaScript testing frameworks; $todo=learn this with Chai,2019-05-20 16:02:57,systemUnknown
+19,JavaScript Testing Framework,Jest,"- a JavaScript testing framework with a focus on simplicity
+- works with projects using: Babel, TypeScript, Node, React, Angular, and Vue
+- developed **by Facebook**
+- runs your tests **concurrently in parallel**, providing a smoother, **faster test run**
+- works right **out of the box**
+	- you just have to install it through npm or yarn, write your test, and run jest","$rank=3.8; $quick=a JavaScript testing framework like Mocha, but simpler; $todo=start with this before Mocha",2019-05-20 16:03:05,systemUnknown
+20,Assertion Library,Chai,"- an assertion library for node that can be paired with any javascript testing framework, e.g. often used with Mocha",$rank=3.6; $quick=an assertion library for JavaScript testing often used with Mocha; $todo=perhaps learn it with Jest first,2019-05-20 16:09:11,systemUnknown
+21,Language Extension,XHP,"- an augmentation of PHP and Hack developed at Facebook to allow XML syntax for the purpose of creating custom and reusable HTML elements
+- Facebook have also developed a similar augmentation for JavaScript called JSX
+- XHP is to PHP what JSX is to React",$idCode=xhp;$rank=1.4; $quick=allows XML syntax in PHP code; $todo=know what it is,2019-05-20 16:09:58,systemUnknown
+22,Language Extension,JSX,"- a syntax extension to JavaScript used with React
+- JSX is optional and not required to use React
+- JSX is not a requirement for using React. Using React without JSX is especially convenient when you don’t want to set up compilation in your build environment. Each JSX element is just syntactic sugar for calling React.createElement(component, props, ...children). So, anything you can do with JSX can also be done with just plain JavaScript.",$rank=4.2; $quick=a way of combining JavaScript and HTML; $todo=learn this when you learn React,2019-05-20 16:09:11,systemUnknown
+23,Mobile Framework,Cordova,"- a mobile application development framework acquired by Adobe 2011 who rebranded it as PhoneGap
+- they later released an open source version called Apache Cordova
+- enables software programmers to build applications for mobile devices using CSS3, HTML5, and JavaScript instead of relying on platform-specific APIs like those in Android, iOS, or Windows Phone
+- they are not just Web apps, but are packaged as apps for distribution and have access to native device APIs
+- Apache Cordova (formerly PhoneGap) 
+- Cordova is a framework that gives you Javascript bindings to invoke native functionality on a mobile device.
+- Adobe/PhoneGap story explained: http://www.informit.com/articles/article.aspx?p=2478076
+- PhoneGap is a distribution of Apache Cordova
+- PhoneGap is Cordova plus some extra Adobe stuff
+- Cordova will always remain open source and lets you create apps that are native to Android, iOS and Windows using web technologies like HTML, CSS, JavaScript. And PhoneGap offers the same cross-platform environment as Cordova. So, currently the difference lies in the names of the same framework, with a catch that PhoneGap services are owned by Adobe and many not always be open-source and free-to-use.","$rank=2.7; $quick=framework that allows you to use CSS3, HTML5 and JavaScript to build platform-specific mobile apps; $todo=learn this if you get into mobile development",2019-05-20 16:21:20,systemUnknown
+24,Mobile Framework,Ionic,"- **2013**, originally built on top of AngularJS and Apache Cordova in, now built on Angular
+- SDK for hybrid mobile app development
+- originally built on top of AngularJS and Apache Cordova
+- now Ionic3 is built on top of Angular (Angular2)
+- provides tools and services for developing hybrid mobile apps using Web technologies like CSS, HTML5, and Sass
+- an open-source SDK for hybrid mobile app development
+- the latest release was re-built as a set of Web Components: can be used with Angular, React or Vue.js
+- uses JavaScript, CSS, HTML5, and Sass
+- mobile apps can be built with these Web technologies and then distributed through native app stores to be installed on devices by utilizing Cordova or Capacitor","$rank=3.8; $quick=allows you to build hybrid mobile apps with CSS, HTML and JavaScript; $todo=if you get into mobile development, look into Ionic4 (2019)",2019-05-20 16:36:16,systemUnknown
+25,CSS Framework,Bootstrap,"- Bookstrap 1 **created 2011**
+	- Mark Otto and Jacob Thornton at Twitter
+- Bootstrap 2 - Jan 2012
+- Bootstrap 3 - Aug 2013
+- the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web
+- Bootstrap 4
+	- **Bootstrap 4 announced in Oct 2014**
+	- first alpha version of Bootstrap 4 was released on Aug 2015
+	- first beta version Aug 2017
+	- suspended work on Bootstrap 3 in Sep 2016
+	- **Bootstrap 4 was finalized in Jan 2018**",$rank=4.9; $quick=a ubiquitous CSS framework that simplifies website design; $todo=learn Bootstrap 4 well,2019-05-20 16:36:16,systemUnknown
+26,CSS Framework,Materialize,"- frontend framework
+- based on Material Design guidelines by Google",$rank=1.7; $quick=something like Bootstrap but with a design philosophy called Material Design; $todo=know that this is an alternative to Bootstrap,2019-05-20 16:36:16,systemUnknown
+27,Web UI Framework,Blazor,"- a Web UI framework based on C#, Razor, and HTML that runs in the browser via WebAssembly
+- was designed to simplify the task of building fast single-page applications that run in any browser
+- March 7th, 2019, 0.9.0 experimental release",$rank=1.5; $quick=Microsoft's new WebAssembly technology; $todo=know that it exists,2019-05-20 16:46:55,systemUnknown
+28,JavaScript Runtime Environment,Node,"- 2009, an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser
+- **shines at I/O** allowing you to make millions of requests to various databases and cache layers
+- Ryan Dahl, créateur de Node.js
+- utilise la machine virtuelle V8, la librairie libuv pour sa boucle d'évènements, et implémente sous licence MIT les spécifications CommonJS",$idCode=node;$rank=4.923; $quick=extremely important and central JavaScript technology for web backend and application development; $todo=definitely learn this,2019-04-27 15:52:18,systemUnknown
+29,JavaScript Library,Redux,"- 2015 created
+- similar to and **inspired by Facebook's Flux** architecture, it was created by Dan Abramov and Andrew Clark
+- **predictable state container** for JavaScript apps
+- helps you write applications that behave consistently
+- **makes it easy to trace** when, where, why, and how your application's state changed
+- most commonly used with libraries such as **React or Angular** for building user interfaces
+- c'est un petit peu compliqué à mettre en place","$rank=3.8; $quick=JavaScript library for maintaining state, used with React and Angular; $todo=use this with React",2019-05-26 00:37:15,systemUnknown
+31,Database Query Language,SQL,"- invented in 1974, a language used to manage data in relational databases",$idCode=sql;$rank=4.95; $quick=the standard language you use to get data from relational databases; $todo=extremely important to learn the basics,2019-05-23 15:56:04,systemUnknown
+32,Markup Language,HTML5,"- HTML 1.0 released 1993, standard markup language for creating web pages and web applications
+- HTML5 released 2011",$idCode=html5;$rank=5.0; $quick=the markup language that serves as the basis of websites; $todo=learn HTML5 very well,2019-04-27 15:52:18,systemUnknown
+33,Style Sheet Language,CSS3,"- 1996, CSS1 was released, enabling the styling of HTML elements in browsers
+- around 2014, CSS3 became the new standard",$idCode=css3;$rank=4.989; $quick=the language used to style websites and a standard tool for web development; $todo=learn CSS3 well,2019-04-27 15:52:18,systemUnknown
+34,Programming Language,JavaScript,"- 1995 created
+- 1995-2005 considered a rather insignificant and weak scripting language
+- 2005-today, has become the ubiquitous language of the web in browsers, and now on the back end with Node.js",$idCode=javascript;$rank=4.985; $quick=the main scripting language of the Web; $todo=get as good at JavaScript as possible,2019-05-25 17:46:10,systemUnknown
+35,Programming Language,TypeScript,"- 2012, created
+- TypeScript is a superset of ECMAScript 6 (ES6), and is backwards compatible with ECMAScript 5 (i.e.: JavaScript), i.e. you can continue to write JavaScript and ease into TypeScript
+- it adds static typing to the JavaScript, so you get more information concerning errors at develop and compile time, which prevents them from occurring at run time
+- maintained by Microsoft and is therefore quite compatible and has similarities to .NET languages such as C#
+- works very well in VSCode
+- experiment at the [TypeScript Playground](https://www.typescriptlang.org/play)",$idCode=typescript;$rank=4.555; $quick=has become the preferred way to program in JavaScript; $todo=definitely learn this,2019-05-24 16:16:05,systemUnknown
+36,Web Framework,Angular,"- a TypeScript-based open-source web application framework led by the Angular Team at Google
+- when you talk about Angular, you have to be precise what you mean, as there are two kinds: AngularJS and Angular:
+	- AngularJS (2009-2015)
+		- Angular 1.x (now called AngularJS)
+		- officially created by Google in 2012, since 2016 written in TypeScript
+	- Angular (2015-)
+		- Angular 2 
+			- a complete rewrite of Angular 1
+			- written in TypeScript instead of JavaScript
+			- renamed Angular 1 to AngularJS
+			- 5 times faster than the AngularJS
+		- Angular 4
+			- (Angular 3 was skipped)
+		- Angular 5
+		- Angular 6
+		- Angular 7
+- basically, you don't want to develop anymore in AngularJS, but instead use the latest version of Angular
+- today when someone says Angular, they means the Angular 2-7 versions, not AngularJS
+- Having an AngularJS app in 2018 probably means one of two things: 
+	- 1. the app has been abandoned and isn't really used 
+	- 2. it's too expensive or troublsome to upgrade to Angular
+- 2018: regarding AngularJS, ""We will release a couple more versions this summer that includes a few important features and fixes before we move into the mode of only making security and dependency related fixes, but that is all.""
+- in 2018, if you are moving away from AngularJS, your choices are React, Angular, and Vue.js",$rank=4.92; $quick=together with React and Vue.js one of the three most popular JavaScript frameworks; $todo=learn this at some point,2019-05-25 17:47:30,systemUnknown
+37,JavaScript Framework,Vue.js,"- a JavaScript framework for building user interfaces and single-page applications
+- I use Vue.js in Datapod on the front and Node.js on the back end
+- here you can see the popularity of Vue.js##vuejsPopularity
+- Vue was created by Evan You after working for Google using AngularJS in a number of projects
+	- ""I figured, what if I could just extract the part that I really liked about Angular and build something really lightweight.""",$idCode=vuejs;$rank=4.91; $quick=can easily be used to enhance existing applications as well as to create new applications; $todo=very useful to learn,2019-05-24 16:44:30,systemUnknown
+38,Markup Language,Razor,"- note when talking about Razor, one is talking about either Razor syntax or Razor Pages
+	- **Razor syntax**
+		- 2011: Razor syntax was released as part of MVC 3 and the WebMatrix tool set
+		- Razor syntax is what you find in `.cshtml` pages, which are used in both ASP.NET MVC and ASP.NET Razor Pages
+		- an ASP.NET template markup syntax based on the C# programming language that enables the programmer to use an HTML construction workflow
+		- the design reduces the number of characters and keystrokes, and enables a more fluid coding workflow by not requiring explicitly denoted server blocks within the HTML code
+	- **Razor Pages**
+		- 2017: Razor Pages were first introduced with ASP.NET Core 2.0
+		- the new ASP.NET Core Razor Pages is the next evolution of ASP.NET WebForms
+		- a Razor page not only has a Razor view (`.cshtml` file) but also a tightly-integrated ""code-behind"" file (`.cshtml.cs` file) which defines the functionality for that page
+		- Razor Pages doesn't use controllers
+		- Razor Pages automatically implement antiforgery validation, which protects against cross-site request forgery (XSRF/CSRF) attacks, without using the [ValidateAntiForgeryToken] attribute		
+- note when you create an ASP.NET Core Project in Visual Studio 2019, you have two choices:
+	- Web Application = **ASP.NET Razor Pages** project
+	- Web Application (Model-View-Controller) = **ASP.NET MVC** project##razorPagesAndMvc
+	- this tutorial shows how to set up both MVC and Razor pages here: https://exceptionnotfound.net/razor-pages-how-does-it-differ-from-mvc-in-asp-net-core",$rank=4.7; $quick=template markup syntax that mixes C# code and HTML; $todo=a must-learn if you are doing ASP.NET development,2019-05-24 13:51:18,systemUnknown
+39,Programming Concept,MVC,"- developed in the 1970s, but became very popular with web frameworks from the 1990s onward##mvcDiagram
+- has three interconnected parts
+	- **Model**
+		- represents the data that will be displayed in the view
+		- gets the data from the database
+		- responsibility: manages data
+	- **View**
+		- what the user sees, e.g. the HTML page
+		- responsibility: displays data
+	- **Controller**
+		- the backend code class 
+		- accepts input from the user to e.g. save to the model
+		- gets data from the model to display to the view
+		- responsibility: sends data to the view and responds to user input
+- separate internal representations of information from the ways information is presented to and accepted from the user
+- is similar to MVVM",$rank=4.9; $quick=an architectural pattern commonly used particularly in web development; $todo=definitely know this,2019-05-24 14:20:25,systemUnknown
+40,ORM Framework,Entity Framework,"- object-relational mapping (ORM) framework for the .NET platform
+- enables developers to work with data in the form of domain-specific objects and properties, such as customers and customer addresses, without having to concern themselves with the underlying database tables and columns where this data is stored",$rank=4.8; $quick=object-relational mapping (ORM) framework for .NET; $todo=learn this if you do .NET development;$cxategoryTitle=ORM Framework,2019-05-24 14:44:41,systemUnknown
+41,Softward Framework,.NET,"- released in 2002 and has been the basis for Microsoft software and web development ever since
+- 2002 .NET Framework 1.0
+- 2007 .NET Framework 3.5
+- 2015 .NET Framework 4.6
+- 2019 .NET Framework 4.8
+- language interoperability
+	- the old Visual Basic became Visual Basic .NET
+	- the new language C# was created, which was very similar to Java
+- Visual Studio became the main development tool for .NET",$idCode=dotnet;$rank=4.9; $quick=the main Windows development framework; $todo=important to know,2019-05-24 15:01:06,systemUnknown
+42,Modern Operating System,Linux,"- 1991 first kernel version released by Linus Torvalds in Finland
+- Linux is a family of operating systems is based on the Linux kernel and is deployed on personal computers and servers, usually in the form of Linux distributions such as Ubuntu, Debian, Fedora, Suse, or Mint
+- Linux is ubiquitous now particularly on Servers
+- as a web developer, you are either working on Windows or Linux as your development computer, and work on Windows or Linux servers
+	- if your development machine is an Apple Mac, the base operating system is BSD UNIX which is very Linux like
+	- therefore, good Linux skills are a must as a software or web developer","$rank=4.9; $quick=an operating system used on many servers; $todo=very important to know, start with the Ubuntu distribution",2019-05-24 15:17:10,systemUnknown
+43,Modern Operating System,Windows,"- for personal computers
+	- 1990: Windows 3.0 was released
+	- 1995: Windows 95
+	- 1998: Windows 98
+	- 2001: **Windows XP** (solid)
+	- 2006: Windows Vista (slow and buggy)
+	- 2009: **Windows 7** (solid)
+	- 2012: Windows 8 (unpopular)
+	- 2014: **Windows 10** (solid)
+- for servers
+	- 1990s: Windows NT (networked computers for companies)
+	- 2003: **Windows Server 2003**
+	- 2008: **Windows Server 2008**
+	- 2012: **Windows Server 2012**
+	- 2016: Windows Server 2016
+	- 2019: Windows Server 2019",$rank=4.9; $quick=ubiquitous operating system for PCs and servers; $todo=know it well,2019-05-24 15:29:27,systemUnknown
+44,Programming Language,Java,"- created 1995 as a class-based, object-oriented language to write applications
+- compiled to bytecode and so was able to run on multiple operating systems
+- syntax similar to C and C++
+	- but had a garbage collector which made memory management easier
+- Java is a popular language for devices, e.g. the Android mobile phone
+- was the inspiration for Microsoft to create C# in 2001
+- versions, roughly
+	- 1996: Java 1
+	- 2002: Java 4
+		- Regular Expressions
+	- 2004: Java 5
+		- Enums, Generics
+	- before this Java was known as J2SE, e.g. ""J2SE 5.0"" (""Java 2 Platform, Standard Edition"")
+	- after this point Java is known as Java SE, e.g. ""Java SE 6"" (""Java Standard Edition"")
+	- 2006: Java 6
+	- 2011: Java 7
+	- 2014: Java 8
+		- Lambda expressions
+		- Java 8 natürlich immer noch die am meisten genutzte Version
+	- 2017: Java 9
+		- no new language concepts
+		-  APIs and diagnostic commands
+	- 2018: Java 10
+		- seit Java 10 können lokale Variablen mit dem Schlüsselwort var deklariert werden
+			- `var zahl = 5; // int`
+		- local variable type inference
+		- Unicode 10
+	- 2018-09: Java 11
+		- Neu in Java 11 ist, dass man nun auch Lambda-Parameter mit var deklarieren kann. 
+			- `Consumer<String> printer = (var s) -> System.out.println(s);`
+		- Java 11 was the last LTS (Long Term Support) which is supported for three years
+	- 2019-03: Java 12
+		- auf den ersten Blick sieht es nicht so viel aus
+		- die Idee der halbjährlichen Releasezyklen ist es, dass neue Features parallel und ohne Zeitdruck, unabhängig von den nächsten Veröffentlichungsterminen entwickelt werden können
+		- changes in Switch statement
+		- new bench-marking tools
+	- 2019-09: Java 13
+		- die größte Änderung in Java 13 ist das Ersetzen des Schlüsselworts break in der Switch Expression durch yield
+		- new memory management capabilities
+		- in 2020-09, `java -version` showed: *java version ""13.0.1"" 2019-10-15*
+	- 2020-03: Java 14 
+		- Die halbjährlichen OpenJDK-Releases tun der Sprache und der Plattform gut.
+		- Diesmal gab es sogar deutlich mehr neue Funktionen also noch bei Java 12 und 13
+		- Text Blocks
+		- brought switch expressions
+	- 2020-09: Java 15
+		- text blocks, hidden classes, the Z Garbage Collector, and previews of pattern matching and records
+		- long text blocks that can be assembled with much more readable code
+		- new garbage collectors
+		- hidden classes designed for use by framework creators
+	- 2021-03: Java 16
+	- 2021-09: Java 17
+		- this will be a LTS (Long Term Support) version, supported for three years
+- ""C# and Java are the big boys of yesteryear, not the sexiest languages but certainly worth learning. The only problem is figuring out which C# and which Java to learn, there have been so many versions of them and so much bad code out there.""","$rank=4.5; $quick=a popular and ubiquitious programming language; $todo=important for software development, not so much for web development",2019-05-24 15:44:55,systemUnknown
+45,JavaScript Transpiler,Babel,"- created by Sebastian McKenzie
+- a JavaScript compiler and configurable transpiler
+- allows software developers to write source code in a preferred programming language or markup language and have it translated by Babel into JavaScript
+	- e.g. you can use Babel to convert JSX markup into JavaScript using the Babel preset ""react""
+- a popular tool for using the newest features of the JavaScript programming language
+- Babel's main purpose is to turn unsupported or cutting-edge language features into ES5
+	- e.g. it can translate all kinds of high version ECMAScript into ES5, which most browsers can understand
+- Babel converts import and export declaration to CommonJS (require/module.exports) by default",$rank=4.8; $quick=a JavaScript transpiler which enables you to use higher versions of ECMAScript; $todo=learn and use this,2019-05-24 15:59:19,systemUnknown
+46,Package Manager,npm,"- 2010 created
+- package manager for JavaScript
+- default package manager for node.js
+- inspiration from shortcomings of PEAR and CPAN
+- makes finding, downloading, installing and using various JavaScript libraries much easier than before
+- npm started out managing node.js modules (that's why packages go into node_modules by default), but it works for the front-end too when combined with Browserify or WebPack
+- [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
+	- where npm makes it easy to install and manage dependencies hosted on the registry, npx **makes it easy to use CLI tools and other executables hosted on the registry**
+	- trend is to install tools as project-local devDependencies, instead of requiring users to install them globally
+		- tools like mocha, grunt, and bower, which were once primarily installed globally on a system, can now have their versions managed on a per-project basis
+		- e.g. `npx mocha` is all you need to do to use your local installation
+		- calling `npx <command>` when <command> isn’t already in your $PATH will automatically install a package with that name from the npm registry for you, and invoke it
+			- the installed package won’t be anywhere in your globals
+	- tools like *yeoman* or *create-react-app* are not used frequently
+		- by the time you run them again, they’ll already be far out of date
+		- with npx you don't have to install them every time you want to use them
+	- npx can even apparently run GitHub gists",$rank=4.924; $quick=the main package manager for JavaScript; $todo=extremely useful,2019-05-24 16:06:21,systemUnknown
+47,Package Manager,Bower,"- a package manager, like npm, which manages frameworks, libraries, assets, and utilities, installs them, and makes sure they are up to date
+- traditionally, many web development projects combined npm and Bower. npm was used to manage back-end dependencies, while Bower was used for front-end dependencies, in fact, you needed to use npm in order to install Bower in the first place
+- Dec 2017: ""**Bower is dead, long live npm. And Yarn. And webpack.**""
+	- Bower has been deprecated by its creators
+	- Bower offered a flat dependency graph, which you can now get with NPM and Yarn
+	- Bower put the burden of dependency management on the user
+- 2018 Update: bower is mostly deprecated **in favor of NPM**","$rank=0.8; $quick=an older package manager for the frontend; $todo=today use npm, Yarn and Webpack",2019-05-24 16:14:01,systemUnknown
+48,JavaScript Library,jQuery,"- 2006 created
+- became the de facto JavaScript library for many years, altough after 2012 or so began to be replaced by more sophisticated JavaScript libraries such as Angular, React, and Vue.js
+	- it's main drawback is that it works directly with the DOM whereas the newer libraries offer more sophisticated event-based patterns such as MVVM which maintain state on the page and continually update based on a data source, and so enable a developer to make much more sophisticated and robust, easy-to-maintain web applications
+- here you can see the popularity of jQuery rise, peak and fall##jqueryPopularity",$idCode=jquery;$rank=4.7; $quick=a very useful and popular but older JavaScript library; $todo=learn the basics,2019-05-24 16:43:10,systemUnknown
+50,JavaScript Library,Backbone,"- 2010 created
+- a JavaScript library with a RESTful JSON interface and based on the Model View Presenter (MVP) application design paradigm
+- lightweight
+- depends on underscore.js and jQuery
+- designed for developing single-page web applications
+- was created by Jeremy Ashkenas, who is also known for CoffeeScript and Underscore.js
+- popularity peaked around 2013##vuejsPopularity
+",$rank=3.8; $quick=a JavaScript library that was popular back in 2010-2015; $todo=look into this as an alternative JavaScript framework,2019-05-24 16:46:46,systemUnknown
+52,Programming LanguageProgramming Language,PHP,"- 1995 created
+- a very popular, pragmatic and universal programming language for websites, the P in the very popular LAMP stack (Linux, Apache, MySQL, PHP)
+- PHP is loosely typed which means it does not require you to declare a variable type when declaring a variable, unlike C# and Java
+- 2005 added object-oriented features 
+	- after 2005 when PHP5 was released, it began to be taken more seriously since the new object-oriented features gave it the ability to implement more sophisticated OOP programming paradigms as one can in C# and Java-like
+- versions
+	- 2015-12 = Version 7.0	
+		- 2016-05 = Training: What's New in PHP 7.0
+	- 2018-12 = Version 7.3
+	- 2019-11 = Version 7.4
+	- 2020-11 = Version 8.0",$rank=4.61; $quick=very popular and pragmatic programming language for websites; $todo=PHP is a solid skill to have,2019-05-25 17:23:01,systemUnknown
+53,Programming Language,ES6,"- ECMAScript 6
+- created to standardize JavaScript
+- JavaScript has remained the best-known implementation of ECMAScript since the standard was first published
+	- e.g. Microsoft created an implementation of ECMAScript called JScript in the late 1990s which never got popular
+- ES1: June 1997
+- ES2: June 1998
+- ES3: Dec. 1999
+- ES4: (abandoned)
+- **ES5**: 2009
+- (moved to annual updates)
+- **ES6**: June 2015 (ES2015)
+	- arrow functions
+	- this is when transpiling to ES5 become popular
+- ES7: June 2016 (ES2016)
+- ES8: June 2017 (ES2017)
+- ES9: June 2018 (ES2018)
+- ES.NEXT (always means the next version)",$idCode=ecmascript;$rank=4.85; $quick=scripting-language specification for JavaScript; $todo=learn the new features of ES6 well,2019-05-27 09:13:22,systemUnknown
+54,Query Language,GraphQL,"- a data query and manipulation language for APIs, and a runtime for fulfilling queries with existing data
+- 2012 developed internally by Facebook
+- 2015 released publically
+- 2018 established GraphQL Foundation, GraphQL now hosted by the non-profit Linux Foundation
+- instead of working with rigid server-defined endpoints, you can send queries to get exactly the data you’re looking for in one request
+- is an efficient, powerful and flexible approach to developing web APIs, and has been compared and contrasted with REST and other web service architectures
+- consists of a type system, query language and execution semantics, static validation, and type introspection
+- ??terry",$idCode=graphql;$rank=4.5; $quick=a newer and more robust alternative to REST; $todo=learn it if you get a chance,2019-05-27 09:34:30,systemUnknown
+55,Javascript Module Bundler,Webpack,"- 2012 created
+- JavaScript module bundler
+- requires Node.js
+- it can be used from the command line, or can be configured using a config file which is named **webpack.config.js**
+- Webpack has **no preference for commonjs over AMD**
+- it can get **quite heavy** when you work on complex projects
+- in 2020 the current **standard way to bundle** websites, but being replaced by **Parcel** for simpler projects",$rank=4.925; $quick=the most popular JavaScript module bundler; $todo=learn this,2019-05-27 10:30:36,systemUnknown
+56,Javascript Module Bundler,Browserify,"- created **2010**, the oldest site bundler
+- allows you to write Node.js-style modules that compile for use in the browser
+- it **lets you use require on the front end**, the same way you'd use it in Node
+- a tool that brings all the resources of the NPM ecosystem off of the server, and into the client.
+- Browserify is an attempt to build a module loader on top of the NPM ecosystem and node modules
+- it uses CommonJS modules and integrates tightly with NPM",$rank=4.2; $quick=gives you access to NPM modules in the browser; $todo=learn Webpack before Browserify,2019-05-27 15:32:16,systemUnknown
+57,Programming Language,C++,"- 1985 created
+- programming language created as an extension of C, i.e. C with classes
+- today C++ is still used widely to write applications",$idCode=cplusplus;$rank=2.3; $quick=low-level language for writing applications; $todo=not relevant to web development,2019-05-27 13:20:26,systemUnknown
+58,Code Editor,Visual Studio Code,"- 2015 created
+- code editor developed by Microsoft for Windows, Linux and macOS
+- highly customizable, small and fast
+- free and open source
+- in 2019 at Stackoverflow, ranked the most popular developer environment tool
+- based on Electron, a framework which is used to deploy Node.js applications for the desktop running on the Blink layout engine","$idCode=vscode;$rank=4.93; $quick=a very useful, cross-platform code editor; $todo=definitely use this even for non-.NET projects",2019-05-27 14:05:07,systemUnknown
+59,Code Editor,Visual Studio Professional,"- robust, full-featured, and convenient editor by Microsoft for developing .NET technologies
+- costs between $200 and $400
+- this is the editor you'll use if you work for a company doing .NET development",$idCode=vsProfessional;$rank=4.2; $quick=the default code editor for .NET technologies; $todo=learn well if you do .NET development,2019-05-27 14:05:07,systemUnknown
+60,Code Editor,Visual Studio Community,"- free version of Visual Studio, the main .NET development environment by Microsoft
+- defined as a ""free, fully-featured IDE for students, open-source and individual developers""
+- since 2015, before that this was known as the Express version
+- can be used to develop .NET web sites, desktop apps, and console apps",$idCode=vsCommunity;$rank=4.2; $quick=free version of Visual Studio for .NET development; $todo=use this free tool to learn Visual Studio,2019-05-27 14:08:26,systemUnknown
+61,Messaging Protocol,SOAP,"- designed in 1998 by Dave Winer
+- a messaging protocol specification for exchanging structured information in the implementation of web services in computer networks",$rank=1.9; $quick=the older way to make services available to software and other websites; $todo=learn REST instead,2019-05-27 14:41:32,systemUnknown
+62,Architectural Design Concept,REST,"- short for ""representational state transfer""
+- Roy Fielding defined REST in his 2000 Ph.D. dissertation
+- allows requesting systems to access and manipulate resources on a server by using a uniform and predefined set of stateless operations
+- Web service APIs that adhere to the REST architectural constraints are called RESTful APIs","$rank=4.5; $quick=a way to make services on a web available to software and other websites; $todo=important, learn this at some point",2019-05-27 14:41:32,systemUnknown
+63,Architectural Design Concept,Web Service,"- any service provided by a web server which is intended for machine-to-machine communication for transferring machine-readable file formats such as XML and JSON
+- web services are either based on SOAP or REST","$rank=2.8; $quick=a service that provides an object-oriented, Web-based interface to a database server; $todo=an important concept and technology",2019-05-27 14:41:56,systemUnknown
+64,GraphQL Client,Apollo,"- the Apollo Client is a major GraphQL client, along with Relay
+- Airbnb uses Apollo for GraphQL
+- ""if you are going to do GraphQL, do Apollo""",$rank=2.5; $quick=the most popular GraphQL client; $todo=learn it if you get into GraphQL,2019-05-27 15:04:45,systemUnknown
+65,Architecture,Flux,"- developed by Facebook to work with React
+- **Flux is a fancy name for the observer pattern** modified a little bit to fit React
+- it is not a framework or a library
+	- it is an architecture that complements React","$rank=2.1; $quick=an architecture and design pattern created by Facebook for React; $todo=know about this, but use Redux in React instead",2019-05-27 15:18:08,systemUnknown
+66,JavaScript Library,RequireJS,"- JavaScript file and module loader
+- implementation for asynchronous module definition in JavaScript
+- is optimized for in-browser use, but it can be used in other JavaScript environments, like Rhino and Node
+- Node already has a module loader, but by using RequireJS on the server, you can use one format for all your modules, whether they are running server side or in the browser","$idCode=requirejs;$rank=1.4; $quick=an older JavaScript tool that loads JavaScript modules in the Browser; $todo=it's old, use Browserify or Webpack instead",2019-05-27 15:36:27,systemUnknown
+67,Modern Operating System,macOS,"- 2001, the Mac operating system started with Mac OS X 10.0
+- it version number increases every year and in 2019 is at Mac OS X 10.15
+- the base operating system beneath the Mac OS is a variant of UNIX called BSD (Berkeley Software Distribution)
+	- if you know your way around the Linux command line, you will feel comfortable developing on a Mac","$idCode=macos;$rank=4.6; $quick=the operating system used on the Mac laptop, a very popular laptop for development; $todo=get access to a Mac and learn the environment as its quite different than Windows",2019-06-12 15:10:49,systemUnknown
+68,UNIX Operating System,BSD,"- 1977 created
+- written in C
+- 1995, the last release of BSD proper
+- today when one says *BSD*, one is referring to one of BSD's descendants, e.g. FreeBSD, OpenBSD, NetBSD,  DragonFly BSD, Darwin, or **most probably macOS**
+- this led to the Darwin operating system, which **led to macOS**",$rank=0.3; $quick=a version of the UNIX operating system from the 1970s; $todo=know that it is the basis of the macOS;$categoryTitle=UNIX Operating System,2019-06-12 15:42:59,systemUnknown
+69,Old Operating System,UNIX,"- 1970s developed
+- still used in universities, research centers and largeand old corporations
+- Linux and macOS are both very similar to UNIX","$idCode=unix;$rank=2.1; $quick=an old operating system from the 1970s; $todo=know that it still exists, e.g. at universities",2019-06-12 16:31:29,systemUnknown
+70,Linux Distribution,Ubuntu,"- 2004 released
+- free
+- built on Debian's architecture and infrastructure
+- GNOME 3 has been the default GUI
+- developed by Canonical, owned by Mark Shuttleworth, South Africa","$rank=4.5; $quick=a very popular distribution of Linux; $todo=install, use and be comfortable with Ubuntu",2019-06-12 16:42:24,systemUnknown
+71,Linux Distribution,Debian,"- 1993 first version
+- one of the earliest operating systems based on the Linux kernel
+- Debian officially contains only free software, but non-free software can be downloaded and installed from the Debian repositories
+- Debian is a popular choice for servers, for example as the operating system component of a LAMP stack (Linux, Apache, MySQL, PHP)",$rank=2.9; $quick=a more technical distribution of Linux than Ubuntu; $todo=know that it exists,2019-06-12 16:50:58,systemUnknown
+72,Linux Distribution,Linux Mint,"- released in 2006
+	- based on Kubuntu, a flavor of Ubuntu
+- focuses on desktop users
+- Linux Mint 2.0 was based on Ubuntu 6.10
+- 2008, Linux Mint adopted the same release cycle as Ubuntu
+- primarily uses free and open-source software, making exceptions for some proprietary software",$rank=3.9; $quick=an easy-to-use distribution of Linux; $todo=install it and try it out,2019-06-12 16:55:50,systemUnknown
+73,Database,MySQL,"- 1995 created by Swedish company MySQL AB 
+- free and open-source
+- it is the database in the popular LAMP stack (Linux, Apache, MySQL, PHP)
+- runs on all operating systems: Windows, Linux, macOS, UNIX
+- 2008 Sun Microsystems acquired MySQL AB
+- 2010 Oracle acquired Sun Microsystems
+- **MariaDB** is a community-developed, commercially supported fork of the MySQL relational database management system, intended to remain free and open-source software under the GNU General Public License
+- versions
+	- 1995 = Version 1.0
+	- 2001 = Version 3.23 - MySAM replaced ISAM
+	- 2003 = Version 4.0 - unions
+	- 2008 = Version 5.1 - stored procedures, triggers, views
+	- *Oracle acquired MySQL*
+	- 2010 = Version 5.5 - default storage engine is InnoDB
+	- 2015 = Version 5.7
+	- 2018 = Version 8.0 - NoSQL Document Store
+		- MySQL installed on Ubuntu 2020-09 was Version 8.0.21",$idCode=mysql;$rank=4.8; $quick=the most popular and widespread database; $todo=learn it well,2019-06-13 11:13:39,systemUnknown
+74,Database,PostgreSQL,"- developed through the 80s at Berkeley
+- released 1996
+- **[post-GRESS-kyew-ell]**
+- free and open-source
+- owned by PostgreSQL Global Development Group
+- 2018, PostgreSQL has gotten significantly better with features like **full-text search**, **JSON columns**, logical replication, upsert, and better scalability, which gets you close to, if not beyond, the performance of typical commercial databases while also allowing you to consolidate several database systems into one for less overhead and cost
+- 2018, the popular foreign-data-wrapper extension even lets you query external sources directly from within PostgreSQL if necessary",$idCode=postgresql;$rank=4.7; $quick=a robust but less popular database than MySQL; $todo=use it in a project if you have a chance,2019-06-13 11:33:20,systemUnknown
+75,Database,SQL Server,"- 1989 first release
+- in general in .NET projects, you don't access the SQL Server directly but set up and speak to Entity framework, which in turn access SQL Server
+- SQL Server Express Edition is a scaled down, free edition of SQL Server
+	- while there are no limitations on the number of databases or users supported, it is limited to using one processor, 1 GB memory and 10 GB database files
+	- so if you want to learn SQL Server, you can use SQL Server Express
+- supported versions
+	- SQL Server 2008
+	- SQL Server 2012
+	- SQL Server 2014
+	- SQL Server 2016
+	- SQL Server 2017	
+- SQL Server 2017 finally added Linux support for these Linux platforms: Red Hat Enterprise Linux, SUSE Linux Enterprise Server, Ubuntu & Docker Engine",$idCode=sqlserver;$rank=4.63; $quick=the database you will use in .NET projects; $todo=learn it well if you develop in .NET,2019-06-13 11:50:33,systemUnknown
+76,Database,SQLite,"- created 2000
+- very popular  used today by several widespread browsers, operating systems, and embedded syxstems such as mobile phones, among others
+- implements most of the SQL standard, generally following PostgreSQL syntax
+- stores the entire database (definitions, tables, indices, and the data itself) as a single cross-platform file on a host machine
+- uses a dynamically and weakly typed SQL syntax that does not guarantee the domain integrity, which means that one can e.g. insert a string into a column defined as an integer
+- designed by Dwayne Hipp in 2000 while working for General Dynamics on contract with the United States Navy
+	- design goals were to allow the program to be operated without installing a database management system or requiring a database administrator",$idCode=sqlite;$rank=4.61; $quick=a very useful file-based database; $todo=use it in a project and learn the differences in SQL syntax from other databases,2019-06-13 12:59:23,systemUnknown
+77,Type of Database,NoSQL,"- 2009, Johan Oskarsson, developer at Last.fm, introduced the term NoSQL when he organized an event to discuss open source distributed, non relational databases
+- a type of database that provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases, e.g. in structured documents
+- used typically in big data and real-time web applications
+- kinds of NoSQL databases include:
+	- Key-Value Cache (Memcached)
+	- Key-Value Store (Redis)
+	- Document Store (CouchDB, MongoDB)","$idCode=nosql;$rank=4.55; $quick=a type of database used with big data; $todo=if you want to work with big data, learn a NoSQL database such as MongoDB or CouchDB",2019-06-13 14:29:44,systemUnknown
+78,NoSQL Database,CouchDB,"- 2005 developed by by Damien Katz, a former Lotus Notes developer at IBM
+- 2008 became an Apache Incubator project
+- 2012 Katz left project to work on Couchbase Server
+- it uses JSON to store data, JavaScript as its query language
+- implements a form of multiversion concurrency control (MVCC) so it does not lock the database file during writes, onflicts are left to the application to resolve","$idCode=couchdb;$rank=4.45; $quick=with MongoDB, a popular NoSQL document store; $todo=a good choice for a NoSQL database",2019-06-13 14:51:15,systemUnknown
+79,NoSQL Database,MongoDB,"- **2009** developed
+- uses **JSON-like documents** with schema
+- can be used as a file system","$idCode=mongodb;$rank=4.5; $quick=with CouchDB, a popular NoSQL document store; $todo=a good choice for a NoSQL database",2019-06-13 14:51:15,systemUnknown
+80,NoSQL Database,Cassandra,"- 2008 Facebook developed
+- 2009 became Apache incubator project
+- 2010 Apache top-level project
+- designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure
+- offers robust support for clusters spanning multiple datacenters
+- has Cassandra Query Language (CQL)",$rank=2.1; $quick=a NoSQL database that handles large amounts of data; $todo=know that it exists,2019-06-13 15:11:14,systemUnknown
+81,NoSQL Database,Redis,"- 2009 developed by Salvatore Sanfilippo for his **Italian** startup
+- an in-memory data structure project implementing a distributed, in-memory **key-value database**
+- the most popular key-value database
+- supports different kinds of abstract data structures, such as strings, lists, maps, sets, sorted sets, HyperLogLogs, bitmaps, streams, and spatial indexes
+- made popular the idea of a system that can be considered **at the same time a store and a cache**, using a design where data is always modified and read from the main computer memory, but also stored on disk in a format that is unsuitable for random access of data, but only to reconstruct the data back in memory once the system restarts",$rank=4.4; $quick=the most popular key-value database; $todo=know that it exists,2019-06-13 15:11:14,systemUnknown
+82,Memory Caching System,Memcached,"- 2003 developed by Brad Fitzpatrick for his website LiveJournal
+	- now a Google Engineer as part of the Go programming language team
+- a general-purpose distributed memory caching system
+- used to speed up dynamic database-driven websites by caching data and objects in RAM to reduce the number of times a database must be read",$rank=2.7; $quick=the most popular memory caching system; $todo=use if you need to speed up access to database,2019-06-13 15:11:14,systemUnknown
+83,Database Concept,CRUD,"- the four basic functions of persistent storage: **create**, **read**, **update**, and **delete**
+- popularized by James Martin in his 1983 book Managing the Data-base Environment
+- in SQL:
+	- create = INSERT
+	- read = SELECT
+	- update = UPDATE
+	- delete = DELETE
+- in HTTP:
+	- create = POST
+	- read = GET
+	- update = POST
+	- delete = DELETE
+- may be extended to CRUDL to cover listing of large data sets which bring additional complexity such as pagination when the data sets are too large to be easily held in memory",$idCode=crud;$rank=0.5; $quick=a basic concept of data access and storage; $todo=know this acronym,2019-06-13 15:24:26,systemUnknown
+84,JavaScript Framework,Ember,"- 2011 released
+	- created by Yehuda Katz, a member of the jQuery, Ruby on Rails and SproutCore core teams
+	- like many of Katz's other projects, it advocates convention over configuration
+- 2015 Ember 2.0
+- used to create scalable **single-page web applications**
+- Ember's popularity **peaked around 2014**##vuejsPopularity
+- sets out to provide **a wholesale solution** to the client-side application problem, **not just V in MVC**
+	- is in contrast to many JavaScript frameworks that start by providing a solution to the V in MVC (Model–View–Controller), and attempt to grow from there
+- based on MVVM
+- Ember.js is a part of a complete front-end stack, which comprises Ember CLI, Ember Data, Ember Inspector, Fastboot, and Liquid Fire. This allows developers to create beautifully rendered, dynamic SPAs
+- consists of five key concepts: routes, models, templates, components, services
+- unlike other projects such as AngularJS (Google) and React (Facebook) which have the backing of one main company, Ember has a variety of sponsors such as Yahoo!, LinkedIn and Bustle which are all major users of the framework
+- has a **steep learning curve**
+- **little flexibility**",$rank=3.5; $quick=a full-featured JavaScript Web Framework but less popular today; $todo=try it out if you can but it has a steep learning curve,2019-06-13 16:41:16,systemUnknown
+85,JavaScript Framework,Meteor,"- written in **Node.js**
+- Meteor actually modifies NodeJS and becomes your server
+- used for back-end development, management of the database, business logic and rendering of the front-end part of the websites are a major area where Meteor framework is used
+- you add frameworks on-top of Meteor's platform
+	- **Meteor comes with a bunch of built-in frameworks**
+	- one of the built-ins is a **View framework called Blaze** which can be compared one-to-one with Angular
+	- Meteor's built-ins can be replaced, so if you want to replace Blaze with Angular then you can
+- **integrates with MongoDB**
+- Meteor can be used with its own Blaze templating engine, as well as with the Angular or React frameworks
+- in **2016** the Meteor Development Group (the open source organisation powering Meteor) started working on a new **backend layer based on GraphQL** to gradually replace their pub/sub system, largely isolated in the whole node.js ecosystem: the Apollo framework",$rank=1.7; $quick=a backend JavaScript framework built on Node.js; $todo=know what it is,2019-06-13 16:51:20,systemUnknown
+86,JavaScript framework,Mithril,"- the implementation of the framework is easy since the functions are not derived from a base class
+- it's only about 8K, is fast and provides routing and XHR utilities out of the box
+- it has a few features similar to React
+- Mithril is pragmatic, in [this 10 minute guide](https://mithril.js.org/index.html), you learn how to create components, XHR and routing, and that's just about the right amount of knowledge needed to build useful applications
+- if you're starting something new, do consider giving Mithril a try, if nothing else, to see how much value Mithril adopters have been getting out of 8kb (gzipped) of code.
+- ""Hyperscript, which I thought I would hate, turned out to be one of my favorite parts of using Mithril especially when I paired it with Tailwind CSS. Since Hyperscript is pure JavaScript, doesn't require a build step, and is the standard way of writing Mithril components, integrating Mithril into our legacy JS app was absolutely dead simple.""","$rank=2.8; $quick=an interesting, small JavaScript framework for single-page applications; $todo=try this out on a new project at some point",2019-06-17 16:14:19,systemUnknown
+88,JavaScript framework,Polymer,"- *2013* development began
+- being developed by **Google developers**
+- used by a number of Google services and websites, e.g. **used for the redesigned YouTube site**
+- in May 2018, the Polymer team announced that any future development in Polymer will shift away from its two-way binding and its template system, and will **focus on LitElement and one-way bindings**
+- it has a structured design process, allowing for an interoperable *lego-block architecture*
+- comes with quite a lot of **ready-made web-components** based components, which you can readily use in your projects
+- embraces the **Material Design** ideology
+	- from a developer point of view, it comes in quite handy when the ready-made elements, provided by Polymer are beautifully crafted
+	- projects made with Polymer **look quite good and are very accessible**, due to Polymer elements following Material Design Ideology very strictly",$rank=2.3; $quick=a robust JavaScript framework created and used by Google; $todo=use this if you want to learn and use Material Design,2019-06-17 16:43:52,systemUnknown
+89,JavaScript framework,Aurelia,"- with Aurelia you're not so much using a framework, but rather you're just writing ES2015/2016 syntax Javascript with some sugar 
+- has a good router
+- your controllers are just ES2015 classes, services, factories and providers are all classes, too
+- just a series of components that you can swap out
+- leverages the convention over configuration approach
+- you don't have to tell Aurelia the name of my accompanying view .html file, as it will just look for a file of the same name with the .html extension
+- Aurelia doesn’t have a Virtual DOM like React and Vue
+- small learning curve
+	- you don't have to hire an Aurelia developer (as you have to e.g. hire a React or Angular developer), all you need to do is hire a competent front-end/Javascript developer
+	- still has a little bit of buy-in with its templating language, but its manageable ",$rank=2.2; $quick=a lesser-known JavaScript framework with a smaller learning-curve; $todo=try it out if you get a chance,2019-06-17 16:51:56,systemUnknown
+90,JavaScript Framework,Knockout,"- 2010 created
+- uses the MVVM (Model-View-ViewModel) pattern
+- is quite minimalist
+- has a clear separation between domain data, view components and data to be displayed
+- it's perfect for creating rich and responsive user interfaces with a clean, underlying data model
+- has a clearly defined layer of specialized code to manage the relationships between the view components
+	- makes the display more responsive and the user experience richer
+	- Automatic UI refresh, i.e. when the data model's state changes, the UI updates automatically
+- there's one significant drawback that makes developers look for better options: tt lacks updates","$rank=1.8; $quick=a minimalist JavaScript framework with MVVM pattern; $todo=interesting for its MVVM pattern, try it as a learning exercise",2019-06-18 13:40:46,systemUnknown
+91,Programming Language,C#,"- 2000 created
+- was Microsoft's respond to Java, and is very Java-like
+- began as a strict object-oriented language but has grown considerably since then
+- is strongly-typed like Java, unlike PHP
+- C# is the dominant language for the .NET platform","$idCode=csharp;$rank=4.6; $quick=a clean, powerful language used on the .NET platform; $todo=very worth learning for job security and understanding high-level programming concepts",2019-06-18 14:32:27,systemUnknown
+92,Programming Language,C,"- 1972 developed at Bell Labs by Dennis Ritchie between 
+	- closely tied to the development of the Unix operating system
+- today is one of the most widely used programming languages
+- provides low-level access to memory
+- ""I never developed a fondness for C, mostly because I don't like pointer arithmetic and the language is barely a rung above assembler.""",$rank=1.1; $quick=low-level language used to program everything from hardware devices to operating systems; $todo=you don't need to learn C for anything that has to do with the Web,2019-06-18 14:41:37,systemUnknown
+93,Programming Language,Objective-C,"- 1984 originally appeared, used by NeXT for its NeXTSTEP operating system
+- the main programming language supported by Apple for the macOS, iOS and iPadOS operating systems,
+- originally a very ""thin"" layer on top of C, and remains a strict superset of C that permits object-oriented programming using a hybrid dynamic/static typing paradigm
+- derives its syntax from both C and Smalltalk (for object-oriented features)
+- one of the most dreaded languages in Stackoverflow surveys
+- in Objective-C one does not call a method; one sends a message
+- at the 2006 Worldwide Developers Conference, Apple announced the release of Objective-C 2.0
+	- a revision of the Objective-C language to include modern garbage collection, syntax enhancements, runtime performance improvements, and 64-bit support",$idCode=objectivec;$rank=2.1; $quick=an unloved language but necessary for programming Apple devices; $todo=required to learn if you develop apps for the iPhone,2019-06-18 14:48:23,systemUnknown
+94,Programming Language,Go,"- 2007 designed at Google to improve programming productivity in an era of multicore, networked machines and large codebases
+- the designers were primarily **motivated by their shared dislike of C++**.
+- **syntactically similar to C, but with memory safety, garbage collection, structural typing**
+- is influenced by C, but with greater simplicity and safety
+- the language is often referred to as Golang because of its domain name, golang.org, but the proper name is Go
+- Go was used **to write Docker and Kubernetes**",$rank=1.1; $quick=a language that resembles C but with object-oriented features; $todo=you don't need to learn it as a web-developer,2019-06-18 14:57:30,systemUnknown
+95,Programming Language,Dart,"- 2011 developed by Google
+- an object-oriented, class defined, garbage-collected language using a C-style syntax that transcompiles optionally into JavaScript
+- heavily used to create a single page applications",$rank=2.3; $quick=a Google replacement for JavaScript which transpiles to JavaScript; $todo=not necessary to learn unless you have a project that uses it,2019-06-18 15:14:36,systemUnknown
+96,Programming Language,Perl,"- 1987 written by Larry Wall as a general-purpose Unix scripting language
+- Perl usually refers to Perl 5, but it may also refer to its redesigned sister language, Perl 6
+- in the 90s used for CGI scripts, i.e. the first backend programming language for the Web
+- today used for system administration and network programming
+- in 1998, it was referred to as the duct tape that holds the Internet together","$rank=1.2; $quick=a language used most on Linux machines for writing sysadmin scripts; $todo=avoid this language if you can, unless you e.g. administer Linux machines",2019-06-18 15:21:29,systemUnknown
+97,Programming Language,Pascal,"- 1970 developed by Niklaus Wirth, a Swiss computer scientist
+- became very successful in the 1970s
+- used as a teaching language in university-level programming courses in the 1980s
+- was displaced by the C programming language during the late 1980s and early 1990s as UNIX-based systems became popular, and especially with the release of C++",$rank=0.4; $quick=an old language no longer used; $todo=you don't need to learn this,2019-06-18 15:30:36,systemUnknown
+98,Programming Language,Lisp,"- developed **1958**
+- the **second-oldest** high-level programming language in widespread use today, behind Fortran
+- Lisp has important design concepts and has evolved into other languages used today including Clojure, Common Lisp, and Scheme
+- after having declined somewhat in the 1990s, Lisp has experienced a resurgence of interest after 2000
+- many new Lisp programmers were inspired by writers such as Paul Graham and Eric S. Raymond to pursue a language others considered antiquated
+- Lisp programmers often describe the language as **an eye-opening experience** and claim to be substantially more productive than in other languages","$rank=0.9; $quick=the second oldest computer language but which has important design features; $todo=as a software developer, you should be able to say intelligent things about Lisp",2019-06-18 15:39:30,systemUnknown
+99,Programming Language,Fortran,"- 1957 developed by IBM
+- has been in continuous use for over six decades in computationally intensive areas such as numerical weather prediction, finite element analysis, computational fluid dynamics, computational physics, crystallography and computational chemistry
+- 1953 proposal submitted at IBM to develop a more practical alternative to assembly language for programming their IBM 704 mainframe computer
+- it reduced the number of programming statements necessary to operate a machine by a factor of 20
+- was widely adopted by scientists",$rank=0.1; $quick=the oldest computer language from the 1950s; $todo=you don't need to learn this,2019-06-18 15:52:25,systemUnknown
+100,Programming Language,COBOL,"- 1959 developed for business use
+- effectively designed from the ground up as a computer language for business, with an emphasis on inputs and outputs, whose only data types were numbers and strings of text
+- still widely used in legacy applications deployed on mainframe computers
+	- primarily used in business, finance, and administrative systems for companies and governments
+- due to its declining popularity and the retirement of experienced COBOL programmers, programs are being migrated to new platforms, rewritten in modern languages or replaced with software packages
+- most programming in COBOL is now purely to maintain existing applications",$rank=0.2; $quick=extremely old computer language hardly in use anymore; $todo=you don't need to learn this,2019-06-18 15:58:14,systemUnknown
+101,Programming Language,Assembly,"- 1949 first appeared
+- not technically a language per se but symbolic machine code
+- usually refers to any low-level structured coding in which there is a very strong correspondence between the program's statements and the architecture's machine code instructions
+- Assembly language usually has one statement per machine instruction
+- an example of Assembly code:##assemblyCode","$rank=0.09; $quick=the lowest level machine instructions, used since 1949; $todo=you don't need to learn this",2019-06-18 16:06:10,systemUnknown
+102,Programming Language,WebAssembly,"- 2017 developed by the W3C, Google, Microsoft, Apple, Mozilla
+- often referred to as Wasm
+- a set of web standards that define a portable modular binary format, and a corresponding language, similar to the assembly language for executable program and environment-specific program interfaces
+- the main goal of WebAssembly is to enable high performance applications on web pages
+- does not replace JavaScript
+- there is direct DOM to access
+- precursor technologies were asm.js 
+- WebAssembly code is intended to be run on a portable abstract structured stack machine, which is designed to be faster to parse than JavaScript, as well as faster to execute, and to enable very compact code representation.
+- it's not that important
+	- every second post about WASM mentions that it will finally end the domination of JavaScript
+	- for traditional web-development e.g. CRUD apps, e-commerce, i.e. 98% of what makes the web today, WASM is pretty useless
+		- there's nothing JavaScript can't do in these areas 
+	- while it will definately be used and there'll be amazingly fast apps built with it, it won't be as widely used as current HTML5 web stack",$idCode=webassembly;$rank=2.6; $quick=a new a upcoming technology to enable high performance applications on web pages; $todo=keep an eye on it but it is not significant yet,2019-06-18 16:13:16,systemUnknown
+103,Programming Language,VBA,"- 1993 created 
+- Visual Basic for Applications, an implementation of Microsoft's event-driven programming language Visual Basic 6
+- although Visual Basic is no longer support, the VBA programming language was upgraded in 2010 with the introduction of Visual Basic for Applications 7 in Microsoft Office applications
+- VBA code only run within the host application, usually used in Microsoft Excel for complex macros and complex Excel interactive applications
+	- less often in Microsoft Word
+- example of VBA code in Excel which is executed by a button in a spreadsheet##vbaExample","$rank=2.3; $quick=definitely an unliked and overly-simplistic language, but pragmatic and useful in Excel; $todo=learning it enough to make macros in Excel is a useful skill",2019-06-18 16:21:24,systemUnknown
+104,Programming Language,BASIC,"- 1964 designed at Darthmouth College
+- design philosophy emphasizes ease of use
+	- designers wanted to enable students in fields other than science and mathematics to use computers
+- emergence of early microcomputers in the mid-1970s led to the development of the original Microsoft BASIC in 1975
+- Apple computers had Apple BASIC
+- BASIC fell from use during the later 1980s as newer machines with far greater capabilities came to market and other programming languages
+- 1991, Microsoft released Visual Basic, combining a greatly updated version of BASIC with a visual forms builder",$rank=0.6; $quick=a simple language used in the 70s and 80s; $todo=you don't need to learn this,2019-06-18 16:30:24,systemUnknown
+105,Programming Language,OCaml,"- 1996 first appeared, an object-layer improvement on Caml, which existed since 1985
+	- Caml = Categorical Abstract Machine Language
+	- OCaml = Objective Caml
+- some feel OCaml is better than C, but it is not more popular since C has been around for so much longer
+- principally maintained by the French Institute for Research in Computer Science and Automation (INRIA)
+- in the early 2000s, elements from OCaml were adopted by many languages, notably F# and Scala
+- OCaml unifies functional, imperative, and object-oriented programming under an ML-like type system, thus, programmers need not be highly familiar with the pure functional language paradigm to use OCaml
+- OCaml is perhaps most distinguished from other languages with origins in academia by its emphasis on performance",$idCode=ocaml;$rank=1.1; $quick=an academic language created in France in the 1990s; $todo=know that it exists,2019-06-18 16:41:33,systemUnknown
+106,Programming Language,Coffeescript,"- 2009 created
+- transcompiles to JavaScript
+- an attempt to make JavaScript more readable
+	- by making many things optional, and, at the same time, enforcing other things
+	- **blocks are all without braces and parenthesis, and whitespace is used to denote blocks, like in Python**
+- adds syntactic sugar inspired by Ruby, Python and Haskell in an effort to enhance JavaScript's brevity and readability
+- is just syntactic sugar on top of JavaScript
+- one of the pioneers of the compile-to-JavaScript concept
+- a reason to use it its **adherence to functional programming**
+	- treats everything as expressions",$rank=3.3; $quick=one of the first languages that transpiled to JavaScript; $todo=not necessary to learn it unless if you have a project in it or to explore its simplicity and functional programming concepts,2019-06-20 11:55:37,systemUnknown
+107,Programming Language,Eiffel,"- created in 1986 by Betrand Meyer
+	- a **French** academic, author, and consultant in the field of computer languages
+- object-oriented programming language 
+- goal of increasing the reliability of commercial software development
+- has distinct principles
+	- design by contract
+	- command–query separation
+	- the uniform-access principle
+	- the single-choice principle
+	- the open–closed principle
+	- option–operand separation
+- many of the concepts found their way into **Java and C#**
+- class serves as the basic unit of decomposition",$rank=0.4; $quick=a 1980s language that influenced Java and C#; $todo=just know about this language,2019-06-20 12:48:47,systemUnknown
+109,Programming Language,F#,"- 2005 created
+- a strongly typed functional-first language that uses type inference
+- you do not need to declare types, the compiler deduces types during compilation
+- every statement, including `if` expressions, `try` expressions and loops, is a composable expression with a static type",$idCode=fsharp; $rank=3.4; $quick=a lesser-known .NET functional language; $todo=learn if you are doing algorithmic programming difficult in C#,2019-06-20 13:47:41,systemUnknown
+110,Programming Language,Groovy,"- 2007 appeared
+- developed since 2003
+- a Java-syntax-compatible object-oriented programming language for the Java platform
+- 2015 became a top-level **Apache project**
+- most valid Java files are also valid Groovy files","$rank=0.7; $quick=a Java-like language with dynamic typing (not good); $todo=if you use Java, you might want to familiarize yourself with Groovy",2019-06-20 13:57:49,systemUnknown
+111,Programming Language,Miranda,"- 1985 created
+- a purely functional programming language 
+- designed by David Turner as a successor to his earlier programming languages SASL and KRC, using some concepts from ML and Hope
+- produced by Research Software Ltd. of England and was the first purely functional language to be commercially supported
+- had a strong influence on the later Haskell programming language",$rank=0.2; $quick=an almost unknown language from the 1980s that influenced Haskell; $todo=you don't need to know this language,2019-06-20 14:15:12,systemUnknown
+112,Programming Language,Haskell,"- 1990 released
+- functional language
+- the latest standard of Haskell is Haskell 2010
+- as of May 2016, the Haskell committee is working on the next standard, Haskell 2020
+- widely used in academia and industry
+- **Purescript** has Haskell syntax",$rank=0.8; $quick=an old language used mostly in academics; $todo=you might want to learn this if you study computer science,2019-06-20 14:15:27,systemUnknown
+113,Programming Language,R,"- 1993 created by Ross Ihaka and Robert Gentleman at the University of Auckland, New Zealand
+- widely used among statisticians and data miners for developing statistical software and data analysis
+- supported by the R Foundation for Statistical Computing
+- the R software environment is written primarily in C, Fortran and R itself
+- although R has a command line interface, there are several graphical user interfaces, such as RStudio, an integrated development environment
+- R is an interpreted language and users typically access it through a command-line interpreter",$rank=0.9; $quick=a popular language for statistical analysis; $todo=you only need to learn this if you get into pure statistical programming,2019-06-20 14:38:02,systemUnknown
+114,Programming Language,S,"- 1976 released 
+- one of several statistical computing languages that were designed at Bell Laboratories
+- before S, much of the statistical computing was done by directly calling Fortran subroutines
+- S was designed to offer an alternate and more interactive approach",$rank=0.3; $quick=a 1970s statistical language; $todo=know of this language in a historical sense,2019-06-20 14:38:02,systemUnknown
+116,Programming Language,Scheme,"- 1975 released
+- created during the early 1970s at the MIT AI Lab 
+- primarily a functional programming language
+- Scheme's simple syntax is based on s-expressions, parenthesized lists in which a prefix operator is followed by its arguments
+- its reliance on lists as data structures is shared by all Lisp dialects
+- one of the three main dialects of Lisp, alongside Common Lisp and Clojure",$rank=0.4; $quick=a derivative of the Lisp language created in the 1970s; $todo=just know about Scheme in a historical sense,2019-06-20 14:41:53,systemUnknown
+117,Programming Language,ReasonML,"- 2016 created
+- it is written ""ReasonML"" but when talking, one says ""Reason""
+- a syntax extension and toolchain for OCaml created by Jordan Walke at Facebook
+- offers a syntax familiar to JavaScript programmers, and transpiles to OCaml
+- **it compiles to JavaScript**
+- ""ReasonML takes the advantages of both OCaml and JavaScript and can compile to both languages.""
+- ReasonML isn't a new language, it's a new syntax for OCaml.
+- it is a new C-like syntax for the programming language OCaml
+	- new syntax is intended to make interoperation with JavaScript and adoption by JavaScript programmers easier
+	- it removes idiosyncrasies of OCaml's syntax
+- ReasonML is based on OCaml
+- ReasonML's default compilation target is JavaScript (browsers and Node.js)
+- ""ReasonML feels much like what you'd get if you cleaned up JavaScript and turned it into a statically typed functional programming language.""
+- free online book: [Exploring ReasonML](http://reasonmlhub.com/exploring-reasonml/toc.html)
+- ReasonML brings the strong typing and functional style of OCaml to the web in a syntax that’s familiar to JavaScript developers.
+- You write your code in ReasonML, the reformat parser converts it to OCaml AST (abstract syntax), from which the BuckleScript compiler produces JavaScript",$rank=3.2;$idCode=reasonml; $quick=a TypeScript-like extension to the functional programming language OCaml; $todo=not necessary to learn but would be interesting to explore,2019-06-20 15:34:47,systemUnknown
+118,Programming Language,Ruby,"- created 1995
+- designed and developed by Yukihiro ""Matz"" Matsumoto in Japan
+- dynamically typed and garbage-collected
+- influenced by Perl, Smalltalk, Eiffel, Ada, and Lisp
+- Matsumoto on the creation of Ruby: ""I was talking with my colleague about the possibility of an object-oriented scripting language. I knew Perl (Perl4, not Perl5), but I didn't like it really, because it had the smell of a toy language (it still has). The object-oriented language seemed very promising. I knew Python then. But I didn't like it, because I didn't think it was a true object-oriented language – OO features appeared to be add-on to the language. As a language maniac and OO fan for 15 years, I really wanted a genuine object-oriented, easy-to-use scripting language. I looked for but couldn't find one. So I decided to make it.""
+- Ruby is object-oriented: **every value is an object**, including classes and instances of types that many other languages designate as primitives (such as integers, booleans, and ""null"")
+- variables always hold references to objects
+- every function is a method and methods are always called on an object
+- RubyGems is Ruby's package manager
+- **Bundler** provides a consistent environment for Ruby projects by tracking and installing the exact gems and versions that are needed
+	- similar to Node's npm or PHP's Composer","$rank=3.8; $quick=a strictly object-oriented language; $todo=worth learning, especially with Ruby on Rails",2019-06-20 15:47:39,systemUnknown
+119,Programming Language,Scala,"- started in 2001 by **Martin Odersky**
+	- der Entwickler von *javac*
+	- got his Ph.D. at ETH Zurich under the supervision of Niklaus Wirth (Swiss computer scientist who designed Pascal)
+	- idea for Scala was mainly academic
+	- more practical than Haskell or Clojure
+- released in 2004 
+	- at École Polytechnique Fédérale de Lausanne
+- combines the best of both worlds: OOP and functional programming
+	- it is primarily object-oriented but incorporates functional paradigms
+	- sehr reactive applications
+		- this means non-blocking
+- compared to other languages that run on the JVM
+	- Groovy
+		- is also functional and object-oriented
+		- but not strongly typed (bad)
+- common editor is IntelliJ IDEA
+- scala.js
+	- Scala compiled to ES6
+- Scala Native
+	- goal is to start without a runtime
+	- compiled with LLVM (low level virtual machine)
+	- but is only experimental
+- can access all libraries that Java can access
+	- but also has 3000+ libraries which are only for Scala
+		- e.g. Spark
+- associated with the company Typesafe
+- Akka is written in Scala
+	- Akka is a free and open-source toolkit and runtime simplifying the construction of concurrent and distributed applications on the JVM. Akka supports multiple programming models for concurrency, but it emphasizes actor-based concurrency, with inspiration drawn from Erlang.
+	- Language bindings exist for both Java and Scala. Akka is written in Scala and, as of Scala 2.10, the actors in the Scala standard library are deprecated in favor of Akka.
+- runs on JVM
+	- compatible with existing Java programs
+- both functional and object-oriented
+- everything in Scala is an **object**
+	- **does not include primitive data types such as int, double, boolean**
+	- even functions are objects
+	- you can pass functions to methods and return them from methods
+	- you can assign functions to variables
+	- supports anonymous functions, or lambdas
+- supports currying
+- statically typed
+- Java code can also call into Scala code
+- Scala takes a more minimalistic approach than Java.
+- designed to be concise, many of Scala's design decisions aimed to address criticisms of Java
+- Scala source code is intended to be **compiled to Java bytecode**, so that the resulting executable code runs on a Java virtual machine. 
+- Scala is **influenced by Lisp**, but it isn't a dialect
+- Scala has become popular because of Apache Spark
+	- Spark 0.9.1 uses Scala 2.10.",$rank=2.1; $quick=a Java-like language with more functional features; $todo=may be interesting if you do intensive Java programming,2019-06-20 16:04:00,systemUnknown
+120,Programming Language,Simula,"- created 1962
+	- at the Norwegian Computing Center in Oslo
+- considered the first object-oriented programming language
+- introduced objects, classes, inheritance, subclasses, and garbage collection
+- as the name suggests, was designed for doing simulations
+- influence of Simula is often understated, and Simula-type objects are reimplemented in C++, Object Pascal, Java, C# and several other languages",$rank=0.4; $quick=the first object-oriented language created in 1962 in Oslo; $todo=know that Simula and Smalltalk are the first two object-oriented languages,2019-06-20 16:35:40,systemUnknown
+121,Programming Language,Smalltalk,"- create in 1972
+	- in part for educational use at the Learning Research Group of Xerox PARC
+- Smalltalk-like languages are in continuing active development and have gathered loyal communities of users around them, ANSI Smalltalk was ratified in 1998 and represents the standard version of Smalltalk","$rank=0.4; $quick=an educational, object-oriented language created in the 1970s that influenced Ruby and Objective-C; $todo=people talk about it a lot as a theoretically ideal language, but nobody uses it",2019-06-20 16:35:40,systemUnknown
+122,Programming Language,Transact-SQL,"- created for Microsoft SQL Server in early 1990s
+- also known as T-SQL
+- is central to using Microsoft SQL Server
+- expands on the SQL standard to include procedural programming, local variables, various support functions for string processing, date processing, mathematics, etc. and changes to the DELETE and UPDATE statements",$idCode=tsql;$rank=3.5; $quick=the language used in Microsoft SQL Server; $todo=learn this if you do .NET development,2019-06-20 16:44:20,systemUnknown
+123,Programming Language,Bash,"- released in 1989
+- a command language widely distributed today as the default login shell for most Unix and Linux distribution, as well as Apple's macOS and Solaris 11
+- a version is also available for Windows
+- Bash is a command processor that typically runs in a text window where the user types commands that cause actions
+ it can also read and execute commands from a file, called a shell script
+- it supports wildcard matching, piping, here documents, command substitution, variables, and control structures for condition-testing and iteration
+- Bash has become by far the most popular shell among users of Linux","$rank=3.8; $quick=the default command language script on Linux, macOS and UNIX; $todo=worth learning if you work on Linux or Mac",2019-06-21 12:46:55,systemUnknown
+124,Programming Language,Visual Basic,"- 1991 created
+- relatively easy to learn and use
+- was derived from BASIC and enabled rapid application development of graphical user interface applications and access to databases
+- over time the community of programmers developed third-party components
+- 1998 final release as version 6
+- 2008 declared legacy
+- a dialect of Visual Basic, Visual Basic for Applications (VBA), is used as a macro or scripting language particularly within Excel",$idCode=visualbasic;$rank=0.5; $quick=the standard way to develop windows applications in the 1990s; $todo=don't learn this,2019-06-21 14:04:29,systemUnknown
+125,Programming Language,Visual Basic .NET,"- 2001 released
+- the successor to its original Visual Basic language, i.e. Visual Basic 6.0 from the 1990s
+- the primary .NET language is C#, and the only reason you would use Visual Basic .NET, which has the same functionality as C# if not less, is that you are used to the syntax of Visual Basic 6.0 and don't want to learn C#
+	- the language was created in addition to C# to attract Visual Basic 6.0 programers to the .NET platform","$idCode=visualbasicnet;$rank=0.65; $quick=.NET language created to attract Visual Studio 6.0 programmers from the 1990s; $todo=you don't need to learn this, learn C# instead to program on .NET",2019-06-21 15:02:14,systemUnknown
+126,Programming Language,Common Lisp,"- 1984 developed
+- Common Lisp is not an implementation, but rather a language specification
+- a dialect of the Lisp programming language
+- Common Lisp sought to unify, standardize, and extend the features of other Lisp dialects
+- influenced Clojure",$idCode=commonlisp;$rank=0.63; $quick=a language specification derived from lisp that inspired Clojure; $todo=just know that it exists,2019-06-21 15:24:15,systemUnknown
+127,Programming Language,XSLT,"- 1998 created
+- a language for transforming XML documents into other XML documents
+- XSLT is influenced by functional languages
+- the XSLT processor takes one or more XML source documents, plus one or more XSLT stylesheets, and processes them to produce an output document
+- in contrast to imperative programming languages like C, XSLT is declarative
+	- the basic processing paradigm is pattern matching","$rank=2.2; $quick=a language for transforming XML documents into other XML documents; $todo=learn this at some point, useful when working with XML",2019-06-21 15:33:22,systemUnknown
+128,Programming Language,Clojure,"- create 2007 by Rich Hickey
+- [CLOH-zhur]
+- a modern, dynamic, and **functional dialect of Lisp** on the Java platform
+- focus on programming with immutable values and explicit progression-of-time constructs is intended to facilitate developing more robust programs, especially multithreaded ones
+- while its type system is entirely dynamic, recent efforts have also sought the implementation of gradual typing
+- Rich Hickey as its benevolent dictator for life (BDFL)",$rank=1.15; $quick=dialect of Lisp for the Java platform; $todo=learn this if you want to get into Lisp and functional programming,2019-06-21 15:45:24,systemUnknown
+129,JavaScript package manager,Yarn,"- developed  **2016 by Facebook**
+- compatible with the public npm registry and **uses npm by default**
+- designed to address some of the shortcomings of npm at the time","$rank=3.1; $quick=a replacement for npm; $todo=learn npm first which is more standard, and perhaps later learn Yarn",2019-07-11 15:46:50,systemUnknown
+130,web application framework ,Ruby on Rails,"- 2005 created
+- uses the MVC pattern, as well as convention over configuration (CoC), don't repeat yourself (DRY), and the active record pattern
+- greatly influenced web app development through innovative features such as seamless database table creations, migrations, and scaffolding of views to enable rapid application development
+- **influenced Django, CakePHP, Laravel, and Sails.js**
+- David Heinemeier Hansson (Danish programmer) extracted Ruby on Rails from his work on the project management tool Basecamp at the web application company also called Basecamp, in 2007, the framework reached a milestone when Apple released Ruby on Rails with Mac OS X v10.5 Leopard",$rank=4.0; $quick=an older web application framework with solid paradigms worth learning; $todo=try to do a project in Ruby on Rails at some point,2019-07-12 10:15:05,systemUnknown
+131,MVC web application framework,Sails.js,"- 2012 created
+- web application framework developed atop the **Node.js and Express.js**
+- borrows concepts from **Ruby on Rails**
+- provides **ORM interface** using Waterline.js (inherits the best parts of ORMs like ActiveRecord, Hibernate, and Mongoose)
+	- enables a uniform API regardless of the underlying database being used
+- offers a host of features out of the box and leads as the generally accepted Node.js framework for both full-stack development and REST APIs",$rank=3.2; $quick=solid MVC web application framework for Node.js; $todo=try it out at some point,2019-07-12 10:28:19,systemUnknown
+132,Python-based web framework,Django,"- 2005 created
+- web framework that uses Python
+- follows the model-template-view (MTV) pattern
+- used to create complex, database-driven websites
+- Python is used throughout, even for settings files and data models
+- **Instagram** apparently uses Django: [Instagram Makes a Smooth Move to Python 3](https://thenewstack.io/instagram-makes-smooth-move-python-3)
+	- ""Instagram serves this incredible amount of traffic, reliably and steadily so, by running Python (with a little help from Django) under the hood""
+- the version control hosting service **Bitbucket** was created with Django",$rank=3.1; $quick=Python-based web framework; $todo=would be a good way to learn Python,2019-07-12 10:36:23,systemUnknown
+133,static type checker for JavaScript,Flow,"- 2014 developed at Facebook and is often used with React
+- static type checker for JavaScript code
+- lets you annotate the variables, functions, and React components with a special type syntax, and catch mistakes early
+- in 2017, Facebook announced that it would re-license Flow, Jest, React, and Immutable.js under a standard MIT License	
+- **Flow is being replaced by TypeScript**",$rank=2.9; $quick=static type checker for JavaScript; $todo=look into this if you develop in React,2019-07-12 11:06:11,systemUnknown
+134,functional language,Erlang,"- 1986 created
+- has garbage collection
+- has immutable data
+- main strength is support for concurrency
+	- the ability of different parts or units of a program, algorithm, or problem to be executed out-of-order or in partial order, without affecting the final outcome",$rank=0.4; $quick=a little-known functional language from the 1980s; $todo=just know that it exists,2019-07-12 11:35:48,systemUnknown
+135,functional programming language,Elixir,"- 2011 created
+- a functional, concurrent, general-purpose programming language that runs on the Erlang (1986) virtual machine
+- was built to enable **higher extensibility and productivity in the Erlang VM** while keeping compatibility with Erlang's ecosystem
+- builds on top of Erlang and shares the same abstractions for building distributed, fault-tolerant applications
+- ""Users send hundreds of messages per minute, now what? You could learn Elixir and Erlang, but is that really where you want your career to go? Or you could try Kafka or Hadoop, tools designed for big data.""",$rank=0.5; $quick=a little-known functional programming language that improves on Erlang; $todo=know that it exists,2019-07-12 11:35:51,systemUnknown
+136,bug-tracking software,Jira,"- 2002 launched
+- issue-tracking product developed by Atlassian that allows bug tracking and agile project management
+- quite popular in Berlin software companies
+- license states ""free for use by official non-profit organizations, charities, and open-source projects, but not governmental, academic or religious organizations""","$rank=2.1; $quick=popular bug-tracking software; $todo=know about this, it is often used in projects",2019-07-19 10:07:20,systemUnknown
+137,operating system virtualization solution,virtual machine,"- a virtual machine is a software emulation of an computer operating system
+- the following are the main applications which allow you to create virtual machines
+	- Hyper-V
+		- since 2008 from Microsoft
+		- replaced Microsoft Virtual PC as the virtualization solution in Windows 10 onwards
+	- VirtualBox
+		- since 2007 from Oracle
+	- VMWare Server
+		- 2006-2010 from WMWare
+			- was discontinued in 2010 but can still be downloaded
+		- VMWare makes it more difficult to use for free than Hyper-V or VirtualBox, but VMWare is a leader in the industry as a paid solution
+	- Parallels Desktop 
+		- since 2006 from Apple
+		- the virtualization software for macOS
+	- KVM
+		- runs on Linux
+		- (Kernel-based Virtual Machine)
+		- released 2007","$rank=3.1; $quick=a way to run a full operating system as a piece of software; $todo=definitely learn how to use the Hyper-V, VirtualBox or VMWare",2019-07-19 10:59:04,systemUnknown
+138,software virtualization solution,Docker,"- 2013 launched bu Solomon Hykes
+- a set of coupled software-as-a-service and platform-as-a-service products that use operating-system-level virtualization to develop and deliver software in packages called containers
+- the software that hosts the containers is called Docker Engine
+- containers are isolated from each other and bundle their own software, libraries and configuration files
+	- they can communicate with each other through well-defined channels
+- containers are run by a single operating-system kernel and are thus **more lightweight than virtual machines**
+- Solomon Hykes started Docker in France as an internal project within dotCloud
+	- Solomon Hykes est né à New York d'un père américain et d'une mère franco-canadienne
+	- le 28 mars 2018, Solomon Hykes annonce officiellement qu'il quitte son poste de CEO7 mais se maintient au conseil d'administration de l'entreprise valorisée 1,3 milliard de dollars
+- A good [getting started tutorial on Docker](https://docker-curriculum.com)
+	- allows users to package an application with all of its dependencies into a standardized unit
+- ??terry: what have you done so far with docker?
+- containers do not have high overhead and hence enable more efficient usage of the underlying system and resources
+	- containers provide most of the isolation of virtual machines at a fraction of the computing power
+	- containers give developers the ability to create predictable environments that are isolated from the rest of the applications and can be run anywhere
+- Will Stern: Docker rules and runs the DevOp world",$rank=4.5; $quick=a software virtualization solution that allows each application to run in a separate container; $todo=definitely learn this,2019-07-19 10:59:04,systemUnknown
+139,build automation tool,Jenkins,"- 2005 began as a project
+- 2011 released under the name Jenkins
+- helps to automate the software development process
+- has hundreds of available plugins, enabling it to support building, deploying and automating any project
+- supports version control tools, including CVS, Subversion, Git, Mercurial, and can execute Apache Ant and Apache Maven as well as arbitrary shell scripts and Windows batch commands",$rank=3.3; $quick=a very popular build automation tool used in companies; $todo=be familiar with it,2019-07-19 12:52:29,systemUnknown
+140,software lifecycle and build tool,GitLab,"- 2011 launched
+- a web-based DevOps lifecycle tool that provides a Git-repository manager providing wiki, issue-tracking and CI/CD (continuous integration and continuous delivery) pipeline
+	- or ""web-based code management and CI/CD system""
+- core is free and open-source but there are commercial options
+- initially focused on code management
+- Git tracks changes, not files.
+	- this makes Git faster than other source control software
+- covers all stages of the DevOps lifecycle for Product, Development, QA, Security, and Operations teams to work concurrently on the same project
+- code was originally written in Ruby, with some parts later rewritten in Go
+	- the current technology stack includes Go, Ruby on Rails and Vue.js
+- MIT License
+- GitLab doesn't have AWS integration. 
+- it has very good integration with Kubernetes, but it doesn't have good integration with, for example, AWS",$rank=3.8; $quick=a popular tool to organize the lifecyle of software development; $todo=learn this at some point,2019-07-19 12:52:29,systemUnknown
+141,markup language,XML,"- 1998, initially defined
+- XML = eXtensible Markup Language
+- a markup language which focuses on structuring documents, although the language is widely used for the representation of arbitrary data structures such as those used in web services
+- there are many popular schemas which prescribe how specific kinds of XML documents are allowed to be formatted for information storage and exchange
+	- RSS - format for news aggregator
+	- XAML - Microsoft's Extensible Application Markup Language
+	- MathML - Mathematical Markup Language
+	- SVG - Scalable Vector Graphics
+	- OpenDocument (ODF) - a document file format used for describing electronic documents
+	- SOAP - a protocol for exchanging XML-based messages over computer networks
+	- SMIL - Synchronized Multimedia Integration Language describes multimedia presentations
+	- ebXML - a collection of Electronic Business specifications
+	- VoiceXML - format for specifying interactive voice dialogues between a human and a computer
+	- XHTML - a markup language that has the same depth of expression as HTML, but with a syntax conforming to XML",$rank=4.3; $quick=markup language for defining and transmitting data and documents; $todo=learn XML well,2019-07-19 13:32:17,systemUnknown
+142,open-standard file format,JSON,"- early 2000s, Douglas Crockford specified the JSON format
+- an open-standard file format that uses human-readable text to transmit data objects consisting of attribute–value pairs and array data types
+- JSON = JavaScript Object Notation
+- a common data format used for asynchronous browser–server communication, including as a replacement for XML 
+- grew out of a need for stateless, real-time server-to-browser communication protocol without using browser plugins such as Flash or Java applets, the dominant methods used in the early 2000s","$rank=4.3; $quick=a popular standard for storing and transmitting information and data objects, particularly in JavaScript; $todo=easy to learn and important",2019-07-19 13:32:17,systemUnknown
+143,module bundler for JavaScript,Rollup,"- created **2014**
+- compiles small pieces of code into something larger and more complex, such as a library or application
+- it uses the new standardized format for code modules included in the ES6 revision of JavaScript, instead of previous idiosyncratic solutions such as CommonJS and AMD
+- the ES6 revision of JavaScript included a syntax for importing and exporting functions and data so they can be shared between separate scripts
+	- the specification is now fixed, but it is only implemented in modern browsers and not finalised in Node.js
+	- Rollup allows you to write your code using the new module system, and will then compile it back down to existing supported formats such as CommonJS modules, AMD modules, and IIFE-style scripts
+	- this means that you get to write future-proof code, and you also get the tremendous benefits of
+- in addition to enabling the use of ES modules, Rollup also statically analyzes the code you are importing, and will exclude anything that isn't actually used","$rank=3.5; $quick=the second most popular module bundler for JavaScript; $todo=learn the more popular Webpack first, then Rollup",2019-07-19 14:03:22,systemUnknown
+144,version control hosting service,Bitbucket,"- 2008 launched (same year as Github)
+- hosts development projects that use Mercurial (since launch) or Git (since 2011)
+- 2010 acquired by Atlassian who also owns the bug-tracking software Jira 
+- is written in Python using the Django web framework","$rank=2.9; $quick=the second most popular version control hosting service; $todo=learn GitHub first, then Bitbucket",2019-07-19 14:33:59,systemUnknown
+145,version control hosting service,Github,"- 2008 created
+- 2018 bought by Microsoft
+- the largest host of source code in the world
+- provides hosting for software development version control using Git
+- offers all of the distributed version control and source code management functionality of Git as well as adding its own features
+- developed using Ruby on Rails using Ruby and Erlang","$rank=4.5; $quick=the standard place to store, publish, and share code projects on the web; $todo=learn this wells",2019-07-19 14:33:59,systemUnknown
+146,graph database,neo4j,"- 2007 created
+- a **NoSQL, graph database management system**
+- an **ACID-compliant** transactional database with native graph storage and processing
+- the most popular graph database
+- **implemented in Java** and accessible from software written in other languages using the Cypher Query Language through a transactional HTTP endpoint
+	- the ""j"" stands for Java
+- can be installed on **Windows, Linux, and Unix**
+- comes with web browser utility tool to provide data visualization 
+- supports the development environments of **.NET, Java, PHP, Python, and Ruby**
+- what is a graph database
+	- a database that uses graph structures for semantic queries with nodes, edges, and properties to represent and store data
+		- edges represent relationships between the nodes
+	- graph databases are part of NoSQL databases
+	- they store knowledge graphs
+	- **employs nodes, properties, and edges**
+		- nodes: instances such as people, businesses, accounts
+		- properties: information about the nodes
+		- edges: lines that connect nodes to other nodes representing the relationship between them
+	- allow simple and fast retrieval[citation needed] of complex hierarchical structures that are difficult to model in relational systems
+	- retrieving data from a graph database **requires a query language other than SQL**, which was designed for the manipulation of data in a relational system and therefore cannot “elegantly” handle traversing a graph
+	- graph databases are typically maintained by highly qualified data engineers or Semantic Web experts
+	- the reason behind such imminent rise of graph databases is to map the hierarchical and complex relationships of the data structures with fast data analytics
+- five types of graphs
+	- **social graph**: connections between people
+	- **intent graph**: reasoning and motivation
+	- **consumption graph**: tracks the consumption or payment of individual customers
+	- **interest graph**: maps a person's interests and is often complemented by a social graph
+	- **mobile graph**: tracks users motions and locations
+- ""I like it and hate it. I hate it because we have to build these ugly dynamic queries in C# that I feel are very brittle. It leaves me longing for SQL Server stored procedures.""",$rank=2.1; $quick=a special type of NoSQL database; $todo=you don't need to know this unless you use it in a project,2019-07-30 13:15:48,systemUnknown
+147,hardware security standard,TPM,"- **Trusted Platform Module**
+- 2011 TPM 1.2
+- 2016 TMP 2.0
+- a TPM is a chip embedded into the motherboard
+- often referred to as a **TPM security chip**
+- it creates a nearly unforgeable hash key summary of the hardware and software configuration
+- computer programs can use a TPM to **authenticate hardware devices**
+- ensures thatthe boot process starts from a trusted combination of hardware and software
+- full disk encryption utilities, such as **dm-crypt and BitLocker**, can use this technology to protect the keys used to encrypt the computer's storage devices
+- starting in 2006, many new laptops have been sold with a built-in TPM chip",$kind=sysadmin; $rank=0.5; $quick=international standard to secure hardware; $todo=know about it,2019-07-31 14:18:57,systemUnknown
+148,encryption feature,Bitlocker,"- 2007 released
+- **Microsoft** technology
+- a full volume encryption feature included **since Windows 7 / Windows Server 2008**
+- protects data by providing **encryption for entire volumes**
+- when enabled, TPM and BitLocker can ensure the integrity of the trusted boot path (BIOS and boot sector), in order to prevent most offline physical attacks and boot sector malware",$kind=sysadmin; $rank=1.1; $quick=a Microsoft encryption feature; $todo=know about this,2019-07-31 14:41:15,systemUnknown
+149,Internet connection,VDSL,"- Very high speed digital subscriber line
+- 52 Mbit/s downstream and 16 Mbit/s upstream
+- capable of supporting applications such as high-definition television, VoIP, and general Internet access over a single connection
+- Deutsche Telekom initially started VDSL2 deployment in **late 2006**, with VDSL2 offered in the 12 largest cities in Germany, by 2007 residents in over 50 cities had access to VDSL2
+- VDSL2 can reach theoretic downstream and upstream data rates of up to 200 Mbps at its source",$kind=sysadmin; $rank=1.2; $quick=a kind of fast Internet connection; $todo=know about this,2019-07-31 14:54:31,systemUnknown
+150,data storage,NAS,"- **Network Attached Storage**
+- a file-level computer data storage server connected to a computer network providing data access to a heterogeneous group of clients
+- is often manufactured as a computer appliance – a purpose-built specialized computer
+- contains **one or more storage drives** often arranged into logical, redundant storage containers or RAID
+- a convenient method of **sharing files among multiple computers**
+- a NAS is usually not designed to be a general-purpose server
+- when you search for a NAS-drive online, the market is dominated by **Synology and QNAP** mainly
+	- both Synology and QNAP units will arrive with their own desktop user interface packed in a proprietary operating system
+	- you can still access a NAS device the traditional way (as a network drive) and through an IP address – from a Windows, MAC or Linux","$kind=sysadmin; $rank=2.2; $quick=file-based data storage server; $todo=know about this, set one up if you can",2019-07-31 15:10:28,systemUnknown
+151,IP remapping method,NAT,"- Network Address Translation
+- a method of remapping one IP address space into another by modifying network address information in the IP header of packets while they are in transit across a traffic routing device
+- it has become a popular and essential tool in conserving global address space in the face of IPv4 address exhaustion
+- allows many devices on a private network to share a single gateway to the internet
+	- all of those devices will have the same public IP address—that of the gateway—and unique private IP addresses
+	- e.g. all of the devices connected to a NAT-enabled wifi router have different private IP addresses, but share the router’s public IP address
+- the router tracks basic data about each active connection (particularly the destination address and port), when a reply returns to the router, it uses the connection tracking data it stored during the outbound phase to determine the private address on the internal network to which to forward the reply
+- **IP masquerading**: Computers and servers on the internet can only see the public IP address of the router and none of the private IP addresses of specific devices, like phones, laptops, smart TVs, internet-of-things devices, and game consoles
+- not everyone agrees that NAT firewalls and VPNs are a good combination",$kind=sysadmin; $rank=1.7; $quick=a way to remap private IP addresses and expose them as one IP address to the Internet; $todo=know about this,2019-07-31 15:22:06,systemUnknown
+152,subnetwork,DMZ,"- stands for demilitarized zone
+- a physical or logical subnetwork that contains and exposes an organization's external-facing services to an untrusted network, usually a larger network such as the Internet
+- an external network node can access only what is exposed in the DMZ, while the rest of the organization's network is firewalled
+- a small, isolated network positioned between the Internet and the private network
+- allows the organization extra time to detect and address breaches before they would further penetrate into the internal networks
+- hosts in the DMZ are permitted to have only limited connectivity to specific hosts in the internal network, as the content of DMZ is not as secure as the internal network",$kind=sysadmin; $rank=1.1; $quick=subnetwork that contains and exposes an organization's external-facing services to an untrusted network; $todo=know about this,2019-08-01 09:15:24,systemUnknown
+153,distributed processing system,Hadoop,"- created **2006**
+- Apache Hadoop
+- got its start as a **Yahoo** project
+- a collection of open-source software utilities that facilitate **using a network of many computers** to solve problems involving **massive amounts of data** and computation
+- consists of a storage part, known as Hadoop Distributed File System (HDFS), and a processing part which is a MapReduce programming model
+- **peaked about 2016**, then lost popularity",$rank=0.5; $quick=a general-purpose form of distributed processing; $todo=just know about this,2019-08-05 15:44:28,systemUnknown
+154,game engine,Unity,"- 2005, developed
+- a cross-platform game engine
+- around 2008, the engine was uncontested on the iPhone and it became well-known with iOS game developers
+- in 2018, supports more than 25 platforms
+- 2010, expanded with the graphics features for desktop computers and video game consoles
+- aims to democratize game development by making it accessible to more developers
+- gives users the ability to create games and experiences in both 2D and 3D
+- offers a primary scripting API in C# for both the Unity editor in the form of plugins and games themselves
+	- has drag and drop functionality
+- prior to C# being the primary programming language used for the engine, it previously supported Boo, which was removed with the release of Unity 5 in 2015
+	- there was a version for JavaScript called UnityScript, which was deprecated in August 2017 in favor of C#.",$rank=1.6; $quick=a cross-platform game engine; $todo=might be a fun way to get into C# programing,2019-08-06 09:54:47,systemUnknown
+155,cloud computing service,AWS,"- launched 2006
+- many services
+	- Amazon Elastic Compute Cloud (Amazon EC2) - virtual cluster of computers
+	- Amazon Simple Storage Service (Amazon S3) - an object storage service
+	- Elastic Block Storage (EBS)
+	- Elastic File System (EFS)
+- AWS offering services are categorized into 3 types such as Infrastructure as a service (IaaS), software as a service (SaaS) and platform as a service (PaaS)
+- emulate most of the attributes of a real computer",$idCode=aws;$rank=3.5;$quick=a subsidiary of Amazon that provides on-demand cloud computing platforms,2020-04-14 15:18:56,systemUnknown
+156,cloud computing service,Google Cloud,"- created 2008
+- Google Cloud Platform (GCP)","$idCode=googleCloud;$rank=3.5;$quick=a suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products, such as Google Search, Gmail and YouTube",2020-04-14 15:37:34,systemUnknown
+157,cloud computing service,Azure,"- created 2010 by Microsoft
+- Azure Sphere OS
+	- a custom high-level Linux-based operating system
+	- provides a platform for Internet of Things application development
+- ARM templates
+	- Azure Resource Manager
+	- to implement infrastructure as code
+	- JSON format","$idCode=azure;$rank=3.5;$quick=a cloud computing service created by Microsoft for building, testing, deploying, and managing applications and services",2020-04-14 15:37:34,systemUnknown
+158,Virtualization Hypervisor,KVM,"- Kernel-based Virtual Machine
+- released 2007
+- the GUI interface makes the management of KVM easier than ever before
+- cons
+	- initial setup of this solution is more difficult than some of the competing products and it could be improved
+	- could be more user friendly, we are struggling with the command lines",$idCode=kvm;$rank=3.2;$quick=a virtualization module in the Linux kernel that allows the kernel to function as a hypervisor,2020-04-15 17:21:18,systemUnknown
+159,Web Application Framework,Express,"- the original author, TJ Holowaychuk, described it as a **Sinatra-inspired** server
+	- Sinatra, a free and open source software web application library and domain-specific language written in Ruby
+- relatively **minimal** with many features available as plugins
+- also sometimes refered to as express.js 
+",$idCode=express;$rank=4.7;$quick=a web application framework for Node.js and the de facto Node standard for building web applications and APIs,2020-04-17 10:31:37,systemUnknown
+160,Web Developer Services,Hosting Providers,"- 1. Hostgator
+	- ""easiest place to dump sites online""
+	- Hostgator outranked GoDaddy on all five of our user rating criteria, including reliability, pricing, and support
+- 2. Netlify	
+	- more developer-focused than Hostgator, you can connect to GitHub, GitLab, BitBucket
+	- founded in **2013**
+	- Danish entrepreneur Mathias Biilmann
+	- Netlify was publicly launched as a MakerLoop product in March 2015
+	- 2017 MakerLoop became Netlify
+	- literally deploy your site in seconds
+	- offers **free account** for hosting personal projects and experiments
+	- a San Francisco-based cloud computing company
+	- [Jamstack](https://jamstack.org/)
+		- JAMstack is a cloud-native web development architecture based on client-side JavaScript code, reusable APIs, and markup content.
+		- JAM
+			- JavaScript - managed by Node.js
+			- APIs - create dynamic features
+			- Markup - generated by a series of templates (HTML, CSS, Liquid, Markdown, YAML)
+		- It was pioneered and created by Netlify.
+		- In its purest form, the idea of JAMstack is that a web application is pre-built into static pages, using content and code to generate the output. 
+		- In basic terms, JAMstack is a significant shift in focus from the now abstractable back end to the now-powerful front end.
+		- ""a really cool way of building your applications""
+		- fast and secure sites and apps delivered by pre-rendering files and serving them directly from a CDN, removing the requirement to manage or run web servers
+		- a cloud-native web development architecture based on client-side JavaScript code, reusable APIs, and markup content
+		- a web application is pre-built into static pages, using content and code to generate the output
+		- Jamstack is a significant shift in focus from the now abstractable back end to the now-powerful front end
+		- **Jamstack on Netlify replaces Wordpress**, you can burn your Wordpress and Drupel apps to the ground
+		- do not build a website with last decade’s tech, the future of the web is mobile, JavaScript and APIs: the JAMstack
+		- another term for this is [headless CMS](https://headlesscms.org)
+		- JAMstack sites might be built using sites built by hand, or with Jekyll, Hugo, Nuxt, Next, Gatsby
+		- advantages
+			- Entire Project on a CDN
+			- Everything Lives in Git
+			- Modern Build Tools: Webpack 
+		- best ways to use Jamstack
+			- [Jekyll](https://jekyllrb.com)
+				- simple, blog-aware, static site generator for personal, project, or organization sites
+				- **written in Ruby** by Tom Preston-Werner, GitHub's co-founder
+			- [Gatsby](https://www.gatsbyjs.org)
+				- free and open source framework **based on React **
+				- makes fast websites and apps
+			- [Hugo](https://gohugo.io)
+				- created by Steve Francia in 2013
+				- world’s fastest framework for building websites, thanks to being **written in Go**
+				- Netlify began providing Hugo hosting in 2017
+				- takes data files, i18n bundles, configuration, templates for layouts, static files, and content written in Markdown and renders a static website
+- 3. DigitalOcean
+	- the developer cloud
+	- Kubernetes in minutes
+	- machines are called droplets
+	- Article: [Machine Box delivers the services via Docker containers, and Digital Ocean is a great place to host these containers in production.](https://blog.machinebox.io/deploy-machine-box-in-digital-ocean-385265fbeafd)
+	- Howto: [Deploying a Node.js App to a DigitalOcean Droplet with Docker](https://stackabuse.com/deploying-a-node-js-app-to-a-digitalocean-droplet-with-docker/)
+	- we'll be using their $5 a month service
+	- ""spin up some digital ocean docker servers and run your docker containers, it's fast and simple""
+4. AWS
+	- the most features
+- Cloud Services
+	- AWS (Amazon Web Services) - 33%
+		- the dominant player, offers the most services
+	- Google Cloud (GCP - Platform) - 8%
+		- simpler than AWS
+	- Microsoft Azure - 16%
+		- use if you are Microsoft dependent
+	- everyone else - 43%
+- (GoDaddy)
+	- GoDaddy is one of the largest companies in this space
+	- it has a big presence in Europe and Asia
+- related tools and services
+	- [Terraform](https://www.terraform.io/)
+		- an open-source infrastructure as code software tool created by HashiCorp
+		- enables users to define and provision a datacenter infrastructure using a high-level configuration language known as Hashicorp Configuration Language (HCL)
+		- Will Stern says to absolutely learn this with docker
+		- ??terry: this sounds like something you would use, what is this, ""open-source infrastructure"", have you ever used Terraform?
+	- [Rancher](https://rancher.com/)
+		- Rancher is a simplification layer over Kubernets
+		- Rancher lets you deliver Kubernetes-as-a-Service
+		- use for medium-size projects
+	- [AWS Fargate](https://aws.amazon.com/fargate/)
+		- serverless compute for containers
+		- a serverless compute engine for containers
+		- Will Stern: Fargate takes the entire server layer out
+		- ??terry: do you know what this is?
+	- [Google AMP](https://developers.google.com/amp)
+		- makes Google own even more 
+		- AMP is a web component framework that you can use to easily create user-first websites, stories, emails, and ads
+	- [PWA](https://web.dev/progressive-web-apps/)
+		- Progressive Web Apps
+		- are just web applications
+		- using the new capabilities are enabled in modern browsers
+		- interesting at least, keep an eye on them",$idCode=hostingProviders;$rank=3.5;$quick=allow you to upload and publich websites and apps to the Internet,2020-04-17 11:11:01,systemUnknown
+161,cryptographic network protocol,SSH,"- created 1995 by Tatu Ylönen, a researcher at Helsinki University of Technology
+- SSH is short for **Secure Shell**
+- SSH provides a secure channel over an unsecured network by using a client–server architecture, connecting an SSH client application with an SSH server
+- history
+	- 1995: Version 1.x
+	- 2006: Version 2.x",$idCode=ssh;$rank=3.5;$quick=a cryptographic network protocol for operating network services securely over an unsecured network,2020-04-17 11:11:01,systemUnknown
+162,naming system,DNS,"- Domain Name System
+- an essential component of the functionality of the Internet **since 1985**
+- A record
+	- an A record points a name to an IP
+	- e.g. `blog.dnsimple.com. A 185.31.17.133`
+- CNAME record
+	- A CNAME record can point a name to another CNAME or to an A record.
+	- e.g. `blog.dnsimple.com. CNAME aetrion.github.io.`
+- MX record
+	- specifies the mail server responsible for accepting email messages on behalf of a domain name","$idCode=cns;$rank=3.5;$quick=a hierarchical and decentralized naming system for computers, services, or other resources connected to the Internet or a private network",2020-04-17 11:19:38,systemUnknown
+163,stylesheet language,SASS,"- created **2006** by Natalie Weizenbaum, Chris Eppstein
+- SASS stands for **syntactically awesome style sheets**
+- Article: [Sass vs. SCSS: which syntax is better?](http://thesassway.com/editorial/sass-vs-scss-which-syntax-is-better)",$idCode=sass;$rank=4.6;$quick=a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets,2020-04-17 11:55:02,systemUnknown
+164,stylesheet language,LESS,"- created by Alexis Sellier in **2009**
+- stands for **Leaner Style Sheets**
+- Less is influenced by Sass and has influenced the newer SCSS syntax of Sass, which adapted its CSS-like block formatting syntax
+- **mixins** allow embedding all the properties of a class into another class by including the class name as one of its properties, thus behaving as a sort of constant or variable",$idCode=less;$rank=4.0;$quick=a dynamic preprocessor style sheet language that can be compiled into CSS,2020-04-17 11:55:02,systemUnknown
+165,CSS framework,Tailwind CSS,"- created by [Adam Wathan](https://adamwathan.me) in **2019**
+- Will Stern of learncode.academy speaks highly of Tailwind CSS
+	- his favorite
+	- the most lightweight CSS library
+- a good [tutorial](https://blog.logrocket.com/tailwind-css-is-it-tomorrows-bootstrap-ebe560f9d00b/)
+- uses utility classes
+	- Utility classes are CSS class names that serve one particular purpose, and are named as such. Typically a class like .bg-blue would give you background-color: blue, for example.
+- ""I can understand the confusion of some, but this is the framework I've been waiting for. No more starting from scratch, and no more backtracking bootstrap.""
+- ""out of genuine curiosity, have you ever tried a utility-based CSS framework? I get that they can look strange at first, but this way of doing CSS is becoming more and more popular""
+- ""Tailwind CSS (350kB minified) has a section on controlling file size that recommends setting up PurgeCSS.""
+- ""we decided to use TailwindCSS, a utility class framework, which provides a bunch of classes you can apply to your projects to rapidly build a UI.""","$idCode=idCodeidCode;$rank=3.5;$quick=a highly customizable, low-level, low-opinionated CSS framework",2020-04-17 13:35:48,systemUnknown
+166,Web Developer Tools,build tools,"- npm scripts (package manager)
+	- entries in the scripts field of the package.json
+	- learn: [Three Things You Didn't Know You Could Do with npm Scripts](https://www.twilio.com/blog/npm-scripts)
+- Webpack (module loader / bundler)
+	- Will Stern: ""the definitive bundler of 2019 although HTTP/2 is becoming better""
+		- Let’s start with a myth about HTTP/2: With HTTP/2 you don’t need to bundle your modules anymore. HTTP/2 can multiplex all your modules over the same connection in parallel. So there are no additional round trips for the many requests. Each module can be separately cached. Sadly it’s not that easy in reality.
+	- can bundle CommonJS, ECMAScript and AMD modules
+		- **AMD** (define) = takes a browser approach, no knowledge of file i/o
+			-  implemented by Dojo Toolkit and RequireJS
+		- **CommonJS** (require, export) = takes a backend approach
+		-  **UMD** (Universal Module Definition) is a variant paradigm that takes advantage of the commonalities to support both AMD and CommonJS
+		- **ES6** (import/export) = 2015
+	- can be installed with npm or yarn
+- Rollup (ES module bundler)
+	- Rollup has support for relative paths, whereas webpack does not, so we either use path. resolve or path.
+	- webpack was started in 2012 by Tobias Koppers to solve a hard problem that existing tools didn’t address: building complex single-page applications (SPAs).
+		- Rollup was created for a different reason: to build flat distributables of JavaScript libraries as efficiently as possible, taking advantage of the ingenious design of ES2015 modules.
+	- Use webpack for apps, and Rollup for libraries
+	- similar to Browserify but bundles ECMAScript modules instead of CommonJS ones)
+- Parcel (module bundler)
+	- is drastically simpler than Webpack, love it for non-complex work
+	- can replace create-react-app
+- Grunt (task runner)
+	- pros
+		- Huge ecosystem of plugins
+	- cons
+		- Can become complicated as the configuration grows
+		- Lack of flexibility with uncommon tasks
+		- gradually becoming outdated
+- Gulp (task runner)
+	- Eighteen months after Grunt, GulpJS was released
+	- where GruntJS uses configuration objects to define tasks declaratively, Gulp defines them as JavaScript functions
+	- It builds on top of the piping concepts (sources, filters, sinks), similar to Unix operating systems.
+	- pros
+		- Requires less amount of code, comparing to Grunt
+		- Large ecosystem of Gulp plugins
+	- con: Initially streams and promises are hard to understand
+- Yarn (package manager)
+	- can be used as an alternative to npm
+	- is a node.js package
+	- if you are a heavy user, it can be a good idea to look into Yarn that takes pride in ultrafast build times
+	- speeds up the build process by caching every package so that you don’t have to download your dependencies multiple times
+- Browserify (module loader / bundler)
+	- node.js package
+	- bundle your front-end dependencies and load them as a **single JavaScript file** in the user’s browser
+	- package managers such as npm and Yarn load modules on the server-side using **Node.js’ require() function** (CommonJS) designed for loading modules. Browserify brings the require() method (CommonJS) to the client-side, which can result in a huge performance gain
+	- your user’s browser has to load only one static JavaScript file that contains all the dependencies your project relies on
+	- you can only use it to load Node.js modules but not other types of JavaScript (or other) files.",$idCode=buildTools;$rank=3.5;$quick=tools that accelerate web development,2020-04-17 14:14:12,systemUnknown
+167,server monitoring tool,New Relic,"- Will Stern recommends it
+- [New Relic website](https://newrelic.com/products/logs)
+- limitless log management in the cloud
+- all your logs in one place
+- expensive but useful
+- ""you will never have to SSH into your servers again to observe what they are doing""
+- use a familiar query language to build powerful and sophisticated queries that can quickly scan vast qualities of aggregated log messages, no indexing required",$idCode=newRelic;$rank=3.5;$quick=tool for limitless log management in the cloud,2020-04-17 15:25:43,systemUnknown
+168,programming paradigm,functional programming,"- functional programming may not improve your ability to get a job, but it stretches your skills and makes you a hipster",$idCode=idCodeidCode;$rank=3.5;$quick=a programming paradigm—a style of building the structure and elements of computer programs—that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data,2020-04-17 16:33:08,systemUnknown
+169,Database,ArangoDB,"- supports three data models: key/value, documents, graphs
+- a unified query language AQL (ArangoDB Query Language)
+- ArangoDB is a NoSQL database system but AQL is similar in many ways to SQL
+- ??terry: have you hear of this?",$idCode=arangoDb;$rank=2.2;$quick=a free and open-source native multi-model database system,2020-04-17 17:08:24,systemUnknown
+170,Database,Elasticsearch,"- a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents
+- developed in Java
+- clients are available in Java, .NET (C#), PHP, Python, Apache Groovy, Ruby
+- CakePHP 3 integrated Elasticsearch",$idCode=elasticsearch;$rank=3.9;$quick=a search engine based on the Lucene library,2020-04-17 17:08:24,systemUnknown
+171,Database,MariaDB,"- includes new storage engines like Aria, ColumnStore, and MyRocks","$idCode=mariaDb;$rank=3.8;$quick=community-developed, commercially supported fork of MySQL",2020-04-17 17:08:24,systemUnknown
+172,productivity tool,Coggle,"- an online tool for creating and sharing mindmaps and flow charts##coggleitexample
+- I learned about this from seeing Will Stern use it in his [2020 Web Technology Video](https://www.youtube.com/watch?v=SBB1YtwODT0), here is the [coggle diagram](https://coggle.it/diagram/XfeRbWj7xy3dsEX8/t/web-development-in-2020) he created for it
+- sign up at the [coggle.it](https://coggle.it/) website and try it out
+- free account
+	- unlimited public diagrams",$idCode=coggle;$rank=3.5;$quick=an online tool for creating and sharing mindmaps and flow charts,2020-04-20 17:41:02,systemUnknown
+173,tooltip library,Tippy.js,"- Tippy.js is the complete tooltip, popover, icon dropdown, and menu solution websites, powered by Popper.js.##tippyexampleskdfj
+- this is the [official Tippy website](https://atomiks.github.io/tippyjs)
+- it uses Popper, which is descripbed at a positioning engine
+	- Popper is also used by Bootstrap","$idCode=tippy;$rank=2.5;$quick=tooltip, popover, icon dropdown, and menu solution websites",2020-04-21 13:04:10,systemUnknown
+174,Javascript Testing Framework,Jasmine,"- created **2010** by developers at Pivotal Labs
+- aims to run on any JavaScript-enabled platform, to not intrude on the application nor the IDE, and to have easy-to-read syntax
+- does not rely on browsers, DOM, or any JavaScript framework
+- suited for websites, Node.js
+- Bootstrap 5 is apparently moving their testing infrastructure from QUnit to Jasmine
+- can get started without much setup",$idCode=jasmine;$rank=3.5;$quick=an open-source testing framework for JavaScript,2020-04-23 16:44:42,systemUnknown
+175,Site Bundler,Brunch,"- created **2011**, almost as old as Browserify
+- compared to Gulp, Brunch operates on a higher level of abstraction, it uses a declarative approach similar to webpack's",$idCode=brunch;$rank=3.1;$quick=one of the oldest site bundlers (2011) with Browserify (2010),2020-05-06 17:10:11,systemUnknown
+176,Site Bundler,Parcel,"- created **2017**
+- much simpler than Webpack
+- everything just worked out of the box
+	- no additional plugins, configuration or anything else has been required",$idCode=parcel;$rank=4.68;$quick=the up-and-coming module bundler which challenges WebPack,2020-05-06 17:10:11,systemUnknown
+177,Site Bundler,FuseBox,"- created **2016**
+- focused on speed
+- uses a zero-configuration approach and aims to be usable out of the box
+- while FuseBox already comes with all plugins available from the core their dependencies must still be installed when required",$idCode=fusebox;$rank=3.5;$quick=site bundler focuses on speech and zero-configuration,2020-05-06 17:10:11,systemUnknown
+178,Code Analysis Tool,Heroku,"- 2007 created
+	- then supported only **Ruby**
+	- PAAS - Platform as a Service
+- 2010 acquired by Salesforce.com
+- 2011 Yukihiro ""Matz"" Matsumoto, the chief designer of the Ruby programming language, joined the company 
+- 2011 Heroku and Facebook introduced Heroku for Facebook
+- now supports 
+	- Java, Node.js, Scala, Clojure, Python, PHP, and Go
+	- Redis databases in addition to its standard PostgreSQL
+- Git friendly
+- has a great free tier
+	- except that free applications that haven't been touched for awhile take a few seconds to start up
+- static files don't work well on Heroku
+	- e.g. these will not work:
+		- `app.use(express.static(__dirname + '/htdocs'));` will not work
+		- `app.use(express.static('../htdocs'));`
+	- instead use the public directory instead","$idCode=heroku;$rank=4.6;$quick=a polyglot PAAS platform that supports Ruby, Java, Node.js, Scala, Clojure, Python, PHP, and Go",2020-08-08 15:40:18,systemUnknown
+179,PHP Framework,Laravel 5,"- Laravel itself uses no less than 14 Symfony components.
+- versions
+	- 2011: Version 1.0
+		- Taylor Otwell created Laravel as an attempt to provide a more advanced alternative to the CodeIgniter framework
+			- Laravel was born out of frustration with CodeIgniter
+	- 2013: Version 4.0
+		- **complete rewrite of the Laravel framework**
+	- 2015: Version 
+		- 2017-09 training: Laravel 5
+	- 2018-02: Version 5.6
+		- 2018-06 training: New in 5.6
+	- 2018-09: Version 5.7
+	- 2019-02: Version 5.8
+		- 2019-09 tutorial was on Laravel 5.7
+	- 2019-09: Version 6
+	- 2020-03: Version 7
+	- 2020-09: Version 8
+- Once you start to wander away from the MVC paradigm, Laravel can't help you.
+- you can use Composer components from other places
+- command-line interface called **Artisan**, does migrations
+- has its own ORM called **Eloquent**
+- uses the **Active Record** pattern
+	- it calls on your database using functions
+- Laravel is very JSON and REST friendly.
+- Has its own template engine called **Blade**.
+- Middleware is PSR-7 compliant.
+- **Laravel Echo**: real-time development using web-sockets
+- Laravel **Scout**: integrates with Eloquent, for indexing
+- **Passport** is an OAuth2 server
+- **Homestead** is a Vagrant deployment
+- **Cashier** for payments
+- **Lumen** is for creating APIs.",$idCode=laravel;$rank=4.7;$quick=PHP framework released 2013 now most popular in 2020,2020-09-03 16:36:43,systemUnknown
+180,PHP Framework,Symfony 5,"- versions
+	- 2007: Version 1.0
+		- named Sensio Framework
+	- 2011: Version 2.0
+		- renamed to Symfony from version 2 and on
+		- more flexibility in using components in an adhoc basis
+	- 2015: Version 3.0
+		- Version 3 became a stable version, subsequent versions are mostly fixes
+		- 2017-09 training: Symfony 3
+	- 2017-11: Version 4.0
+		- 2019-05 training: Symfony 4
+		- 2019-09 training: Symfony 4
+	- 2019-11: Version 5.0
+- has a solid code-base community and docs
+- not too overwelming to get started
+- is quite modular
+- backed by French company SensioLabs
+	- The first name was Sensio Framework, and all classes were therefore prefixed with sf.
+- MIT license
+- two parts
+	- framework
+	- decoupled components
+		- Drupal uses some of their components
+- installing
+	- has its own installer
+	- or you can use Composer
+	- you can install demo
+	- you can install CMF (Content Management Framework)
+	- you can install Rest
+	- is very object oriented
+- concepts
+	- bundles
+		- everything is in a bundle
+		- entire application
+	- routing
+		- using YML
+	- controller
+	- twig templates
+	- Doctrine ORM
+		- optional
+	- dependency injection
+		- like Zend
+		- helps for testing
+	- events
+		- used throughout
+	- PSR-FIG standards
+		- PSR-0 and PSR-4 autoloading","$idCode=symfony;$rank=4.5;$quick=a popular PHP framework created in 2007, today second in popularity behind Laravel",2020-09-03 16:36:43,systemUnknown
+181,PHP Framework,Magento,"- versions
+	- 2008 released
+		- originally developed by Varien, Inc, a US private company headquartered in Culver City, California
+	- 2011 eBay invested
+	- 2015-11 break up with eBay, new owner Permira private equity fund 
+	- 2018-05 **aquired by Adobe**
+		- Adobe announced that it was acquiring Magento for $1.68 billion
+- Magento provides two distinct platforms: Magento Open Source (previously Magento Community Edition) and Magento Commerce
+- uses multiple other PHP frameworks such as Laminas and Symfony
+- more than 100,000 online stores have been created on this platform
+- employs the MySQL or MariaDB relational database management system, the PHP programming language, and elements of the Zend Framework
+- has conventions of object-oriented programming and model–view–controller architecture","$idCode=magento;$rank=4.1;$quick=an e-commerce PHP framework created in 2008, now owned by Adobe",2020-09-03 22:58:10,systemUnknown
+182,PHP Framework,CogeIgniter,"- versions
+	- 2006: Version 1
+		- released by **EllisLab** on February 28, 2006
+	- 2011-2014: it stalled
+		- because of this, it is a little bit behind the other frameworks
+		- EllisLab lack of resources to give the framework the attention they felt it deserved
+		- this is when Taylor Otwell created Laravel as an attempt to provide a more advanced alternative to the CodeIgniter framework
+	- 2014: changed stewardship from Ellislab to **British Columbia Institute of Technology**
+		- first version at BCIT was 3.0
+		- MIT license
+			- previous license was copy-left (if you want to change the core files, you have to include those open source)
+		- 2019-02: Training on CogeIgniter 3.2
+	- 2019-10: CodeIgniter Foundation controls it now
+	- 2020-02: CogeIgniter 4
+- quite popular but **it's not modernized** and there's no PHP-FIG
+- a favorite for developers who want a lighter-weight framework
+- has a very small footprint that does little more than enforce the MVC pattern
+- it's decoupled and flexible
+	- you can use a lot of the other elements if you don't want to use the MVC pattern
+	- allows you to take and pick what you choose
+- downsides
+	- hasn't upgraded much for newer versions of PHP
+	- doesn't have official Composer integration
+	- **no PSR/PHP-FIG support**
+		- PSR = PHP Standard Recommendation
+		- FIG = Framework Interoperability Group
+			- plan to have some support in the 4.0 release",$idCode=cogeIgniter;$rank=4.1;$quick=PHP Framework created 2006 loosely based on MVC,2020-09-03 23:01:53,systemUnknown
+183,PHP Framework,Drupal 8,"- versions
+	- 2001: Version 1.0
+		- originally written by **Belgian programmer** Dries Buytaert as a message board
+	- 2009: Acquia helped re-launch Whitehouse.gov on Drupal
+	- 2015: Drupal 8 
+		- 2016: latest English course
+		- 2018-03: French Tutorial Drupal 8 (https://www.linkedin.com/learning/l-essentiel-de-drupal-8/creer-de-nouveaux-champs)
+	- 2020-06: Drupal 9
+	- 2022-07: Drupal 10
+- 2.3% of all websites, ranging from personal blogs to corporate, political, and government sites
+- standard release of Drupal, known as Drupal core, contains basic features common to content-management systems",$idCode=drupal;$rank=4.1;$quick=content management PHP framework written by Belgian in 2001,2020-09-03 23:36:40,systemUnknown
+184,PHP Framework,Zend 3,"- Zend Framework, which was formerly led and managed by Rogue Wave Software, is now called the Laminas Project, and is managed by the Linux Foundation. 
+	- https://www.zend.com/blog/evolution-zend-framework-laminas-project
+- has seen wide adoption across the PHP ecosystem, with an emphasis on the Enterprise market
+- versions
+	- 2006 Zend Framework 1
+		- 2007: the main framworks at that time were Symfony 1, CodeIgniter, CakePHP and the Zend Framework
+		- 2011: Magento apparently used Zend Framework 1 as a base
+		- stated end of life: 2016-09
+	- 2012 Zend Framework 2
+		- stated end of life: 2018-03
+	- 2016-06  Zend Framework 3
+		- 2019-02: Training on Zend 3
+	- 2019-04 Laminas
+- loosely coupled: you can pull libraries out of zend and use it for other purposes
+- the most commercial of the PHP frameworks
+- it has a well-tested code base
+- has a steep learning curve
+- it's not as active or popular as it once was (2019)","$idCode=zend;$rank=3.9;$quick=popular, corporate-ownded PHP framework created in 2006",2020-09-03 23:39:18,systemUnknown
+185,PHP Framework,TYPO3,"- versions
+	- 1997: pre-version
+		- initially authored by Kasper Skårhøj from **Denmark**
+			- nach einem abgebrochenen Ingenieurstudium arbeitete er als selbstständiger Webdesigner und begann 1997 TYPO3 für seine Kunden zu entwickeln
+	- 2001: Version 3.0 
+		- first public release
+	- 2014: Version 7.0
+	- 2016-03: Version 8.0
+		- 2016-06: last French videos ""What's New in TYPO3 7 and 8""
+	- 2017-12: Version 9.0
+		- 2018-10: Training ""TYPO3 CMS 9: Neue Funktionen""
+	- 2020-04: Version 10.4
+- TYPO3 is, along with Drupal, Joomla, and WordPress, among the most popular content management systems worldwide
+	- more widespread in Europe 
+	- biggest market share i sin German-speaking countries
+- from small sites for individuals or nonprofit organizations to multilingual enterprise solutions for large corporations","$idCode=typo3;$rank=3.9;$quick=free content management system written in PHP, created in 2001 by Dane, popular in German-speaking countries",2020-09-03 23:49:43,systemUnknown
+186,PHP Framework,Joomla,"- versions
+	- 2005: Version 1.0
+		- released as a rebranded/fork release of Mambo
+		- Joomla developers created a website called OpenSourceMatters.org (OSM) to distribute information to the software community
+		- Project leader Andrew Eddie is from Australia
+		- Joomla is the anglicized spelling of the Swahili word jumla, meaning all together or as a whole
+	- 2012: Version 3.0
+	- 2017-05: French course: https://www.linkedin.com/learning/l-essentiel-de-joomla-3-6/bienvenue-dans-l-essentiel-de-joomla-3-6
+	- 2018-05, English course: https://www.linkedin.com/learning/joomla-3-essential-training-1-working-with-content/welcome-2
+	- 2020-07, Version 3.9.20",$idCode=joomla;$rank=4.2;$quick=PHP content management framework created by Australian in 2005,2020-09-04 00:05:46,systemUnknown
+187,PHP Framework,Wordpress,"- version
+	- 2003: Version 1.0
+		- b2/cafelog, more commonly known as b2 or cafelog, was the precursor to WordPress
+		- released its founders, American developer Matt Mullenweg (living in Houston) and English developer Mike Little (living in Stockport, England)
+	- 2020-08: Version 5.5",$idCode=wordpress;$rank=3.9;$quick=most popular content management system written in PHP,2020-09-04 00:24:05,systemUnknown
+188,PHP Framework,CakePHP,"- modeled after the concepts of Ruby on Rails
+- MIT license
+- versions
+	- 2005 started work on it
+		- CakePHP started in April 2005 by **Polish programmer** Michal Tatarynowicz
+			- he wanted to have something more like Ruby on Rails for PHP
+		- MIT license
+		- opened it up to online community of developers
+		- L. Masters and G. J. Woodworth founded the Cake Software Foundation
+			- The Cake Software Foundation is a not-for-profit corporation based in Nevada, United States. The organization was formed in 2005, to help promote the development of the CakePHP framework, as well as support the project.
+	- 2006: Version 1.0
+	- **2015: CakePHP 3**
+		- 2015-01: CakePHP 2 and CakePHP 3 are worlds different with a fairly sizable learning curve
+		- new in Version 3 and 3.3
+			- modernized
+			- namespaces
+			- support for PHP 7	
+			- PSR support (PHP Standard Recommendation)
+				- **PSR-7 HTTP Middleware** compliant
+			- full Composer integration
+			- rebuilt the ORM from scratch
+			- integrated Elastic Search
+	- 2016-03 Training mentioned CakePHP 3 
+	- 2019-02: Training on Cake 3
+		- now has a company called CakeDC behind it
+			- ""CakeDC offers you access to the leading CakePHP developers from around the world. Faster CakePHP development that will have your application growth ready and stable.""
+	- today (2020-09)
+		- the [Cake Software Foundation](https://cakefoundation.org) website says it is going through some changes
+		- CakePHP 4 Strawberry
+- good features
+	- borrows concepts from **Ruby on Rails**
+		- convention over configuration
+	- has **Back command-line interface**
+	- scaffolding for RAD (Rapid Application Development) and prototyping
+		- builds CRUD code for you
+	- MVC-based
+- overcome
+	- used to be bloated and slow (pre CakePHP 3)","$idCode=cakePhp;$rank=3.9;$quick=MVC framework written in PHP, started by Polish developer in 2005",2020-09-04 00:36:31,systemUnknown
+189,PHP Framework,Yii 2,"- Yii is pronounced as ""Yee"" 
+	- in Chinese it means ""simple and evolutionary"" and it is an acronym for ""Yes It Is!""
+- pre-version
+	- 2004: PRADO project was started by Qiang Xue
+		- inspired by Apache Tapestry
+		- convention over configuration
+		- borrowed ideas from Borland Delphi
+	- Yii started as an attempt to fix perceived drawbacks of the PRADO framework
+- versions
+	- 2008: Version 1.0
+	- 2010: Version 1.1
+		- adding a form builder, relational Active record queries, a unit testing framework 
+	- **2011: Version 2.0**
+		- added some PSR support for some of the core
+			- e.g. autoloading standards
+		- one of the first to integrate **Composer support**
+		- added namespaces
+	- 2019-02 training, ""currently at Version 2.0""
+	- 2019-05: Version 2.0.19 
+- low-profile, high performance
+- managed by small company called Yii Software, LLC
+- uses BSD license (quite similar to MIT)
+- aims to do things simply
+- Yii is full stack, so once you commit to Yii, you're going to use Yii.","$idCode=yii;$rank=3.9;$quick=an open source, object-oriented, component-based MVC PHP framework created in 2008",2020-09-04 00:47:54,systemUnknown
+190,PHP Package Manager,Composer,"- versions
+	- 2011: started development
+		- developed by Nils Adermann and Jordi Boggiano, who continue to manage the project
+	- 2012: Version 1.0
+- inspired by Node's npm and Ruby's bundler",$idCode=composer;$rank=4.5;$quick=the standard package manager for PHP,2020-09-04 13:28:38,systemUnknown
+191,Web Server,IIS,"- history
+	- 1996: IIS 1.0 - Add-on for Windows NT 3.51
+	- 1996: IIS 2.0 - Released with Windows NT 4.0 RTM
+	- 1996: IIS 3.0 - Released with Windows NT 4.0 SP3
+	- 1997: IIS 4.0 - Released with Windows NT Internet Option Pack
+	- 2000: IIS 5.0 - Released with Windows 2000
+	- 2002: IIS 5.1 - Released with Windows XP Professional
+	- 2003: IIS 6.0 - Released with Windows Server 2003
+	- 2008: IIS 7.0 - Released with Windows Server 2008 and Windows Vista
+	- 2009: IIS 7.5 - Released with Windows Server 2008 R2 and Windows 7
+	- 2012: IIS 8.0 - Released with Windows Server 2012 and Windows 8
+	- 2013: IIS 8.5 - Released with Windows Server 2012 R2 and Windows 8.1 
+	- 2016: IIS 10.0 version 1607
+	- 2017: IIS 10.0 version 1709
+	- 2018: IIS 10.0 version 1809 
+	- 2020: my machine has ""Version 10.0.19041.450""",$idCode=iis;$rank=4.223;$quick=Microsoft's standard web server,2020-09-09 17:34:49,systemUnknown
+192,Web Server,Apache,"- versions
+	- 1995: Version 1.0
+	- 2000: Version 1.1
+	- 2002: Version 2.0
+	- 2005: Version 2.2
+	- 2012: Version 2.4
+	- 2020-08: Version 2.4.46",$idCode=apache;$rank=4.223;$quick=most popular web server,2020-09-09 17:35:01,systemUnknown
+193,Web Server,Nginx,"- history
+	- 2002: Igor Sysoev began development
+	- 2004: Version 1.0
+	- 2011: Nginx Inc. founded by Igor Sysoev and Maxim Konovalov, San Francisco","$idCode=nginx;$rank=4.223;$quick=a fast web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache",2020-09-09 17:35:01,systemUnknown
+194,Platform as a Service,Cloud Foundry,"- history
+	- 2009: conceived by a small team at VMware led by Derek Collison
+	- **2011**: initial release
+	- 2013: Pivotal was created from EMC and VMware, to market assets including Cloud Foundry, RabbitMQ and Spring
+	- 2019: VMware took over Pivotal
+- Cloud Foundry’s container-based architecture runs apps in any programming language over a variety of cloud service providers. ","$idCode=cloudFoundry;$rank=4.2;$quick= open source, multi-cloud application platform as a service (PaaS)",2020-09-10 13:28:15,systemUnknown
+195,javascriptModules,JavaScript modules,"- Pre-ES2015 (ES6), the most widely used approach to adding various library modules to JavaScript files' scope was via CommonJS. Node.js uses it, and it's the system used by most packages on npm today. The main concept in CommonJS modules is a function called require. When you call this with the module name of a dependency, it makes sure the module is loaded and returns its interface to be used in the file's scope.
+- For a long while, CommonJS modules worked quite well and allowed the JavaScript community, via npm, to share code on a large scale.
+- But CommonJS has a few quirks that make it a less than ideal solution: namely, the fact that require is a normal function call taking any kind of argument, not just a string literal, which makes it hard to determine the dependencies of a module without running its code. 
+- ES2015 introduced its own module system, and in doing so, integrated the new module support notation into the language. The main concepts of dependencies and interfaces remain the same, but the details differ.
+- import carTires from './autoParts/tires.js';
+- import carTires, * as tireOptions from './autoParts/tires.js';
+- import { carrots, potatoes, onions } from './plants/veggies.js';
+- let vehicles = await import('./waysToTravel.js');
+- pro ES6/import over CommonJS/require
+	- You can use named imports to selectively load only the pieces you need. That can save memory.
+	- Import can be asynchronous (and in the current ES6 Module Loader, it in fact is) and can perform a little better.
+- RequireJS
+	- optimized for in-browser use
+	- but can be used in Rhino and Node
+	- current version: 2.3.6 (27. August 2018)
+	- in 2015, the time has come to move on from RequireJS to Browserify or Webpack
+- UMD
+	- 2014
+		- Asynchronous Module Definition (AMD) has gained traction on the frontend, with RequireJS being the most popular implementation
+		- CommonJS is a style you may be familiar with if you're written anything in Node (which uses a slight variant). 
+			- var $ = require('jquery');
+		- UMD is admittedly ugly, but is both AMD and CommonJS compatible, as well as supporting the old-style “global” variable definition
+	- Webpack is an attempt to unify the modules landscape by supporting AMD, CommonJS and ES6 modules
+	- The UMD pattern typically attempts to offer compatibility with the most popular script loaders of the day (e.g RequireJS amongst others). In many cases it uses AMD as a base, with special-casing added to handle CommonJS compatibility.
+- 2017
+	- In September 2017, Node.js added support for ES modules, alongside CommonJS modules, with the release of Node.js 8.5, using the .mjs (Micheal Jackson Script) extension to differentiate ES modules from CommonJS modules.
+	- TypeScript cannot transpile to .mjs files.
+		- Workaround: Transpile to ES2015 target, and use a post compile script to rename the files to .mjs from .js
+	- TypeScript cannot import .mjs files.	
+		- Workaround: There is none. Unfortunately you can’t do it today. You can import .ts files written with ES2015 syntax though.
+	- TypeScript allows the use of CommonJS require() and ES module import syntax in the same module. Node.js does not.
+		- Workaround: Ensure any TypeScript you write only uses ES module syntax. You should rewrite any instances of require() syntax to use import() syntax.",$rank=4.3; $quick=the method to separate code in JavaScript applications,2020-09-27 15:46:57,systemUnknown

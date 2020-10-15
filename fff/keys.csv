@@ -1,0 +1,22 @@
+id,category,shortcut,info,score,extras,systemWhenCreated,systemWhoCreated
+2,vscode,ALT-(left arrow),go back to last position,2,,2019-04-25 09:35:17,systemUnknown
+3,vscode,ctrl-p,open file quick,2,,2019-03-21 21:32:29,systemUnknown
+4,vscode,ctrl-shift-o,"searches for a method in a JavaScript class (try in Datapod `qstr.js`, search for `convert`)",2,,2019-03-21 21:32:29,systemUnknown
+5,vscode,shift-alt-c,(on file in outline) copy file path,2,,2019-03-21 21:33:27,systemUnknown
+6,vscode,"ctrl-,",user settings,2,,2019-03-21 21:33:27,systemUnknown
+7,vscode,"ctrl-k, ctrl-s",show keyboard shortcuts,2,,2019-03-21 21:33:27,systemUnknown
+8,vscode,alt-z,toggle word wrap,2,,2019-03-21 21:33:27,systemUnknown
+9,vscode,CTRL-[ and CTRL-],move the indent of a line or block of lines back and forth horizontally,2,,2019-04-25 09:32:14,systemUnknown
+10,vscode,"ctrl-shift-e, F2",rename file,2,,2019-03-21 21:34:20,systemUnknown
+11,vscode,go back to previous code file,ALT-(left arrow),2,,2019-03-21 21:34:27,systemUnknown
+12,vscode,ctrl-shift-s,save file as,2,,2019-03-21 21:34:29,systemUnknown
+13,vscode,alt-shift up/down arrow,copy line	,2,,2019-03-21 22:35:53,systemUnknown
+14,vscode,alt up/down arrow,move line	,2,,2019-03-21 22:36:27,systemUnknown
+15,vscode,alt-shift-f,reformat code	,2,,2019-03-21 22:36:27,systemUnknown
+16,vscode,ctrl-shift-k,delete line	,2,,2019-03-21 22:36:27,systemUnknown
+17,vscode,"ctrl-shift-enter, ctrl-enter",insert above / below line	,2,,2019-03-21 22:36:27,systemUnknown
+18,vscode,ctrl-shift-n,open up new instance of visual studio code,2,,2019-07-15 15:40:25,systemUnknown
+19,ubuntu,WINDOWS-D,show desktop,2,,2019-10-23 13:16:53,systemUnknown
+20,ubunto,ctrl-windows-d,show desktop,2,,2019-10-25 13:36:49,systemUnknown
+21,vscode,CTRL-SHIFT-P discard changes,git: discard changes,2,,2019-10-29 15:22:18,systemUnknown
+22,vscode,SHIFT-ALT-F12,find all references,2,,2019-10-29 15:22:18,systemUnknown

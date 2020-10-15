@@ -1,0 +1,224 @@
+id,dpnVersionIdCode,idCode,title,kind,displayOrder,description,manualChanges,systemWhenCreated,systemWhoCreated
+1,00050,showcaseMarkdown,Showcase: Markdown,newShowcasePage,10,The Showcase Markdown shows how to convert markdown text to HTML and serves as an editor to experiment.,,,
+2,00100,batchImport,Batch Import,newFeature,10,"This is a central feature of Datapod which enables you to record items that you want to add to your databse in text files in Datapod format, and then dump it all into the database at once by going to the Batch Import page and pasting the text into the box. You are able to review each item before you import it individually, or you can import them all at once. To get the Datapod syntax for each item type, click on the template text link for that item type.",,2019-03-13 11:53:36,systemUnknown
+3,00100,transformationSynchronizer,Transformation Synchronizer Page Type,newPageType,25,This page type was added to allow you to easily create a new page which allows the user to type text and have it converted and displayed immediately as one types.,,2019-03-13 13:17:27,systemUnknown
+4,00100,qfilRemoveLineWithText,qfil.RemoveLineWithText,newHelperFunction,40,"Enables you to e.g. remove a specific line in a code file (usually a library reference), so that you can dynamically change the code of your site while developing. Note that if you need more fine-grained control of changing code in files, use the `DynamicPage` class, e.g. `dynamicPage.changeMarkerLineAndSave('configDeveloping', ""return false;"");`",,2019-03-13 14:02:32,systemUnknown
+5,00100,textChunkDocumentClass,TextChunkDocument class,newClass,28,"This class allows you to parse a text document, collecting each text block in a `TextChunk` class which contains a collection of lines. This serves as pre-parsing for my Datapod item parsing, for example. Note that you can have multi-line lines with the `[[` and `]]` markers, as well as maintain tab-indentiing in multi-line lines. To try this class out live, see the `Showcase: TextChunkDocument`.",,2019-03-13 15:08:20,systemUnknown
+6,00100,datapodQueryLanguage,Datapod Query Language (DQL),newFeature,23,"You can now access the database with basic DQL commands by using the `fetch` methods of the `dpod` class, e.g. `dpod.fetchItem('pageItem where idCode = home', function (item) {...});`. The returned item is not just a record but a full object from the e.g. `pageItem` class with all its methods and inherited methods from `item`. This makes it very easy to quickly get a rich item out of the database. Currently the `dpod` class has `fetchItem()`, `fetchItems()` and `deleteItem()`. See the `Showcase: DQL` page and its controller code to experiment with and learn more about these functions. The idea is that `Database Query Language` will become a data abstraction language that will be able to talk to multiple and various kinds of data sources, currently the sqlite database, but in the future other SQL databases such as MySQL and PostgreSQL, but also text files (in Datapod Text Format), Excel files, XML files, CSV files, as well as external web services, REST points, and cloud-based data sources, all with the same simple syntax.",,2019-03-13 15:52:17,systemUnknown
+9,00110,createItemTypeManagePage,Create Item Type Now Creates Manage Items Page,newFeature,5,"`Create Item Type` now creates a page which allows the user to edit, add, copy, and delete items.",,2019-03-19 16:41:29,systemUnknown
+10,00110,deleteItemTypeListNow,Delete Item Type Page Displays List,enhancement,150,The `Delete Item Type` page now lists item types in a dropdown to choose from.,,2019-03-19 16:09:54,systemUnknown
+11,00110,pageFlickerLogin,Page Flicker on Login Page Removed,bugFix,200,"When logging in, you no longer experience a page flicker before being redirected to the default page.",,2019-03-19 16:28:57,systemUnknown
+12,00110,screenResizeEvent,Viewport Resize Event,newFeature,70,"In the `Showcase: JavaScript Sorting`, you will now find a Vue.js implementation of how a page can change based on size of the viewport, i.e. where elements are positioned, etc. The Vue.js `app` object has a `viewport` property which tracks `height`, `width` and `device` which you can use in your Vue.js to respond to the change in size of the viewport. The two values of `viewport.device` are `computer` and `smartphone` which is a simple way to e.g. add more information on bigger screens (computer) and minimal information on smaller screens (smartphone).",,2019-03-19 16:49:49,systemUnknown
+18,00112,nullsInDatabaseFixed,Fixed issue with NULLs in database,bugFix,80,Null values no longer cause errors in application.,,2019-04-08 01:33:04,systemUnknown
+19,00112,batchImportMinorFixes,Minor bug fixes in Batch Import,bugFix,90,"Space at the end of multiline fields no longer causes error, etc.",,2019-04-08 01:27:31,systemUnknown
+20,00112,newPageTypeMultipleAjaxSteps,New Page Type: Multiple AJAX Steps,newFeature,10,"This creates a page which enables you to easily define any number of steps on the front end, which will be executed one by one on the back end, informing the user of progress as each step is completed. This is useful when you have pages which required long processes, or webservice calls for which the duration is varied.",,2019-04-08 01:30:28,systemUnknown
+21,00200,createDataType,Create Data Type,newFeature,20,"Allows you to easily create a new Data Type for your forms and item types. You would create a data type if you have a kind of information that will be used in multiple forms or data types and you want automatic validation, automatic drop-down values, automatic default values, automatic test values, and a default display when items are displayed. For example, if you have a fixed number of departments in your company, you could make a data type called Department which would inheret from Line, and fields in your item types would then not be of type Line where the user types in the department name, but rather of type Department where they would select a department from a dropdown. **To try this out**, go to `DEVELOPER> Create Data Type`.",,2019-04-18 15:59:08,systemUnknown
+22,00200,newPageTypeItemTypeDisplayPage,New Page Type: ItemType Display Page,newFeature,10,"This allows you to create an enduser-friendly page for an itemtype (database table) on which one can search, edit, add, and delete any item. The page is mobile-friendly and can be easily customized with its controller-view architecture. **To try this out**, go to `DEVELOPER> Create Page` and select `Item Type Display Page`.",,2019-04-18 15:40:50,systemUnknown
+23,00200,es6Showcase,ES6 Showcase Half-Finished,newShowcase,60,"This showcase gives a live code example of the most useful features of ECMAScript 6 including default parameters, template literals, const and let instead of var, multiline strings, destructuring assignment, and arrow functions. I will later add the new data structure Maps, map(), filter(), reduce(), find(), classes, and promises. **To try this out**, go to `DEVELOPER> Showcase: Best ECMAScript 6 Features` and look at the file `systemControllers\controllerShowcaseBestEcmascript6Features.js`.",,2019-04-18 16:36:18,systemUnknown
+24,00200,newDataTypePassword,New DataType: Password,newDataType,70,"A new dataType ""Password"" was added which allows you to define a form field or itemType field as a password. This means it will automatically be masked as dots in forms and when displayed through the `getNiceValue()` method. **To try this out**, create an ItemType with a field that has the definition e.g. `Password;password` and then create an ItemType Display Page for the ItemType.",,2019-04-18 16:24:59,systemUnknown
+25,00200,newDataTypeMarkdown,New DataType: Markdown,newDataType,65,"A new dataType `Markdown` was added which allows the user to enter markdown text with a preview. The text will also be automatically displayed as parsed Markdown HTML, e.g. on the `ItemType Display Page`.  **To try this out**, create an ItemType with a field called e.g. `Description;markdown` and then edit this field on the manage page and you will see that you can type in markdown, click the `Update` button and see the parsed version of the markdown.",,2019-04-18 16:18:43,systemUnknown
+26,00200,newDataTypeOutline,New DataType: Outline,newDataType,67,"A new dataType ""Outline"" was added which allows the user to enter text in outline form, i.e. indented lines that beling with ""- "" and which can contain graphics with the @@idCode format for graphics that are stored in an import directory defined in `config.sourceImageAbsolutePath()`, use a graphics capturing tool like SnagIt to easily copy them there. You can also include blocks of code or other text in the outline by using two lines of dashes. This datatype is ideal for Howto item types or class notes, etc. **To try this out**, create an ItemType with a field called e.g. `Notes;outline` and then edit this field on the manage page and you will see that you can type in text in outline form, click the `Update` button and see the parsed version of the outline.",,2019-04-18 16:19:13,systemUnknown
+27,00200,showcaseMultipleAjaxSteps,Showcases: Multiple AJAX Steps with/without Node Restarts,newShowcase,69,"The two new showcases `Multistep AJAX Process` and `Multiple AJAX Steps with Node Restarts` give you two approaches to creating frontend views which call multi-step background processes via AJAX in a particular sequence while waiting between each step on the front end. This is particuarly important if you your processes are recreating any pages in your site itself and thus causing Node to restart via `nodemon`. **To try this out**, go to `DEVELOPER> Showcase: Multiple AJAX Steps with Node Restarts`.",,2019-04-18 16:35:54,systemUnknown
+28,00200,addFieldToItemType,Add Field to Item Type,newFeature,45,"This page will ask you for an itemType and a few field definition and then gives you a list of eight steps to do to add this field to the itemType. You could alternatively delete and recreate the itemType, but if you have modified any of these files, it is often easier to add a field in this way. **To try this out**, go to `DEVELOPER> Add Field to Item Type`.",,2019-04-18 15:59:27,systemUnknown
+29,00300,outlineTextExpanded,Basic Markdown Features now Available in Outline DataType,newFeature,10,"In fields that are of Outline DataType, you can now use basic Markdown features such as `*italics*` or `**bold**` or type come code, e.g. \```nnnnnnnnn``\`. You can also create links to URLs with the common Markdown sytax: `[search](http://google.com) here`.",,2019-08-12 16:55:09,systemUnknown
+30,00300,featureshowcasePageState2,Showcase: Page State,newShowcase,10,"This showcase shows how to keep state in the URL so that you can allow the user to e.g. search text, display information and sort fields, all which is refected in the URL line so that they can bookmark the page and return to the same state of the page as when they bookmarked it.",,2019-08-13 15:45:57,systemUnknown
+31,00300,featureShowcaseSorted,Showcase pages now sorted alphabetically,enhancement,920,The Showcase pages now number over twenty and so have been sorted alphabetically in order to better find them.,,2019-08-13 15:53:25,systemUnknown
+32,00300,featureShowcaseMobile,Showcase: Mobile Development,newShowcase,43,The new Mobile Development showcase shows you how to utilize different CSS classes and different HTML elements based on how wide the screen is. The example is set so that generally you can have two views (1) smartphone and (2) tablet/computer.,,2019-08-13 16:16:32,systemUnknown
+33,00300,featureMultiItemSearch,Create Multi-Item Search Page,newFeature,22,"You can now create a page that gives you a search box which searches through numerous item types. You have to have beforehand created an *Item Type Display Page* for each of the items, so that when you search and find an item, you can click on it and it will be displayed.",,2019-08-13 16:22:45,systemUnknown
+34,00300,createPageSimpleData,Create Page: Display Simple Data from Backend,newFeature,25,"You can now create a page that displays simple data that is sent from the backend controller to the front end view. This gives you a simple basis on which to quickly build pages that get some kind of data from the backend, put it in variables, and display this data on the frontend.",,2019-08-13 16:34:16,systemUnknown
+35,00400,featureOutlineButton,Outline fields now have markup for displaying text as buttons,enhancement,10,"In fields of the DataType **Outline**, you can now make nice-looking buttons by putting text between double square brackets.","- in the file `systemTextParsers\textParserLine.js`, add this method:
+	---------------------
+	parseButtonMarkers(text) {
+		let r = text;
+		r = qstr.replaceAllRegex(r, /\[\[(.*?)\]\]/i, (match, innerText, offset, string) => {
+			return `<span class=""standardOutlineButton"">${innerText}</span>`;
+		});
+		return r;
+	}
+	---------------------
+- in the file `systemTextParsers\textParserLine.js`, in the method `parseForOutline()`, in the middle of the method around line 172, enter this line:
+	-------------------------
+	r = this.parseButtonMarkers(r);
+	-------------------------
+- in the file `less\systemCss\system_main.less`, at the very end, add this CSS class:
+	-----------------------------
+	span.standardOutlineButton {
+		display         : inline-block;
+		padding         : 0 5px;
+		font-family     : 'Courier New', Courier, monospace;
+		background-color: #ddd;
+		border          : 1px solid #bbb;
+		border-radius   : 3px;
+		font-size       : 80%;
+	}	
+	-----------------------------
+- be sure to execute `less-watch-compiler` so that the changes in the `less\systemCss\system_main.less` get translated to `public\systemCss\system_main.css`",2019-08-28 11:30:54,systemUnknown
+36,00400,remappingCodesForBatchItems,Define Remappings of Item Markers for Batch Import,newFeature,20,"You can now keep a list of item marker remappings in the config files so that instead of having to type `==flashcard` to identify a batch import item, you can simply type `==fc`. This particularly saves effort when you have long item names such as `==secondaryNetworkServers`, you could remap it these to `==sns`.","- in the file `system/config.js` add this method:
+	-----------------------------
+	// enables alternative codes to be given for items
+	// when they are imported, e.g. 'fc': 'flashcard' would map:
+	//
+	// ==fc
+	// house
+	// das Haus
+	//
+	// to:
+	//
+	// ==flashcard
+	// house
+	// das Haus
+	exports.importedItemMarkerRemappings = function () {
+		return {
+			'sb': 'showcaseBook'
+		};
+	}
+	-----------------------------
+- in the file `systemClasses\batchImportBlock.js`, add this method:
+	----------------------------------
+	//remap alternative itemTypeIdCodes, e.g. ""fc"" to ""flashcard""
+	remapAlternativeItemTypeIdCodes() {
+		const remappings = config.importedItemMarkerRemappings();
+		for (const fromMarker in remappings) {
+			const toMarker = remappings[fromMarker];
+			if (this.markerLine == fromMarker) {
+				this.markerLine = toMarker;
+			}
+		}
+	}	
+	----------------------------------
+- in the same file `systemClasses\batchImportBlock.js`, in the method `getItemTypeObject()`, add this as the first line of the method:
+	--------------------------------------
+	this.remapAlternativeItemTypeIdCodes();
+	--------------------------------------",2019-08-28 13:38:20,systemUnknown
+37,00400,improvedSearchDisplayCreatePage,Improved Search-Display-Edit-ItemType Page,enhancement,15,"This enhancement streamlines the way items are loaded in the controller for the search-display-edit page for an ItemType, namely the records are gotten, then a plural itemType object is created with them, and the new method **enchance()** is called on it which adds new properties to the items for display and management on the front end. Also, the old, difficult-to-read `that = this` syntax is replaced with the new, simpler ES6 arrow function syntax. This makes it easier to create a base search-display-edit page for an ItemType, and then simlpy add any new properties in the **enchance()** method which then automatically get sent to the front end. If you need data from other tables (e.g. to emulate JOINs), load them in your controller, save them in your plural object as properties, and then use them from within your **enhance()** method.","- in the template file `systemFileTemplates\fileTemplate_newControllerItemTypeDisplay.txt`, replace these two methods:
+	----------------------
+	action_loadPageData() {
+		const dpDataLoader = new DpDataLoader();
+		dpDataLoader.getRecordsWithSql('@@itemTypeCamelSingularRecords', 'select * from @@itemTypeIdCode');
+		dpDataLoader.load(data => {
+
+			const @@itemTypeIdCode = System.instantiateItemsWithRecords('@@itemTypeIdCode', data.@@itemTypeCamelSingularRecords);
+			@@itemTypeIdCode.enhance();
+			this.responseData.@@itemTypeIdCode = @@itemTypeIdCode.asArray();
+
+			qsys.currentUserData(this.request, userData => {
+				this.responseData.userData = userData;
+				this.sendResponse();
+			});
+		});
+	}	
+
+	action_deleteItem() {
+		const item = this.requestData.item;
+		dpod.deleteItem(`@@itemTypeCamelSingular where id = ${item.id}`, () => {
+			this.sendResponse();
+		});
+	}
+	----------------------
+- in the template file `systemFileTemplates\fileTemplate_newPageItemTypeDisplay.txt`, replace this method:
+	--------------------------------
+	refreshUrlFromPageState: function () {
+		qsys.changeUrl('@@pageIdCode', this.pageState);
+	},	
+	--------------------------------
+- in the same template file `systemFileTemplates\fileTemplate_newPageItemTypeDisplay.txt`, replace this method:
+	--------------------------------
+	buildManageItemUrl(command, id) {
+		const returnUrl = qsys.getPageAndParametersFromUrl('@@pageIdCode');
+		const encodedReturnUrl = qsys.encodeForUrlPassing(returnUrl);
+		const targetUrl =
+			`manage@@itemTypePascalSingular?returnUrl=${encodedReturnUrl}&command=${command}&id=${id}`;
+		return targetUrl;
+	},
+	--------------------------------
+- in the template file `systemFileTemplates\fileTemplate_newClassItemTypePlural.txt`, add this empty method:
+	-----------------------------
+	enhance() {
+		for (const item of this.items) {
+			item.htmlBody = item.getDefaultHtmlBodyAsTable();
+			item.itemTextBlock = item.getItemTextBlock();
+		}
+	}
+	-----------------------------
+- in the file `systemItems\items.js`, add this empty method:
+	-----------------------------
+	enhance() {
+	}
+	-----------------------------",2019-08-29 10:00:26,systemUnknown
+38,00400,optionsOnCreatePageImproved,List of options on Create Page is reorganized and improved,enhancement,50,"The list of kinds of pages you can create was reorganized and some old page types removed. In addition, each page type has a description to give you a better idea what kind of page it will create.","- in the file `systemControllers\controllerCreatePage.js`, replace line 28 with the following text (triple-click the following text to select all):
+	-------------------------------
+	*Type; choice; $choiceSelector = radioVertical; $choices = <h>Display ItemType Page</h> <in>(enables user to easily search and edit items)</in> [itemTypeDisplay]*, <h>Display Data from SQL statement</h> <in>(a very simple display-data-from-database page)</in> [sqlStatement], <h>Display Simple Data from Backend</h> <in>(a very simple display-data-not-from-database page)</in> [simpleData], <h>Custom Form</h> <in>(type in list of fields to make a form)</in> [customForm], <h>Multi-ItemType Search Page</h> <in>(enables user to search for numerous kinds of items)</in> [multiitemSearchPage], <h>Manage Item</h> <in>(use if you add a field to an ItemType)</in> [manageItem], <h>Manage Items</h> <in>(use if you add a field to an ItemType)</in> [manageItems], <h>Text Parser</h> <in>(parses text on button-click)</in> [textParser], <h>Transformation Synchronizer</h> <in>(text automatically parsed as one types)</in> [transformationSynchronizer], <h>Multiple Ajax Steps</h> <in>(a form which sends commands to controller one at a time)</in> [multipleAjaxSteps], <h>Display XML File</h> <in>(controller parses XML file and sends data to frontend)</in> [displayXmlFile]
+	-------------------------------
+	- after pasting, make sure you back-tab this line back to the left margin
+- in the file `systemPages\createPage.ejs`, add the following style block at the top before `<div id=""app"">`
+	--------------------------------
+	<style>
+	h {
+		color: brown;
+		font-weight: 500;
+	}
+	in {
+		color: #777;
+		font-style: italic;
+	}
+	</style>	
+	--------------------------------
+- in the same file `systemPages\createPage.ejs`, replace this full `<label>` block around line 47:
+	----------------------------------
+	<label class=""prohibitSelectionClickable"" :class=""{text_disabled: choice.disabled}""
+		v-on:keyup.enter=""onEnterClick()""><input type=""radio""
+			@change=""fieldTypeChanged(choice)"" v-model=""fields.type.value""
+			:disabled=""choice.disabled"" :value=""choice.idCode"">
+		<span v-html=""choice.label""></span></label>
+	----------------------------------",2019-08-29 11:00:54,systemUnknown
+40,00400,imageVideoNonGreedy,Image (##) and video (@@) parsing syntax is now non-greedy,bugFix,200,"This fix resolves the problem that the outline parser would attempt to parse a `##` or `@@` in the text even if it was not at the end of the line, as if required to refer to an embedded image or a video. This lead to unexplained missing text in parsed outline text, e.g. if you has file template variables in the middle of the text such as @@itemTypeIdCode. The regex has been improved so that only when these markers are at the end of a line with an idCode (or YouTube code) after them, i.e. letters and numbers, will it be parsed.","- in the file `systemTextParsers\textParserLine.js`, replace the following methods:
+	------------------------------
+	parseImageIdCode() {
+		const regex = /##([a-zA-Z0-9]*)$/;
+		const matches = this.content.match(regex)
+		this.content = this.content.replace(regex, '');
+		if (matches != null) {
+			this.imageIdCode = matches[1];
+		}
+	}
+
+	parseVideoIdCode() {
+		const regex = /@@([a-zA-Z0-9]*)$/;
+		const matches = this.content.match(regex)
+		this.content = this.content.replace(regex, '');
+		if (matches != null) {
+			this.videoIdCode = matches[1];
+		}
+	}
+	------------------------------",2019-08-29 13:30:16,systemUnknown
+41,00400,createPageScreenScraping3,New Create-Page Type: Screen Scraping Page,newPageType,45,"You can now create a page that screen scrapes data from an external site, packs the information in a variable, sends it to the front end, and displays it in a list.",,2019-09-09 14:16:13,systemUnknown
+42,00400,featureRegexParser,New Class and Showcase: Regex Parser,newFeature,33,"The new `RegexParser` class takes much of the complexity out of parsing a text with multiple regexes. It also enables you to send the text from the backend to the frontend as a collection of objects instead of static HTML which enables you to developer complex interactions for each type of item you parse in the text. The example in the showcase shows how you can easily create interactive translation flashcards in a foreign langauge text, as well as easily mark words as nouns and verbs which enable the use to click on these words to look them up in external resourse websites.",,2019-09-10 10:28:55,systemUnknown
+43,00401,theWaitSpinnerImport,Wait-spinner now appears after pasting import text in Batch Import,bugFix,150,"I noticed that pasting text into the Batch Import input box while online would not give any feedback while the text was being parsed in the back end, so added a wait icon while the text is being parsed.","- in the file `systemPages\batchImport.ejs` make the following changes:
+	- add these CSS classes:
+		-------------------------------
+		.waitArea {
+			margin: 0 0 57px 0;
+		}
+
+		.waitArea i {
+			color: #ccc;
+			font-size: 22px;
+		}		
+		-------------------------------
+	- above the line `<div v-show=""pageStatus !='processingForm'"" class=""showResultsArea"">` add the following code block:
+		----------------------------
+		<div class=""waitArea"" v-show=""pageStatus =='processingForm'"">
+			<i class=""pull-left fa fa-cog fa-spin""></i>
+		</div>
+		----------------------------
+	- on the line after `processForm: function () {`, add:
+		-------------------------------
+		this.pageStatus = 'processingForm';
+		-------------------------------",2019-09-11 13:25:48,systemUnknown
+44,00401,itemTypeTextBlockSelected,Three bugs fixes on Creation of Item Type Display Page,bugFix,10,"This feature fixes the following problems on the Item Type Display Page: (1) when you click the **copy editing text block** icon, it opens and selects the text for you to copy, so you can do a quick **click-CTLR-C-click** to get the text block for easily updating the item in a text editor, where you can then later copy it into Batch Import, (2) the icons in the upper-right of each item now have mouse-over info bubbles telling you what they do, and (3) the content of the item is now shown when you click the item open (fixed a bug which caused the content of the item not to show).",,2019-09-11 16:49:19,systemUnknown
+45,00500,httpHighlightInCode,Turn off URL parsing in Outline DataTypes,newFeature,88,"In outline mode, when you have a URL instead of code (backticks), then it is also parsed, as is usually desired. However, you can now turn it off, e.g. if you have a lot of short code instances with URLs and you just want the user to be able to copy the text.","- github: 0902425d9cc84d622e59aa47cff3b27de7698b87
+- For the last change, search for `options` and it is just two lines to change, basically put in the variables `options` and `this.options`",2019-11-27 14:12:47,systemUnknown
+46,00500,outlineDateTitleSections,Option to highight dates in Ouline DataType,newFeature,10,"If you want to use the Outline Data Type as a way to take daily notes on something, say issues in an issues tracker, then you can use this option which will display the creation date on of the item on the first line, and then any line that has the text `yyyy-mm-dd` by itself on the line will display the date as a header, currently English- and German-formatted date functions are available for this in `qdat.js` but you can add your own of course for other languages or other date formats. Copy, paste and change this line: `issue.htmlBody = qstr.parseOutline(issue.notes,'issues', {highlightedDateLines:true, highlightedDateLinesStart: qdat.getDateFromDateTime(issue.systemWhenCreated)});`",,2019-12-03 17:32:17,systemUnknown
+47,00500,developerPanelBase,Developer Panel,newFeature,5,The developer menu dropdown has been replaced with a developer panel which is divided into sections.,,2019-12-04 16:49:26,systemUnknown
+48,00500,theOutlineHighlight,Syntax to highlight code in outline DataType,newFeature,50,You can now highlight text in the outline DataType with the `<H|` and `|H>` syntax.,- github: 81424ecd0c4d838ca5d9a39d1c273c8df3ba0d86,2019-12-05 11:20:59,systemUnknown
+49,00500,showcaseOutline,Showcase: Outline DataType,newShowcase,40,This interactive showcase allows you to experiment with the rich markup of the Outline datatype.,,2019-12-11 16:41:28,systemUnknown
